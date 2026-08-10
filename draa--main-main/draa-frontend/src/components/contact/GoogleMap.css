@@ -1,0 +1,132 @@
+.map-marketplace-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+/* WRAPPER FOR FLOATING EFFECT */
+.map-container-wrapper {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f1f5f9;
+}
+
+.figma-iframe {
+    border: none;
+    display: block;
+    filter: grayscale(0.2);
+    /* Matches clean Figma look */
+}
+
+/* FLOATING INFO CARD */
+.map-floating-card {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 380px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+    border: 1px solid #f1f5f9;
+}
+
+.card-header-icon {
+    width: 50px;
+    height: 50px;
+    background: #f7f1e5;
+    color: #bd7b20;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-details h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.card-details p {
+    font-size: 14.5px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ACTIONS IN CARD */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.action-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #111827;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btn-directions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #bd7b20;
+    color: #fff !important;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    /* Center this button in the vertical flex column */
+    align-self: center;
+    transition: background 0.3s ease;
+}
+
+.btn-directions:hover {
+    background: #9b6118;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .map-floating-card {
+        position: static;
+        width: 100%;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .card-details {
+        width: 100%;
+    }
+
+    .card-actions {
+        width: 100%;
+        align-items: center;
+    }
+
+    .map-container-wrapper {
+        border-radius: 16px;
+    }
+
+    .figma-iframe {
+        height: 350px;
+    }
+}

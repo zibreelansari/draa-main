@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './DraaCorporateHome.css';
 
 const navigation = [
+  { label: 'Home', href: '/' },
   { label: 'About DRAA', href: '/about-draa' },
   { label: 'Capabilities', href: '/capabilities' },
   { label: 'Study in India', href: '/study-in-india' },

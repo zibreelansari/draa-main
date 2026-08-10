@@ -1,0 +1,3097 @@
+{
+	"info": {
+		"_postman_id": "4b6f10c7-2c1b-4179-8833-25a81e9b2752",
+		"name": "E-Learning Platform Routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0. Static Content & CMS",
+			"item": [
+				{
+					"name": "Static File Serving (Uploads)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/uploads/image.jpg",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"uploads",
+								"image.jpg"
+							]
+						},
+						"description": "Access files uploaded via the main uploads controller path."
+					}
+				},
+				{
+					"name": "Static File Serving (API Uploads)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/uploads/image.jpg",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"uploads",
+								"image.jpg"
+							]
+						},
+						"description": "Access files uploaded via the separate API uploads path."
+					}
+				},
+				{
+					"name": "CMS: Privacy Policy (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/cms",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"cms"
+							]
+						},
+						"description": "Admin endpoint for CMS Privacy Policy"
+					}
+				},
+				{
+					"name": "CMS: Terms and Conditions (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/tnc",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"tnc"
+							]
+						},
+						"description": "Admin endpoint for CMS Terms and Conditions"
+					}
+				},
+				{
+					"name": "CMS: About Us (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/aboutus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"aboutus"
+							]
+						},
+						"description": "Admin endpoint for CMS About Us"
+					}
+				},
+				{
+					"name": "CMS: FAQs (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/faqs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"faqs"
+							]
+						},
+						"description": "Admin endpoint for CMS FAQs"
+					}
+				}
+			]
+		},
+		{
+			"name": "1. User/Admin/Teacher Auth & Profile",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"securepassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						},
+						"description": "User registration"
+					}
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"securepassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/users/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						},
+						"description": "User login"
+					}
+				},
+				{
+					"name": "Admin Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Admin User\",\n    \"email\": \"admin@example.com\",\n    \"password\": \"secureadminpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/adminRegister",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"adminRegister"
+							]
+						},
+						"description": "Admin registration"
+					}
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"secureadminpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/adminLogin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"adminLogin"
+							]
+						},
+						"description": "Admin login"
+					}
+				},
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/userProfile/{{userId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userProfile",
+								"{{userId}}"
+							]
+						},
+						"description": "Get a specific user's profile by ID."
+					}
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/deleteStudent/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deleteStudent",
+								"{{studentId}}"
+							]
+						},
+						"description": "Delete a student by ID."
+					}
+				},
+				{
+					"name": "Update Student Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/updateStudentStatus/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"updateStudentStatus",
+								"{{studentId}}"
+							]
+						},
+						"description": "Update a student's status."
+					}
+				},
+				{
+					"name": "Get Teacher Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/teacherProfile/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacherProfile",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Get a specific teacher's profile by ID."
+					}
+				},
+				{
+					"name": "Delete Teacher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/deleteTeacher/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deleteTeacher",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Delete a teacher by ID."
+					}
+				},
+				{
+					"name": "Update Teacher Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"approved\",\n    \"rejectionReason\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/updateTeacherStatus/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"updateTeacherStatus",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Update a teacher's status (requires `status` in body: pending, approved, rejected, suspended)."
+					}
+				},
+				{
+					"name": "Update Teacher Status (Batch)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teacherIds\": [\"{{teacherId1}}\", \"{{teacherId2}}\"],\n    \"status\": \"approved\",\n    \"rejectionReason\": \"Bulk approval\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/updateTeacherStatus/batch-update",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"updateTeacherStatus",
+								"batch-update"
+							]
+						},
+						"description": "Batch update teacher status."
+					}
+				},
+				{
+					"name": "Get Teacher's Own Profile (Course Routes)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/Teacher/MyProfile/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"Teacher",
+								"MyProfile",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Get teacher's own profile."
+					}
+				},
+				{
+					"name": "Get Admin's Own Profile (Course Routes)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/Admin/MyProfile/{{adminId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"Admin",
+								"MyProfile",
+								"{{adminId}}"
+							]
+						},
+						"description": "Get admin's own profile."
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Count & Stats",
+			"item": [
+				{
+					"name": "Get All Students Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/count/getAllStudents",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"count",
+								"getAllStudents"
+							]
+						},
+						"description": "Fetch count of all students/users."
+					}
+				},
+				{
+					"name": "Get All Teachers Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/count/getAllTeachers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"count",
+								"getAllTeachers"
+							]
+						},
+						"description": "Fetch count of all teachers."
+					}
+				},
+				{
+					"name": "Get Teacher Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/teacher/stats",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"stats"
+							]
+						},
+						"description": "Fetch statistics for teachers."
+					}
+				},
+				{
+					"name": "Get Course Stats Overview (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courses/stats",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courses",
+								"stats"
+							]
+						},
+						"description": "Get course statistics (likely for admin dashboard/public view)."
+					}
+				},
+				{
+					"name": "Get Course Stats Overview (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/stats/overview",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"stats",
+								"overview"
+							]
+						},
+						"description": "Get course statistics overview (likely more detailed for admin)."
+					}
+				}
+			]
+		},
+		{
+			"name": "3. Teachers",
+			"item": [
+				{
+					"name": "All Teachers Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/allteachersName",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"allteachersName"
+							]
+						},
+						"description": "Get a list of all teacher names."
+					}
+				},
+				{
+					"name": "Get All Teachers (Admin Status Route)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/updateTeacherStatus/all?status=approved&page=1&limit=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"updateTeacherStatus",
+								"all"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "approved",
+									"description": "Filter by status (pending, approved, rejected, suspended)"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get all teachers with status counts (for admin dashboard)."
+					}
+				}
+			]
+		},
+		{
+			"name": "4. Courses CRUD & Management",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "My New Course"
+								},
+								{
+									"key": "coverphoto",
+									"type": "file",
+									"src": "/path/to/cover.jpg"
+								},
+								{
+									"key": "chapters[0][title]",
+									"value": "Chapter 1"
+								},
+								{
+									"key": "chapters[0][study_file]",
+									"type": "file",
+									"src": "/path/to/studyfile.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/create-course",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"create-course"
+							]
+						},
+						"description": "Add a new course (uses multer for coverphoto and chapter study files)."
+					}
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Updated Course Title"
+								},
+								{
+									"key": "coverphoto",
+									"type": "file",
+									"src": "/path/to/new_cover.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/updateCourse/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"updateCourse",
+								"{{courseId}}"
+							]
+						},
+						"description": "Update an existing course (uses multer)."
+					}
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/deleteCourse/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"deleteCourse",
+								"{{courseId}}"
+							]
+						},
+						"description": "Delete a course."
+					}
+				},
+				{
+					"name": "Update Course Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"published\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/updateStatus/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"updateStatus",
+								"{{courseId}}"
+							]
+						},
+						"description": "Update course status (e.g., draft, published, archived)."
+					}
+				},
+				{
+					"name": "Update Course Approval Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"approvalStatus\": \"approved\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/UpdateCourseApprovalStatus/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"UpdateCourseApprovalStatus",
+								"{{courseId}}"
+							]
+						},
+						"description": "Update course approval status (e.g., pending, approved, rejected)."
+					}
+				},
+				{
+					"name": "Get All Approved Courses (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/allCourses",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"allCourses"
+							]
+						},
+						"description": "Get all approved courses with pagination, search, and filters."
+					}
+				},
+				{
+					"name": "Get Featured/Popular Courses (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courses/featured",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courses",
+								"featured"
+							]
+						},
+						"description": "Get featured/popular courses."
+					}
+				},
+				{
+					"name": "Get Courses by Category (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courses/category/{{categoryName}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courses",
+								"category",
+								"{{categoryName}}"
+							]
+						},
+						"description": "Get courses by specific category."
+					}
+				},
+				{
+					"name": "Get Course Details (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courseDetails/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courseDetails",
+								"{{courseId}}"
+							]
+						},
+						"description": "Get detailed information for a specific course."
+					}
+				},
+				{
+					"name": "Get Specific Course Details (Legacy Path)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courseDetails/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courseDetails",
+								"{{courseId}}"
+							]
+						},
+						"description": "Get specific course details (alternate/legacy path)."
+					}
+				},
+				{
+					"name": "Get Courses by Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courseDetails/teacher/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courseDetails",
+								"teacher",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Get all courses taught by a specific teacher."
+					}
+				}
+			]
+		},
+		{
+			"name": "5. Admin Course Management",
+			"item": [
+				{
+					"name": "Get All Courses (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses"
+							]
+						},
+						"description": "Get all courses for admin view (incl. unapproved/draft)."
+					}
+				},
+				{
+					"name": "Get Course Statistics (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/stats",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"stats"
+							]
+						},
+						"description": "Get course statistics for admin dashboard."
+					}
+				},
+				{
+					"name": "Admin Approve Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/{{courseId}}/approve",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"{{courseId}}",
+								"approve"
+							]
+						},
+						"description": "Approve a course."
+					}
+				},
+				{
+					"name": "Admin Reject Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/{{courseId}}/reject",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"{{courseId}}",
+								"reject"
+							]
+						},
+						"description": "Reject a course."
+					}
+				},
+				{
+					"name": "Admin Update Course Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"published\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/{{courseId}}/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"{{courseId}}",
+								"status"
+							]
+						},
+						"description": "Update a course's status (e.g., draft, published, archived) by Admin."
+					}
+				},
+				{
+					"name": "Admin Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"{{courseId}}"
+							]
+						},
+						"description": "Delete a course by Admin."
+					}
+				},
+				{
+					"name": "Admin Bulk Approve Courses",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"{{courseId1}}\", \"{{courseId2}}\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/bulk/approve",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"bulk",
+								"approve"
+							]
+						},
+						"description": "Bulk approve multiple courses."
+					}
+				},
+				{
+					"name": "Admin Bulk Update Course Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courseIds\": [\"{{courseId1}}\", \"{{courseId2}}\"],\n    \"status\": \"published\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/admin/courses/bulk/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"admin",
+								"courses",
+								"bulk",
+								"status"
+							]
+						},
+						"description": "Bulk update multiple courses status."
+					}
+				}
+			]
+		},
+		{
+			"name": "6. Course Content Management",
+			"item": [
+				{
+					"name": "Publish Course Content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_id",
+									"value": "{{courseId}}"
+								},
+								{
+									"key": "title",
+									"value": "Module 1 Lecture 1"
+								},
+								{
+									"key": "featured_image",
+									"type": "file",
+									"src": "/path/to/image.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/createCourseContent",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"createCourseContent"
+							]
+						},
+						"description": "Create and publish new course content (uses multer for image upload)."
+					}
+				},
+				{
+					"name": "Get All Course Content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/allCourseContent",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"allCourseContent"
+							]
+						},
+						"description": "Get all course content across all courses."
+					}
+				},
+				{
+					"name": "Update Course Content Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"published\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courseContent/updateStatus/{{contentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courseContent",
+								"updateStatus",
+								"{{contentId}}"
+							]
+						},
+						"description": "Update course content status (e.g., draft, published)."
+					}
+				},
+				{
+					"name": "Delete Course Content",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/deleteCourseContent/{{contentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"deleteCourseContent",
+								"{{contentId}}"
+							]
+						},
+						"description": "Delete a specific course content module."
+					}
+				},
+				{
+					"name": "Get Course Content Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/courseContentDetails/{{contentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"courseContentDetails",
+								"{{contentId}}"
+							]
+						},
+						"description": "Get detailed information for a specific course content module."
+					}
+				},
+				{
+					"name": "Update Course Content",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Lecture Title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/UpdateCourseContent/{{contentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"UpdateCourseContent",
+								"{{contentId}}"
+							]
+						},
+						"description": "Update specific course content."
+					}
+				}
+			]
+		},
+		{
+			"name": "7. Course Categories",
+			"item": [
+				{
+					"name": "Get All Course Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories"
+							]
+						},
+						"description": "Get all course categories."
+					}
+				},
+				{
+					"name": "Get Categories by Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories/teacher/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories",
+								"teacher",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Get categories associated with a specific teacher."
+					}
+				},
+				{
+					"name": "Get Category by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories/{{categoryId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories",
+								"{{categoryId}}"
+							]
+						},
+						"description": "Get a specific course category by ID."
+					}
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Category\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories"
+							]
+						},
+						"description": "Create a new course category."
+					}
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Category Name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories/{{categoryId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories",
+								"{{categoryId}}"
+							]
+						},
+						"description": "Update an existing course category."
+					}
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories/{{categoryId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories",
+								"{{categoryId}}"
+							]
+						},
+						"description": "Delete a specific course category."
+					}
+				},
+				{
+					"name": "Get Courses by Category ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories/{{categoryId}}/courses",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories",
+								"{{categoryId}}",
+								"courses"
+							]
+						},
+						"description": "Get courses under a specific category ID."
+					}
+				},
+				{
+					"name": "Update Category Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    { \"_id\": \"{{categoryId1}}\", \"order\": 1 },\n    { \"_id\": \"{{categoryId2}}\", \"order\": 2 }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/course/categories/order/update",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"categories",
+								"order",
+								"update"
+							]
+						},
+						"description": "Update the display order of categories."
+					}
+				}
+			]
+		},
+		{
+			"name": "8. Student Course Payment & Progress",
+			"item": [
+				{
+					"name": "Create Course Order (Razorpay Step 1)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"course_id\": \"{{courseId}}\",\n    \"student_data\": {\n        \"id\": \"{{studentId}}\",\n        \"name\": \"Student Name\",\n        \"email\": \"student@example.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/course/payment/create-order",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"course",
+								"payment",
+								"create-order"
+							]
+						},
+						"description": "Initiate Razorpay order creation for a course."
+					}
+				},
+				{
+					"name": "Verify Course Payment (Razorpay Step 2)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"course_id\": \"{{courseId}}\",\n    \"razorpay_order_id\": \"order_xxxxxx\",\n    \"razorpay_payment_id\": \"pay_xxxxxx\",\n    \"razorpay_signature\": \"signed_string\",\n    \"student_data\": {\n        \"id\": \"{{studentId}}\",\n        \"name\": \"Student Name\",\n        \"email\": \"student@example.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/course/payment/verify-payment",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"course",
+								"payment",
+								"verify-payment"
+							]
+						},
+						"description": "Verify payment signature and complete course purchase."
+					}
+				},
+				{
+					"name": "Check Course Purchase Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/course/payment/check-purchase/{{courseId}}?student_id={{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"course",
+								"payment",
+								"check-purchase",
+								"{{courseId}}"
+							],
+							"query": [
+								{
+									"key": "student_id",
+									"value": "{{studentId}}"
+								}
+							]
+						},
+						"description": "Check if a student has purchased a specific course."
+					}
+				},
+				{
+					"name": "Get My Purchased Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/course/payment/my-courses/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"course",
+								"payment",
+								"my-courses",
+								"{{studentId}}"
+							]
+						},
+						"description": "Get all courses purchased by a student."
+					}
+				},
+				{
+					"name": "Get Course Access",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/course/payment/course-access/{{studentId}}/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"course",
+								"payment",
+								"course-access",
+								"{{studentId}}",
+								"{{courseId}}"
+							]
+						},
+						"description": "Verify access and get full course details for a purchased course."
+					}
+				},
+				{
+					"name": "Get Course Progress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/courses/progress/progress/{{studentId}}/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"courses",
+								"progress",
+								"progress",
+								"{{studentId}}",
+								"{{courseId}}"
+							]
+						},
+						"description": "Get or create a student's progress record for a course."
+					}
+				},
+				{
+					"name": "Update Chapter Progress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chapter_id\": \"{{chapterId}}\",\n    \"chapter_name\": \"Chapter 1\",\n    \"chapter_index\": 1,\n    \"status\": \"completed\",\n    \"completion_percentage\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/courses/progress/progress/{{studentId}}/{{courseId}}/chapter",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"courses",
+								"progress",
+								"progress",
+								"{{studentId}}",
+								"{{courseId}}",
+								"chapter"
+							]
+						},
+						"description": "Update the progress status of a specific chapter."
+					}
+				},
+				{
+					"name": "Get Learning Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/courses/progress/analytics/{{studentId}}/{{courseId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"courses",
+								"progress",
+								"analytics",
+								"{{studentId}}",
+								"{{courseId}}"
+							]
+						},
+						"description": "Get a student's learning analytics and milestones for a course."
+					}
+				}
+			]
+		},
+		{
+			"name": "9. Books CRUD & Purchase",
+			"item": [
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "My Great Book"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/path/to/cover.jpg"
+								},
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/path/to/book.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/books/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create"
+							]
+						},
+						"description": "Create a new book (uses multer for cover image and PDF)."
+					}
+				},
+				{
+					"name": "Get All Approved Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/books/approved",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"approved"
+							]
+						},
+						"description": "Get all approved books for public display."
+					}
+				},
+				{
+					"name": "Get Book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/books/{{bookId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"{{bookId}}"
+							]
+						},
+						"description": "Get a single book by ID."
+					}
+				},
+				{
+					"name": "Get Books by Category Slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/books/category/{{categorySlug}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"category",
+								"{{categorySlug}}"
+							]
+						},
+						"description": "Get books filtered by category slug."
+					}
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Updated Book Title"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/books/{{bookId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"{{bookId}}"
+							]
+						},
+						"description": "Update an existing book (supports file upload)."
+					}
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/books/{{bookId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"{{bookId}}"
+							]
+						},
+						"description": "Delete a book."
+					}
+				},
+				{
+					"name": "Create Book Order (Razorpay Step 1)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"book_id\": \"{{bookId}}\",\n    \"student_data\": {\n        \"id\": \"{{studentId}}\",\n        \"name\": \"Student Name\",\n        \"email\": \"student@example.com\"\n    },\n    \"delivery_address\": \"123 Street, City, State, 123456\" // Required for physical books\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/books/payment/create-order",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"books",
+								"payment",
+								"create-order"
+							]
+						},
+						"description": "Initiate Razorpay order creation for a book."
+					}
+				},
+				{
+					"name": "Verify Book Payment (Razorpay Step 2)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"book_id\": \"{{bookId}}\",\n    \"razorpay_order_id\": \"order_xxxxxx\",\n    \"razorpay_payment_id\": \"pay_xxxxxx\",\n    \"razorpay_signature\": \"signed_string\",\n    \"student_data\": {\n        \"id\": \"{{studentId}}\",\n        \"name\": \"Student Name\",\n        \"email\": \"student@example.com\"\n    },\n    \"delivery_address\": \"123 Street, City, State, 123456\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/books/payment/verify-payment",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"books",
+								"payment",
+								"verify-payment"
+							]
+						},
+						"description": "Verify payment signature and complete book purchase."
+					}
+				},
+				{
+					"name": "Get My Purchased Books (Legacy/Detailed)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/books/payment/my-books/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"books",
+								"payment",
+								"my-books",
+								"{{studentId}}"
+							]
+						},
+						"description": "Get all books purchased by a student (Detailed/Legacy path)."
+					}
+				},
+				{
+					"name": "Get My Purchased Books (New/CRM)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/books/purchase/my-books/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"books",
+								"purchase",
+								"my-books",
+								"{{studentId}}"
+							]
+						},
+						"description": "Get all books purchased by a student (New/CRM path)."
+					}
+				},
+				{
+					"name": "Download PDF Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/students/books/payment/download/{{purchaseId}}?student_id={{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"books",
+								"payment",
+								"download",
+								"{{purchaseId}}"
+							],
+							"query": [
+								{
+									"key": "student_id",
+									"value": "{{studentId}}"
+								}
+							]
+						},
+						"description": "Download a purchased PDF book (checks limit/expiry)."
+					}
+				}
+			]
+		},
+		{
+			"name": "10. Exams & Assignments",
+			"item": [
+				{
+					"name": "Create Exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New Exam\",\n    \"questions\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"create"
+							]
+						},
+						"description": "Create a new exam."
+					}
+				},
+				{
+					"name": "Get Exams by Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/teacher/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"teacher",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Get all exams created by a specific teacher."
+					}
+				},
+				{
+					"name": "Get Exam by ID (Creator)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/fetch/{{examId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"fetch",
+								"{{examId}}"
+							]
+						},
+						"description": "Fetch exam details by ID (for creator/admin)."
+					}
+				},
+				{
+					"name": "Update Exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Exam Title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/update/{{examId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"update",
+								"{{examId}}"
+							]
+						},
+						"description": "Update an existing exam by creator."
+					}
+				},
+				{
+					"name": "Delete Exam",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/delete/{{examId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"delete",
+								"{{examId}}"
+							]
+						},
+						"description": "Delete an exam."
+					}
+				},
+				{
+					"name": "Get Exam Details (Student)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/student/fetch/{{examId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"student",
+								"fetch",
+								"{{examId}}"
+							]
+						},
+						"description": "Fetch exam details by ID for a student."
+					}
+				},
+				{
+					"name": "Get All Exams (Students)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/student/list",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"student",
+								"list"
+							]
+						},
+						"description": "Get all available exams for students."
+					}
+				},
+				{
+					"name": "Submit Exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\": \"{{studentId}}\",\n    \"answers\": [{\"questionId\": \"{{qId}}\", \"answer\": \"option_A\"}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/student/submit/{{examId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"student",
+								"submit",
+								"{{examId}}"
+							]
+						},
+						"description": "Submit a completed exam."
+					}
+				},
+				{
+					"name": "Get Exam Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/results/{{submissionId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"results",
+								"{{submissionId}}"
+							]
+						},
+						"description": "Get detailed results for a specific exam submission."
+					}
+				},
+				{
+					"name": "Get Exams (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/exam/admin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"exam",
+								"admin"
+							]
+						},
+						"description": "Get all exams (for admin view)."
+					}
+				},
+				{
+					"name": "Create Assignment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New Assignment\",\n    \"teacherId\": \"{{teacherId}}\",\n    \"dueDate\": \"2025-12-31\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"create"
+							]
+						},
+						"description": "Create a new assignment."
+					}
+				},
+				{
+					"name": "Get All Assignments by Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/all/{{teacherId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"all",
+								"{{teacherId}}"
+							]
+						},
+						"description": "Get all assignments created by a teacher."
+					}
+				},
+				{
+					"name": "Make Assignment Live",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/make-live/{{assignmentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"make-live",
+								"{{assignmentId}}"
+							]
+						},
+						"description": "Change an assignment status to live."
+					}
+				},
+				{
+					"name": "Delete Assignment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/delete/{{assignmentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"delete",
+								"{{assignmentId}}"
+							]
+						},
+						"description": "Delete an assignment."
+					}
+				},
+				{
+					"name": "Upload Assignment Files (Student Submission)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileUrl",
+									"type": "file",
+									"src": "/path/to/submission.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/upload/{{assignmentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"upload",
+								"{{assignmentId}}"
+							]
+						},
+						"description": "Upload files for a specific assignment submission."
+					}
+				},
+				{
+					"name": "Get Assignment by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/{{assignmentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"{{assignmentId}}"
+							]
+						},
+						"description": "Get a specific assignment by ID."
+					}
+				},
+				{
+					"name": "Get All Assignments (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/admin/assignments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"admin",
+								"assignments"
+							]
+						},
+						"description": "Get all assignments (for admin view)."
+					}
+				},
+				{
+					"name": "Update Assignment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Revised Assignment Title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/assignmments/update/{{assignmentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignmments",
+								"update",
+								"{{assignmentId}}"
+							]
+						},
+						"description": "Update an existing assignment."
+					}
+				}
+			]
+		},
+		{
+			"name": "11. Test Series & Attempts",
+			"item": [
+				{
+					"name": "Create Test Series",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Series 1\",\n    \"topicCategory\": \"{{topicId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/test-series/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"test-series",
+								"create"
+							]
+						},
+						"description": "Create a new test series (legacy/basic route)."
+					}
+				},
+				{
+					"name": "Get Active Test Series (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/test-series/active/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"test-series",
+								"active",
+								"all"
+							]
+						},
+						"description": "Get all active test series."
+					}
+				},
+				{
+					"name": "Start Test Attempt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"{{studentId}}\",\n    \"testSeriesId\": \"{{testSeriesId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/{{testSeriesId}}/start",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"{{testSeriesId}}",
+								"start"
+							]
+						},
+						"description": "Start a new test attempt."
+					}
+				},
+				{
+					"name": "Submit Answer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"questionId\": \"{{questionId}}\",\n    \"selectedOption\": \"A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/attempt/{{attemptId}}/answer",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"attempt",
+								"{{attemptId}}",
+								"answer"
+							]
+						},
+						"description": "Submit an answer for a specific question in an ongoing attempt."
+					}
+				},
+				{
+					"name": "Submit Test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/attempt/{{attemptId}}/submit",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"attempt",
+								"{{attemptId}}",
+								"submit"
+							]
+						},
+						"description": "Finalize and submit a test attempt."
+					}
+				},
+				{
+					"name": "Get Test Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/attempt/{{attemptId}}/results",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"attempt",
+								"{{attemptId}}",
+								"results"
+							]
+						},
+						"description": "Retrieve detailed results for a submitted test."
+					}
+				},
+				{
+					"name": "Create Test Series Order (Razorpay Step 1)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"test_series_id\": \"{{testSeriesId}}\",\n    \"student_data\": {\n        \"id\": \"{{studentId}}\",\n        \"name\": \"Student Name\",\n        \"email\": \"student@example.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/purchase/create-order",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"purchase",
+								"create-order"
+							]
+						},
+						"description": "Initiate Razorpay order creation for a test series."
+					}
+				},
+				{
+					"name": "Verify Test Series Payment (Razorpay Step 2)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"test_series_id\": \"{{testSeriesId}}\",\n    \"razorpay_order_id\": \"order_xxxxxx\",\n    \"razorpay_payment_id\": \"pay_xxxxxx\",\n    \"razorpay_signature\": \"signed_string\",\n    \"student_data\": {\n        \"id\": \"{{studentId}}\",\n        \"name\": \"Student Name\",\n        \"email\": \"student@example.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/purchase/verify-payment",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"purchase",
+								"verify-payment"
+							]
+						},
+						"description": "Verify payment signature and complete test series purchase."
+					}
+				},
+				{
+					"name": "Check Test Series Purchase Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/purchase/check-purchase/{{testSeriesId}}?student_id={{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"purchase",
+								"check-purchase",
+								"{{testSeriesId}}"
+							],
+							"query": [
+								{
+									"key": "student_id",
+									"value": "{{studentId}}"
+								}
+							]
+						},
+						"description": "Check if a student has purchased a specific test series."
+					}
+				},
+				{
+					"name": "Get My Purchased Test Series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/test-series/purchase/my-test-series/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"test-series",
+								"purchase",
+								"my-test-series",
+								"{{studentId}}"
+							]
+						},
+						"description": "Get all test series purchased by a student."
+					}
+				}
+			]
+		},
+		{
+			"name": "12. Jobs & Categories",
+			"item": [
+				{
+					"name": "Create Job Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Software Engineer"
+								},
+								{
+									"key": "job_pdf_file",
+									"type": "file",
+									"src": "/path/to/job_desc.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/jobs/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"jobs",
+								"create"
+							]
+						},
+						"description": "Create a new job post."
+					}
+				},
+				{
+					"name": "Get All Job Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/jobs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"jobs"
+							]
+						},
+						"description": "Get all job posts."
+					}
+				},
+				{
+					"name": "Get Approved Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/jobs/approved/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"jobs",
+								"approved",
+								"all"
+							]
+						},
+						"description": "Get all approved job posts."
+					}
+				},
+				{
+					"name": "Create Job Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IT Jobs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/jobs/categories/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"jobs",
+								"categories",
+								"create"
+							]
+						},
+						"description": "Create a new job category."
+					}
+				},
+				{
+					"name": "Get All Job Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/jobs/categories/fetch",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"jobs",
+								"categories",
+								"fetch"
+							]
+						},
+						"description": "Get all job categories."
+					}
+				}
+			]
+		},
+		{
+			"name": "13. Contact & Inquiry",
+			"item": [
+				{
+					"name": "Submit Contact Form",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"User\",\n    \"email\": \"user@contact.com\",\n    \"message\": \"I have a query.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/contactus/contact/submit",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contactus",
+								"contact",
+								"submit"
+							]
+						},
+						"description": "Submit a contact form inquiry."
+					}
+				},
+				{
+					"name": "Get All Contacts (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/contactus/admin/contacts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contactus",
+								"admin",
+								"contacts"
+							]
+						},
+						"description": "Get all contact form submissions (Admin)."
+					}
+				},
+				{
+					"name": "Get Contact Stats (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/contactus/admin/contacts/stats",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contactus",
+								"admin",
+								"contacts",
+								"stats"
+							]
+						},
+						"description": "Get contact form statistics (Admin)."
+					}
+				},
+				{
+					"name": "Get All Inquiries (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/inquiry",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"inquiry"
+							]
+						},
+						"description": "Get all inquiries (Admin)."
+					}
+				}
+			]
+		},
+		{
+			"name": "14. Live Sessions & Payment Management",
+			"item": [
+				{
+					"name": "Create Live Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Weekly Q&A\",\n    \"startTime\": \"2025-10-10T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/live-sessions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"live-sessions"
+							]
+						},
+						"description": "Create a new live session/meeting."
+					}
+				},
+				{
+					"name": "List Live Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/live-sessions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"live-sessions"
+							]
+						},
+						"description": "List all live sessions/meetings."
+					}
+				},
+				{
+					"name": "Get All Payments (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/admin/payments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"payments"
+							]
+						},
+						"description": "Get all payment records (Admin)."
+					}
+				}
+			]
+		},
+		{
+			"name": "15. Dashboards",
+			"item": [
+				{
+					"name": "Student Dashboard Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/dashboard/analytics/stats/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"dashboard",
+								"analytics",
+								"stats",
+								"{{studentId}}"
+							]
+						},
+						"description": "Get core statistics for the student dashboard."
+					}
+				},
+				{
+					"name": "Student Dashboard Recent Activity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/student/dashboard/analytics/activity/{{studentId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"dashboard",
+								"analytics",
+								"activity",
+								"{{studentId}}"
+							]
+						},
+						"description": "Get recent activity data for the student dashboard."
+					}
+				},
+				{
+					"name": "Teacher Dashboard Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/teacher/dashboard/analytics",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"dashboard",
+								"analytics"
+							]
+						},
+						"description": "Get analytics for the teacher dashboard."
+					}
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

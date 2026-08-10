@@ -1,0 +1,322 @@
+/* ==========================================
+   UNIFIED REGISTER & LOGIN PORTAL STYLING
+   ========================================== */
+
+.unified-register-page {
+  background: #f8fafc;
+  padding: 40px 0 100px;
+  color: #0f172a;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.unified-register-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Breadcrumb */
+.figma-breadcrumb {
+  font-size: 14px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.figma-breadcrumb a {
+  text-decoration: none;
+  color: #bd7b20;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.figma-breadcrumb a:hover {
+  color: #9b6118;
+}
+
+.figma-breadcrumb .active {
+  color: #94a3b8;
+}
+
+/* Portal Title & Header Section */
+.portal-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px;
+}
+
+.portal-header h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+
+.portal-header h1 span {
+  background: linear-gradient(135deg, #bd7b20 0%, #66735b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portal-header p {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Portal Grid Layout */
+.portal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Portal Card Styles */
+.portal-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 50px 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+/* Student Specific Colors */
+.portal-card.student-card::before {
+  background: linear-gradient(90deg, #bd7b20 0%, #3b82f6 100%);
+}
+
+/* Teacher Specific Colors */
+.portal-card.teacher-card::before {
+  background: linear-gradient(90deg, #66735b 0%, #d946ef 100%);
+}
+
+.portal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  border-color: #cbd5e1;
+}
+
+.portal-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Visual Vector Box */
+.card-visual-box {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.card-visual-box svg {
+  width: 100%;
+  height: 100%;
+  max-width: 220px;
+  filter: drop-shadow(0 10px 15px rgba(91, 108, 255, 0.1));
+  transition: transform 0.4s ease;
+}
+
+.portal-card:hover .card-visual-box svg {
+  transform: scale(1.05);
+}
+
+/* Portal Description details */
+.portal-card h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.portal-card p.card-desc {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  height: 72px; /* Keeps descriptions aligned */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Group */
+.auth-button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.portal-btn {
+  width: 100%;
+  height: 54px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.portal-btn.btn-primary {
+  background: #bd7b20;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(91, 108, 255, 0.15);
+}
+
+.portal-btn.btn-primary:hover {
+  background: #9b6118;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(91, 108, 255, 0.25);
+}
+
+.portal-btn.btn-secondary {
+  background: #ffffff;
+  color: #475569;
+  border: 1.5px solid #e2e8f0;
+}
+
+.portal-btn.btn-secondary:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+/* Specific Teacher secondary/primary shifts if we want subtle style diversity */
+.portal-card.teacher-card .portal-btn.btn-primary {
+  background: #66735b;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.portal-card.teacher-card .portal-btn.btn-primary:hover {
+  background: #66735b;
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.25);
+}
+
+/* Admin Access Link Area */
+.admin-trigger-bar {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 30px;
+}
+
+.admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.admin-link:hover {
+  color: #475569;
+  background: #f1f5f9;
+}
+
+/* ==========================================
+   SVG MICRO-ANIMATIONS KEYFRAMES
+   ========================================== */
+
+/* Rotating Elements (Gears, Graduation Orbits) */
+.svg-animate-spin {
+  animation: svg-spin 12s linear infinite;
+  transform-origin: center;
+}
+
+.svg-animate-spin-reverse {
+  animation: svg-spin-rev 16s linear infinite;
+  transform-origin: center;
+}
+
+/* Floating/Bobbing Elements */
+.svg-animate-float-y {
+  animation: svg-float-y 4s ease-in-out infinite alternate;
+}
+
+.svg-animate-float-y-slow {
+  animation: svg-float-y 6s ease-in-out infinite alternate;
+}
+
+/* Pulsing orbits/lights */
+.svg-animate-pulse {
+  animation: svg-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes svg-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes svg-spin-rev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes svg-float-y {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes svg-pulse {
+  0% { opacity: 0.3; transform: scale(0.96); }
+  100% { opacity: 0.8; transform: scale(1.04); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+  .portal-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+  
+  .portal-card {
+    padding: 40px 30px;
+  }
+
+  .portal-header h1 {
+    font-size: 32px;
+  }
+}
