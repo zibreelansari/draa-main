@@ -1,0 +1,100 @@
+/* Container padding and background matching Figma */
+.upper-footer-tier {
+    padding: 60px 0;
+    background-color: #f9faff; /* Very light lavender/grey backdrop */
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.newsletter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Heading and Subtitle Styling */
+.newsletter-text {
+    flex: 1;
+}
+
+.newsletter-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.newsletter-subtitle {
+    font-size: 16px;
+    color: #6b7280; /* Muted grey text */
+    margin: 0;
+}
+
+/* Form, Input, and Button Alignment */
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.newsletter-input {
+    width: 380px;
+    padding: 14px 20px;
+    border: 1.5px solid #ffffff;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-input:focus {
+    border-color: #bd7b20; /* Design Primary Blue */
+}
+
+.newsletter-btn {
+    background-color: #bd7b20; /* Figma Primary Blue */
+    color: #ffffff;
+    padding: 0 35px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.newsletter-btn:hover {
+    background-color: #9b6118;
+}
+
+/* Responsive Handling for Mobile/Tablet */
+@media (max-width: 1024px) {
+    .newsletter-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .newsletter-input {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-title {
+        font-size: 22px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .newsletter-btn {
+        padding: 14px 0;
+    }
+}

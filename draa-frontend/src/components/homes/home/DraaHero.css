@@ -1,0 +1,519 @@
+.draa-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 76px 0 82px;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(212, 154, 47, 0.16), transparent 32%),
+    linear-gradient(135deg, #f8f2e7 0%, #fffdf8 52%, #eee3d0 100%);
+  border-bottom: 1px solid rgba(43, 35, 24, 0.1);
+}
+
+.draa-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(45, 38, 27, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 38, 27, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to right, black, transparent 68%);
+}
+
+.draa-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+  align-items: center;
+  gap: clamp(50px, 8vw, 120px);
+}
+
+.draa-hero-copy {
+  max-width: 690px;
+}
+
+.draa-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(174, 109, 22, 0.2);
+  border-radius: 999px;
+  color: #885412;
+  background: rgba(255, 253, 248, 0.72);
+  font-size: 13px;
+  font-weight: 750;
+  box-shadow: 0 8px 28px rgba(72, 48, 18, 0.06);
+}
+
+.draa-hero-kicker {
+  margin: 28px 0 8px;
+  color: #996018;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+}
+
+.draa-hero h1 {
+  margin: 0;
+  max-width: 720px;
+  color: #17140f;
+  font-family: "Arial Black", "Inter", system-ui, sans-serif;
+  font-size: clamp(50px, 6.2vw, 84px);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.draa-hero h1 span {
+  display: block;
+  color: #bd7b20;
+}
+
+.draa-hero-description {
+  max-width: 590px;
+  margin: 24px 0 0;
+  color: #5f574b;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.7;
+}
+
+.draa-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.draa-hero-primary,
+.draa-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.draa-hero-primary {
+  color: #fffdf8;
+  background: #1c1914;
+  box-shadow: 0 14px 30px rgba(28, 25, 20, 0.2);
+}
+
+.draa-hero-secondary {
+  color: #342b20;
+  border: 1px solid rgba(45, 35, 23, 0.18);
+  background: rgba(255, 253, 248, 0.82);
+}
+
+.draa-hero-primary:hover,
+.draa-hero-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.draa-hero-primary:hover {
+  color: white;
+  box-shadow: 0 18px 36px rgba(28, 25, 20, 0.25);
+}
+
+.draa-hero-secondary:hover {
+  color: #342b20;
+  background: #fffdf8;
+}
+
+.draa-hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 38px;
+}
+
+.draa-hero-proof div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.draa-hero-proof strong {
+  color: #201c16;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.draa-hero-proof span {
+  color: #736a5d;
+  font-size: 12px;
+}
+
+.draa-hero-proof i {
+  width: 1px;
+  height: 34px;
+  background: rgba(45, 35, 23, 0.16);
+}
+
+.draa-hero-brand-card {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 44px;
+  color: #f8f2e7;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(216, 157, 54, 0.34), transparent 28%),
+    linear-gradient(145deg, #29241c 0%, #15130f 72%);
+  box-shadow: 0 36px 80px rgba(56, 42, 23, 0.22);
+  transform: rotate(1.5deg);
+}
+
+.draa-hero-card-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.draa-hero-logo-wrap {
+  position: relative;
+  z-index: 2;
+  width: 230px;
+  height: 210px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f8f2e7;
+  box-shadow: inset 0 0 0 10px rgba(189, 123, 32, 0.14), 0 20px 44px rgba(0, 0, 0, 0.22);
+}
+
+.draa-hero-logo-wrap img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.draa-hero-wordmark {
+  position: relative;
+  z-index: 2;
+  margin-top: 26px;
+  font-family: "Arial Black", "Inter", system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.24em;
+  transform: translateX(0.12em);
+}
+
+.draa-hero-brand-card p {
+  position: relative;
+  z-index: 2;
+  margin: 12px 0 0;
+  color: #cfc5b4;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+.draa-hero-orbit {
+  position: absolute;
+  border: 1px solid rgba(221, 168, 75, 0.26);
+  border-radius: 50%;
+}
+
+.draa-hero-orbit-one {
+  width: 360px;
+  height: 360px;
+}
+
+.draa-hero-orbit-two {
+  width: 430px;
+  height: 430px;
+}
+
+.draa-hero-glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.draa-hero-glow-one {
+  top: -130px;
+  right: 36%;
+  width: 280px;
+  height: 280px;
+  background: rgba(212, 154, 47, 0.14);
+}
+
+.draa-hero-glow-two {
+  bottom: -130px;
+  left: 36%;
+  width: 340px;
+  height: 340px;
+  background: rgba(105, 119, 88, 0.1);
+}
+
+@media (max-width: 991px) {
+  .draa-hero {
+    padding: 62px 0 68px;
+  }
+
+  .draa-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .draa-hero-copy {
+    max-width: 760px;
+  }
+
+  .draa-hero-brand-card {
+    width: 100%;
+    min-height: 390px;
+    transform: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .draa-hero {
+    padding: 44px 0 50px;
+  }
+
+  .draa-hero h1 {
+    font-size: 46px;
+  }
+
+  .draa-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .draa-hero-primary,
+  .draa-hero-secondary {
+    width: 100%;
+  }
+
+  .draa-hero-proof {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .draa-hero-proof i {
+    display: none;
+  }
+
+  .draa-hero-brand-card {
+    min-height: 340px;
+    padding: 30px 18px;
+    border-radius: 24px;
+  }
+
+  .draa-hero-logo-wrap {
+    width: 170px;
+    height: 156px;
+  }
+}
+
+/* Bilingual copy and alignment refinement */
+.draa-hero-copy {
+  max-width: 760px;
+}
+
+.draa-hero h1 {
+  max-width: 760px;
+  font-size: clamp(50px, 5.4vw, 74px);
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.draa-hero h1 span {
+  margin-top: 7px;
+}
+
+.draa-hero-description {
+  max-width: 650px;
+  text-wrap: pretty;
+}
+
+.draa-hero-kicker {
+  max-width: 690px;
+  line-height: 1.55;
+}
+
+.draa-hero-proof {
+  max-width: 650px;
+}
+
+.draa-hero-proof div {
+  min-width: 0;
+  max-width: 190px;
+}
+
+.draa-hero-proof strong,
+.draa-hero-proof span {
+  line-height: 1.35;
+}
+
+.draa-hero-brand-card > p {
+  max-width: 320px;
+  text-align: center;
+  line-height: 1.55;
+}
+
+.draa-hero--hi :is(
+  .draa-hero-eyebrow,
+  .draa-hero-kicker,
+  h1,
+  .draa-hero-description,
+  .draa-hero-actions,
+  .draa-hero-proof,
+  .draa-hero-brand-card > p
+) {
+  font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", system-ui, sans-serif;
+}
+
+.draa-hero--hi .draa-hero-kicker {
+  max-width: 660px;
+  color: #8d5816;
+  font-size: 13px;
+  letter-spacing: 0.045em;
+}
+
+.draa-hero--hi h1 {
+  max-width: 735px;
+  font-size: clamp(44px, 4.75vw, 66px);
+  line-height: 1.16;
+  letter-spacing: -0.038em;
+}
+
+.draa-hero--hi h1 span {
+  margin-top: 2px;
+}
+
+.draa-hero--hi .draa-hero-description {
+  max-width: 680px;
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.82;
+}
+
+.draa-hero--hi .draa-hero-primary,
+.draa-hero--hi .draa-hero-secondary {
+  padding-inline: 21px;
+  font-size: 15px;
+}
+
+.draa-hero--hi .draa-hero-proof {
+  gap: 18px;
+}
+
+.draa-hero--hi .draa-hero-proof strong {
+  font-size: 15px;
+}
+
+.draa-hero--hi .draa-hero-proof span {
+  font-size: 11px;
+}
+
+@media (max-width: 991px) {
+  .draa-hero h1 {
+    max-width: 720px;
+    font-size: clamp(48px, 8vw, 66px);
+  }
+
+  .draa-hero--hi h1 {
+    max-width: 690px;
+    font-size: clamp(42px, 7vw, 56px);
+  }
+}
+
+@media (max-width: 575px) {
+  .draa-hero h1 {
+    font-size: 42px;
+    line-height: 1.06;
+  }
+
+  .draa-hero--hi h1 {
+    font-size: 38px;
+    line-height: 1.18;
+  }
+
+  .draa-hero-description,
+  .draa-hero--hi .draa-hero-description {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .draa-hero-proof,
+  .draa-hero--hi .draa-hero-proof {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .draa-hero-proof div {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(110px, 0.72fr) 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(45, 35, 23, 0.1);
+    border-radius: 11px;
+    background: rgba(255, 253, 248, 0.65);
+  }
+}
+
+/* Keep the English hero compact beside the brand card. */
+.draa-hero--en h1 {
+  max-width: 650px;
+  font-size: clamp(40px, 3.25vw, 50px);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+}
+
+.draa-hero--en h1 span {
+  margin-top: 3px;
+}
+
+.draa-hero--en .draa-hero-description {
+  max-width: 610px;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.68;
+}
+
+.draa-hero--en .draa-hero-kicker {
+  max-width: 620px;
+  font-size: 12px;
+  letter-spacing: 0.145em;
+}
+
+@media (max-width: 991px) {
+  .draa-hero--en h1 {
+    max-width: 640px;
+    font-size: clamp(40px, 6.4vw, 50px);
+  }
+}
+
+@media (max-width: 575px) {
+  .draa-hero--en h1 {
+    font-size: 36px;
+    line-height: 1.08;
+  }
+
+  .draa-hero--en .draa-hero-description {
+    font-size: 15.5px;
+  }
+}

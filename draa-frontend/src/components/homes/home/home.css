@@ -1,0 +1,351 @@
+.home-banner{
+    background: #00a3b1 !important;
+}
+
+.fnumber{
+    background: #00a3b1 !important;
+}
+
+.feature-item:hover{
+    border-color: #00a3b1 !important;
+}
+
+.feature-item:hover .fea-icon{
+    background-color: #00a3b1 !important;
+}
+
+#navigation::after{
+    background-image: url();
+}
+
+.bg_btn{
+    background-color: #00a3b1 !important;
+    border-color: aliceblue !important;
+    color:aliceblue !important
+}
+
+.wborder_btn{
+    background-color: #00a3b1 !important;
+    border-color: aliceblue !important;
+    color:aliceblue !important
+}
+
+.bg_btn:hover {
+    background-color: aliceblue !important;
+    color: black !important;
+}
+
+
+.wborder_btn:hover{
+    background-color: aliceblue !important;
+    color: black !important;
+}
+
+.total_students_badge .icon{
+    background-color: #00a3b1 !important;
+}
+
+.total_course_badge .icon{
+    background-color: #00a3b1 !important;
+}
+
+.section-title span{
+    color: #00a3b1 !important;
+}
+
+.counter-title h2 span{
+    color: #00a3b1 !important;
+}
+
+.counter-title h2::before{
+    background-color: #00a3b1 !important;
+}
+
+.counter-title h2::after{
+    background-color: #00a3b1 !important;
+}
+
+.counter-item .cicon{
+    background-color: #00a3b1 !important;
+}
+
+.working-process{
+    background-color: #00a3b1 !important;
+}
+
+.wicon{
+    background-color: #00a3b1 !important;
+}
+
+.sicon a{
+    background-color: #00a3b1 !important;
+}
+
+.single-instructor .designation{
+    color: #00a3b1 !important;
+}
+
+.circles{
+    background-color: #00a3b1 !important;
+}
+
+.review-item .rating-number{
+    background-color: #00a3b1 !important;
+}
+
+.preloader{
+    background-color: #00a3b1 !important;
+}
+
+.counterIcon {
+    width: 39px;
+    height: 39px;
+    /* background: burlywood; */
+    /* padding: 5px; */
+    /* border-radius: 53px; */
+}
+
+.course_cat {
+    display: inline-block;
+    position: absolute;
+    top: 29px;
+}
+
+/* DRAA homepage theme
+   Scoped to the homepage wrapper so dashboards and inner pages keep their
+   existing visual system. */
+.draa-home {
+    --primary: #bd7b20;
+    --draa-ink: #17140f;
+    --draa-muted: #665e52;
+    --draa-accent: #bd7b20;
+    --draa-accent-dark: #8d5816;
+    --draa-cream: #f7f1e5;
+    --draa-paper: #fffdf8;
+    --draa-sage: #66735b;
+    overflow: clip;
+    color: var(--draa-ink);
+    background: var(--draa-cream);
+}
+
+.draa-home .platform-features,
+.draa-home .blog-marketplace-section,
+.draa-home .popular-ts-section,
+.draa-home .ps-section,
+.draa-home .faq-section {
+    background-color: var(--draa-cream) !important;
+}
+
+.draa-home .popular-books-section,
+.draa-home .popular-courses-section-new,
+.draa-home .pe-section,
+.draa-home .da-section,
+.draa-home .need-help-section {
+    background-color: var(--draa-paper) !important;
+}
+
+.draa-home :is(
+    .pf-section-title,
+    .pb-main-title,
+    .section-main-title,
+    .section-main-title-new,
+    .ts-main-title,
+    .ts-section-title,
+    .pe-section-title,
+    .ps-title,
+    .da-title,
+    .faq-title,
+    .help-main-title
+) {
+    color: var(--draa-ink) !important;
+}
+
+.draa-home :is(
+    .pf-section-subtitle,
+    .pb-sub-text,
+    .section-sub-text,
+    .section-sub-text-new,
+    .ts-sub-text,
+    .ts-section-sub,
+    .pe-section-sub,
+    .ps-subtitle,
+    .da-desc,
+    .faq-header p,
+    .help-sub-text
+) {
+    color: var(--draa-muted) !important;
+}
+
+.draa-home :is(
+    .pf-eyebrow,
+    .premium-academy-badge,
+    .pe-eyebrow,
+    .ps-eyebrow,
+    .da-badge,
+    .faq-subtitle
+) {
+    color: var(--draa-accent-dark) !important;
+    border-color: rgba(189, 123, 32, 0.2) !important;
+    background: rgba(224, 180, 98, 0.13) !important;
+}
+
+.draa-home :is(
+    .pe-title-gradient,
+    .ps-title-accent,
+    .da-title-accent,
+    .faq-title span,
+    .gradient-text
+) {
+    color: var(--draa-accent) !important;
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+.draa-home :is(
+    .pb-card,
+    .course-card-new,
+    .blog-card-figma,
+    .ts-card-figma,
+    .pe-clean-card,
+    .ps-card,
+    .faq-item,
+    .help-card-figma
+) {
+    border-color: rgba(66, 51, 29, 0.12) !important;
+    background: var(--draa-paper) !important;
+    box-shadow: 0 12px 34px rgba(67, 49, 25, 0.07) !important;
+}
+
+.draa-home :is(
+    .pb-card,
+    .course-card-new,
+    .blog-card-figma,
+    .ts-card-figma,
+    .pe-clean-card,
+    .ps-card,
+    .help-card-figma
+):hover {
+    border-color: rgba(189, 123, 32, 0.38) !important;
+    box-shadow: 0 18px 42px rgba(96, 64, 23, 0.13) !important;
+}
+
+.draa-home [class*="view-all"] {
+    color: var(--draa-accent-dark) !important;
+    border-color: rgba(189, 123, 32, 0.22) !important;
+}
+
+.draa-home :is(
+    .pb-add-cart,
+    .enroll-btn-new,
+    .ts-attempt-btn,
+    .pe-view-all-btn,
+    .da-web-btn,
+    .faq-icon-wrapper,
+    .help-action-link
+) {
+    color: #fffdf8 !important;
+    border-color: var(--draa-accent) !important;
+    background: var(--draa-accent) !important;
+}
+
+.draa-home :is(
+    .pb-add-cart,
+    .enroll-btn-new,
+    .ts-attempt-btn,
+    .pe-view-all-btn,
+    .da-web-btn
+):hover {
+    background: var(--draa-accent-dark) !important;
+}
+
+.draa-home .pf-browser-header,
+.draa-home .pf-playground-frame {
+    border-color: rgba(66, 51, 29, 0.13) !important;
+    background: var(--draa-paper) !important;
+    box-shadow: 0 26px 60px rgba(74, 52, 24, 0.12) !important;
+}
+
+.draa-home .pf-browser-address {
+    color: #776b5d !important;
+    background: #f2eadc !important;
+}
+
+.draa-home .courses-filter-chips button.active,
+.draa-home .pf-tab-btn.active {
+    color: #fffdf8 !important;
+    border-color: var(--draa-accent) !important;
+    background: var(--draa-accent) !important;
+}
+
+.draa-home .videography-cta-section {
+    background: var(--draa-paper) !important;
+}
+
+.draa-home .v-cta-card {
+    background:
+      radial-gradient(circle at 88% 12%, rgba(210, 153, 50, 0.24), transparent 28%),
+      linear-gradient(135deg, #29241c 0%, #17140f 100%) !important;
+    border-color: rgba(224, 180, 98, 0.2) !important;
+}
+
+.draa-home .v-cta-badge,
+.draa-home .v-cta-btn-glowing {
+    border-color: rgba(224, 180, 98, 0.32) !important;
+    background: rgba(212, 154, 47, 0.14) !important;
+}
+
+.draa-home .v-cta-btn-glowing .btn-inner {
+    background: var(--draa-accent) !important;
+}
+
+.draa-home .ps-card-accent,
+.draa-home .ps-dot {
+    background: var(--draa-accent) !important;
+}
+
+.draa-home .da-store-btn {
+    border-color: rgba(66, 51, 29, 0.15) !important;
+}
+
+.draa-home .faq-question-btn:hover,
+.draa-home .faq-item.active .faq-question-btn {
+    color: var(--draa-accent-dark) !important;
+}
+
+.draa-home .lower-footer-tier {
+    color: #494034;
+    border-top: 1px solid rgba(66, 51, 29, 0.12);
+    background: #eee3d0 !important;
+}
+
+.draa-home .lower-footer-tier :is(.footer-col-title, .footer-link-list a, .contact-info-list a) {
+    color: #2a241c !important;
+}
+
+.draa-home .lower-footer-tier .contact-icon {
+    color: var(--draa-accent) !important;
+}
+
+.draa-home .upper-footer-tier,
+.draa-home .dynamic-footer {
+    --primary: var(--draa-accent);
+}
+
+@media (max-width: 767px) {
+    .draa-home :is(
+        .platform-features,
+        .popular-books-section,
+        .blog-marketplace-section,
+        .popular-courses-section-new,
+        .popular-ts-section,
+        .pe-section,
+        .videography-cta-section,
+        .ps-section,
+        .da-section,
+        .faq-section
+    ) {
+        scroll-margin-top: 90px;
+    }
+}
+
+

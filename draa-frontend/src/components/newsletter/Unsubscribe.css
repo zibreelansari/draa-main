@@ -1,0 +1,198 @@
+.unsub-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 20%, rgb(40, 44, 52) 0%, rgb(17, 19, 23) 100.2%);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Glass card design */
+.unsub-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 520px;
+  color: #ffffff;
+  transform: translateY(15px);
+  opacity: 0;
+  animation: unsubFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes unsubFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.unsub-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #ffffff, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.unsub-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* Feedback radio options */
+.feedback-group {
+  margin-bottom: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.feedback-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 14px;
+}
+
+.feedback-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease;
+}
+
+.feedback-option:last-child {
+  margin-bottom: 0;
+}
+
+.feedback-option:hover {
+  color: #ffffff;
+}
+
+.feedback-option input[type="radio"] {
+  accent-color: #bd7b20;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Form input if email is manually entered */
+.manual-email-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.manual-email-input:focus {
+  border-color: #bd7b20;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* Unsubscribe and Confirm Actions */
+.unsub-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.unsub-confirm-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.25);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.unsub-confirm-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.unsub-confirm-btn:active {
+  transform: translateY(0);
+}
+
+.unsub-cancel-link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-top: 8px;
+}
+
+.unsub-cancel-link:hover {
+  color: #ffffff;
+}
+
+/* Success display when unsubscribe completes */
+.unsub-success-wrapper {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.unsub-success-icon {
+  width: 64px;
+  height: 64px;
+  color: #10b981;
+  margin-bottom: 24px;
+}
+
+.back-home-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-home-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}

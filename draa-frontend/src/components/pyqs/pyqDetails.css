@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ═══════════════════════════════════════════════════════
+   PYQ DETAILS PAGE — Sarkari Result Inspired Layout
+   ═══════════════════════════════════════════════════════ */
+
+.pyq-details-wrapper {
+  background: #ffffff;
+  min-height: 80vh;
+  padding: 36px 0 80px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.pyq-details-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── PAGE TITLE ─────────────────────────────────────── */
+
+.pyq-details-header {
+  margin-bottom: 28px;
+}
+
+.pyq-details-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a365d;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.pyq-details-header p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── SECTION LABEL ───────────────────────────────────── */
+
+.pyq-section-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #dbeafe;
+}
+
+/* ── TABLE BLOCK ─────────────────────────────────────── */
+
+.pyq-table-block {
+  margin-bottom: 40px;
+}
+
+.pyq-table-responsive {
+  overflow-x: auto;
+  border: 1px solid #b0bec5;
+  border-radius: 4px;
+}
+
+/* ── MATRIX TABLE ────────────────────────────────────── */
+
+.pyq-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background: #fff;
+}
+
+/* Header row */
+.pyq-matrix-table thead tr {
+  background: #f0f4f8;
+}
+
+.pyq-matrix-table th {
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  border: 1px solid #b0bec5;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* Year column width */
+.pyq-matrix-table .year-col {
+  width: 120px;
+  text-align: center;
+}
+
+/* Data cells */
+.pyq-matrix-table td {
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #334155;
+  border: 1px solid #b0bec5;
+  vertical-align: middle;
+}
+
+/* Year cell bold */
+.pyq-matrix-table .year-cell {
+  font-weight: 700;
+  color: #1a365d;
+  font-size: 15px;
+}
+
+/* Alternating rows */
+.pyq-matrix-table tbody tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+.pyq-matrix-table tbody tr:hover td {
+  background-color: #eff6ff;
+}
+
+/* ── ACTION LINKS ────────────────────────────────────── */
+
+.action-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-btn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.table-btn.view-btn {
+  color: #2563eb;
+}
+.table-btn.view-btn:hover {
+  color: #1d4ed8;
+}
+
+.table-btn.dl-btn {
+  color: #16a34a;
+}
+.table-btn.dl-btn:hover {
+  color: #15803d;
+}
+
+/* Empty cell dash */
+.empty-cell {
+  color: #94a3b8;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* ── LOADER ─────────────────────────────────────────── */
+
+.pyq-details-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* ── NO DATA ─────────────────────────────────────────── */
+
+.pyq-no-data {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+}
+
+.pyq-no-data h3 {
+  color: #334155;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.pyq-no-data p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .pyq-details-header h1 {
+    font-size: 20px;
+  }
+
+  .pyq-matrix-table th,
+  .pyq-matrix-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .action-links {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

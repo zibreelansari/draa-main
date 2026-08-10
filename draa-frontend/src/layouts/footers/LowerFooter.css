@@ -1,0 +1,178 @@
+/* Background and container matching Figma */
+.lower-footer-tier {
+    padding: 80px 0 60px;
+    background-color: #f9faff;
+}
+
+.footer-main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Layout proportions */
+    gap: 40px;
+}
+
+/* Brand Column */
+.footer-logo-img {
+    height: 108px;
+    margin-bottom: -20px;
+    display: block;
+}
+
+.footer-mission-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4b5563; /* Muted primary text */
+    margin-top: 0;
+    margin-bottom: 25px;
+    max-width: 320px;
+}
+
+.footer-social-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon-btn {
+    width: 36px;
+    height: 36px;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon-btn.insta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon-btn.fb {
+    background-color: #1877f2;
+}
+
+.social-icon-btn.yt {
+    background-color: #ff0000;
+}
+
+.social-icon-btn.linkedin {
+    background-color: #0077b5;
+}
+
+.social-icon-btn.wa {
+    background-color: #25d366;
+}
+
+.social-icon-btn.telegram {
+    background-color: #0088cc;
+}
+
+.social-icon-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* Column Headers */
+.footer-col-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Link and Resource Lists */
+.footer-link-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Default stack */
+    gap: 12px;
+}
+
+.footer-link-list a {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link-list a:hover {
+    color: #bd7b20; /* Primary Blue Hover */
+}
+
+/* Contact Details */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-icon {
+    color: #bd7b20; /* Icon color from design */
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item span {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* Responsive Grid for Tablets/Mobile */
+@media (max-width: 1024px) {
+    .footer-main-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-main-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-mission-text {
+        margin: 0 auto 25px;
+    }
+    
+    .footer-social-row {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    
+    .contact-item {
+        justify-content: center;
+        text-align: left;
+    }
+}
+.footer-draa-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #17140f;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.footer-draa-mark {
+  width: 58px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.footer-draa-lockup span {
+  font-family: "Arial Black", "Inter", system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
