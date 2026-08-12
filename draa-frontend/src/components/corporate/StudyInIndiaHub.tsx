@@ -1,10 +1,10 @@
 import { FormEvent, useMemo, useState } from 'react';
-import { ArrowRight, BookOpen, Calculator, Check, CheckCircle2, ClipboardCheck, ExternalLink, FileCheck2, GraduationCap, Landmark, MapPin, Search, ShieldCheck, UserRoundCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Calculator, Check, CheckCircle2, ClipboardCheck, ExternalLink, FileCheck2, GraduationCap, Landmark, MapPin, Search, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import DraaCorporateHeader from '../homes/home/DraaCorporateHeader';
-import SEO from '../common/SEO';
-import ScrollToTop from '../common/ScrollToTop';
-import ScrollTop from '../common/ScrollTop';
+import DraaCorporateHeader from './DraaCorporateHeader';
+import SEO from './SEO';
+import ScrollToTop from './ScrollToTop';
+import ScrollTop from './ScrollTop';
 import './StudyInIndiaHub.css';
 
 type Tool = 'explore' | 'eligibility' | 'budget' | 'checklist';
@@ -95,7 +95,7 @@ export default function StudyInIndiaHub() {
               <p>Explore academic pathways, understand requirements, estimate your budget and prepare the documents needed for a confident application.</p>
               <div className="sii-actions">
                 <a href="#planning-tools" className="sii-button sii-button-dark">Start planning <ArrowRight size={17} /></a>
-                <Link to="/login" className="sii-button sii-button-light">Student login <UserRoundCheck size={17} /></Link>
+                <Link to="/contact?subject=Study%20in%20India%20Guidance" className="sii-button sii-button-light">Request guidance <ArrowRight size={17} /></Link>
               </div>
               <div className="sii-trust-row">
                 <span><ShieldCheck size={17} /> Independent advice</span>
@@ -188,7 +188,7 @@ export default function StudyInIndiaHub() {
                   <div className="sii-checklist">
                     <div className="sii-progress"><span>Preparation progress</span><strong>{checked.length}/{checklistItems.length}</strong><div><i style={{ width: `${(checked.length / checklistItems.length) * 100}%` }} /></div></div>
                     {checklistItems.map((item) => <button key={item} onClick={() => toggleChecklist(item)} className={checked.includes(item) ? 'checked' : ''}><span>{checked.includes(item) && <Check size={15} />}</span>{item}</button>)}
-                    <p>Your checklist is saved on this device. Create an account to use the future DRAA student workspace across devices.</p>
+                    <p>Your checklist is saved only on this device.</p>
                   </div>
                 )}
               </div>
@@ -206,7 +206,7 @@ export default function StudyInIndiaHub() {
         <section className="sii-guidance-cta">
           <div className="draa-corp-shell">
             <div><span>Need personal guidance?</span><h2>Turn your interests into a realistic India study plan.</h2><p>Share your academic background, preferred subject and budget. DRAA will help you identify the next sensible step.</p></div>
-            <div><Link to="/contact" className="sii-button sii-button-light">Request guidance <ArrowRight size={17} /></Link><Link to="/login" className="sii-button sii-button-gold">Create student account</Link></div>
+            <div><Link to="/contact?subject=Study%20in%20India%20Guidance" className="sii-button sii-button-light">Request guidance <ArrowRight size={17} /></Link></div>
           </div>
         </section>
       </main>

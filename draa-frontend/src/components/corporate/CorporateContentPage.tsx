@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   BookOpen,
@@ -18,12 +17,12 @@ import {
   Sparkles,
   Users,
 } from 'lucide-react';
-import DraaCorporateHeader from '../homes/home/DraaCorporateHeader';
-import SEO from '../common/SEO';
-import ScrollToTop from '../common/ScrollToTop';
-import ScrollTop from '../common/ScrollTop';
-import url from '../../url';
+import DraaCorporateHeader from './DraaCorporateHeader';
+import SEO from './SEO';
+import ScrollToTop from './ScrollToTop';
+import ScrollTop from './ScrollTop';
 import type { CorporatePageData } from './types';
+import { corporatePages } from './corporatePages';
 import './CorporateContentPage.css';
 
 const icons: Record<string, typeof Sparkles> = {
@@ -59,32 +58,20 @@ const pageImageAlt: Record<string, string> = {
   'who-we-support': 'Institutional leaders and educators working together',
 };
 
+const capabilityServiceLinks: Record<string, string> = {
+  'Content & Publishing': '/services/content-publishing',
+  'Professional Learning': '/services/professional-learning',
+  'Education Events': '/services/education-events',
+  'Academic Advisory': '/services/academic-advisory',
+  'Digital Learning': '/services/digital-learning',
+};
+
 interface CorporateContentPageProps {
   slug: string;
 }
 
 export default function CorporateContentPage({ slug }: CorporateContentPageProps) {
-  const [page, setPage] = useState<CorporatePageData | null>(null);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const controller = new AbortController();
-    setPage(null);
-    setError('');
-
-    fetch(`${url}/corporate/pages/${slug}`, { signal: controller.signal })
-      .then(async (response) => {
-        const result = await response.json();
-        if (!response.ok || !result.success) throw new Error(result.message || 'Unable to load this page.');
-        return result.data as CorporatePageData;
-      })
-      .then(setPage)
-      .catch((requestError) => {
-        if (requestError.name !== 'AbortError') setError(requestError.message || 'Unable to load this page.');
-      });
-
-    return () => controller.abort();
-  }, [slug]);
+  const page: CorporatePageData | undefined = corporatePages[slug];
 
   return (
     <div className="draa-corp corporate-content-page">
@@ -97,18 +84,12 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
       <DraaCorporateHeader />
 
       <main>
-        {!page && !error && (
-          <div className="corporate-page-loading" aria-label="Loading page">
-            <div /><div /><div />
-          </div>
-        )}
-
-        {error && (
+        {!page && (
           <section className="corporate-page-error">
             <div className="draa-corp-shell">
               <span>Page unavailable</span>
               <h1>We could not load this content.</h1>
-              <p>{error}</p>
+              <p>The requested DRAA page does not exist.</p>
               <a href="/">Return to the homepage <ArrowRight size={17} /></a>
             </div>
           </section>
@@ -167,14 +148,15 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
                     <div className={`corporate-page-items corporate-page-items--${section.layout || 'feature-grid'}`}>
                       {section.items.map((item, index) => {
                         const Icon = icons[item.icon || 'sparkles'] || Sparkles;
+                        const itemLink = slug === 'capabilities' ? capabilityServiceLinks[item.title] || item.link : item.link;
                         return (
                           <article key={`${section.key}-${item.title}`}>
                             <span className="corporate-page-item-number">{String(index + 1).padStart(2, '0')}</span>
-                            {sectionIndex === 0 && index === 0 && item.link && <span className="corporate-page-useful"><Sparkles size={12} /> Popular starting point</span>}
+                            {sectionIndex === 0 && index === 0 && itemLink && <span className="corporate-page-useful"><Sparkles size={12} /> Popular starting point</span>}
                             <span className="corporate-page-item-icon"><Icon size={23} /></span>
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
-                            {item.link && <a className="corporate-page-item-link" href={item.link}>Explore this service <ArrowRight size={15} /></a>}
+                            {itemLink && <a className="corporate-page-item-link" href={itemLink}>Explore this service <ArrowRight size={15} /></a>}
                           </article>
                         );
                       })}
