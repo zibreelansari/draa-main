@@ -50,11 +50,19 @@ export default function ServiceDetailPage() {
 
   const HeroIcon = iconMap[service.icon];
   const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const contactSubjects: Record<string, string> = {
+    'content-publishing': 'Educational Content & Publishing',
+    'professional-learning': 'Professional Learning & Training',
+    'education-events': 'Educational Events',
+    'academic-advisory': 'Institutional Advisory',
+    'digital-learning': 'Digital Learning Solutions',
+  };
+  const contactSubject = contactSubjects[service.slug] || service.shortTitle;
 
   return (
     <div className={`draa-corp service-detail service-detail--${service.slug}`}>
       <SEO
-        title={`${service.title} | DRAA`}
+        title={service.title}
         siteName="DRAA"
         description={service.summary}
         keywords={`${service.shortTitle}, DRAA education services, ${service.eyebrow}`}
@@ -70,10 +78,10 @@ export default function ServiceDetailPage() {
               <div className="service-breadcrumb"><Link to="/capabilities">Capabilities</Link><span>/</span>{service.shortTitle}</div>
               <span className="draa-corp-section-label"><HeroIcon size={15} /> {service.eyebrow}</span>
               <p className="service-number">SERVICE {service.number}</p>
-              <h1>{service.title}</h1>
+              <h1>{service.slug === 'content-publishing' ? <>Rigorous content.<span>Real impact.</span></> : service.title}</h1>
               <p className="service-hero-summary">{service.summary}</p>
               <div className="service-hero-actions">
-                <Link className="service-button service-button-dark" to={`/contact?subject=${encodeURIComponent(service.title)}`}>Discuss your requirement <ArrowRight size={17} /></Link>
+                <Link className="service-button service-button-dark" to={`/contact?subject=${encodeURIComponent(contactSubject)}`}>Discuss your requirement <ArrowRight size={17} /></Link>
                 <a className="service-button service-button-light" href="#service-deliverables">Explore deliverables</a>
               </div>
             </div>
@@ -178,7 +186,7 @@ export default function ServiceDetailPage() {
         </section>
 
         <section className="service-final-cta">
-          <div className="draa-corp-shell"><div><span>Start with your requirement</span><h2>Let’s design the right {service.shortTitle.toLowerCase()} solution.</h2><p>Share the audience, the challenge and the outcome you want to create.</p></div><Link to={`/contact?subject=${encodeURIComponent(service.title)}`}>Start a conversation <ArrowRight size={18} /></Link></div>
+          <div className="draa-corp-shell"><div><span>Start with your requirement</span><h2>Let’s design the right {service.shortTitle.toLowerCase()} solution.</h2><p>Share the audience, the challenge and the outcome you want to create.</p></div><Link to={`/contact?subject=${encodeURIComponent(contactSubject)}`}>Start a conversation <ArrowRight size={18} /></Link></div>
         </section>
       </main>
 

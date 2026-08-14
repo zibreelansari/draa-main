@@ -47,16 +47,38 @@ const icons: Record<string, typeof Sparkles> = {
 const pageImages: Record<string, string> = {
   'about-draa': '/brand/corporate/education-workshop.png',
   capabilities: '/brand/corporate/education-workshop.png',
+  events: '/brand/corporate/learning-event.png',
+  'learning-programs': '/brand/corporate/education-workshop.png',
   'learning-events': '/brand/corporate/learning-event.png',
-  'who-we-support': '/brand/corporate/education-workshop.png',
+  resources: '/brand/corporate/content-studio.png',
+  'who-we-support': '/brand/corporate/institutional-partners-v2.png',
 };
 
 const pageImageAlt: Record<string, string> = {
   'about-draa': 'Education professionals collaborating in a DRAA workshop setting',
   capabilities: 'Education specialists planning a learning programme together',
+  events: 'A professionally produced education event for participants and speakers',
+  'learning-programs': 'Learners participating in an expert-led development programme',
   'learning-events': 'Professional participants attending an education workshop',
+  resources: 'Education specialists creating useful learning resources',
   'who-we-support': 'Institutional leaders and educators working together',
 };
+
+const heroAccents: Record<string, string> = {
+  'about-draa': 'We exist to empower education and enrich futures.',
+  capabilities: 'Outcomes that matter.',
+  events: 'Impact tomorrow.',
+  'learning-programs': 'for every ambition.',
+  resources: 'drive impact.',
+  'who-we-support': 'education ecosystem.',
+};
+
+function HeroTitle({ slug, title }: { slug: string; title: string }) {
+  const accent = heroAccents[slug];
+  if (!accent || !title.includes(accent)) return <>{title}</>;
+  const lead = title.replace(accent, '').trim();
+  return <>{lead}<span>{accent}</span></>;
+}
 
 const capabilityServiceLinks: Record<string, string> = {
   'Content & Publishing': '/services/content-publishing',
@@ -74,7 +96,7 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
   const page: CorporatePageData | undefined = corporatePages[slug];
 
   return (
-    <div className="draa-corp corporate-content-page">
+    <div className={`draa-corp corporate-content-page corporate-content-page--${slug}`}>
       <SEO
         title={page?.seo?.title || page?.navigationLabel || 'DRAA'}
         siteName="DRAA"
@@ -102,7 +124,7 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
               <div className="draa-corp-shell corporate-page-hero-inner">
                 <div>
                   <span className="draa-corp-section-label">{page.eyebrow || page.navigationLabel}</span>
-                  <h1>{page.title}</h1>
+                  <h1><HeroTitle slug={slug} title={page.title} /></h1>
                   <p>{page.summary}</p>
                 </div>
                 {pageImages[slug] ? (

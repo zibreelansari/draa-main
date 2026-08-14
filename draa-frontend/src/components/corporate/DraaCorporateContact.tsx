@@ -1,145 +1,347 @@
-import { FormEvent, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { ArrowRight, Building2, CheckCircle2, GraduationCap, Handshake, MapPin, Send } from 'lucide-react';
-import DraaCorporateHeader from './DraaCorporateHeader';
-import SEO from './SEO';
-import ScrollToTop from './ScrollToTop';
-import ScrollTop from './ScrollTop';
-import './DraaCorporateHome.css';
+import { FormEvent, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import {
+  ArrowRight,
+  BookOpen,
+  Building2,
+  CalendarClock,
+  CheckCircle2,
+  Clock3,
+  GraduationCap,
+  Handshake,
+  Landmark,
+  Laptop2,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Send,
+} from "lucide-react";
+import DraaCorporateFooter from "./DraaCorporateFooter";
+import DraaCorporateHeader from "./DraaCorporateHeader";
+import SEO from "./SEO";
+import ScrollToTop from "./ScrollToTop";
+import ScrollTop from "./ScrollTop";
+import "./DraaCorporateHome.css";
+import "./ContactPage.css";
 
-type FormStatus = { type: 'idle' | 'success'; message?: string };
+type FormStatus = { type: "idle" | "success"; message?: string };
+const interests = [
+  [BookOpen, "Content development"],
+  [GraduationCap, "Training & capacity building"],
+  [Laptop2, "Digital experiences"],
+  [CalendarClock, "Events & conferences"],
+  [Landmark, "Advisory solutions"],
+  [Building2, "Learning programmes"],
+  [MapPin, "Study in India guidance"],
+  [Handshake, "Partnerships"],
+];
 
 export default function DraaCorporateContact() {
   const [searchParams] = useSearchParams();
-  const requestedSubject = useMemo(() => searchParams.get('subject') || '', [searchParams]);
-  const [status, setStatus] = useState<FormStatus>({ type: 'idle' });
-
+  const requestedSubject = useMemo(
+    () => searchParams.get("subject") || "",
+    [searchParams],
+  );
+  const [status, setStatus] = useState<FormStatus>({ type: "idle" });
   const submitEnquiry = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    const organisation = String(data.get('organisation') || '').trim();
-    const message = String(data.get('message') || '').trim();
-
-    const subject = String(data.get('subject') || 'DRAA website enquiry');
+    const data = new FormData(event.currentTarget);
+    const interestsSelected = data.getAll("interest").join(", ");
+    const subject = String(
+      data.get("subject") || interestsSelected || "DRAA website enquiry",
+    );
     const body = [
-      `Name: ${String(data.get('name') || '')}`,
-      `Organisation: ${organisation || 'Not provided'}`,
-      `Email: ${String(data.get('email') || '')}`,
-      `Phone: ${String(data.get('phone') || '')}`,
-      '',
-      message,
-    ].join('\n');
+      `Name: ${data.get("name")}`,
+      `Organisation: ${data.get("organisation") || "Not provided"}`,
+      `Email: ${data.get("email")}`,
+      `Phone: ${data.get("phone") || "Not provided"}`,
+      `Interests: ${interestsSelected || "Not specified"}`,
+      "",
+      String(data.get("message") || ""),
+    ].join("\n");
     window.location.href = `mailto:admin@draa.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus({ type: 'success', message: 'Your email application has opened with the enquiry details prepared.' });
+    setStatus({
+      type: "success",
+      message:
+        "Your email application has opened with the enquiry details prepared.",
+    });
   };
-
   return (
-    <div className="draa-corp draa-corp-contact-page">
+    <div className="draa-corp contact-editorial">
       <SEO
         title="Contact DRAA"
         siteName="DRAA"
-        description="Connect with DRAA for educational content, professional learning, events, institutional advisory, digital learning and Study in India guidance."
-        keywords="contact DRAA, education partnership, institutional training, Study in India guidance"
+        description="Connect with DRAA for education services, institutional partnerships, learning programmes, events and Study in India guidance."
         ogImage="/brand/draa-mark.png"
       />
       <DraaCorporateHeader />
-
       <main>
-        <section className="draa-contact-hero">
-          <div className="draa-corp-shell draa-contact-hero-inner">
+        <section className="contact-ed-hero">
+          <div className="draa-corp-shell contact-ed-hero-grid">
             <div>
-              <span className="draa-corp-section-label">Connect with DRAA</span>
-              <h1>Let’s create meaningful educational outcomes together.</h1>
+              <span>We’re here to listen and help.</span>
+              <h1>
+                Let’s create meaningful
+                <br />
+                impact <em>together.</em>
+              </h1>
+              <p>
+                Have a question, idea or partnership in mind? Reach out and
+                let’s start a focused conversation.
+              </p>
             </div>
-            <p>Tell us what you are trying to achieve. Our team will help shape the right content, programme, event, advisory engagement or learner-support pathway.</p>
+            <div className="contact-ed-graphic" aria-label="Connect with DRAA">
+              <span className="contact-bubble bubble-one">
+                Let’s
+                <br />
+                Connect
+              </span>
+              <span className="contact-bubble bubble-two">
+                <MessageCircle size={37} />
+              </span>
+              <span className="contact-bubble bubble-three">
+                <Mail size={43} />
+              </span>
+              <span className="contact-bubble bubble-four">
+                <Phone size={38} />
+              </span>
+              <div>
+                <img src="/brand/draa-mark.png" alt="DRAA" />
+              </div>
+              <i />
+              <i />
+              <i />
+            </div>
           </div>
         </section>
 
-        <section className="draa-contact-main">
-          <div className="draa-corp-shell draa-contact-layout">
-            <div className="draa-contact-context">
-              <span className="draa-corp-section-label">How we can help</span>
-              <h2>Start with your requirement—not a predefined package.</h2>
-              <p>Choose the area closest to your need. We will review the context and connect you with the appropriate DRAA team.</p>
-
-              <div className="draa-contact-paths">
-                <article><Building2 size={21} /><span><strong>Institutional Solutions</strong>Content, academic advisory and digital learning projects.</span></article>
-                <article><GraduationCap size={21} /><span><strong>Training &amp; Events</strong>Workshops, professional programmes and education events.</span></article>
-                <article><Handshake size={21} /><span><strong>Partnerships</strong>Collaborations with institutions, experts and organisations.</span></article>
-                <article><MapPin size={21} /><span><strong>Study in India Guidance</strong>Programme discovery and admission-readiness support.</span></article>
+        <section className="contact-ed-main">
+          <div className="draa-corp-shell contact-ed-grid">
+            <section className="contact-ed-form-card">
+              <div>
+                <span>Send us an inquiry</span>
+                <h2>Tell us what you want to achieve.</h2>
+                <p>
+                  Fill in the details and our team will get back to you shortly.
+                </p>
               </div>
-
-              <div className="draa-contact-office">
-                <MapPin size={20} />
-                <div><strong>New Delhi Office</strong><p>Building No. 1, 3rd Floor, D Block, East of Kailash, New Delhi, Delhi 110065</p></div>
-              </div>
-            </div>
-
-            <div className="draa-contact-form-card">
-              <div className="draa-contact-form-heading">
-                <span>Partnership &amp; service enquiry</span>
-                <h2>Tell us how we can support you.</h2>
-              </div>
-
-              {status.type === 'success' ? (
-                <div className="draa-contact-success" role="status">
+              {status.type === "success" ? (
+                <div className="contact-ed-success">
                   <CheckCircle2 size={38} />
-                  <h3>Enquiry received</h3>
+                  <h3>Email prepared</h3>
                   <p>{status.message}</p>
-                  <button type="button" onClick={() => setStatus({ type: 'idle' })}>Send another enquiry</button>
+                  <button onClick={() => setStatus({ type: "idle" })}>
+                    Send another inquiry
+                  </button>
                 </div>
               ) : (
-                <form onSubmit={submitEnquiry} className="draa-contact-form">
-                  <div className="draa-contact-form-row">
-                    <label>Full name<input name="name" type="text" placeholder="Your name" required maxLength={100} /></label>
-                    <label>Organisation<input name="organisation" type="text" placeholder="Institution or company" maxLength={120} /></label>
+                <form id="contact-form" onSubmit={submitEnquiry}>
+                  <div className="contact-ed-form-row">
+                    <label>
+                      Full name *
+                      <input
+                        name="name"
+                        required
+                        placeholder="Enter your full name"
+                      />
+                    </label>
+                    <label>
+                      Work email *
+                      <input
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="name@organisation.com"
+                      />
+                    </label>
                   </div>
-                  <div className="draa-contact-form-row">
-                    <label>Email address<input name="email" type="email" placeholder="name@example.com" required /></label>
-                    <label>Phone number<input name="phone" type="tel" placeholder="+91 9876543210" required pattern="\+?[1-9][0-9]{1,14}" /></label>
+                  <div className="contact-ed-form-row">
+                    <label>
+                      Phone number
+                      <input
+                        name="phone"
+                        type="tel"
+                        placeholder="+91 98710 84500"
+                      />
+                    </label>
+                    <label>
+                      Organisation
+                      <input
+                        name="organisation"
+                        placeholder="Enter organisation name"
+                      />
+                    </label>
                   </div>
-                  <label>Area of interest
-                    <select name="subject" required defaultValue={requestedSubject} key={requestedSubject}>
-                      <option value="" disabled>Select an enquiry type</option>
-                      <option value="Educational Content & Publishing">Educational Content &amp; Publishing</option>
-                      <option value="Professional Learning & Training">Professional Learning &amp; Training</option>
-                      <option value="Educational Events">Educational Events</option>
-                      <option value="Institutional Advisory">Institutional Advisory</option>
-                      <option value="Digital Learning Solutions">Digital Learning Solutions</option>
-                      <option value="Study in India Guidance">Study in India Guidance</option>
-                      <option value="Partnership Opportunity">Partnership Opportunity</option>
-                      <option value="General Enquiry">General Enquiry</option>
-                    </select>
-                  </label>
-                  <label>Your requirement<textarea name="message" rows={6} placeholder="Briefly describe your objective, audience and expected outcome." required maxLength={1800} /></label>
-                  <button type="submit" className="draa-contact-submit">
-                    Prepare email <Send size={17} />
+                  <div className="contact-ed-form-row">
+                    <label>
+                      Inquiry type
+                      <select name="subject" defaultValue={requestedSubject}>
+                        <option value="">Select inquiry type</option>
+                        <option>Educational Content & Publishing</option>
+                        <option>Professional Learning & Training</option>
+                        <option>Educational Events</option>
+                        <option>Institutional Advisory</option>
+                        <option>Digital Learning Solutions</option>
+                        <option>Website Development</option>
+                        <option>Mobile App Development</option>
+                        <option>LMS &amp; Learning Platforms</option>
+                        <option>Institution Portals &amp; ERP</option>
+                        <option>UI/UX &amp; Product Design</option>
+                        <option>Cloud, Maintenance &amp; Support</option>
+                        <option>Study in India Guidance</option>
+                        <option>Partnership Opportunity</option>
+                        <option value="Career Expression of Interest">Career Expression of Interest</option>
+                      </select>
+                    </label>
+                    <label>
+                      Your message *
+                      <textarea
+                        name="message"
+                        required
+                        rows={5}
+                        placeholder="Tell us about your requirement..."
+                      />
+                    </label>
+                  </div>
+                  <button type="submit">
+                    Send message <Send size={15} />
                   </button>
+                  <small>Your information is secure and confidential.</small>
                 </form>
               )}
-            </div>
+            </section>
+
+            <aside className="contact-ed-side">
+              <section>
+                <h2>What are you interested in?</h2>
+                <p>Select all that apply to help us serve you better.</p>
+                <div className="contact-interest-grid">
+                  {interests.map(([Icon, text]) => {
+                    const I = Icon as typeof BookOpen;
+                    return (
+                      <label key={String(text)}>
+                        <I size={16} />
+                        <span>{String(text)}</span>
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          value={String(text)}
+                          form="contact-form"
+                        />
+                      </label>
+                    );
+                  })}
+                </div>
+              </section>
+              <section className="contact-channel-section">
+                <h2>Connect with us</h2>
+                <p>Choose the way that works best for you.</p>
+                <div>
+                  {[
+                    [Phone, "Call us", "+91 11 4100 8450"],
+                    [Mail, "Email us", "admin@draa.in"],
+                    [MessageCircle, "WhatsApp", "+91 98710 84500"],
+                    [
+                      CalendarClock,
+                      "Schedule a call",
+                      "Book a convenient time",
+                    ],
+                  ].map(([Icon, title, text]) => {
+                    const I = Icon as typeof Phone;
+                    return (
+                      <article key={String(title)}>
+                        <I size={20} />
+                        <strong>{String(title)}</strong>
+                        <span>{String(text)}</span>
+                        <small>Mon–Sat, 9:30 AM–6:30 PM</small>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            </aside>
           </div>
         </section>
 
-        <section className="draa-contact-next-step">
+        <section className="contact-office-map">
           <div className="draa-corp-shell">
-            <span>What happens next?</span>
-            <div><strong>01</strong><p>We review your requirement.</p></div>
-            <ArrowRight size={19} />
-            <div><strong>02</strong><p>The right DRAA team connects with you.</p></div>
-            <ArrowRight size={19} />
-            <div><strong>03</strong><p>We define the most suitable next step.</p></div>
+            <div>
+              <MapPin size={20} />
+              <span>
+                <h2>Our office</h2>
+                <strong>DRAA (OPC) Private Limited</strong>
+                <p>
+                  B-62, First Floor, Defence Colony,
+                  <br />
+                  New Delhi – 110024, India
+                </p>
+                <small>
+                  <Clock3 size={13} /> Mon–Sat: 9:30 AM–6:30 PM IST
+                </small>
+              </span>
+            </div>
+            <div className="contact-map-real">
+              <iframe
+                title="DRAA office location in Defence Colony, New Delhi"
+                src="https://www.google.com/maps?q=B-62%2C%20First%20Floor%2C%20Defence%20Colony%2C%20New%20Delhi%2C%20110024%2C%20India&z=15&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <a
+                className="contact-map-label"
+                href="https://www.google.com/maps/search/?api=1&query=B-62%2C%20Defence%20Colony%2C%20New%20Delhi%2C%20110024%2C%20India"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open DRAA office location in Google Maps"
+              >
+                <MapPin size={26} />
+                <span>
+                  <strong>DRAA (OPC) Private Limited</strong>
+                  <small>B-62, Defence Colony · New Delhi 110024</small>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section className="contact-faq">
+          <div className="draa-corp-shell">
+            <h2>Frequently asked questions</h2>
+            {[
+              "What is the typical response time?",
+              "Can I schedule a meeting with your team?",
+              "Do you offer customised solutions?",
+              "Where are you located?",
+            ].map((q) => (
+              <details key={q}>
+                <summary>{q}</summary>
+                <p>
+                  Our team responds with the most useful next step based on your
+                  requirement, audience and timeline.
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+        <section className="contact-ed-cta">
+          <div className="draa-corp-shell">
+            <div>
+              <h2>
+                Let’s work together to create <em>lasting impact.</em>
+              </h2>
+              <p>
+                Collaborate with DRAA to design solutions that educate, empower
+                and create measurable change.
+              </p>
+            </div>
+            <a href="mailto:admin@draa.in">
+              Explore partnership opportunities <ArrowRight size={16} />
+            </a>
           </div>
         </section>
       </main>
-
-      <footer className="draa-corp-footer draa-contact-footer">
-        <div className="draa-corp-shell draa-corp-footer-bottom">
-          <span>© {new Date().getFullYear()} DRAA (OPC) Private Limited</span>
-          <span>Education Services &amp; Knowledge Management</span>
-        </div>
-      </footer>
+      <DraaCorporateFooter />
       <ScrollToTop />
       <ScrollTop />
     </div>

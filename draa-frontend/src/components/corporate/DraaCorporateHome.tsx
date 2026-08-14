@@ -24,6 +24,8 @@ import ScrollTop from './ScrollTop';
 import SEO from './SEO';
 import './DraaCorporateHome.css';
 
+const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
+
 const challenges = [
   {
     icon: BookOpen,
@@ -55,6 +57,7 @@ const solutions = [
     text: 'Research-led books, digital publications, courseware, assessments and custom learning resources.',
     tags: ['Books & e-books', 'Study resources', 'Institutional content'],
     path: '/services/content-publishing',
+    image: '/brand/corporate/stock/writing-content.jpg',
   },
   {
     number: '02',
@@ -63,6 +66,7 @@ const solutions = [
     text: 'Faculty development, student skill programmes, leadership training and career-readiness workshops.',
     tags: ['Workshops', 'Certification', 'Skill development'],
     path: '/services/professional-learning',
+    image: '/brand/corporate/stock/team-learning.jpg',
   },
   {
     number: '03',
@@ -71,6 +75,7 @@ const solutions = [
     text: 'Conferences, seminars, webinars, competitions and knowledge-sharing programmes with end-to-end support.',
     tags: ['Conferences', 'Webinars', 'Education fairs'],
     path: '/services/education-events',
+    image: '/brand/corporate/stock/event-stage.jpg',
   },
   {
     number: '04',
@@ -79,6 +84,7 @@ const solutions = [
     text: 'Practical consultancy for curriculum, institutional development, admissions and quality frameworks.',
     tags: ['Academic planning', 'Institutional quality', 'Mentorship'],
     path: '/services/academic-advisory',
+    image: '/brand/corporate/stock/classroom.jpg',
   },
   {
     number: '05',
@@ -87,6 +93,7 @@ const solutions = [
     text: 'Accessible learning platforms, online courses, virtual classrooms and assessment-led digital experiences.',
     tags: ['Learning platforms', 'Virtual delivery', 'Digital assessment'],
     path: '/services/digital-learning',
+    image: '/brand/corporate/stock/digital-learning.jpg',
   },
 ];
 
@@ -122,7 +129,7 @@ export default function DraaCorporateHome() {
               </p>
               <div className="draa-corp-actions">
                 <a href="/#solutions" className="draa-corp-button draa-corp-button-dark">Explore our capabilities <ArrowRight size={18} /></a>
-                <a href="/#study-in-india" className="draa-corp-button draa-corp-button-light"><Landmark size={18} /> Study in India guidance</a>
+                <a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" className="draa-corp-button draa-corp-button-light"><Landmark size={18} /> Study in India portal</a>
               </div>
               <div className="draa-corp-trust-row">
                 <div><strong>Since 2023</strong><span>Established in New Delhi</span></div>
@@ -134,7 +141,17 @@ export default function DraaCorporateHome() {
             </div>
 
             <div className="draa-corp-hero-visual" aria-label="DRAA's five education capabilities">
-              <div className="draa-corp-visual-orbit" />
+              <div className="draa-corp-visual-meta" aria-hidden="true">
+                <span>Integrated education ecosystem</span>
+                <strong>05 capabilities</strong>
+              </div>
+              <div className="draa-corp-visual-orbit" aria-hidden="true">
+                <i className="draa-orbit-node draa-orbit-node-one" />
+                <i className="draa-orbit-node draa-orbit-node-two" />
+                <i className="draa-orbit-node draa-orbit-node-three" />
+                <i className="draa-orbit-node draa-orbit-node-four" />
+                <i className="draa-orbit-node draa-orbit-node-five" />
+              </div>
               <div className="draa-corp-visual-brand">
                 <img src="/brand/draa-mark.png" alt="DRAA logo" />
                 <strong>DRAA</strong>
@@ -211,8 +228,9 @@ export default function DraaCorporateHome() {
               <p>Each engagement can stand alone or combine into a complete solution.</p>
             </div>
             <div className="draa-corp-solution-grid">
-              {solutions.map(({ number, icon: Icon, title, text, tags, path }) => (
+              {solutions.map(({ number, icon: Icon, title, text, tags, path, image }) => (
                 <Link key={title} to={path} className="draa-corp-solution-card">
+                  <img className="draa-corp-solution-image" src={image} alt="" loading="lazy" />
                   <div className="draa-corp-solution-top"><span>{number}</span><Icon size={25} /></div>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -231,7 +249,7 @@ export default function DraaCorporateHome() {
               <h2>Make the journey to Indian higher education easier to understand.</h2>
               <p>DRAA’s guidance hub will help international learners discover programmes, understand eligibility, explore scholarships and prepare for each admission milestone—with official government services clearly identified.</p>
               <div className="draa-corp-study-actions">
-                <a href="/#study-tools" className="draa-corp-button draa-corp-button-gold">Explore the journey <ArrowRight size={18} /></a>
+                <a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" className="draa-corp-button draa-corp-button-gold">Open the DRAA portal <ArrowRight size={18} /></a>
                 <a href="https://studyinindia.gov.in/" target="_blank" rel="noreferrer" className="draa-corp-text-link">Visit the official portal <ArrowRight size={16} /></a>
               </div>
               <small>DRAA is an independent education-services company and is not the Government of India’s Study in India portal.</small>
@@ -252,8 +270,8 @@ export default function DraaCorporateHome() {
               <h2>Programmes that move people from insight to action.</h2>
             </div>
             <div className="draa-corp-learning-list">
-              <div><Presentation size={22} /><span><strong>Professional learning</strong>Workshops, faculty development and certification programmes.</span></div>
-              <div><CalendarDays size={22} /><span><strong>Knowledge-sharing events</strong>Conferences, seminars, webinars and education fairs.</span></div>
+              <Link to="/learning-programs"><Presentation size={22} /><span><strong>Professional learning</strong>Workshops, faculty development and certification programmes.</span><ArrowRight size={17} /></Link>
+              <Link to="/events"><CalendarDays size={22} /><span><strong>Knowledge-sharing events</strong>Conferences, seminars, webinars and education fairs.</span><ArrowRight size={17} /></Link>
               <div><Users size={22} /><span><strong>Custom institutional programmes</strong>Solutions designed around a defined academic or organisational need.</span></div>
             </div>
           </div>
@@ -297,8 +315,8 @@ export default function DraaCorporateHome() {
             <div><img src="/brand/draa-mark.png" alt="DRAA logo" /><strong>DRAA</strong></div>
             <p>Education Services &amp; Knowledge Management</p>
           </div>
-          <div><strong>Explore</strong><Link to="/about-draa">About DRAA</Link><Link to="/capabilities">Capabilities</Link><Link to="/who-we-support">Who We Support</Link></div>
-          <div><strong>Opportunities</strong><Link to="/study-in-india">Study in India</Link><Link to="/learning-events">Learning &amp; Events</Link><Link to="/contact">Partner with DRAA</Link></div>
+          <div><strong>Explore</strong><Link to="/about-draa">About DRAA</Link><Link to="/capabilities">Services</Link><Link to="/resources">Resources</Link><Link to="/who-we-support">Who We Support</Link></div>
+          <div><strong>Opportunities</strong><a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer">Study in India</a><Link to="/learning-programs">Learning Programs</Link><Link to="/events">Events</Link><Link to="/contact">Partner with DRAA</Link></div>
           <div><strong>Company</strong><span>DRAA (OPC) Private Limited</span><span>New Delhi, India</span><span>CIN: U85491DL2023OPC416284</span></div>
         </div>
         <div className="draa-corp-shell draa-corp-footer-bottom"><span>© {new Date().getFullYear()} DRAA (OPC) Private Limited</span><span>Purpose-led education. Responsible growth.</span></div>

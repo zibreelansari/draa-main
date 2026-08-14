@@ -3,7 +3,7 @@ import type { CorporatePageData } from './types';
 export const corporatePages: Record<string, CorporatePageData> = {
   'about-draa': {
     slug: 'about-draa', navigationLabel: 'About DRAA', eyebrow: 'About DRAA',
-    title: 'An education partner built around meaningful outcomes.',
+    title: 'About DRAA. We exist to empower education and enrich futures.',
     summary: 'DRAA combines academic insight, content expertise, programme delivery and technology to strengthen learning for individuals, institutions and organisations.',
     seo: { title: 'About DRAA', description: 'Learn about DRAA, a New Delhi education services and knowledge management company.' },
     sections: [
@@ -24,7 +24,7 @@ export const corporatePages: Record<string, CorporatePageData> = {
   },
   capabilities: {
     slug: 'capabilities', navigationLabel: 'Capabilities', eyebrow: 'Our capabilities',
-    title: 'Connected education services, designed around the outcome.',
+    title: 'Solutions that educate. Outcomes that matter.',
     summary: 'Engage DRAA for one specialist requirement or combine capabilities into a complete educational programme.',
     seo: { title: 'DRAA Capabilities', description: 'Explore DRAA services in content, training, events, advisory and digital learning.' },
     sections: [
@@ -41,6 +41,67 @@ export const corporatePages: Record<string, CorporatePageData> = {
         { title: 'End-to-end delivery', description: 'Strategy, design, production, coordination and review under one plan.', icon: 'check' },
         { title: 'Ongoing partnership', description: 'A structured relationship across multiple education priorities.', icon: 'handshake' },
       ], callToAction: { label: 'Submit a project brief', href: '/contact?subject=General%20Enquiry' } },
+    ],
+  },
+  events: {
+    slug: 'events', navigationLabel: 'Events & Conferences', eyebrow: 'Events & Conferences',
+    title: 'Conversations today. Impact tomorrow.',
+    summary: 'DRAA brings educators, leaders, innovators and change-makers together to exchange ideas, build capability and shape the future of learning.',
+    seo: { title: 'DRAA Events & Conferences', description: 'Conferences, workshops, webinars, leadership forums and education events from DRAA.' },
+    sections: [
+      { key: 'upcoming', eyebrow: 'Upcoming experiences', title: 'Knowledge-sharing designed for participation.', description: 'From focused webinars to large-format conferences, every event is built around a clear audience promise.', layout: 'feature-grid', items: [
+        { title: 'Conferences & Summits', description: 'Large-scale convenings that connect research, practice, policy and leadership.', icon: 'presentation', link: '/services/education-events' },
+        { title: 'Workshops', description: 'Hands-on learning experiences with practical tools and guided application.', icon: 'users', link: '/services/professional-learning' },
+        { title: 'Webinars', description: 'Accessible live sessions with specialists, educators and thought leaders.', icon: 'laptop', link: '/contact?subject=Educational%20Events' },
+        { title: 'Leadership Forums', description: 'Focused dialogue for academic and organisational decision-makers.', icon: 'briefcase', link: '/contact?subject=Educational%20Events' },
+        { title: 'Faculty Development', description: 'Programmes that strengthen teaching, assessment and academic leadership.', icon: 'graduation', link: '/services/professional-learning' },
+        { title: 'Student Events', description: 'Competitions, festivals and engagement programmes for emerging talent.', icon: 'calendar', link: '/contact?subject=Educational%20Events' },
+      ] },
+      { key: 'event-services', eyebrow: 'DRAA event services', title: 'End-to-end event management with academic depth.', description: 'We connect programme strategy, curation, speakers, participant communication and delivery under one accountable plan.', layout: 'journey', items: [
+        { title: 'Frame', description: 'Define the audience, purpose, format and success measures.', icon: 'search' },
+        { title: 'Curate', description: 'Shape the theme, sessions, speakers and participant journey.', icon: 'lightbulb' },
+        { title: 'Produce', description: 'Coordinate communication, registration and live delivery.', icon: 'calendar' },
+        { title: 'Extend', description: 'Capture learning, feedback and reusable post-event content.', icon: 'check' },
+      ], callToAction: { label: 'Host an event with DRAA', href: '/contact?subject=Educational%20Events' } },
+    ],
+  },
+  'learning-programs': {
+    slug: 'learning-programs', navigationLabel: 'Learning Programs', eyebrow: 'Learning Programs',
+    title: 'Learning programs for every ambition.',
+    summary: 'Curated programs that build knowledge, strengthen capabilities and create lasting impact across learners, educators and organisations.',
+    seo: { title: 'DRAA Learning Programs', description: 'Certification, faculty development, student skills and corporate learning programs from DRAA.' },
+    sections: [
+      { key: 'program-categories', eyebrow: 'Explore by category', title: 'Practical learning for real-world progress.', description: 'Choose a focused programme or work with DRAA to build a tailored pathway for your audience.', layout: 'feature-grid', items: [
+        { title: 'Certification Programs', description: 'Industry-relevant, expert-led pathways with applied assessment and recognition.', icon: 'shield', link: '/contact?subject=Professional%20Learning%20%26%20Training' },
+        { title: 'Faculty Development', description: 'Teaching, assessment, research and leadership development for educators.', icon: 'presentation', link: '/services/professional-learning' },
+        { title: 'Student Skill Programs', description: 'Communication, research, career and future-ready capabilities for students.', icon: 'graduation', link: '/services/professional-learning' },
+        { title: 'Corporate Training', description: 'Custom programmes that strengthen performance, leadership and team capability.', icon: 'briefcase', link: '/contact?subject=Professional%20Learning%20%26%20Training' },
+      ] },
+      { key: 'journey', eyebrow: 'Our learning journey', title: 'From discovery to measurable impact.', description: 'Every programme combines purposeful content, active practice and practical follow-through.', layout: 'journey', items: [
+        { title: 'Discover', description: 'Identify the goals, audience and capability needs.', icon: 'search' },
+        { title: 'Learn', description: 'Engage with expert-led content and discussion.', icon: 'book' },
+        { title: 'Practice', description: 'Apply learning through projects and assessments.', icon: 'clipboard' },
+        { title: 'Impact', description: 'Translate new capability into meaningful outcomes.', icon: 'check' },
+      ], callToAction: { label: 'Talk to a learning advisor', href: '/contact?subject=Professional%20Learning%20%26%20Training' } },
+    ],
+  },
+  resources: {
+    slug: 'resources', navigationLabel: 'Resources', eyebrow: 'Knowledge for impact',
+    title: 'Resources that drive impact.',
+    summary: 'Explore research, practical guides, case studies and expert insights designed to help educators, institutions and organisations learn, apply and lead.',
+    seo: { title: 'DRAA Resources', description: 'Research, guides, case studies and practical education resources from DRAA.' },
+    sections: [
+      { key: 'featured', eyebrow: 'Featured insights', title: 'Ideas worth putting into practice.', description: 'A curated starting point for education leaders, content teams and learning professionals.', layout: 'feature-grid', items: [
+        { title: 'The Future of Learning Design', description: 'How learning journeys are moving from content delivery to measurable capability.', icon: 'book' },
+        { title: 'Measuring What Matters', description: 'A practical introduction to evidence, feedback and meaningful education outcomes.', icon: 'check' },
+        { title: 'Learning Ecosystems That Last', description: 'Why connected content, people and platforms create more scalable progress.', icon: 'users' },
+      ] },
+      { key: 'library', eyebrow: 'Browse the library', title: 'Useful resources for each stage of the work.', description: 'Use these collections to frame a challenge, build a programme and improve delivery.', layout: 'feature-grid', items: [
+        { title: 'Articles & Perspectives', description: 'Clear thinking on learning, education services and capability building.', icon: 'book' },
+        { title: 'Guides & Whitepapers', description: 'Practical frameworks for design, delivery, facilitation and assessment.', icon: 'clipboard' },
+        { title: 'Case Studies', description: 'Examples of education challenges translated into structured interventions.', icon: 'briefcase' },
+        { title: 'Toolkits & Templates', description: 'Reusable planning tools that make complex education projects easier to start.', icon: 'lightbulb' },
+      ], callToAction: { label: 'Request a specific resource', href: '/contact?subject=General%20Enquiry' } },
     ],
   },
   'learning-events': {
@@ -65,7 +126,7 @@ export const corporatePages: Record<string, CorporatePageData> = {
   },
   'who-we-support': {
     slug: 'who-we-support', navigationLabel: 'Who We Support', eyebrow: 'Who we support',
-    title: 'Solutions shaped around the people and institutions we serve.',
+    title: 'Solutions for every education ecosystem.',
     summary: 'We begin with the audience, context and desired learning outcome—not with a one-size-fits-all product.',
     seo: { title: 'Who DRAA Supports', description: 'DRAA works with institutions, universities, learners, educators and organisations.' },
     sections: [

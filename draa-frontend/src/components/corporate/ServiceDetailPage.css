@@ -7,6 +7,7 @@
 .service-hero-copy .draa-corp-section-label { display: inline-flex; align-items: center; gap: 7px; }
 .service-number { margin: 25px 0 9px; color: #9b641c; font-size: 11px; font-weight: 900; letter-spacing: .16em; }
 .service-hero h1 { max-width: 690px; margin: 0; color: #191611; font-size: clamp(43px, 4.6vw, 66px); line-height: 1.02; letter-spacing: -.052em; }
+.service-hero h1 span { display: block; color: #bd7b20; }
 .service-hero-summary { max-width: 650px; margin: 23px 0 0; color: #61584c; font-size: clamp(16px, 1.35vw, 18px); line-height: 1.72; }
 .service-hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
 .service-button { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 19px; border-radius: 11px; font-size: 12px; font-weight: 850; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
@@ -33,7 +34,7 @@
 .service-proof-row strong { color: #2a241c; font-size: 15px; }
 .service-proof-row span { margin-top: 4px; color: #7b7062; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 
-.service-family-nav { position: sticky; top: 78px; z-index: 20; border-top: 1px solid #eadfce; border-bottom: 1px solid #e5d8c5; background: rgba(255,253,248,.95); backdrop-filter: blur(14px); box-shadow: 0 7px 20px rgba(54,39,20,.05); }
+.service-family-nav { position: sticky; top: 68px; z-index: 20; border-top: 1px solid #eadfce; border-bottom: 1px solid #e5d8c5; background: rgba(255,253,248,.95); backdrop-filter: blur(14px); box-shadow: 0 7px 20px rgba(54,39,20,.05); }
 .service-family-nav .draa-corp-shell { min-height: 69px; display: flex; align-items: center; gap: 22px; }
 .service-family-nav .draa-corp-shell>strong { color: #8d5814; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
 .service-family-nav .draa-corp-shell>div { flex: 1; display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; }

@@ -35,9 +35,9 @@ export const services: ServiceDetail[] = [
   {
     slug: 'content-publishing',
     number: '01',
-    title: 'Educational Content & Publishing',
+    title: 'Rigorous content. Real impact.',
     shortTitle: 'Content & Publishing',
-    eyebrow: 'Research-led learning resources',
+    eyebrow: 'Academic content',
     summary: 'Clear, credible and audience-ready educational content—from the first content map to the final print or digital resource.',
     intro: 'DRAA brings subject expertise, instructional structure, editorial quality and production discipline into one workflow. We create resources that are accurate, easy to use and aligned with the learner, curriculum and delivery context.',
     image: '/brand/corporate/content-studio.png',
