@@ -23,6 +23,7 @@ import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
 import SEO from './SEO';
 import './DraaCorporateHome.css';
+import type { CSSProperties } from 'react';
 
 const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
 
@@ -31,21 +32,25 @@ const challenges = [
     icon: BookOpen,
     title: 'Quality content is hard to find',
     text: 'Learners and institutions need reliable, current and well-structured educational resources.',
+    image: '/brand/corporate/stock/quality-content.webp',
   },
   {
     icon: Presentation,
     title: 'Learning needs practical exposure',
     text: 'Training must move beyond theory through workshops, dialogue and applied skill development.',
+    image: '/brand/corporate/stock/learning-need.webp'
   },
   {
     icon: Handshake,
     title: 'Institutions need expert direction',
     text: 'Academic planning, programme development and quality improvement require specialist support.',
+    image: '/brand/corporate/stock/institution-exposure.webp'
   },
   {
     icon: Laptop2,
     title: 'Knowledge remains fragmented',
     text: 'Digital tools should bring content, delivery, assessment and learner progress into one clear system.',
+    image: '/brand/corporate/stock/fragmented.webp'
   },
 ];
 
@@ -98,10 +103,15 @@ const solutions = [
 ];
 
 const audiences = [
-  { icon: Building2, title: 'Schools & Colleges', text: 'Academic content, educator development and learner-engagement programmes aligned with institutional priorities.' },
-  { icon: Landmark, title: 'Universities & Higher Education', text: 'Programme design, international-student guidance, events and knowledge initiatives for modern campuses.' },
-  { icon: GraduationCap, title: 'Learners & Educators', text: 'Structured resources, practical training and guided pathways that support academic and professional progress.' },
-  { icon: BriefcaseBusiness, title: 'Organisations & Partners', text: 'Custom learning, capacity-building and education programmes developed for defined organisational outcomes.' },
+  {
+    icon: Building2,
+    title: 'Schools & Colleges',
+    text: 'Academic content, educator development and learner-engagement programmes aligned with institutional priorities.',
+    image: '/brand/corporate/stock/school-colleges.webp',
+  },
+  { icon: Landmark, title: 'Universities & Higher Education', text: 'Programme design, international-student guidance, events and knowledge initiatives for modern campuses.' ,  image: '/brand/corporate/stock/university-higher.webp', },
+  { icon: GraduationCap, title: 'Learners & Educators', text: 'Structured resources, practical training and guided pathways that support academic and professional progress.' , image: '/brand/corporate/stock/learners-educators.webp', },
+  { icon: BriefcaseBusiness, title: 'Organisations & Partners', text: 'Custom learning, capacity-building and education programmes developed for defined organisational outcomes.' , image: '/brand/corporate/stock/organization-partner.webp', },
 ];
 
 export default function DraaCorporateHome() {
@@ -207,16 +217,34 @@ export default function DraaCorporateHome() {
               <h2>Better learning begins with the right structure.</h2>
               <p>We connect the parts of education that are too often treated separately.</p>
             </div>
-            <div className="draa-corp-challenge-grid">
-              {challenges.map(({ icon: Icon, title, text }, index) => (
-                <article key={title} className="draa-corp-challenge-card">
-                  <span className="draa-corp-card-index">0{index + 1}</span>
-                  <span className="draa-corp-icon-box"><Icon size={23} /></span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
-            </div>
+           <div className="draa-corp-challenge-grid">
+  {challenges.map(({ icon: Icon, title, text, image }, index) => (
+    <article
+      key={title}
+      className={`draa-corp-challenge-card ${
+        image ? 'draa-corp-challenge-card-image' : ''
+      }`}
+      style={
+        image
+          ? ({
+              '--challenge-bg': `url(${image})`,
+            } as CSSProperties)
+          : undefined
+      }
+    >
+      <span className="draa-corp-card-index">
+        0{index + 1}
+      </span>
+
+      <span className="draa-corp-icon-box">
+        <Icon size={23} />
+      </span>
+
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </article>
+  ))}
+</div>
           </div>
         </section>
 
@@ -285,14 +313,32 @@ export default function DraaCorporateHome() {
               <p>We begin with the audience, the context and the desired learning outcome—not with a one-size-fits-all product.</p>
             </div>
             <div className="draa-corp-audience-grid">
-              {audiences.map(({ icon: Icon, title, text }, index) => (
-                <article key={title}>
-                  <span>0{index + 1}</span>
-                  <Icon size={24} />
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
+            {audiences.map(({ icon: Icon, title, text, image }, index) => (
+  <article
+    key={title}
+    className="draa-corp-audience-card"
+  >
+    {image && (
+      <img
+        className="draa-corp-audience-bg"
+        src={image}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      />
+    )}
+
+    <span className="draa-corp-audience-number">
+      0{index + 1}
+    </span>
+
+    <Icon size={24} />
+
+    <h3>{title}</h3>
+
+    <p>{text}</p>
+  </article>
+))}
             </div>
           </div>
         </section>
