@@ -1,23 +1,22 @@
 {
-  "name": "draa-study-india",
+  "name": "draa-study-india-platform",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "dev": "vite --port 5175 --strictPort",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --port 4174"
-  },
-  "dependencies": {
-    "@vitejs/plugin-react": "^4.3.3",
-    "vite": "^5.4.9",
-    "typescript": "~5.6.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "lucide-react": "^0.479.0"
+    "build:shared": "npm run build -w @draa/shared",
+    "build:database": "npm run build -w @draa/database",
+    "build:api": "npm run build -w @draa/api",
+    "build:web": "npm run build -w @draa/web",
+    "build:packages": "npm run build:shared && npm run build:database",
+    "build": "npm run build:packages && npm run build:api && npm run build:web",
+    "dev": "npm run build:packages && concurrently -n API,WEB -c blue,green \"npm run dev -w @draa/api\" \"npm run dev -w @draa/web\"",
+    "seed": "npm run seed -w @draa/api",
+    "start": "npm run start -w @draa/api"
   },
   "devDependencies": {
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1"
+    "concurrently": "^9.2.1",
+    "typescript": "~5.6.2"
   }
 }

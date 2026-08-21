@@ -1,0 +1,12 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import PortalLayout from "./components/PortalLayout";
+import ContentPage from "./pages/ContentPage";
+import CourseDetailPage from "./pages/CourseDetailPage";
+import CoursesPage from "./pages/CoursesPage";
+import DashboardPage from "./pages/DashboardPage";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import ResourcesPage from "./pages/ResourcesPage";
+
+export default function App(){return <BrowserRouter><Routes><Route element={<PortalLayout/>}><Route index element={<HomePage/>}/><Route path="courses" element={<CoursesPage/>}/><Route path="courses/:slug" element={<CourseDetailPage/>}/><Route path="notifications" element={<ResourcesPage/>}/><Route path="educational-blogs" element={<ResourcesPage/>}/><Route path="recorded-videos" element={<ResourcesPage/>}/>{["about","why-india","reasons","things-to-do","higher-education","institute-ranking","eligibility","scholarships","how-to-apply","visa-frro","local-support","faq","contact","privacy"].map(path=><Route key={path} path={path} element={<ContentPage/>}/>)}<Route path="login/:role" element={<LoginPage/>}/><Route path="register/:role" element={<RegisterPage/>}/></Route><Route path="dashboard" element={<DashboardPage/>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes></BrowserRouter>}

@@ -1,0 +1,25 @@
+{
+  "name": "@draa/web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5175 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4175"
+  },
+  "dependencies": {
+    "@draa/shared": "*",
+    "lucide-react": "^0.479.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.9"
+  }
+}
