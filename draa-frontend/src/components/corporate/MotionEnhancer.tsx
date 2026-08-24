@@ -7,6 +7,8 @@ const depthSelector = [
   ".careers-hero-media",
   ".digital-hero-media",
   ".service-hero-visual",
+  ".service-experience-hero-visual",
+  ".services-overview-hero-image",
   ".corporate-page-hero-photo",
   ".support-orbit",
 ].join(",");
@@ -21,19 +23,37 @@ const maskSelector = [
 const revealSelector = [
   ".draa-corp-hero-copy > *",
   ".draa-corp-hero-visual",
+  ".draa-corp-proof-band p",
+  ".draa-corp-proof-track > *",
   ".draa-corp-section-heading",
   ".draa-corp-two-column > *",
+  ".draa-corp-delivery-visual > *",
   ".draa-corp-challenge-card",
   ".draa-corp-solution-card",
   ".draa-corp-study-card > *",
+  ".draa-corp-study-tools > *",
+  ".draa-corp-learning-list > *",
   ".draa-corp-audience-grid > *",
   ".draa-corp-partner-inner > *",
+  ".draa-corp-footer-main > *",
+  ".draa-corp-footer-bottom > *",
   ".corporate-page-hero-inner > *",
   ".corporate-page-heading",
   ".corporate-page-items > *",
   ".corporate-page-partner .draa-corp-shell > *",
   ".service-hero-copy > *",
   ".service-hero-visual",
+  ".service-experience-hero-copy > *",
+  ".service-experience-hero-visual",
+  ".service-experience-proof-row > *",
+  ".service-experience-heading",
+  ".service-experience-priority-grid > *",
+  ".service-experience-spotlight-grid > *",
+  ".service-experience-delivery-grid > *",
+  ".service-experience-value-grid > *",
+  ".service-experience-outcome-grid > *",
+  ".service-experience-related .draa-corp-shell > *",
+  ".service-experience-final .draa-corp-shell > *",
   ".service-heading",
   ".service-intro-grid > *",
   ".service-challenge",
@@ -42,6 +62,11 @@ const revealSelector = [
   ".service-results-grid > *",
   ".service-related-grid > *",
   ".service-final-cta .draa-corp-shell > *",
+  ".services-overview-hero-copy > *",
+  ".services-hero-panel",
+  ".services-need-strip .draa-corp-shell > *",
+  ".services-need-grid > *",
+  ".services-catalogue-heading > *",
   ".sii-hero-grid > *",
   ".sii-heading",
   ".sii-tool-shell",
@@ -74,6 +99,8 @@ const revealSelector = [
   ".contact-ed-cta .draa-corp-shell",
   ".digital-hero-copy > *",
   ".digital-hero-media",
+  ".digital-route-heading",
+  ".digital-route-grid > *",
   ".digital-ecosystem-grid > *",
   ".digital-heading-row > *",
   ".digital-bento > *",
@@ -113,6 +140,10 @@ export default function MotionEnhancer() {
   useEffect(() => {
     const progress = document.querySelector<HTMLElement>(".draa-reading-progress");
     const header = document.querySelector<HTMLElement>(".draa-corp-header");
+    const home = document.querySelector<HTMLElement>(".draa-corp-home");
+    const hero = home?.querySelector<HTMLElement>(".draa-corp-hero");
+    const heroVisual = home?.querySelector<HTMLElement>(".draa-corp-hero-visual");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
 
     const updateScrollState = () => {
@@ -121,6 +152,12 @@ export default function MotionEnhancer() {
       const amount = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
       progress?.style.setProperty("--draa-read-progress", String(amount));
       header?.classList.toggle("is-scrolled", window.scrollY > 18);
+      if (home && hero && !reduceMotion) {
+        const heroProgress = Math.min(Math.max(window.scrollY / Math.max(hero.offsetHeight, 1), 0), 1);
+        home.style.setProperty("--draa-hero-shift", `${(heroProgress * 34).toFixed(1)}px`);
+        home.style.setProperty("--draa-hero-fade", String(1 - heroProgress * 0.28));
+        heroVisual?.style.setProperty("--draa-parallax-y", `${(heroProgress * 22).toFixed(1)}px`);
+      }
     };
     const onScroll = () => {
       if (frame) return;
@@ -135,6 +172,9 @@ export default function MotionEnhancer() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       header?.classList.remove("is-scrolled");
+      home?.style.removeProperty("--draa-hero-shift");
+      home?.style.removeProperty("--draa-hero-fade");
+      heroVisual?.style.removeProperty("--draa-parallax-y");
     };
   }, [pathname]);
 
@@ -146,13 +186,21 @@ export default function MotionEnhancer() {
     let depthElements: HTMLElement[] = [];
     let maskElements: HTMLElement[] = [];
     const depthCleanup: Array<() => void> = [];
+    const pointerCleanup: Array<() => void> = [];
     const frame = window.requestAnimationFrame(() => {
+      const home = document.querySelector<HTMLElement>(".draa-corp-home");
       elements = Array.from(
         document.querySelectorAll<HTMLElement>(revealSelector),
       );
 
       elements.forEach((element, index) => {
-        element.dataset.uiReveal = "";
+        let revealStyle = "up";
+        if (home?.contains(element)) {
+          if (element.matches(".draa-corp-hero-copy > *, .draa-corp-two-column > :first-child")) revealStyle = "left";
+          if (element.matches(".draa-corp-two-column > :last-child")) revealStyle = "right";
+          if (element.matches(".draa-corp-hero-visual, .draa-corp-challenge-card, .draa-corp-solution-card, .draa-corp-study-tools > *, .draa-corp-audience-grid > *")) revealStyle = "scale";
+        }
+        element.dataset.uiReveal = revealStyle;
         element.classList.add("ui-motion-ready");
         element.style.setProperty(
           "--ui-reveal-delay",
@@ -198,6 +246,37 @@ export default function MotionEnhancer() {
             element.removeEventListener("pointerleave", onPointerLeave);
           });
         });
+
+        if (home) {
+          const onPagePointerMove = (event: PointerEvent) => {
+            home.style.setProperty("--draa-pointer-x", `${((event.clientX / window.innerWidth) * 100).toFixed(2)}%`);
+            home.style.setProperty("--draa-pointer-y", `${((event.clientY / window.innerHeight) * 100).toFixed(2)}%`);
+          };
+          window.addEventListener("pointermove", onPagePointerMove, { passive: true });
+          pointerCleanup.push(() => window.removeEventListener("pointermove", onPagePointerMove));
+
+          const interactiveCards = Array.from(home.querySelectorAll<HTMLElement>(
+            ".draa-corp-challenge-card, .draa-corp-solution-card, .draa-corp-study-tools > div, .draa-corp-audience-grid article",
+          ));
+          interactiveCards.forEach((card) => {
+            const onCardPointerMove = (event: PointerEvent) => {
+              const bounds = card.getBoundingClientRect();
+              card.style.setProperty("--draa-card-x", `${event.clientX - bounds.left}px`);
+              card.style.setProperty("--draa-card-y", `${event.clientY - bounds.top}px`);
+              card.classList.add("draa-pointer-active");
+            };
+            const onCardPointerLeave = () => card.classList.remove("draa-pointer-active");
+            card.addEventListener("pointermove", onCardPointerMove);
+            card.addEventListener("pointerleave", onCardPointerLeave);
+            pointerCleanup.push(() => {
+              card.removeEventListener("pointermove", onCardPointerMove);
+              card.removeEventListener("pointerleave", onCardPointerLeave);
+              card.classList.remove("draa-pointer-active");
+              card.style.removeProperty("--draa-card-x");
+              card.style.removeProperty("--draa-card-y");
+            });
+          });
+        }
       }
     });
 
@@ -210,6 +289,7 @@ export default function MotionEnhancer() {
         element.style.removeProperty("--ui-reveal-delay");
       });
       depthCleanup.forEach((cleanup) => cleanup());
+      pointerCleanup.forEach((cleanup) => cleanup());
       depthElements.forEach((element) => {
         element.classList.remove("draa-motion-depth");
         element.style.removeProperty("--draa-tilt-x");

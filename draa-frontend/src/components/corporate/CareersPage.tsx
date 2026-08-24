@@ -90,7 +90,7 @@ export default function CareersPage() {
               <span className="careers-eyebrow">CAREERS AT DRAA</span>
               <h1>
                 Build work that helps
-                <span>learning move forward.</span>
+                <span>learning move forward</span>
               </h1>
               <p>
                 Join a purpose-led education services company where research,
@@ -143,7 +143,7 @@ export default function CareersPage() {
           <div className="draa-corp-shell">
             <div className="careers-section-intro">
               <span>HOW WE WORK</span>
-              <h2>Professional standards. Human collaboration.</h2>
+              <h2>Professional standards — Human collaboration</h2>
               <p>
                 DRAA was established in New Delhi in 2023 with a focus on
                 education services and knowledge management. Our work is
@@ -170,7 +170,7 @@ export default function CareersPage() {
             <div className="careers-pathway-heading">
               <div>
                 <span>WHERE YOU CAN CONTRIBUTE</span>
-                <h2>Many disciplines. One education mission.</h2>
+                <h2>Many disciplines — One education mission</h2>
               </div>
               <p>
                 Our work calls for different kinds of expertise. These are the
@@ -178,9 +178,8 @@ export default function CareersPage() {
               </p>
             </div>
             <div className="careers-pathway-grid">
-              {disciplines.map(({ icon: Icon, title, text }, index) => (
+              {disciplines.map(({ icon: Icon, title, text }) => (
                 <article key={title}>
-                  <span className="careers-pathway-number">0{index + 1}</span>
                   <Icon size={23} />
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -194,7 +193,7 @@ export default function CareersPage() {
           <div className="draa-corp-shell careers-opportunities-grid">
             <div className="careers-opportunity-copy">
               <span>CURRENT OPPORTUNITIES</span>
-              <h2>We are building our talent network.</h2>
+              <h2>We are building our talent network</h2>
               <p>
                 No specific vacancies are published on the website at this time.
                 If your experience aligns with our work, you are welcome to send
@@ -225,14 +224,14 @@ export default function CareersPage() {
           <div className="draa-corp-shell">
             <div className="careers-section-intro">
               <span>A CLEAR CANDIDATE JOURNEY</span>
-              <h2>What to expect when an opportunity matches.</h2>
+              <h2>What to expect when an opportunity matches</h2>
             </div>
             <div className="careers-process-grid">
-              {hiringSteps.map(([Icon, title, text], index) => {
+              {hiringSteps.map(([Icon, title, text]) => {
                 const StepIcon = Icon as typeof SearchCheck;
                 return (
                   <article key={String(title)}>
-                    <span><StepIcon size={20} /><b>{index + 1}</b></span>
+                    <span><StepIcon size={20} /></span>
                     <h3>{String(title)}</h3>
                     <p>{String(text)}</p>
                   </article>
@@ -246,7 +245,7 @@ export default function CareersPage() {
           <div className="draa-corp-shell">
             <div>
               <span>BRING YOUR PERSPECTIVE</span>
-              <h2>Help us create knowledge that makes a difference.</h2>
+              <h2>Help us create knowledge that makes a difference</h2>
             </div>
             <p>
               We welcome interest from people with varied backgrounds and

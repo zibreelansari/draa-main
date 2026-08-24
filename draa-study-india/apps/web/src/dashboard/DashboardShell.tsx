@@ -154,7 +154,7 @@ export default function DashboardShell({ user, activeSection, onNavigate, notifi
               <button className="workspace-profile-trigger" type="button" onClick={() => setProfileOpen((open) => !open)} aria-expanded={profileOpen}>
                 <span>{initials}</span><div><strong>{user.displayName}</strong><small>{roleLabels[user.role]}</small></div><ChevronDown size={16} />
               </button>
-              {profileOpen && <div className="workspace-popover workspace-profile-popover"><div><strong>{user.displayName}</strong><small>{user.email}</small></div><button type="button"><Settings size={16} />Account settings</button><button type="button" onClick={logout}><LogOut size={16} />Log out</button></div>}
+              {profileOpen && <div className="workspace-popover workspace-profile-popover"><div><strong>{user.displayName}</strong><small>{user.email}</small></div><button type="button" disabled title="Profile management will be available after identity verification is connected."><Settings size={16} />Account settings</button><button type="button" onClick={logout}><LogOut size={16} />Log out</button></div>}
             </div>
           </div>
         </header>

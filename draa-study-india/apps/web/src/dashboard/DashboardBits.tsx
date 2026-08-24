@@ -13,11 +13,11 @@ export function formatMoney(value?: number) {
 }
 
 export function titleCase(value: string) {
-  return value.replaceAll("_", " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase());
+  return value.replace(/_/g, " ").toLowerCase().replace(/\b\w/g, (letter: string) => letter.toUpperCase());
 }
 
 export function StatusBadge({ value }: { value: string }) {
-  const normalized = value.toLowerCase().replaceAll("_", "-");
+  const normalized = value.toLowerCase().replace(/_/g, "-");
   return <span className={`workspace-status workspace-status-${normalized}`}><i />{titleCase(value)}</span>;
 }
 

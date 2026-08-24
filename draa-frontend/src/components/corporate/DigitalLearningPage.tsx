@@ -28,6 +28,8 @@ import ScrollTop from "./ScrollTop";
 import "./DraaCorporateHome.css";
 import "./DigitalLearningPage.css";
 
+const remoteImage = (id: string, width: number) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=88`;
+
 const capabilities = [
   {
     icon: LayoutDashboard,
@@ -49,7 +51,7 @@ const capabilities = [
       "Interactive content",
       "Accessible delivery",
     ],
-    image: "/brand/corporate/stock/digital-course-design.jpg",
+    image: remoteImage("photo-1516321318423-f06f85e504b3", 1200),
     className: "digital-cap-course",
   },
   {
@@ -83,30 +85,37 @@ const useCases = [
     label: "Higher education",
     title: "Connected learning for modern campuses",
     text: "Bring courses, faculty resources, assessment and learner support into one coherent experience.",
-    image: "/brand/corporate/stock/digital-hero-students.jpg",
+    image: remoteImage("photo-1522202176988-66273c2fd55f", 1100),
     icon: GraduationCap,
   },
   {
     label: "Schools & training providers",
     title: "Blended programmes that stay organised",
     text: "Support classroom teaching with structured content, practice, communication and progress tracking.",
-    image: "/brand/corporate/stock/digital-course-design.jpg",
+    image: remoteImage("photo-1509062522246-3755977927d7", 1100),
     icon: MonitorPlay,
   },
   {
     label: "Organisations & teams",
     title: "Learning built around capability goals",
     text: "Deliver onboarding, professional learning and role-based development with clearer evidence of participation.",
-    image: "/brand/corporate/stock/digital-team-workshop.jpg",
+    image: remoteImage("photo-1521737711867-e3b97375f902", 1100),
     icon: Users,
   },
 ];
 
 const journey = [
-  ["01", "Discover", "Audience, constraints and outcomes"],
-  ["02", "Architect", "Content, pathways and platform"],
-  ["03", "Build & launch", "Experience, testing and onboarding"],
-  ["04", "Measure & improve", "Usage, feedback and iteration"],
+  ["Discover", "Audience, constraints and outcomes"],
+  ["Architect", "Content, pathways and platform"],
+  ["Build & launch", "Experience, testing and onboarding"],
+  ["Measure & improve", "Usage, feedback and iteration"],
+];
+
+const digitalRoutes = [
+  { icon: Code2, title: "Website or web portal", text: "For services, admissions, information and business workflows" },
+  { icon: Smartphone, title: "Mobile application", text: "For learners, customers and teams on the move" },
+  { icon: GraduationCap, title: "Learning platform or LMS", text: "For courses, cohorts, resources and learner progress" },
+  { icon: ClipboardCheck, title: "Assessment or exam system", text: "For practice, feedback, reporting and certification" },
 ];
 
 const developmentServices = [
@@ -191,31 +200,33 @@ export default function DigitalLearningPage() {
         title="Digital Learning Solutions"
         siteName="DRAA"
         description="DRAA designs websites, mobile apps, learning platforms, institution portals, digital courses and supported technology solutions for education institutions and organisations."
-        ogImage="/brand/corporate/stock/digital-hero-students.jpg"
+        ogImage={remoteImage("photo-1522202176988-66273c2fd55f", 1600)}
       />
       <DraaCorporateHeader />
       <main>
         <section className="digital-hero">
+          <img className="digital-hero-background" src={remoteImage("photo-1706016899218-ebe36844f70e", 2200)} alt="" />
+          <div className="digital-hero-wash" aria-hidden="true" />
           <div className="draa-corp-shell digital-hero-grid">
             <div className="digital-hero-copy">
               <span className="digital-kicker">
-                <Sparkles size={15} /> Digital learning, thoughtfully connected
+                <Sparkles size={15} /> Digital products, built around people
               </span>
               <p className="digital-overline">
-                DRAA DIGITAL LEARNING SOLUTIONS
+                DRAA DIGITAL EXPERIENCES & PLATFORMS
               </p>
               <h1>
-                Digital learning designed for <em>people.</em>
-                <span>Engineered to perform.</span>
+                Digital experiences people <em>understand</em>
+                <span>and teams can rely on</span>
               </h1>
               <p className="digital-hero-lead">
-                DRAA integrates content, technology, assessment and learner
-                support to create coherent digital experiences for institutions
-                and organisations.
+                From a corporate website or mobile app to a learning platform or
+                institutional portal, DRAA creates connected digital products
+                with a clear purpose, a confident user journey and reliable support.
               </p>
               <div className="digital-actions">
                 <Link
-                  to="/contact?subject=Digital%20Learning%20Solutions"
+                  to="/contact?subject=Digital%20Experiences%20%26%20Platforms"
                   className="digital-button digital-button-dark"
                 >
                   Discuss your requirement <ArrowRight size={17} />
@@ -247,22 +258,22 @@ export default function DigitalLearningPage() {
             </div>
             <div className="digital-hero-media">
               <img
-                src="/brand/corporate/stock/digital-hero-students.jpg"
-                alt="Students collaborating around laptops in a digital learning session"
+                src={remoteImage("photo-1680060731105-325991d05343", 1600)}
+                alt="University building in Sonepat, India"
               />
               <div className="digital-media-shade" />
               <div className="digital-media-panel">
-                <span>LEARNING ECOSYSTEM</span>
-                <strong>One connected journey</strong>
+                <span>ONE CONNECTED EXPERIENCE</span>
+                <strong>Plan, build and grow with confidence</strong>
                 <ul>
                   <li>
-                    <CirclePlay size={14} /> Learn
+                    <CirclePlay size={14} /> Engage
                   </li>
                   <li>
-                    <ClipboardCheck size={14} /> Practise
+                    <ClipboardCheck size={14} /> Manage
                   </li>
                   <li>
-                    <BarChart3 size={14} /> Progress
+                    <BarChart3 size={14} /> Improve
                   </li>
                 </ul>
               </div>
@@ -277,6 +288,27 @@ export default function DigitalLearningPage() {
           </div>
         </section>
 
+        <section className="digital-route-strip" aria-labelledby="digital-route-title">
+          <div className="draa-corp-shell">
+            <div className="digital-route-heading">
+              <span>Start with your need</span>
+              <h2 id="digital-route-title">What are you looking to build?</h2>
+            </div>
+            <div className="digital-route-grid">
+              {digitalRoutes.map(({ icon: Icon, title, text }) => (
+                <a key={title} href="#digital-courses">
+                  <span><Icon size={20} /></span>
+                  <div>
+                    <strong>{title}</strong>
+                    <small>{text}</small>
+                  </div>
+                  <ArrowRight size={16} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="digital-ecosystem">
           <div className="draa-corp-shell digital-ecosystem-grid">
             <div>
@@ -285,7 +317,7 @@ export default function DigitalLearningPage() {
               </span>
               <h2>
                 Effective technology begins with a clearly designed learning
-                journey.
+                journey
               </h2>
               <p>
                 We define the audience, objectives and operational context
@@ -328,7 +360,7 @@ export default function DigitalLearningPage() {
                 <span className="digital-section-label">What we can build</span>
                 <h2>
                   An integrated digital ecosystem—not a collection of
-                  disconnected tools.
+                  disconnected tools
                 </h2>
               </div>
               <p>
@@ -341,7 +373,6 @@ export default function DigitalLearningPage() {
               {capabilities.map(
                 (
                   { icon: Icon, title, text, points, image, className },
-                  index,
                 ) => (
                   <article key={title} className={className}>
                     {image && (
@@ -355,7 +386,6 @@ export default function DigitalLearningPage() {
                       <span className="digital-cap-icon">
                         <Icon size={22} />
                       </span>
-                      <small>0{index + 1}</small>
                       <h3>{title}</h3>
                       <p>{text}</p>
                       {points && (
@@ -385,7 +415,7 @@ export default function DigitalLearningPage() {
                 </span>
                 <h2>
                   Designed for different learners, environments and
-                  institutional priorities.
+                  institutional priorities
                 </h2>
               </div>
               <p>
@@ -411,14 +441,14 @@ export default function DigitalLearningPage() {
           </div>
         </section>
 
-        <section className="digital-courses">
+        <section id="digital-courses" className="digital-courses">
           <div className="draa-corp-shell">
             <div className="digital-course-intro">
               <div>
                 <span className="digital-section-label">
                   Digital development services
                 </span>
-                <h2>Technology services built around real business needs.</h2>
+                <h2>Technology services built around real business needs</h2>
               </div>
               <div>
                 <p>
@@ -436,7 +466,6 @@ export default function DigitalLearningPage() {
               {developmentServices.map(
                 (
                   { icon: Icon, title, category, delivery, text, skills },
-                  index,
                 ) => (
                   <article key={title}>
                     <div className="digital-service-visual" aria-hidden="true">
@@ -461,7 +490,7 @@ export default function DigitalLearningPage() {
                       <span className="digital-course-icon">
                         <Icon size={22} />
                       </span>
-                      <small>SERVICE 0{index + 1}</small>
+                      <small>BUILT AROUND YOUR USERS</small>
                     </div>
                     <h3>{title}</h3>
                     <div className="digital-course-meta">
@@ -493,26 +522,22 @@ export default function DigitalLearningPage() {
               <span className="digital-section-label">
                 What good looks like
               </span>
-              <h2>Effective from first interaction to measurable outcome.</h2>
+              <h2>Effective from first interaction to measurable outcome</h2>
             </div>
             <div className="digital-outcome-list">
               <span>
-                <strong>01</strong>
                 <b>Simple to navigate</b>
                 <small>Clear pathways reduce learner friction.</small>
               </span>
               <span>
-                <strong>02</strong>
                 <b>Ready for adoption</b>
                 <small>Training and onboarding support teams.</small>
               </span>
               <span>
-                <strong>03</strong>
                 <b>Visible progress</b>
                 <small>Useful signals support timely decisions.</small>
               </span>
               <span>
-                <strong>04</strong>
                 <b>Designed to evolve</b>
                 <small>Modular systems grow with the programme.</small>
               </span>
@@ -524,16 +549,15 @@ export default function DigitalLearningPage() {
           <div className="draa-corp-shell digital-journey-card">
             <div className="digital-journey-copy">
               <span className="digital-section-label">Our delivery model</span>
-              <h2>A structured route from requirement to successful launch.</h2>
+              <h2>A structured route from requirement to successful launch</h2>
               <p>
                 One accountable team connects learning design, content,
                 technology and implementation.
               </p>
             </div>
             <div className="digital-journey-steps">
-              {journey.map(([number, title, text]) => (
+              {journey.map(([title, text]) => (
                 <article key={title}>
-                  <span>{number}</span>
                   <strong>{title}</strong>
                   <small>{text}</small>
                 </article>
@@ -548,10 +572,10 @@ export default function DigitalLearningPage() {
               <span>READY TO BUILD?</span>
               <h2>
                 Let’s create a digital learning environment that is practical,
-                scalable and ready to evolve.
+                scalable and ready to evolve
               </h2>
             </div>
-            <Link to="/contact?subject=Digital%20Learning%20Solutions">
+            <Link to="/contact?subject=Digital%20Experiences%20%26%20Platforms">
               Start a conversation <ArrowRight size={17} />
             </Link>
           </div>

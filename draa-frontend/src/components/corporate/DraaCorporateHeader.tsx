@@ -3,29 +3,36 @@ import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './DraaCorporateHome.css';
 
-const companyLinks = [
+interface NavMenuLink {
+  label: string;
+  description: string;
+  href: string;
+  featured?: boolean;
+}
+
+const companyLinks: NavMenuLink[] = [
   { label: 'About DRAA', description: 'Purpose, approach and company story', href: '/about-draa' },
   { label: 'Who We Support', description: 'Schools, universities, brands and partners', href: '/who-we-support' },
   { label: 'Careers', description: 'Build purposeful work with DRAA', href: '/careers' },
 ];
 
-const solutionLinks = [
-  { label: 'Services Overview', description: 'Explore all connected capabilities', href: '/capabilities' },
-  { label: 'Academic Content', description: 'Research-led learning resources', href: '/services/content-publishing' },
-  { label: 'Professional Learning', description: 'Training that transfers to practice', href: '/services/professional-learning' },
-  { label: 'Education Events', description: 'Conferences, workshops and forums', href: '/events' },
-  { label: 'Academic Advisory', description: 'Institutional strategy and quality', href: '/services/academic-advisory' },
-  { label: 'Digital Learning', description: 'Platforms, courses and assessments', href: '/services/digital-learning' },
+const serviceLinks: NavMenuLink[] = [
+  { label: 'All Services', description: 'View every DRAA capability in one place', href: '/capabilities', featured: true },
+  { label: 'Educational Content Development', description: 'Research-led content, courseware and assessments', href: '/services/content-publishing' },
+  { label: 'Academic & Professional Training', description: 'Practical learning for educators, learners and teams', href: '/services/professional-learning' },
+  { label: 'Educational Events & Conferences', description: 'Purposeful conferences, workshops and forums', href: '/services/education-events' },
+  { label: 'Educational Consultancy', description: 'Academic strategy, quality and implementation', href: '/services/academic-advisory' },
+  { label: 'Digital Learning Solutions', description: 'Learning platforms, courses and digital products', href: '/services/digital-learning' },
 ];
 
-const insightLinks = [
+const insightLinks: NavMenuLink[] = [
   { label: 'Resources', description: 'Guides, perspectives and case studies', href: '/resources' },
   { label: 'Learning Programs', description: 'Programmes for every ambition', href: '/learning-programs' },
 ];
 
 const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
 
-function DesktopMenu({ label, links, wide = false, active = false }: { label: string; links: typeof companyLinks; wide?: boolean; active?: boolean }) {
+function DesktopMenu({ label, links, wide = false, active = false }: { label: string; links: NavMenuLink[]; wide?: boolean; active?: boolean }) {
   return (
     <div className="draa-nav-group">
       <button type="button" className={`draa-nav-trigger ${active ? 'active' : ''}`}>{label} <ChevronDown size={14} /></button>
@@ -33,7 +40,7 @@ function DesktopMenu({ label, links, wide = false, active = false }: { label: st
         <span className="draa-nav-dropdown-label">Explore {label}</span>
         <div>
           {links.map((item) => (
-            <Link key={item.href + item.label} to={item.href}>
+            <Link key={item.href + item.label} to={item.href} className={item.featured ? 'draa-nav-dropdown-featured' : undefined}>
               <strong>{item.label}</strong>
               <small>{item.description}</small>
               <ArrowRight size={14} />
@@ -48,7 +55,7 @@ function DesktopMenu({ label, links, wide = false, active = false }: { label: st
 export default function DraaCorporateHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
-  const groupIsActive = (links: typeof companyLinks) => links.some((item) => pathname === item.href || (item.href.startsWith('/services/') && pathname === item.href));
+  const groupIsActive = (links: NavMenuLink[]) => links.some((item) => pathname === item.href || (item.href.startsWith('/services/') && pathname === item.href));
 
   return (
     <header className="draa-corp-header">
@@ -64,7 +71,7 @@ export default function DraaCorporateHeader() {
         <nav className="draa-corp-nav" aria-label="Main navigation">
           <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : undefined}>Home</NavLink>
           <DesktopMenu label="Company" links={companyLinks} active={groupIsActive(companyLinks)} />
-          <DesktopMenu label="Solutions" links={solutionLinks} wide active={groupIsActive(solutionLinks)} />
+          <DesktopMenu label="Services" links={serviceLinks} wide active={groupIsActive(serviceLinks)} />
           <a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" className="draa-nav-study">Study in India</a>
           <DesktopMenu label="Insights" links={insightLinks} active={groupIsActive(insightLinks)} />
           <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : undefined}>Contact</NavLink>
@@ -84,8 +91,8 @@ export default function DraaCorporateHeader() {
           <NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink>
           <span>Company</span>
           {companyLinks.map((item) => <NavLink key={item.href} to={item.href} onClick={() => setMenuOpen(false)}>{item.label}</NavLink>)}
-          <span>Solutions</span>
-          {solutionLinks.map((item) => <NavLink key={item.href + item.label} to={item.href} onClick={() => setMenuOpen(false)}>{item.label}</NavLink>)}
+          <span>Services</span>
+          {serviceLinks.map((item) => <NavLink key={item.href + item.label} className={item.featured ? 'draa-mobile-all-services' : undefined} to={item.href} onClick={() => setMenuOpen(false)}>{item.label}{item.featured && <ArrowRight size={15} />}</NavLink>)}
           <a className="draa-mobile-study" href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Study in India <ArrowRight size={15} /></a>
           <span>Insights</span>
           {insightLinks.slice(0, 2).map((item) => <NavLink key={item.href} to={item.href} onClick={() => setMenuOpen(false)}>{item.label}</NavLink>)}

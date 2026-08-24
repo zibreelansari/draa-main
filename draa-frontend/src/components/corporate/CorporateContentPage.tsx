@@ -65,27 +65,27 @@ const pageImageAlt: Record<string, string> = {
 };
 
 const heroAccents: Record<string, string> = {
-  'about-draa': 'We exist to empower education and enrich futures.',
-  capabilities: 'Outcomes that matter.',
-  events: 'Impact tomorrow.',
-  'learning-programs': 'for every ambition.',
-  resources: 'drive impact.',
-  'who-we-support': 'education ecosystem.',
+  'about-draa': 'We exist to empower education and enrich futures',
+  capabilities: 'Outcomes that matter',
+  events: 'Impact tomorrow',
+  'learning-programs': 'for every ambition',
+  resources: 'drive impact',
+  'who-we-support': 'education ecosystem',
 };
 
 function HeroTitle({ slug, title }: { slug: string; title: string }) {
   const accent = heroAccents[slug];
   if (!accent || !title.includes(accent)) return <>{title}</>;
-  const lead = title.replace(accent, '').trim();
+  const lead = title.replace(accent, '').trim().replace(/[—–-]\s*$/, '').trim();
   return <>{lead}<span>{accent}</span></>;
 }
 
 const capabilityServiceLinks: Record<string, string> = {
-  'Content & Publishing': '/services/content-publishing',
-  'Professional Learning': '/services/professional-learning',
-  'Education Events': '/services/education-events',
-  'Academic Advisory': '/services/academic-advisory',
-  'Digital Learning': '/services/digital-learning',
+  'Content & Curriculum Development': '/services/content-publishing',
+  'Training & Capacity Building': '/services/professional-learning',
+  'Events & Conferences': '/services/education-events',
+  'Advisory & Institutional Solutions': '/services/academic-advisory',
+  'Digital Experiences & Platforms': '/services/digital-learning',
 };
 
 interface CorporateContentPageProps {
@@ -110,7 +110,7 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
           <section className="corporate-page-error">
             <div className="draa-corp-shell">
               <span>Page unavailable</span>
-              <h1>We could not load this content.</h1>
+              <h1>We could not load this content</h1>
               <p>The requested DRAA page does not exist.</p>
               <a href="/">Return to the homepage <ArrowRight size={17} /></a>
             </div>
@@ -173,7 +173,6 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
                         const itemLink = slug === 'capabilities' ? capabilityServiceLinks[item.title] || item.link : item.link;
                         return (
                           <article key={`${section.key}-${item.title}`}>
-                            <span className="corporate-page-item-number">{String(index + 1).padStart(2, '0')}</span>
                             {sectionIndex === 0 && index === 0 && itemLink && <span className="corporate-page-useful"><Sparkles size={12} /> Popular starting point</span>}
                             <span className="corporate-page-item-icon"><Icon size={23} /></span>
                             <h3>{item.title}</h3>
@@ -196,7 +195,7 @@ export default function CorporateContentPage({ slug }: CorporateContentPageProps
 
             <section className="corporate-page-partner">
               <div className="draa-corp-shell">
-                <div><span>Work with DRAA</span><h2>Let’s shape the right educational solution.</h2></div>
+                <div><span>Work with DRAA</span><h2>Let’s shape the right educational solution</h2></div>
                 <a href="/contact">Start a conversation <ArrowRight size={18} /></a>
               </div>
             </section>

@@ -80,11 +80,11 @@ export default function DraaCorporateContact() {
         <section className="contact-ed-hero">
           <div className="draa-corp-shell contact-ed-hero-grid">
             <div>
-              <span>We’re here to listen and help.</span>
+              <span>We’re here to listen and help</span>
               <h1>
                 Let’s create meaningful
                 <br />
-                impact <em>together.</em>
+                impact <em>together</em>
               </h1>
               <p>
                 Have a question, idea or partnership in mind? Reach out and
@@ -121,7 +121,7 @@ export default function DraaCorporateContact() {
             <section className="contact-ed-form-card">
               <div>
                 <span>Send us an inquiry</span>
-                <h2>Tell us what you want to achieve.</h2>
+                <h2>Tell us what you want to achieve</h2>
                 <p>
                   Fill in the details and our team will get back to you shortly.
                 </p>
@@ -178,11 +178,11 @@ export default function DraaCorporateContact() {
                       Inquiry type
                       <select name="subject" defaultValue={requestedSubject}>
                         <option value="">Select inquiry type</option>
-                        <option>Educational Content & Publishing</option>
-                        <option>Professional Learning & Training</option>
-                        <option>Educational Events</option>
-                        <option>Institutional Advisory</option>
-                        <option>Digital Learning Solutions</option>
+                        <option>Content &amp; Curriculum Development</option>
+                        <option>Training &amp; Capacity Building</option>
+                        <option>Events &amp; Conferences</option>
+                        <option>Advisory &amp; Institutional Solutions</option>
+                        <option>Digital Experiences &amp; Platforms</option>
                         <option>Website Development</option>
                         <option>Mobile App Development</option>
                         <option>LMS &amp; Learning Platforms</option>
@@ -328,7 +328,7 @@ export default function DraaCorporateContact() {
           <div className="draa-corp-shell">
             <div>
               <h2>
-                Let’s work together to create <em>lasting impact.</em>
+                Let’s work together to create <em>lasting impact</em>
               </h2>
               <p>
                 Collaborate with DRAA to design solutions that educate, empower

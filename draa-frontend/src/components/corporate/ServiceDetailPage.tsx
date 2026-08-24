@@ -21,6 +21,7 @@ import SEO from './SEO';
 import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
 import { services, servicesBySlug, type ServiceIcon } from './serviceData';
+import ServiceExperiencePage from './ServiceExperiencePage';
 import './ServiceDetailPage.css';
 
 const iconMap: Record<ServiceIcon, typeof BookOpen> = {
@@ -47,14 +48,17 @@ export default function ServiceDetailPage() {
   }, [serviceSlug]);
 
   if (!service) return <Navigate to="/capabilities" replace />;
+  if (service.slug === 'professional-learning' || service.slug === 'education-events' || service.slug === 'academic-advisory') {
+    return <ServiceExperiencePage service={service} />;
+  }
 
   const HeroIcon = iconMap[service.icon];
   const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 3);
   const contactSubjects: Record<string, string> = {
-    'content-publishing': 'Educational Content & Publishing',
-    'professional-learning': 'Professional Learning & Training',
-    'education-events': 'Educational Events',
-    'academic-advisory': 'Institutional Advisory',
+    'content-publishing': 'Educational Content Development',
+    'professional-learning': 'Academic & Professional Training',
+    'education-events': 'Educational Events & Conferences',
+    'academic-advisory': 'Educational Consultancy',
     'digital-learning': 'Digital Learning Solutions',
   };
   const contactSubject = contactSubjects[service.slug] || service.shortTitle;
@@ -77,8 +81,8 @@ export default function ServiceDetailPage() {
             <div className="service-hero-copy">
               <div className="service-breadcrumb"><Link to="/capabilities">Capabilities</Link><span>/</span>{service.shortTitle}</div>
               <span className="draa-corp-section-label"><HeroIcon size={15} /> {service.eyebrow}</span>
-              <p className="service-number">SERVICE {service.number}</p>
-              <h1>{service.slug === 'content-publishing' ? <>Rigorous content.<span>Real impact.</span></> : service.title}</h1>
+              <p className="service-number">DRAA SERVICE</p>
+              <h1>{service.slug === 'content-publishing' ? <>Rigorous content<span>Real impact</span></> : service.title}</h1>
               <p className="service-hero-summary">{service.summary}</p>
               <div className="service-hero-actions">
                 <Link className="service-button service-button-dark" to={`/contact?subject=${encodeURIComponent(contactSubject)}`}>Discuss your requirement <ArrowRight size={17} /></Link>
@@ -88,7 +92,7 @@ export default function ServiceDetailPage() {
 
             <div className="service-hero-visual">
               <figure><img src={service.image} alt={service.imageAlt} /></figure>
-              <div className="service-image-caption"><span>{service.number}</span><strong>{service.shortTitle}</strong><small>Designed around your outcome</small></div>
+              <div className="service-image-caption"><strong>{service.shortTitle}</strong><small>Designed around your outcome</small></div>
             </div>
           </div>
           <div className="draa-corp-shell service-proof-row">
@@ -110,7 +114,7 @@ export default function ServiceDetailPage() {
           <div className="draa-corp-shell service-intro-grid">
             <div>
               <span className="draa-corp-section-label">The service</span>
-              <h2>A complete solution, not an isolated activity.</h2>
+              <h2>A complete solution, not an isolated activity</h2>
             </div>
             <div className="service-intro-copy">
               <p>{service.intro}</p>
@@ -123,7 +127,7 @@ export default function ServiceDetailPage() {
           <div className="draa-corp-shell">
             <div className="service-heading">
               <span className="draa-corp-section-label">Where we add value</span>
-              <h2>From a common challenge to a connected response.</h2>
+              <h2>From a common challenge to a connected response</h2>
               <p>Each part of the engagement is designed to remove friction and strengthen the final learning outcome.</p>
             </div>
             <div className="service-outcome-map">
@@ -140,13 +144,13 @@ export default function ServiceDetailPage() {
           <div className="draa-corp-shell">
             <div className="service-heading service-heading-light">
               <span className="draa-corp-section-label">What we can deliver</span>
-              <h2>Support shaped to the scope you need.</h2>
+              <h2>Support shaped to the scope you need</h2>
               <p>Commission one focused deliverable or combine several into an end-to-end programme.</p>
             </div>
             <div className="service-deliverable-grid">
-              {service.deliverables.map((item, index) => {
+              {service.deliverables.map((item) => {
                 const Icon = iconMap[item.icon];
-                return <article key={item.title}><div><span>{String(index + 1).padStart(2, '0')}</span><Icon size={22} /></div><h3>{item.title}</h3><p>{item.description}</p></article>;
+                return <article key={item.title}><div><Icon size={22} /></div><h3>{item.title}</h3><p>{item.description}</p></article>;
               })}
             </div>
           </div>
@@ -156,10 +160,10 @@ export default function ServiceDetailPage() {
           <div className="draa-corp-shell">
             <div className="service-heading">
               <span className="draa-corp-section-label">How we work</span>
-              <h2>A clear route from requirement to result.</h2>
+              <h2>A clear route from requirement to result</h2>
             </div>
             <div className="service-process" aria-label={`${service.shortTitle} delivery process`}>
-              {service.process.map((step, index) => <div key={step.title}><span>{index + 1}</span><strong>{step.title}</strong><p>{step.description}</p>{index < service.process.length - 1 && <i aria-hidden="true"><ArrowRight size={18} /></i>}</div>)}
+              {service.process.map((step, index) => <div key={step.title}><strong>{step.title}</strong><p>{step.description}</p>{index < service.process.length - 1 && <i aria-hidden="true"><ArrowRight size={18} /></i>}</div>)}
             </div>
           </div>
         </section>
@@ -168,7 +172,7 @@ export default function ServiceDetailPage() {
           <div className="draa-corp-shell service-results-grid">
             <div>
               <span className="draa-corp-section-label">The value created</span>
-              <h2>Outcomes your team can see and use.</h2>
+              <h2>Outcomes your team can see and use</h2>
               <p>Success measures are agreed for the context and scope of each engagement.</p>
             </div>
             <div className="service-results-list">{service.outcomes.map((outcome) => <div key={outcome}><span><Check size={17} /></span><strong>{outcome}</strong></div>)}</div>
@@ -180,13 +184,13 @@ export default function ServiceDetailPage() {
             <div className="service-heading"><span className="draa-corp-section-label">Build a connected solution</span><h2>Often combined with</h2></div>
             <div className="service-related-grid">{relatedServices.map((item) => {
               const Icon = iconMap[item.icon];
-              return <Link key={item.slug} to={`/services/${item.slug}`}><span><Icon size={20} /></span><div><small>SERVICE {item.number}</small><strong>{item.shortTitle}</strong></div><ArrowRight size={17} /></Link>;
+              return <Link key={item.slug} to={`/services/${item.slug}`}><span><Icon size={20} /></span><div><small>DRAA SERVICE</small><strong>{item.shortTitle}</strong></div><ArrowRight size={17} /></Link>;
             })}</div>
           </div>
         </section>
 
         <section className="service-final-cta">
-          <div className="draa-corp-shell"><div><span>Start with your requirement</span><h2>Let’s design the right {service.shortTitle.toLowerCase()} solution.</h2><p>Share the audience, the challenge and the outcome you want to create.</p></div><Link to={`/contact?subject=${encodeURIComponent(contactSubject)}`}>Start a conversation <ArrowRight size={18} /></Link></div>
+          <div className="draa-corp-shell"><div><span>Start with your requirement</span><h2>Let’s design the right {service.shortTitle.toLowerCase()} solution</h2><p>Share the audience, the challenge and the outcome you want to create.</p></div><Link to={`/contact?subject=${encodeURIComponent(contactSubject)}`}>Start a conversation <ArrowRight size={18} /></Link></div>
         </section>
       </main>
 

@@ -1,0 +1,1034 @@
+/* ==========================================================================
+   Content & Curriculum Development Page Styles
+   3D Elevation, Glassmorphism, Editorial Aesthetics & Micro-Animations
+   ========================================================================== */
+
+.content-publishing-page {
+  --cp-amber: #D97706;
+  --cp-amber-dark: #B45309;
+  --cp-gold: #C98A2C;
+  --cp-ink: #0F172A;
+  --cp-slate: #1E293B;
+  --cp-muted: #64748B;
+  --cp-card-bg: rgba(255, 255, 255, 0.94);
+  --cp-border: rgba(15, 23, 42, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Section
+   -------------------------------------------------------------------------- */
+.cp-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 60px 0 75px;
+  background:
+    radial-gradient(circle at 8% 15%, rgba(217, 119, 6, 0.16), transparent 35%),
+    radial-gradient(circle at 92% 75%, rgba(180, 83, 9, 0.12), transparent 30%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+  border-bottom: 1px solid var(--cp-border);
+}
+
+.cp-hero {
+  min-height: 620px;
+  padding: 84px 0 70px;
+  color: #fffaf2;
+  background: #21170f;
+}
+.cp-hero-background {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.72) contrast(1.06);
+  transform: scale(1.025);
+  animation: cp-banner-image 1s cubic-bezier(.22, 1, .36, 1) both;
+}
+.cp-hero-wash {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(25,18,12,.96) 0%, rgba(27,19,12,.87) 40%, rgba(25,18,12,.45) 70%, rgba(20,15,10,.3) 100%), linear-gradient(0deg, rgba(20,14,9,.65), transparent 52%);
+}
+@keyframes cp-banner-image { from { opacity: .75; transform: scale(1.07); } to { opacity: 1; transform: scale(1.025); } }
+.cp-hero-mesh { z-index: -1; opacity: .22; background-image: linear-gradient(rgba(245,213,158,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(245,213,158,.22) 1px, transparent 1px); mask-image: linear-gradient(90deg, #000, transparent 58%); }
+.cp-breadcrumb a, .cp-breadcrumb-current { color: #efba65; }
+.cp-breadcrumb span { color: #dacdbd; }
+.cp-pill { border-color: rgba(244,188,101,.4); color: #efba65; background: rgba(255,255,255,.1); box-shadow: none; }
+.cp-hero h1 { max-width: 660px; color: #fffaf2; font-size: clamp(42px, 4.8vw, 68px); line-height: .98; }
+.cp-hero h1 span { background: linear-gradient(135deg, #efba65, #d99030); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.cp-hero-lead { color: #e1d4c3; }
+.cp-hero-trust { border-top-color: rgba(255,255,255,.2); }
+.cp-hero-trust > div strong { color: #fffaf2; }
+.cp-hero-trust > div span { color: #ded1c0; }
+.cp-hero-trust i { background: rgba(255,255,255,.2); }
+.cp-hero-image-wrapper { border-color: rgba(255,255,255,.34); background: rgba(255,255,255,.1); box-shadow: 0 28px 70px rgba(0,0,0,.28); }
+
+.cp-hero-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.25;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, #000 60%, transparent 100%);
+}
+
+.cp-hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.cp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.cp-breadcrumb a {
+  color: var(--cp-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cp-breadcrumb a:hover {
+  color: var(--cp-amber-dark);
+}
+
+.cp-breadcrumb span {
+  color: #CBD5E1;
+}
+
+.cp-breadcrumb-current {
+  color: var(--cp-amber-dark);
+  font-weight: 700;
+}
+
+.cp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.08);
+  color: var(--cp-amber-dark);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.cp-pill-light {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+
+.cp-hero h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 850;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--cp-ink);
+  margin: 0 0 18px;
+}
+
+.cp-hero h1 span {
+  display: block;
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cp-hero-lead {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--cp-muted);
+  max-width: 580px;
+  margin: 0 0 28px;
+}
+
+.cp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.cp-hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid var(--cp-border);
+}
+
+.cp-hero-trust > div strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--cp-ink);
+}
+
+.cp-hero-trust > div span {
+  font-size: 11px;
+  color: var(--cp-muted);
+}
+
+.cp-hero-trust i {
+  width: 1px;
+  height: 24px;
+  background: var(--cp-border);
+  display: block;
+}
+
+/* 3D Hero Visual Container */
+.cp-hero-visual {
+  position: relative;
+  perspective: 1200px;
+}
+
+.cp-hero-image-wrapper {
+  position: relative;
+  border-radius: 26px;
+  overflow: visible;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  box-shadow: 0 28px 70px -15px rgba(15, 23, 42, 0.16);
+  transform: perspective(1200px) rotateY(-3deg) rotateX(2deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cp-hero-image-wrapper:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+.cp-hero-main-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Floating badges */
+.cp-floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px -8px rgba(15, 23, 42, 0.15);
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.cp-floating-badge:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
+.badge-top {
+  top: -14px;
+  right: -14px;
+}
+
+.badge-bottom {
+  bottom: -16px;
+  left: -14px;
+}
+
+.badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--cp-amber-dark);
+  display: grid;
+  place-items: center;
+}
+
+.cp-floating-badge strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--cp-ink);
+  line-height: 1.2;
+}
+
+.cp-floating-badge small {
+  font-size: 10px;
+  color: var(--cp-muted);
+}
+
+/* --------------------------------------------------------------------------
+   2. Portfolio & Deliverables Section (Filter Tabs)
+   -------------------------------------------------------------------------- */
+.cp-portfolio-section {
+  background: #FAF8F5;
+  border-bottom: 1px solid var(--cp-border);
+}
+
+.cp-tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.cp-tab-btn {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--cp-border);
+  background: #FFFFFF;
+  color: var(--cp-slate);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cp-tab-btn:hover {
+  border-color: rgba(217, 119, 6, 0.4);
+  color: var(--cp-amber-dark);
+  background: #FDFBF7;
+}
+
+.cp-tab-btn.active {
+  background: var(--cp-ink);
+  color: #FFFFFF;
+  border-color: var(--cp-ink);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+}
+
+.cp-deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 26px;
+}
+
+.cp-deliverable-card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cp-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cp-card-tag {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cp-amber-dark);
+  background: rgba(217, 119, 6, 0.1);
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.cp-card-format {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cp-muted);
+}
+
+.cp-card-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.cp-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FAF8F5;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--cp-amber-dark);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.cp-deliverable-card:hover .cp-icon-box {
+  background: var(--cp-amber);
+  color: #FFFFFF;
+  border-color: var(--cp-amber);
+  transform: scale(1.08);
+}
+
+.cp-card-icon-title h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--cp-ink);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.cp-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cp-muted);
+  margin: 0 0 20px;
+}
+
+.cp-card-features {
+  background: #FAF8F5;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 22px;
+}
+
+.cp-card-features strong {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 750;
+  color: var(--cp-ink);
+  margin-bottom: 8px;
+}
+
+.cp-card-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-card-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--cp-slate);
+  line-height: 1.4;
+}
+
+.cp-check-icon {
+  color: var(--cp-amber-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cp-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.cp-card-link {
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--cp-amber-dark);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease;
+}
+
+.cp-card-link:hover {
+  transform: translateX(4px);
+  color: var(--cp-amber);
+}
+
+/* --------------------------------------------------------------------------
+   3. Pedagogical Engine (4 Pillars & Center Banner)
+   -------------------------------------------------------------------------- */
+.cp-pedagogy-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 46px;
+}
+
+.cp-pedagogy-header-copy {
+  max-width: 680px;
+}
+
+.cp-pedagogy-header-copy h2 {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 850;
+  color: var(--cp-ink);
+  margin: 8px 0 12px;
+  line-height: 1.2;
+}
+
+.cp-pedagogy-header-copy p {
+  font-size: 15px;
+  color: var(--cp-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cp-pedagogy-header-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--cp-border);
+  border-radius: 18px;
+  padding: 16px 22px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cp-pedagogy-header-badge strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--cp-amber);
+  line-height: 1;
+}
+
+.cp-pedagogy-header-badge span {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--cp-muted);
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+.cp-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.cp-pillar-card {
+  padding: 28px 24px;
+}
+
+.cp-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cp-pillar-num {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--cp-amber);
+  background: rgba(217, 119, 6, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.cp-pillar-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #FAF8F5;
+  color: var(--cp-amber-dark);
+  display: grid;
+  place-items: center;
+}
+
+.cp-pillar-sub {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cp-muted);
+}
+
+.cp-pillar-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--cp-ink);
+  margin: 6px 0 10px;
+  line-height: 1.3;
+}
+
+.cp-pillar-card p {
+  font-size: 12.5px;
+  color: var(--cp-muted);
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.cp-pillar-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-pillar-points li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--cp-slate);
+  font-weight: 600;
+}
+
+.cp-pillar-points svg {
+  color: var(--cp-amber);
+}
+
+/* Center Visual Banner */
+.cp-pedagogy-banner {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.2);
+}
+
+.cp-banner-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.cp-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.72) 55%, rgba(15, 23, 42, 0.3) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px;
+  gap: 40px;
+  color: #FFFFFF;
+}
+
+.cp-banner-tag {
+  font-size: 10.5px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F59E0B;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cp-banner-overlay h3 {
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 850;
+  margin: 0 0 10px;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.cp-banner-overlay p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #CBD5E1;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Production Roadmap Timeline
+   -------------------------------------------------------------------------- */
+.cp-roadmap-section {
+  background: #FAF8F5;
+  border-top: 1px solid var(--cp-border);
+  border-bottom: 1px solid var(--cp-border);
+}
+
+.cp-roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+}
+
+.cp-roadmap-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-node-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  color: #FFFFFF;
+  font-weight: 850;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.3);
+  margin-bottom: 16px;
+  z-index: 2;
+}
+
+.cp-node-content {
+  padding: 22px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-node-header {
+  margin-bottom: 10px;
+}
+
+.cp-node-header h3 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--cp-ink);
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+.cp-node-duration {
+  font-size: 10.5px;
+  font-weight: 750;
+  color: var(--cp-amber-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cp-node-content p {
+  font-size: 12px;
+  color: var(--cp-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Discipline Coverage Matrix
+   -------------------------------------------------------------------------- */
+.cp-two-col-header {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.cp-two-col-header h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 850;
+  color: var(--cp-ink);
+  margin: 6px 0 0;
+}
+
+.cp-two-col-header p {
+  font-size: 15px;
+  color: var(--cp-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cp-disciplines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.cp-discipline-card {
+  padding: 26px;
+}
+
+.cp-discipline-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.cp-discipline-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--cp-amber-dark);
+  display: grid;
+  place-items: center;
+}
+
+.cp-discipline-title-row h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cp-ink);
+  margin: 0;
+}
+
+.cp-topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cp-topic-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--cp-slate);
+  font-weight: 600;
+}
+
+.cp-topic-check {
+  color: var(--cp-amber);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Comparison Table
+   -------------------------------------------------------------------------- */
+.cp-comparison-section {
+  background: #FAF8F5;
+  border-top: 1px solid var(--cp-border);
+}
+
+.cp-comparison-table-wrapper {
+  overflow-x: auto;
+  padding: 20px;
+  background: #FFFFFF;
+}
+
+.cp-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.cp-comparison-table th {
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cp-ink);
+  border-bottom: 2px solid var(--cp-border);
+}
+
+.cp-comparison-table th.cp-highlight-col {
+  color: var(--cp-amber-dark);
+  background: rgba(217, 119, 6, 0.06);
+  border-radius: 12px 12px 0 0;
+}
+
+.cp-comparison-table td {
+  padding: 18px 20px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  vertical-align: top;
+}
+
+.cp-criterion-cell {
+  font-weight: 750;
+  color: var(--cp-ink);
+  min-width: 180px;
+}
+
+.cp-muted-cell {
+  color: var(--cp-muted);
+  min-width: 200px;
+}
+
+.cp-highlight-cell {
+  background: rgba(217, 119, 6, 0.05);
+  color: var(--cp-ink);
+  font-weight: 650;
+  min-width: 240px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cp-win-icon {
+  color: var(--cp-amber-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   7. FAQs Section
+   -------------------------------------------------------------------------- */
+.cp-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cp-faq-card {
+  overflow: hidden;
+  border: 1px solid var(--cp-border);
+  transition: all 0.25s ease;
+}
+
+.cp-faq-card.open {
+  border-color: rgba(217, 119, 6, 0.35);
+  box-shadow: 0 14px 34px -8px rgba(217, 119, 6, 0.12);
+}
+
+.cp-faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.cp-faq-trigger span {
+  font-size: 15px;
+  font-weight: 750;
+  color: var(--cp-ink);
+}
+
+.cp-faq-chevron {
+  color: var(--cp-muted);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.cp-faq-card.open .cp-faq-chevron {
+  transform: rotate(180deg);
+  color: var(--cp-amber);
+}
+
+.cp-faq-answer {
+  padding: 0 24px 22px;
+  animation: cpFaqFade 0.25s ease both;
+}
+
+.cp-faq-answer p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--cp-muted);
+  margin: 0;
+}
+
+@keyframes cpFaqFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   8. Final Conversion CTA Section
+   -------------------------------------------------------------------------- */
+.cp-final-cta-section {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  padding: 75px 0;
+  color: #FFFFFF;
+}
+
+.cp-final-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cp-cta-copy h2 {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 850;
+  color: #FFFFFF;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.cp-cta-copy p {
+  font-size: 15px;
+  color: #FEF3C7;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cp-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .cp-hero-inner,
+  .cp-two-col-header,
+  .cp-final-cta-inner {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cp-roadmap-timeline {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cp-banner-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cp-hero-trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cp-hero-trust i {
+    display: none;
+  }
+
+  .cp-pedagogy-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cp-deliverables-grid,
+  .cp-pillars-grid,
+  .cp-disciplines-grid {
+    grid-template-columns: 1fr;
+  }
+}

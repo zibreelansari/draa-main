@@ -51,45 +51,40 @@ const challenges = [
 
 const solutions = [
   {
-    number: '01',
     icon: BookOpen,
-    title: 'Content & Publishing',
+    title: 'Educational Content Development',
     text: 'Research-led books, digital publications, courseware, assessments and custom learning resources.',
     tags: ['Books & e-books', 'Study resources', 'Institutional content'],
     path: '/services/content-publishing',
     image: '/brand/corporate/stock/writing-content.jpg',
   },
   {
-    number: '02',
     icon: GraduationCap,
-    title: 'Professional Learning',
+    title: 'Academic & Professional Training',
     text: 'Faculty development, student skill programmes, leadership training and career-readiness workshops.',
     tags: ['Workshops', 'Certification', 'Skill development'],
     path: '/services/professional-learning',
     image: '/brand/corporate/stock/team-learning.jpg',
   },
   {
-    number: '03',
     icon: CalendarDays,
-    title: 'Education Events',
+    title: 'Educational Events & Conferences',
     text: 'Conferences, seminars, webinars, competitions and knowledge-sharing programmes with end-to-end support.',
     tags: ['Conferences', 'Webinars', 'Education fairs'],
     path: '/services/education-events',
     image: '/brand/corporate/stock/event-stage.jpg',
   },
   {
-    number: '04',
     icon: BriefcaseBusiness,
-    title: 'Academic Advisory',
+    title: 'Educational Consultancy',
     text: 'Practical consultancy for curriculum, institutional development, admissions and quality frameworks.',
     tags: ['Academic planning', 'Institutional quality', 'Mentorship'],
     path: '/services/academic-advisory',
     image: '/brand/corporate/stock/classroom.jpg',
   },
   {
-    number: '05',
     icon: Laptop2,
-    title: 'Digital Learning',
+    title: 'Digital Learning Solutions',
     text: 'Accessible learning platforms, online courses, virtual classrooms and assessment-led digital experiences.',
     tags: ['Learning platforms', 'Virtual delivery', 'Digital assessment'],
     path: '/services/digital-learning',
@@ -106,7 +101,7 @@ const audiences = [
 
 export default function DraaCorporateHome() {
   return (
-    <div className="draa-corp">
+    <div className="draa-corp draa-corp-home">
       <SEO
         title="Education Services & Knowledge Management"
         siteName="DRAA"
@@ -119,16 +114,17 @@ export default function DraaCorporateHome() {
       <main>
         <section className="draa-corp-hero" aria-labelledby="draa-corp-title">
           <div className="draa-corp-hero-grid" aria-hidden="true" />
+          <div className="draa-corp-hero-aurora" aria-hidden="true" />
           <div className="draa-corp-shell draa-corp-hero-inner">
             <div className="draa-corp-hero-copy">
               <span className="draa-corp-pill"><Sparkles size={15} /> Education with purpose. Knowledge with impact.</span>
               <p className="draa-corp-overline">DRAA (OPC) PRIVATE LIMITED</p>
-              <h1 id="draa-corp-title">Empowering education.<span>Enriching futures.</span></h1>
+              <h1 id="draa-corp-title">Empowering education<span>Enriching futures</span></h1>
               <p className="draa-corp-hero-lead">
                 We design content, learning programmes, education events, institutional solutions and digital experiences that turn knowledge into measurable outcomes.
               </p>
               <div className="draa-corp-actions">
-                <a href="/#solutions" className="draa-corp-button draa-corp-button-dark">Explore our capabilities <ArrowRight size={18} /></a>
+                <a href="/#solutions" className="draa-corp-button draa-corp-button-dark">Explore our services <ArrowRight size={18} /></a>
                 <a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" className="draa-corp-button draa-corp-button-light"><Landmark size={18} /> Study in India portal</a>
               </div>
               <div className="draa-corp-trust-row">
@@ -140,10 +136,10 @@ export default function DraaCorporateHome() {
               </div>
             </div>
 
-            <div className="draa-corp-hero-visual" aria-label="DRAA's five education capabilities">
+            <div className="draa-corp-hero-visual" aria-label="DRAA's five education services">
               <div className="draa-corp-visual-meta" aria-hidden="true">
                 <span>Integrated education ecosystem</span>
-                <strong>05 capabilities</strong>
+                <strong>Connected services</strong>
               </div>
               <div className="draa-corp-visual-orbit" aria-hidden="true">
                 <i className="draa-orbit-node draa-orbit-node-one" />
@@ -152,6 +148,7 @@ export default function DraaCorporateHome() {
                 <i className="draa-orbit-node draa-orbit-node-four" />
                 <i className="draa-orbit-node draa-orbit-node-five" />
               </div>
+              <div className="draa-corp-visual-scan" aria-hidden="true" />
               <div className="draa-corp-visual-brand">
                 <img src="/brand/draa-mark.png" alt="DRAA logo" />
                 <strong>DRAA</strong>
@@ -164,12 +161,13 @@ export default function DraaCorporateHome() {
               <div className="draa-corp-capability capability-five"><Laptop2 size={17} /> Digital</div>
             </div>
           </div>
+          <div className="draa-corp-hero-scroll" aria-hidden="true"><span>Scroll to explore</span><i /></div>
         </section>
 
         <section className="draa-corp-proof-band">
           <div className="draa-corp-shell">
             <p>Built for meaningful educational growth</p>
-            <div><span><Users size={17} /> Learners</span><span><Building2 size={17} /> Institutions</span><span><BriefcaseBusiness size={17} /> Professionals</span><span><Handshake size={17} /> Organisations</span></div>
+            <div className="draa-corp-proof-track"><span><Users size={17} /> Learners</span><span><Building2 size={17} /> Institutions</span><span><BriefcaseBusiness size={17} /> Professionals</span><span><Handshake size={17} /> Organisations</span></div>
           </div>
         </section>
 
@@ -177,7 +175,7 @@ export default function DraaCorporateHome() {
           <div className="draa-corp-shell draa-corp-two-column">
             <div>
               <span className="draa-corp-section-label">Who we are</span>
-              <h2>An education partner built around outcomes.</h2>
+              <h2>An education partner built around outcomes</h2>
             </div>
             <div className="draa-corp-about-copy">
               <p>DRAA is a New Delhi-based education services and knowledge management company established in June 2023. We bring together academic insight, content expertise, programme delivery and technology to support the future of learning in Bharat and beyond.</p>
@@ -204,13 +202,12 @@ export default function DraaCorporateHome() {
           <div className="draa-corp-shell">
             <div className="draa-corp-section-heading">
               <span className="draa-corp-section-label">The need we address</span>
-              <h2>Better learning begins with the right structure.</h2>
+              <h2>Better learning begins with the right structure</h2>
               <p>We connect the parts of education that are too often treated separately.</p>
             </div>
             <div className="draa-corp-challenge-grid">
-              {challenges.map(({ icon: Icon, title, text }, index) => (
+              {challenges.map(({ icon: Icon, title, text }) => (
                 <article key={title} className="draa-corp-challenge-card">
-                  <span className="draa-corp-card-index">0{index + 1}</span>
                   <span className="draa-corp-icon-box"><Icon size={23} /></span>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -224,14 +221,14 @@ export default function DraaCorporateHome() {
           <div className="draa-corp-shell">
             <div className="draa-corp-section-heading draa-corp-section-heading-light">
               <span className="draa-corp-section-label">What we do</span>
-              <h2>Five capabilities. One connected education partner.</h2>
+              <h2>Five services — One connected education partner</h2>
               <p>Each engagement can stand alone or combine into a complete solution.</p>
             </div>
             <div className="draa-corp-solution-grid">
-              {solutions.map(({ number, icon: Icon, title, text, tags, path, image }) => (
+              {solutions.map(({ icon: Icon, title, text, tags, path, image }) => (
                 <Link key={title} to={path} className="draa-corp-solution-card">
                   <img className="draa-corp-solution-image" src={image} alt="" loading="lazy" />
-                  <div className="draa-corp-solution-top"><span>{number}</span><Icon size={25} /></div>
+                  <div className="draa-corp-solution-top"><Icon size={25} /></div>
                   <h3>{title}</h3>
                   <p>{text}</p>
                   <ul>{tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
@@ -246,7 +243,7 @@ export default function DraaCorporateHome() {
           <div className="draa-corp-shell draa-corp-study-card">
             <div className="draa-corp-study-copy">
               <span className="draa-corp-section-label">Study in India guidance</span>
-              <h2>Make the journey to Indian higher education easier to understand.</h2>
+              <h2>Make the journey to Indian higher education easier to understand</h2>
               <p>DRAA’s guidance hub will help international learners discover programmes, understand eligibility, explore scholarships and prepare for each admission milestone—with official government services clearly identified.</p>
               <div className="draa-corp-study-actions">
                 <a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" className="draa-corp-button draa-corp-button-gold">Open the DRAA portal <ArrowRight size={18} /></a>
@@ -267,12 +264,12 @@ export default function DraaCorporateHome() {
           <div className="draa-corp-shell draa-corp-two-column">
             <div>
               <span className="draa-corp-section-label">Learning &amp; events</span>
-              <h2>Programmes that move people from insight to action.</h2>
+              <h2>Programmes that move people from insight to action</h2>
             </div>
             <div className="draa-corp-learning-list">
               <Link to="/learning-programs"><Presentation size={22} /><span><strong>Professional learning</strong>Workshops, faculty development and certification programmes.</span><ArrowRight size={17} /></Link>
               <Link to="/events"><CalendarDays size={22} /><span><strong>Knowledge-sharing events</strong>Conferences, seminars, webinars and education fairs.</span><ArrowRight size={17} /></Link>
-              <div><Users size={22} /><span><strong>Custom institutional programmes</strong>Solutions designed around a defined academic or organisational need.</span></div>
+              <div><Users size={22} /><span><strong>Custom institutional programmes</strong>Services designed around a defined academic or organisational need.</span></div>
             </div>
           </div>
         </section>
@@ -281,13 +278,12 @@ export default function DraaCorporateHome() {
           <div className="draa-corp-shell">
             <div className="draa-corp-section-heading">
               <span className="draa-corp-section-label">Who we support</span>
-              <h2>Solutions shaped around the people and institutions we serve.</h2>
+              <h2>Services shaped around the people and institutions we serve</h2>
               <p>We begin with the audience, the context and the desired learning outcome—not with a one-size-fits-all product.</p>
             </div>
             <div className="draa-corp-audience-grid">
-              {audiences.map(({ icon: Icon, title, text }, index) => (
+              {audiences.map(({ icon: Icon, title, text }) => (
                 <article key={title}>
-                  <span>0{index + 1}</span>
                   <Icon size={24} />
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -309,7 +305,7 @@ export default function DraaCorporateHome() {
         </section>
       </main>
 
-      <footer className="draa-corp-footer">
+      <footer className="draa-corp-footer draa-corp-footer--home">
         <div className="draa-corp-shell draa-corp-footer-main">
           <div className="draa-corp-footer-brand">
             <div><img src="/brand/draa-mark.png" alt="DRAA logo" /><strong>DRAA</strong></div>

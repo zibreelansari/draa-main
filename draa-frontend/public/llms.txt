@@ -13,7 +13,7 @@
 
 ## Services
 - [Content & Publishing](https://draa.in/services/content-publishing)
-- [Professional Learning](https://draa.in/services/professional-learning)
-- [Education Events](https://draa.in/services/education-events)
-- [Academic Advisory](https://draa.in/services/academic-advisory)
-- [Digital Learning](https://draa.in/services/digital-learning)
+- [Training & Capacity Building](https://draa.in/services/professional-learning)
+- [Events & Conferences](https://draa.in/services/education-events)
+- [Advisory & Institutional Solutions](https://draa.in/services/academic-advisory)
+- [Digital Experiences & Platforms](https://draa.in/services/digital-learning)

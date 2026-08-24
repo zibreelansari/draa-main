@@ -32,7 +32,7 @@ export default function EventsPage() {
           <div className="draa-corp-shell events-hero-inner">
             <div>
               <span className="editorial-kicker"><Sparkles size={13} /> Events &amp; conferences</span>
-              <h1>Conversations today.<span>Impact tomorrow.</span></h1>
+              <h1>Conversations today<span>Impact tomorrow</span></h1>
               <p>DRAA brings educators, leaders, innovators and change-makers together to exchange ideas, build capability and shape the future of learning.</p>
               <div className="editorial-actions"><a href="#upcoming" className="editorial-button editorial-button-gold">Register now <ArrowRight size={16} /></a><Link to="/contact?subject=Educational%20Events" className="editorial-button editorial-button-light">Host an event <ArrowRight size={16} /></Link></div>
             </div>
@@ -57,8 +57,8 @@ export default function EventsPage() {
 
         <section className="events-value editorial-section editorial-section-tint">
           <div className="draa-corp-shell events-value-grid">
-            <div className="events-reasons"><span className="editorial-eyebrow">Why attend DRAA events?</span><h2>Ideas become useful when people connect.</h2>{[[GraduationCap,'Learn from global experts'],[Handshake,'Build a diverse professional network'],[BarChart3,'Discover actionable insight'],[Award,'Earn meaningful recognition']].map(([Icon,text])=>{const I=Icon as typeof GraduationCap;return <p key={String(text)}><I size={17}/>{String(text)}</p>})}</div>
-            <div className="events-services"><span className="editorial-eyebrow">DRAA event services</span><h2>End-to-end delivery.</h2><div>{[[Megaphone,'Strategy & planning'],[Presentation,'Content & curation'],[Mic2,'Speaker management'],[Users,'Marketing & promotion'],[Laptop2,'Virtual experience'],[BarChart3,'Analytics & reporting']].map(([Icon,text])=>{const I=Icon as typeof Megaphone;return <article key={String(text)}><I size={19}/><strong>{String(text)}</strong></article>})}</div><Link to="/contact?subject=Educational%20Events">Host an event with DRAA <ArrowRight size={14}/></Link></div>
+            <div className="events-reasons"><span className="editorial-eyebrow">Why attend DRAA events?</span><h2>Ideas become useful when people connect</h2>{[[GraduationCap,'Learn from global experts'],[Handshake,'Build a diverse professional network'],[BarChart3,'Discover actionable insight'],[Award,'Earn meaningful recognition']].map(([Icon,text])=>{const I=Icon as typeof GraduationCap;return <p key={String(text)}><I size={17}/>{String(text)}</p>})}</div>
+            <div className="events-services"><span className="editorial-eyebrow">DRAA event services</span><h2>End-to-end delivery</h2><div>{[[Megaphone,'Strategy & planning'],[Presentation,'Content & curation'],[Mic2,'Speaker management'],[Users,'Marketing & promotion'],[Laptop2,'Virtual experience'],[BarChart3,'Analytics & reporting']].map(([Icon,text])=>{const I=Icon as typeof Megaphone;return <article key={String(text)}><I size={19}/><strong>{String(text)}</strong></article>})}</div><Link to="/contact?subject=Educational%20Events">Host an event with DRAA <ArrowRight size={14}/></Link></div>
             <div className="events-gallery"><span className="editorial-eyebrow">Past events gallery</span><div><img src="/brand/corporate/stock/event-stage.jpg" alt="Conference stage and audience"/><img src="/brand/corporate/stock/event-networking.jpg" alt="Attendees networking at an event"/><img src="/brand/corporate/stock/team-learning.jpg" alt="Participants collaborating in a workshop"/></div></div>
           </div>
         </section>

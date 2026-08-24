@@ -14,7 +14,6 @@ export type ServiceIcon =
 
 export interface ServiceDetail {
   slug: string;
-  number: string;
   title: string;
   shortTitle: string;
   eyebrow: string;
@@ -34,10 +33,9 @@ export interface ServiceDetail {
 export const services: ServiceDetail[] = [
   {
     slug: 'content-publishing',
-    number: '01',
-    title: 'Rigorous content. Real impact.',
-    shortTitle: 'Content & Publishing',
-    eyebrow: 'Academic content',
+    title: 'Rigorous content — Real impact',
+    shortTitle: 'Educational Content Development',
+    eyebrow: 'Educational content development',
     summary: 'Clear, credible and audience-ready educational content—from the first content map to the final print or digital resource.',
     intro: 'DRAA brings subject expertise, instructional structure, editorial quality and production discipline into one workflow. We create resources that are accurate, easy to use and aligned with the learner, curriculum and delivery context.',
     image: '/brand/corporate/content-studio.png',
@@ -73,9 +71,8 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'professional-learning',
-    number: '02',
-    title: 'Professional Learning & Training',
-    shortTitle: 'Professional Learning',
+    title: 'Academic & Professional Training',
+    shortTitle: 'Academic & Professional Training',
     eyebrow: 'Capability that transfers to practice',
     summary: 'Practical workshops and development programmes that help educators, students and teams build skills they can use.',
     intro: 'Every programme begins with a real capability need. DRAA combines expert facilitation, applied activities, supporting resources and follow-through so participation leads to confident action—not just attendance.',
@@ -112,9 +109,8 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'education-events',
-    number: '03',
     title: 'Educational Events & Conferences',
-    shortTitle: 'Education Events',
+    shortTitle: 'Educational Events & Conferences',
     eyebrow: 'Knowledge shared with purpose',
     summary: 'Well-curated conferences, seminars, webinars and learning events—planned from concept through participant experience.',
     intro: 'DRAA combines academic curation with dependable event coordination. We shape the theme, programme, speaker journey, participant communication and learning assets so every event has a clear purpose and a professional experience.',
@@ -151,9 +147,8 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'academic-advisory',
-    number: '04',
-    title: 'Academic Advisory & Consultancy',
-    shortTitle: 'Academic Advisory',
+    title: 'Educational Consultancy',
+    shortTitle: 'Educational Consultancy',
     eyebrow: 'Expert direction, practical implementation',
     summary: 'Evidence-informed support for curriculum, programmes, quality systems and institutional development.',
     intro: 'DRAA helps institutions move from a complex academic challenge to a workable plan. Our advisory approach combines stakeholder insight, structured analysis, co-design and implementation support rather than stopping at a report.',
@@ -190,9 +185,8 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'digital-learning',
-    number: '05',
     title: 'Digital Learning Solutions',
-    shortTitle: 'Digital Learning',
+    shortTitle: 'Digital Learning Solutions',
     eyebrow: 'Technology shaped around learning',
     summary: 'Accessible digital learning journeys that connect content, delivery, assessment and learner progress.',
     intro: 'DRAA translates learning requirements into digital experiences that are clear, engaging and scalable. We can support the instructional layer, the content layer and the implementation plan—from an online course to a complete learning platform.',

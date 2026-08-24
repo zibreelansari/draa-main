@@ -14,7 +14,6 @@ import {
   Globe2,
   GraduationCap,
   IndianRupee,
-  Mail,
   MapPin,
   MessageSquareText,
   Plus,
@@ -80,7 +79,7 @@ export default function InstituteDashboard({ data, activeSection, onNavigate, on
   }
 
   if (activeSection === "applications") return <>
-    <PageHeading eyebrow="Admissions workspace" title="Application review" description="Prioritise new applicants, record clear decisions and keep institutional updates visible to students." actions={<button className="workspace-button secondary" type="button"><Mail size={17} />Message applicants</button>} />
+    <PageHeading eyebrow="Admissions workspace" title="Application review" description="Prioritise new applicants, record clear decisions and keep institutional updates visible to students." />
     {message && <p className="workspace-toast success"><CheckCircle2 size={17} />{message}</p>}{error && <p className="workspace-toast error"><AlertCircle size={17} />{error}</p>}
     <section className="workspace-panel" data-dashboard-reveal><div className="application-toolbar"><div className="workspace-filter-tabs" role="group" aria-label="Filter applications">{["ALL", "SUBMITTED", "UNDER_REVIEW", "OFFERED", "DECLINED"].map((status) => <button key={status} type="button" className={applicationFilter === status ? "is-active" : ""} onClick={() => setApplicationFilter(status)}>{status === "ALL" ? "All" : titleCase(status)}<span>{status === "ALL" ? data.applicants.length : data.applicants.filter((applicant) => applicant.status === status).length}</span></button>)}</div><label className="workspace-table-search"><Search size={16} /><input placeholder="Search applicants" aria-label="Search applicants" /></label></div>
       {filteredApplicants.length ? <div className="workspace-table-wrap"><table className="workspace-table"><thead><tr><th>Applicant</th><th>Programme</th><th>Submitted</th><th>Status</th><th><span className="sr-only">Actions</span></th></tr></thead><tbody>{filteredApplicants.map((applicant) => <tr key={applicant.id}><td><div className="table-person"><span>{applicant.studentName.split(" ").map((part) => part[0]).slice(0, 2).join("")}</span><div><strong>{applicant.studentName}</strong><small>{applicant.country || "Country not supplied"} · {applicant.email}</small></div></div></td><td><strong>{applicant.courseTitle}</strong><small>{titleCase(applicant.level)}</small></td><td>{formatDate(applicant.submittedAt)}</td><td><StatusBadge value={applicant.status} /></td><td><button className="workspace-row-action" type="button" onClick={() => setSelectedApplicant(applicant)}>Review <ArrowRight size={15} /></button></td></tr>)}</tbody></table></div> : <EmptyState icon={Users} title="No applications in this view" text="Change the status filter to see other applicants." />}
