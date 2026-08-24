@@ -17,12 +17,12 @@ const companyLinks: NavMenuLink[] = [
 ];
 
 const serviceLinks: NavMenuLink[] = [
-  { label: 'All Services', description: 'View every DRAA capability in one place', href: '/capabilities', featured: true },
-  { label: 'Educational Content Development', description: 'Research-led content, courseware and assessments', href: '/services/content-publishing' },
-  { label: 'Academic & Professional Training', description: 'Practical learning for educators, learners and teams', href: '/services/professional-learning' },
-  { label: 'Educational Events & Conferences', description: 'Purposeful conferences, workshops and forums', href: '/services/education-events' },
-  { label: 'Educational Consultancy', description: 'Academic strategy, quality and implementation', href: '/services/academic-advisory' },
-  { label: 'Digital Learning Solutions', description: 'Learning platforms, courses and digital products', href: '/services/digital-learning' },
+  { label: 'All Services', description: 'Overview of all 5 core business activities', href: '/capabilities', featured: true },
+  { label: 'Educational Content Development', description: 'Study materials, textbooks, question banks & curriculum content', href: '/services/educational-content-development' },
+  { label: 'Academic & Professional Training', description: 'Faculty development, student workshops & corporate training', href: '/services/academic-professional-training' },
+  { label: 'Educational Events & Conferences', description: 'Conferences, seminars, webinars, competitions & summits', href: '/services/educational-events-conferences' },
+  { label: 'Educational Consultancy', description: 'Curriculum planning, accreditation support & academic guidance', href: '/services/educational-consultancy' },
+  { label: 'Digital Learning Solutions', description: 'LMS platforms, virtual classrooms, mobile apps & AI tracking', href: '/services/digital-learning-solutions' },
 ];
 
 const insightLinks: NavMenuLink[] = [

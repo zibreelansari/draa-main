@@ -21,8 +21,11 @@ export default function App() {
         <Route path="/about-draa" element={<AboutDraaPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/capabilities" element={<ServicesOverviewPage />} />
+        <Route path="/services" element={<Navigate to="/capabilities" replace />} />
         <Route path="/services/content-publishing" element={<ContentPublishingPage />} />
+        <Route path="/services/educational-content-development" element={<ContentPublishingPage />} />
         <Route path="/services/digital-learning" element={<DigitalLearningPage />} />
+        <Route path="/services/digital-learning-solutions" element={<DigitalLearningPage />} />
         <Route path="/services/:serviceSlug" element={<ServiceDetailPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/learning-programs" element={<CorporateContentPage slug="learning-programs" />} />

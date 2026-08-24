@@ -257,25 +257,19 @@ export default function ContentPublishingPage() {
             1. HERO SECTION (High Visual Impact & Editorial Rigor)
             ========================================================================= */}
         <section className="cp-hero" aria-labelledby="cp-hero-title">
-          <img
-            className="cp-hero-background"
-            src="https://images.unsplash.com/photo-1599634875158-597d3f647df6?auto=format&fit=crop&w=2200&q=90"
-            alt=""
-          />
-          <div className="cp-hero-wash" aria-hidden="true" />
           <div className="cp-hero-mesh" aria-hidden="true" />
           <div className="draa-corp-shell cp-hero-inner">
             <div className="cp-hero-copy">
               <nav className="cp-breadcrumb" aria-label="Breadcrumb">
                 <Link to="/">Home</Link>
                 <span>/</span>
-                <Link to="/capabilities">Capabilities</Link>
+                <Link to="/capabilities">All Services</Link>
                 <span>/</span>
-                <span className="cp-breadcrumb-current">Academic Content &amp; Publishing</span>
+                <span className="cp-breadcrumb-current">Educational Content Development</span>
               </nav>
 
               <span className="cp-pill">
-                <Sparkles size={14} /> Research-Led Pedagogy &middot; End-to-End Publishing
+                <Sparkles size={14} /> 01. Research-Led Pedagogy &middot; End-to-End Publishing
               </span>
 
               <h1 id="cp-hero-title">
@@ -289,7 +283,7 @@ export default function ContentPublishingPage() {
               <div className="cp-hero-actions">
                 <Link
                   className="draa-corp-button draa-corp-button-gold"
-                  to="/contact?subject=Content%20%26%20Curriculum%20Development"
+                  to="/contact?subject=Educational%20Content%20Development"
                 >
                   Discuss Your Publishing Need <ArrowRight size={17} />
                 </Link>
@@ -321,8 +315,8 @@ export default function ContentPublishingPage() {
             <div className="cp-hero-visual">
               <div className="cp-hero-image-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1695722099520-564bb36a3a6b?auto=format&fit=crop&w=1200&q=88"
-                  alt="Historic Indian college building representing academic excellence"
+                  src="/brand/corporate/stock/textbook_editorial.jpg"
+                  alt="Academic editorial workspace showing textbook manuscript layout, design, and educational publishing"
                   className="cp-hero-main-img"
                 />
                 <div className="cp-floating-badge badge-top">

@@ -1,244 +1,352 @@
-import { useMemo, useState } from 'react';
+import React from 'react';
 import {
   ArrowRight,
-  BookOpenCheck,
+  BookOpen,
+  BriefcaseBusiness,
   Building2,
   CalendarDays,
-  Check,
+  CheckCircle2,
+  ChevronRight,
+  ClipboardList,
   Compass,
   GraduationCap,
   Handshake,
+  HeartHandshake,
   Laptop2,
+  Layers,
   MessageCircle,
-  Search,
+  Presentation,
+  ShieldCheck,
   Sparkles,
   Target,
   Users,
+  Workflow,
+  Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import DraaCorporateFooter from './DraaCorporateFooter';
 import DraaCorporateHeader from './DraaCorporateHeader';
-import SEO from './SEO';
 import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
+import SEO from './SEO';
+import { services, type ServiceIcon } from './serviceData';
+import './DraaCorporateHome.css';
 import './ServicesOverviewPage.css';
 
-type ServiceGroup = 'Content & Learning' | 'Events & Advisory' | 'Digital Platforms';
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  book: BookOpen,
+  calendar: CalendarDays,
+  check: CheckCircle2,
+  clipboard: ClipboardList,
+  graduation: GraduationCap,
+  handshake: Handshake,
+  laptop: Laptop2,
+  presentation: Presentation,
+  shield: ShieldCheck,
+  users: Users,
+  sparkles: Sparkles,
+  compass: Compass,
+  briefcase: BriefcaseBusiness,
+  building: Building2,
+};
 
-const serviceGroups: Array<'All Services' | ServiceGroup> = [
-  'All Services',
-  'Content & Learning',
-  'Events & Advisory',
-  'Digital Platforms',
-];
-
-const services = [
+const engagementModels = [
   {
-    id: 'content-curriculum',
-    group: 'Content & Learning' as ServiceGroup,
-    icon: BookOpenCheck,
-    title: 'Educational Content Development',
-    promise: 'Turn subject expertise into structured, accurate and audience-ready learning resources',
-    description: 'DRAA connects research, curriculum architecture, instructional design, editing and production in one dependable content workflow',
-    capabilities: ['Curriculum and content mapping', 'Books, courseware and study resources', 'Assessments and multimedia learning assets'],
-    bestFor: 'Schools, universities, publishers, training providers and education brands',
-    image: '/brand/corporate/stock/writing-content.jpg',
-    href: '/services/content-publishing',
+    icon: ClipboardList,
+    title: 'Specialist assignment',
+    tag: 'FOCUSED REQUIREMENT',
+    description: 'A defined content, training, advisory or event requirement with fixed milestone delivery.',
   },
   {
-    id: 'training-capacity',
-    group: 'Content & Learning' as ServiceGroup,
-    icon: GraduationCap,
-    title: 'Academic & Professional Training',
-    promise: 'Build practical capability that participants can carry into real academic and professional work',
-    description: 'From faculty development to career readiness, every programme combines expert facilitation, applied practice and useful follow-through',
-    capabilities: ['Faculty and educator development', 'Student skills and career readiness', 'Leadership and institutional capability'],
-    bestFor: 'Educators, students, academic leaders and organisational teams',
-    image: '/brand/corporate/stock/team-learning.jpg',
-    href: '/services/professional-learning',
+    icon: Users,
+    title: 'Custom programme',
+    tag: 'MULTI-SESSION COHORT',
+    description: 'A multi-session or multi-format educational capability solution architected for a specific audience.',
   },
   {
-    id: 'events-conferences',
-    group: 'Events & Advisory' as ServiceGroup,
-    icon: CalendarDays,
-    title: 'Educational Events & Conferences',
-    promise: 'Create purposeful knowledge experiences that people understand, participate in and remember',
-    description: 'We bring programme strategy, curation, speakers, participant communication and live delivery together under one event plan',
-    capabilities: ['Conferences, summits and forums', 'Workshops, webinars and student events', 'Speaker, partner and participant management'],
-    bestFor: 'Institutions, associations, education brands and knowledge partners',
-    image: '/brand/corporate/stock/event-stage.jpg',
-    href: '/services/education-events',
+    icon: Workflow,
+    title: 'End-to-end delivery',
+    tag: 'TURNKEY EXECUTION',
+    description: 'Complete strategy, instructional design, production, event coordination and review under one unified plan.',
   },
   {
-    id: 'advisory-institutional',
-    group: 'Events & Advisory' as ServiceGroup,
-    icon: Handshake,
-    title: 'Educational Consultancy',
-    promise: 'Move from a complex academic challenge to a clear, practical and measurable plan',
-    description: 'Our advisory work combines evidence, stakeholder insight, co-design and implementation support instead of stopping at recommendations',
-    capabilities: ['Curriculum and programme strategy', 'Institutional quality and development', 'Admissions, learner journeys and training strategy'],
-    bestFor: 'Schools, colleges, universities and education-sector organisations',
-    image: '/brand/corporate/stock/classroom.jpg',
-    href: '/services/academic-advisory',
-  },
-  {
-    id: 'digital-platforms',
-    group: 'Digital Platforms' as ServiceGroup,
-    icon: Laptop2,
-    title: 'Digital Learning Solutions',
-    promise: 'Build useful digital products around real learners, teams and operational workflows',
-    description: 'DRAA plans and develops connected web, app and learning experiences with accessible journeys, clear implementation and long-term support in mind',
-    capabilities: ['Websites, apps and institutional portals', 'LMS, online courses and virtual classrooms', 'Digital assessment, UX and implementation support'],
-    bestFor: 'Institutions, education businesses, academies and growing organisations',
-    image: '/brand/corporate/stock/digital-learning.jpg',
-    href: '/services/digital-learning',
+    icon: HeartHandshake,
+    title: 'Ongoing partnership',
+    tag: 'STRATEGIC ALLIANCE',
+    description: 'A structured, long-term institutional relationship spanning multiple academic and capability priorities.',
   },
 ];
 
-const needPaths = [
-  [BookOpenCheck, 'I need stronger learning content', 'content-curriculum'],
-  [GraduationCap, 'I want to build people capability', 'training-capacity'],
-  [CalendarDays, 'I need an event delivered', 'events-conferences'],
-  [Building2, 'I need institutional guidance', 'advisory-institutional'],
-  [Laptop2, 'I need a digital product or platform', 'digital-platforms'],
-] as const;
+import AnimatedHeroBackground from './AnimatedHeroBackground';
 
 export default function ServicesOverviewPage() {
-  const [activeGroup, setActiveGroup] = useState<(typeof serviceGroups)[number]>('All Services');
-  const visibleServices = useMemo(
-    () => activeGroup === 'All Services' ? services : services.filter((service) => service.group === activeGroup),
-    [activeGroup],
-  );
-
-  const jumpToService = (id: string) => {
-    setActiveGroup('All Services');
-    window.requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-  };
-
   return (
-    <div className="draa-corp services-overview-page">
+    <div className="draa-corp capabilities-hub">
       <SEO
-        title="Education Services"
+        title="Our Capabilities & Educational Services | DRAA"
         siteName="DRAA"
-        description="Explore DRAA services in content and curriculum, training, events, institutional advisory and digital platforms"
-        ogImage="https://images.unsplash.com/photo-1599634875158-597d3f647df6?auto=format&fit=crop&w=1600&q=90"
+        description="Explore DRAA's five integrated core capabilities: Educational Content Development, Academic Training, Events & Conferences, Consultancy, and Digital Learning."
+        keywords="DRAA capabilities, educational services, academic publishing, faculty training, education events, educational consultancy, digital learning solutions"
+        ogImage="/brand/corporate/stock/academic_publishing_hero.jpg"
       />
       <DraaCorporateHeader />
+
       <main>
-        <section className="services-overview-hero">
-          <img
-            className="services-overview-hero-image"
-            src="https://images.unsplash.com/photo-1599634875158-597d3f647df6?auto=format&fit=crop&w=2200&q=90"
-            alt="A stately Indian college building with a domed entrance and green lawns"
-          />
-          <div className="services-overview-hero-wash" aria-hidden="true" />
-          <div className="draa-corp-shell services-overview-hero-grid">
-            <div className="services-overview-hero-copy">
-              <span className="services-overview-kicker"><Sparkles size={14} /> Our capabilities</span>
-              <h1>Education services that create <em>outcomes that endure</em></h1>
-              <p>Engage DRAA for one specialist requirement or bring together content, capability building, events, advisory and technology in a connected programme with a clear purpose</p>
-              <div className="services-overview-actions">
-                <a href="#service-finder">Explore all services <ArrowRight size={17} /></a>
-                <Link to="/contact?subject=General%20Enquiry">Discuss your requirement <MessageCircle size={17} /></Link>
+        <section className="cap-hero">
+          <div className="cap-hero-bg-wrap">
+            <img
+              src="/brand/corporate/stock/draa_leadership_executive.jpg"
+              alt="DRAA Education Leadership & Strategy Consultants in Boardroom"
+              className="cap-hero-bg-img"
+            />
+            <div className="cap-hero-overlay" />
+          </div>
+
+          <div className="draa-corp-shell cap-hero-inner">
+            <div className="cap-hero-copy">
+              <span className="cap-pill">
+                <Sparkles size={13} /> OUR CAPABILITIES
+              </span>
+
+              <h1>
+                Solutions that <span>educate.</span>
+                <br />
+                <em>Outcomes that matter.</em>
+              </h1>
+
+              <p className="cap-hero-lead">
+                Engage DRAA for one specialist requirement or combine capabilities into a complete, outcome-driven educational programme tailored to your institution.
+              </p>
+
+              <div className="cap-hero-actions">
+                <a href="#what-we-do" className="draa-corp-button draa-corp-button-gold">
+                  Explore 5 Capabilities <ArrowRight size={16} />
+                </a>
+                <Link to="/contact" className="draa-corp-button draa-corp-button-light">
+                  Discuss Your Needs <MessageCircle size={16} />
+                </Link>
               </div>
-              <dl className="services-overview-proof">
-                <div><dt>Connected</dt><dd>Education services</dd></div>
-                <div><dt>One</dt><dd>Accountable partner</dd></div>
-                <div><dt>Custom</dt><dd>Scope and delivery</dd></div>
-              </dl>
             </div>
+          </div>
 
-            <aside className="services-hero-panel" aria-label="DRAA delivery approach">
-              <span className="services-hero-panel-eyebrow">One accountable partner</span>
-              <strong>From the first brief to meaningful impact</strong>
-              <p>Practical expertise across every part of the education journey</p>
-              <div>
-                <span>Content</span><span>Capability</span><span>Technology</span>
+          {/* Quick Page Jump Navigation Bar */}
+          <div className="draa-corp-shell cap-quick-nav-shell">
+            <div className="cap-quick-nav">
+              <div className="cap-quick-label">
+                <span>ON THIS PAGE</span>
               </div>
-              <i aria-hidden="true" />
-            </aside>
-          </div>
-        </section>
-
-        <section className="services-need-strip" aria-labelledby="services-need-title">
-          <div className="draa-corp-shell">
-            <div><span>Not sure where to begin?</span><h2 id="services-need-title">Start with what you need</h2></div>
-            <div className="services-need-grid">
-              {needPaths.map(([Icon, label, id]) => (
-                <button type="button" key={id} onClick={() => jumpToService(id)}>
-                  <Icon size={19} /><span>{label}</span><ArrowRight size={15} />
-                </button>
-              ))}
+              <div className="cap-quick-links">
+                <a href="#what-we-do" className="cap-quick-link">
+                  <span>01</span> What we do
+                </a>
+                <a href="#ways-to-engage" className="cap-quick-link">
+                  <span>02</span> Ways to engage
+                </a>
+                <a href="#why-draa" className="cap-quick-link">
+                  <span>03</span> Why partner with DRAA
+                </a>
+              </div>
+              <Link to="/contact" className="cap-quick-cta">
+                <span>Not sure where to start?</span>
+                <div className="cap-quick-cta-icon">
+                  <ArrowRight size={14} />
+                </div>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section id="service-finder" className="services-catalogue">
+        {/* =========================================================================
+            2. WHAT WE DO (5 Core Capabilities Blended Bento Cards matching Sample 2)
+            ========================================================================= */}
+        <section id="what-we-do" className="draa-corp-section cap-what-section">
           <div className="draa-corp-shell">
-            <div className="services-catalogue-heading">
-              <div><span>Explore our services</span><h2>Clear capabilities for real education needs</h2></div>
-              <p>Filter by area, compare the scope and open any service for a more detailed view of deliverables, process and outcomes</p>
-            </div>
-            <div className="services-filter" role="group" aria-label="Filter DRAA services">
-              {serviceGroups.map((group) => (
-                <button key={group} type="button" className={activeGroup === group ? 'is-active' : ''} aria-pressed={activeGroup === group} onClick={() => setActiveGroup(group)}>
-                  {group}
-                </button>
-              ))}
-            </div>
-
-            <div className="services-card-list">
-              {visibleServices.map(({ id, group, icon: Icon, title, promise, description, capabilities, bestFor, image, href }) => (
-                <article id={id} className="services-overview-card" key={id}>
-                  <div className="services-overview-card-media">
-                    <img src={image} alt={`${title} team at work`} loading="lazy" />
+            <div className="cap-what-layout">
+              {/* Left Column Intro */}
+              <div className="cap-what-intro">
+                <span className="cap-section-pill">
+                  <Layers size={14} /> WHAT WE DO
+                </span>
+                <h2>Five capabilities. One accountable partner.</h2>
+                <p>
+                  Each capability is meticulously planned for your target audience, delivery context, and desired learning outcome—from primary education and university degrees to enterprise upskilling.
+                </p>
+                <div className="cap-intro-badges">
+                  <div className="cap-intro-badge">
+                    <CheckCircle2 size={16} />
+                    <span>NEP 2020 &amp; OBE Aligned</span>
                   </div>
-                  <div className="services-overview-card-body">
-                    <div className="services-overview-card-title"><span><Icon size={22} /></span><div><small>{group}</small><h3>{title}</h3></div></div>
-                    <strong>{promise}</strong>
-                    <p>{description}</p>
-                    <ul>{capabilities.map((capability) => <li key={capability}><Check size={15} />{capability}</li>)}</ul>
+                  <div className="cap-intro-badge">
+                    <CheckCircle2 size={16} />
+                    <span>100% Client-Owned IP</span>
                   </div>
-                  <aside className="services-overview-card-action">
-                    <span>Best for</span><p>{bestFor}</p>
-                    <Link to={href}>View service details <ArrowRight size={16} /></Link>
-                    <Link to={`/contact?subject=${encodeURIComponent(title)}`}>Request a conversation</Link>
-                  </aside>
-                </article>
-              ))}
+                  <div className="cap-intro-badge">
+                    <CheckCircle2 size={16} />
+                    <span>Turnkey Multi-Modal Handover</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column Bento Cards Grid */}
+              <div className="cap-bento-grid">
+                {services.map((service) => {
+                  const Icon = iconMap[service.icon] || BookOpen;
+                  return (
+                    <Link
+                      key={service.slug}
+                      to={`/services/${service.slug}`}
+                      className={`cap-bento-card cap-bento-card--${service.slug}`}
+                      style={{ '--service-theme': service.themeColor } as React.CSSProperties}
+                    >
+                      <div className="cap-bento-media">
+                        <img src={service.image} alt={service.title} loading="lazy" />
+                        <div className="cap-bento-overlay" />
+                        <div className="cap-bento-icon-badge" style={{ color: service.themeColor }}>
+                          <Icon size={20} />
+                        </div>
+                      </div>
+
+                      <div className="cap-bento-content">
+                        <h3>{service.title}</h3>
+                        <p>{service.summary}</p>
+                        <div className="cap-bento-footer">
+                          <span className="cap-bento-link" style={{ color: service.themeColor }}>
+                            Explore Capability <ArrowRight size={14} />
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="services-model">
-          <div className="draa-corp-shell services-model-grid">
-            <div className="services-model-intro">
-              <span>One delivery model</span>
-              <h2>A clear route from requirement to measurable value</h2>
-              <p>You do not need a finished brief before speaking with DRAA We can help define the need, connect the right services and create a practical delivery plan</p>
-              <Link to="/contact?subject=Project%20Brief">Share your starting point <ArrowRight size={16} /></Link>
-            </div>
-            <div className="services-model-steps">
-              {[
-                [Search, 'Discover', 'Clarify the audience, context and outcome'],
-                [Compass, 'Design', 'Shape the right service mix and delivery plan'],
-                [Users, 'Deliver', 'Coordinate specialists, production and support'],
-                [Target, 'Improve', 'Review evidence and strengthen the next cycle'],
-              ].map(([Icon, title, text]) => {
-                const StepIcon = Icon as typeof Search;
-                return <article key={String(title)}><span><StepIcon size={20} /></span><div><h3>{String(title)}</h3><p>{String(text)}</p></div></article>;
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section className="services-final-cta">
+        {/* =========================================================================
+            3. WAYS TO ENGAGE (4 Clear Support Levels matching Sample 3)
+            ========================================================================= */}
+        <section id="ways-to-engage" className="draa-corp-section cap-engage-section">
           <div className="draa-corp-shell">
-            <div><span>Need more than one service?</span><h2>Build one connected programme with DRAA</h2><p>Combine content, training, events, advisory and digital delivery under one accountable plan</p></div>
-            <Link to="/contact?subject=Connected%20Education%20Programme">Plan a connected programme <ArrowRight size={17} /></Link>
+            <div className="cap-engage-layout">
+              {/* Left Column Intro */}
+              <div className="cap-engage-intro">
+                <span className="cap-section-pill">
+                  <Target size={14} /> WAYS TO ENGAGE
+                </span>
+                <h2>Choose the level of support that fits your requirement.</h2>
+                <p>
+                  Start with a focused single assignment or combine services into a comprehensive, multi-phase programme managed by DRAA with milestone accountability.
+                </p>
+                <div className="cap-engage-action">
+                  <Link to="/contact" className="draa-corp-button draa-corp-button-dark">
+                    Submit a Project Brief <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column 4 Engagement Level Cards */}
+              <div className="cap-engage-grid">
+                {engagementModels.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="cap-engage-card">
+                      <div className="cap-engage-card-top">
+                        <span className="cap-engage-tag">{item.tag}</span>
+                        <div className="cap-engage-icon-wrap">
+                          <Icon size={22} />
+                        </div>
+                      </div>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            4. WHY DRAA (Connected Delivery Advantage)
+            ========================================================================= */}
+        <section id="why-draa" className="draa-corp-section cap-why-section">
+          <div className="draa-corp-shell">
+            <div className="cap-section-header text-center mx-auto">
+              <span className="cap-section-pill">
+                <ShieldCheck size={14} /> THE DRAA ADVANTAGE
+              </span>
+              <h2>Why Institutions Rely on Our Capabilities</h2>
+              <p>
+                We bridge the gap between academic vision and execution reality through our specialized authoring, training, event operations, advisory, and technology teams.
+              </p>
+            </div>
+
+            <div className="cap-advantage-grid">
+              <div className="cap-advantage-card">
+                <div className="cap-adv-icon">
+                  <BookOpen size={24} />
+                </div>
+                <h3>Syllabus &amp; OBE Precision</h3>
+                <p>
+                  Every piece of content, training syllabus, and digital module is rigorously mapped against Bloom’s Taxonomy and institutional credit frameworks.
+                </p>
+              </div>
+
+              <div className="cap-advantage-card">
+                <div className="cap-adv-icon">
+                  <ShieldCheck size={24} />
+                </div>
+                <h3>100% Client Ownership</h3>
+                <p>
+                  Your institution retains full copyright, intellectual property, master source files, and distribution rights with zero recurring licensing royalties.
+                </p>
+              </div>
+
+              <div className="cap-advantage-card">
+                <div className="cap-adv-icon">
+                  <Laptop2 size={24} />
+                </div>
+                <h3>Multi-Format Handover</h3>
+                <p>
+                  From print-ready CMYK pre-press PDFs to accessible ePub3, SCORM packages, and cloud LMS portals—we deliver across every learning modality.
+                </p>
+              </div>
+
+              <div className="cap-advantage-card">
+                <div className="cap-adv-icon">
+                  <Handshake size={24} />
+                </div>
+                <h3>One Accountable Partner</h3>
+                <p>
+                  Eliminate fragmented vendor management. Work with a unified partner capable of driving content, training, events, consultancy, and EdTech simultaneously.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            5. FINAL CONVERSION BANNER (Executive Dark Canvas matching Sample 3 bottom)
+            ========================================================================= */}
+        <section className="cap-final-banner">
+          <div className="draa-corp-shell cap-final-inner">
+            <div className="cap-final-copy">
+              <span className="cap-final-eyebrow">WORK WITH DRAA</span>
+              <h2>Let’s shape the right educational solution.</h2>
+              <p>
+                Share your requirements, cohort details, or institutional roadmap with our team to receive a tailored capabilities blueprint.
+              </p>
+            </div>
+            <div className="cap-final-actions">
+              <Link to="/contact" className="cap-final-cta-btn">
+                Start a conversation <ArrowRight size={17} />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
+
       <DraaCorporateFooter />
       <ScrollToTop />
       <ScrollTop />
