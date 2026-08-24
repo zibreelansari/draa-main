@@ -79,7 +79,7 @@ export const services: ServiceDetail[] = [
     eyebrow: 'Capability that transfers to practice',
     summary: 'Practical workshops and development programmes that help educators, students and teams build skills they can use.',
     intro: 'Every programme begins with a real capability need. DRAA combines expert facilitation, applied activities, supporting resources and follow-through so participation leads to confident action—not just attendance.',
-    image: '/brand/corporate/education-workshop.png',
+    image: '/brand/corporate/education-workshop.webp',
     imageAlt: 'Professional educator facilitating a collaborative learning workshop',
     icon: 'graduation',
     proof: [
@@ -157,7 +157,7 @@ export const services: ServiceDetail[] = [
     eyebrow: 'Expert direction, practical implementation',
     summary: 'Evidence-informed support for curriculum, programmes, quality systems and institutional development.',
     intro: 'DRAA helps institutions move from a complex academic challenge to a workable plan. Our advisory approach combines stakeholder insight, structured analysis, co-design and implementation support rather than stopping at a report.',
-    image: '/brand/corporate/education-workshop.png',
+    image: '/brand/corporate/education-workshop.webp',
     imageAlt: 'Academic leaders collaborating on an institutional development plan',
     icon: 'handshake',
     proof: [

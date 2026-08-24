@@ -45,10 +45,10 @@ const icons: Record<string, typeof Sparkles> = {
 };
 
 const pageImages: Record<string, string> = {
-  'about-draa': '/brand/corporate/education-workshop.png',
-  capabilities: '/brand/corporate/education-workshop.png',
+  'about-draa': '/brand/corporate/education-workshop.webp',
+  capabilities: '/brand/corporate/education-workshop.webp',
   events: '/brand/corporate/learning-event.png',
-  'learning-programs': '/brand/corporate/education-workshop.png',
+  'learning-programs': '/brand/corporate/education-workshop.webp',
   'learning-events': '/brand/corporate/learning-event.png',
   resources: '/brand/corporate/content-studio.png',
   'who-we-support': '/brand/corporate/institutional-partners-v2.png',

@@ -30,7 +30,8 @@ import ScrollTop from "./ScrollTop";
 import "./DraaCorporateHome.css";
 import "./AboutDraaPage.css";
 
-const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || "http://localhost:5175";
+const studyIndiaPortalUrl =
+  import.meta.env.VITE_STUDY_INDIA_URL || "http://localhost:5175";
 
 const promises = [
   {
@@ -63,21 +64,25 @@ const values = [
     icon: Target,
     title: "Purpose",
     text: "Empower education, strengthen institutions and transform communities.",
+    image: "/brand/corporate/stock/purpose.webp",
   },
   {
     icon: Flag,
     title: "Mission",
     text: "Design and deliver solutions that create measurable, sustainable impact.",
+    image: "/brand/corporate/stock/mission.webp"
   },
   {
     icon: Eye,
     title: "Vision",
     text: "A world where quality education unlocks opportunity and excellence for all.",
+    image:"/brand/corporate/stock/values.webp"
   },
   {
     icon: Heart,
     title: "Values",
     text: "Integrity, collaboration, innovation and excellence in everything we do.",
+    image: "/brand/corporate/stock/vision.webp"
   },
 ];
 
@@ -127,7 +132,6 @@ const services = [
   },
 ];
 
-
 const process = [
   [Search, "Discover", "Understand needs and context"],
   [Lightbulb, "Design", "Create strategy and solutions"],
@@ -137,17 +141,49 @@ const process = [
 ];
 
 const educationChallenges = [
-  [BookOpen, "Quality learning content", "Reliable, structured and current resources are not always easy to access."],
-  [GraduationCap, "Learning opportunities", "Learners and professionals need relevant development beyond traditional classrooms."],
-  [Compass, "Expert guidance", "Institutions and individuals benefit from informed academic and capability decisions."],
-  [Laptop2, "Connected knowledge", "Content, platforms and learning data work better when they form one coherent system."],
+  [
+    BookOpen,
+    "Quality learning content",
+    "Reliable, structured and current resources are not always easy to access.",
+  ],
+  [
+    GraduationCap,
+    "Learning opportunities",
+    "Learners and professionals need relevant development beyond traditional classrooms.",
+  ],
+  [
+    Compass,
+    "Expert guidance",
+    "Institutions and individuals benefit from informed academic and capability decisions.",
+  ],
+  [
+    Laptop2,
+    "Connected knowledge",
+    "Content, platforms and learning data work better when they form one coherent system.",
+  ],
 ];
 
 const engagementStreams = [
-  [BookOpen, "Content & publishing", "Educational books, digital publications, study resources and premium learning materials."],
-  [CalendarDays, "Events & partnerships", "Educational conferences, institutional collaborations and responsible sponsorships."],
-  [Handshake, "Consultancy & mentorship", "Educational advisory, training consultation, institutional development and guidance."],
-  [Presentation, "Training & capability building", "Workshops, certification programmes and practical skill development."],
+  [
+    BookOpen,
+    "Content & publishing",
+    "Educational books, digital publications, study resources and premium learning materials.",
+  ],
+  [
+    CalendarDays,
+    "Events & partnerships",
+    "Educational conferences, institutional collaborations and responsible sponsorships.",
+  ],
+  [
+    Handshake,
+    "Consultancy & mentorship",
+    "Educational advisory, training consultation, institutional development and guidance.",
+  ],
+  [
+    Presentation,
+    "Training & capability building",
+    "Workshops, certification programmes and practical skill development.",
+  ],
 ];
 
 export default function AboutDraaPage() {
@@ -261,7 +297,7 @@ export default function AboutDraaPage() {
           <div className="draa-corp-shell about-ref-story-grid">
             <div className="about-ref-story-photo">
               <img
-                src="/brand/corporate/stock/university-building.jpg"
+                src="/brand/corporate/stock/india-gate.png"
                 alt="A university campus representing education and institutional growth"
               />
               <span>
@@ -278,9 +314,9 @@ export default function AboutDraaPage() {
               </h2>
               <p>
                 Incorporated on 28 June 2023 in New Delhi, DRAA (OPC) Private
-                Limited works across teaching, tutoring and training. Our purpose
-                is to help institutions, organisations and learners create
-                education experiences that are relevant, inclusive and
+                Limited works across teaching, tutoring and training. Our
+                purpose is to help institutions, organisations and learners
+                create education experiences that are relevant, inclusive and
                 future-ready.
               </p>
               <small className="about-ref-legal">
@@ -291,13 +327,35 @@ export default function AboutDraaPage() {
               </a>
             </div>
             <div className="about-ref-value-grid">
-              {values.map(({ icon: Icon, title, text }) => (
-                <article key={title}>
-                  <Icon size={23} />
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
+              <div className="about-ref-value-grid">
+                {values.map(({ icon: Icon, title, text, image }) => (
+                  <article
+                    key={title}
+                    className={`about-ref-value-card ${image ? "has-background" : ""}`}
+                    style={
+                      image
+                        ? {
+                            backgroundImage: `
+                linear-gradient(
+                  180deg,
+                  rgba(20, 15, 10, 0.08) 0%,
+                  rgba(20, 15, 10, 0.22) 42%,
+                  rgba(20, 15, 10, 0.90) 100%
+                ),
+                url(${image})
+              `,
+                          }
+                        : undefined
+                    }
+                  >
+                    <Icon size={23} />
+
+                    <h3>{title}</h3>
+
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -353,26 +411,37 @@ export default function AboutDraaPage() {
           <div className="draa-corp-shell">
             <span className="about-ref-label">WHAT WE DO</span>
             <div className="about-ref-service-grid">
-              {services.map(({ icon: Icon, title, text, image, href, external }) => {
-                const cardContent = (
-                  <>
-                  <img src={image} alt="" loading="lazy" />
-                  <div>
-                    <span>
-                      <Icon size={15} />
-                      {title}
-                    </span>
-                    <p>{text}</p>
-                    <ArrowRight size={15} />
-                  </div>
-                  </>
-                );
-                return external ? (
-                  <a href={studyIndiaPortalUrl} target="_blank" rel="noreferrer" key={title}>{cardContent}</a>
-                ) : (
-                  <Link to={href} key={title}>{cardContent}</Link>
-                );
-              })}
+              {services.map(
+                ({ icon: Icon, title, text, image, href, external }) => {
+                  const cardContent = (
+                    <>
+                      <img src={image} alt="" loading="lazy" />
+                      <div>
+                        <span>
+                          <Icon size={15} />
+                          {title}
+                        </span>
+                        <p>{text}</p>
+                        <ArrowRight size={15} />
+                      </div>
+                    </>
+                  );
+                  return external ? (
+                    <a
+                      href={studyIndiaPortalUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={title}
+                    >
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <Link to={href} key={title}>
+                      {cardContent}
+                    </Link>
+                  );
+                },
+              )}
             </div>
           </div>
         </section>

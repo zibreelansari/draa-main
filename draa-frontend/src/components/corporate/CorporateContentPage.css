@@ -1,122 +1,2099 @@
-.corporate-page-loading { min-height: 70vh; display: grid; place-content: center; gap: 12px; background: #f8f3eb; }
-.corporate-page-loading div { width: 260px; height: 16px; border-radius: 999px; background: linear-gradient(90deg, #eee5d8, #fffaf1, #eee5d8); background-size: 200% 100%; animation: corporate-loading 1.3s linear infinite; }
+/* =========================================================
+   DRAA Corporate Content Page
+   Target: wider, cleaner, premium layout like reference image
+   Scope: MAIN + FOOTER ONLY (header/navigation untouched)
+   ========================================================= */
+
+:root {
+  --corp-bg: #fffdf8;
+  --corp-bg-soft: #f6f1e8;
+  --corp-ink: #17140f;
+  --corp-text: #635b50;
+  --corp-muted: #8d8377;
+  --corp-line: #e8dccb;
+  --corp-gold: #bd7b20;
+  --corp-gold-dark: #925b16;
+  --corp-gold-soft: #f3e6d2;
+  --corp-dark: #181510;
+}
+
+/* ---------- shared page width ---------- */
+.corporate-content-page .draa-corp-shell,
+.corporate-page-footer .draa-corp-shell {
+  width: min(calc(100% - 48px), 1240px) !important;
+  max-width: 1240px !important;
+  margin-inline: auto !important;
+}
+
+/* ---------- loading / error ---------- */
+.corporate-page-loading {
+  min-height: 70vh;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  background: var(--corp-bg-soft);
+}
+
+.corporate-page-loading div {
+  width: 260px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #eee5d8, #fffaf1, #eee5d8);
+  background-size: 200% 100%;
+  animation: corporate-loading 1.3s linear infinite;
+}
+
 .corporate-page-loading div:nth-child(2) { width: 390px; height: 42px; }
 .corporate-page-loading div:nth-child(3) { width: 320px; }
-@keyframes corporate-loading { to { background-position: -200% 0; } }
 
-.corporate-page-error { min-height: 70vh; display: grid; place-items: center; padding: 80px 0; background: #f8f3eb; }
-.corporate-page-error span { color: #976019; font-size: 11px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+@keyframes corporate-loading {
+  to { background-position: -200% 0; }
+}
+
+.corporate-page-error {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 80px 0;
+  background: var(--corp-bg-soft);
+}
+
+.corporate-page-error span {
+  color: var(--corp-gold-dark);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
 .corporate-page-error h1 { margin: 14px 0; font-size: 48px; }
 .corporate-page-error p { color: #70675b; }
-.corporate-page-error a { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: #241f18; font-weight: 800; text-decoration: none; }
+.corporate-page-error a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #241f18;
+  font-weight: 800;
+  text-decoration: none;
+}
 
-.corporate-page-hero { position: relative; isolation: isolate; overflow: hidden; padding: 62px 0 68px; background: radial-gradient(circle at 13% 10%, rgba(189,123,32,.16), transparent 29%), linear-gradient(135deg, #f7efe2, #fffdf8 58%, #ede2d1); }
-.corporate-page-grid { position: absolute; inset: 0; z-index: -1; opacity: .24; background-image: linear-gradient(rgba(48,39,28,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(48,39,28,.09) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to right, #000, transparent 74%); }
-.corporate-page-hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 72px; }
-.corporate-page-hero h1 { max-width: 810px; margin: 0; color: #191611; font-size: clamp(44px, 4.6vw, 66px); line-height: 1.02; letter-spacing: -.052em; }
-.corporate-page-hero h1 > span { display: block; color: #bd7b20; font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: -.025em; }
-.corporate-page-hero p { max-width: 720px; margin: 23px 0 0; color: #62594d; font-size: 17px; line-height: 1.75; }
-.corporate-page-hero-mark { position: relative; min-height: 355px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(255,255,255,.13); border-radius: 29px; color: #fff; background: radial-gradient(circle at 75% 17%, rgba(208,148,48,.31), transparent 29%), linear-gradient(145deg, #2b261e, #15130f); box-shadow: 0 34px 70px rgba(55,41,22,.22); transform: perspective(1300px) rotateY(-2deg); }
-.corporate-page-hero-mark img { position: relative; z-index: 2; width: 105px; height: 105px; padding: 5px; object-fit: contain; background: transparent; filter: invert(1) drop-shadow(0 18px 13px rgba(0,0,0,.42)); transition: transform .35s ease; }
-.corporate-page-hero-mark:hover img { transform: scale(1.14) rotateY(-7deg); }
-.corporate-page-hero-mark strong { position: relative; z-index: 2; margin-top: 21px; font-size: 17px; letter-spacing: .08em; text-align: center; }
-.corporate-page-ring { position: absolute; border: 1px solid rgba(218,164,69,.25); border-radius: 50%; }
-.corporate-page-ring-one { width: 250px; height: 250px; }
-.corporate-page-ring-two { width: 320px; height: 320px; }
-.corporate-page-hero-photo { position: relative; min-height: 385px; margin: 0; overflow: hidden; border: 10px solid rgba(255,250,241,.88); border-radius: 28px; background: #241f18; box-shadow: 0 32px 65px rgba(45,33,19,.2), 0 0 0 1px rgba(92,65,30,.08); transform: perspective(1000px) rotateY(-2deg) rotateX(1deg); }
-.corporate-page-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,16,11,.72), transparent 48%); pointer-events: none; }
-.corporate-page-hero-photo img { width: 100%; height: 385px; display: block; object-fit: cover; }
+/* =========================================================
+   HERO
+   ========================================================= */
+.corporate-page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 42px 0 28px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(189,123,32,.07), transparent 28%),
+    linear-gradient(115deg, #fffdf8 0%, #fffaf2 55%, #fbf4e9 100%);
+}
+
+.corporate-page-grid {
+  position: absolute;
+  z-index: -1;
+  right: -170px;
+  bottom: -250px;
+  width: 520px;
+  height: 520px;
+  opacity: .58;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    transparent 0 15px,
+    rgba(189,123,32,.13) 16px 17px
+  );
+  mask-image: linear-gradient(to left, #000 30%, transparent 92%);
+}
+
+.corporate-page-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(520px, 1.14fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.corporate-page-hero h1 {
+  max-width: 560px;
+  margin: 0;
+  color: var(--corp-ink);
+  font-size: clamp(42px, 3.35vw, 56px);
+  line-height: .98;
+  font-weight: 750;
+  letter-spacing: -.048em;
+}
+
+.corporate-page-hero h1 > span {
+  display: block;
+  margin-top: 4px;
+  color: var(--corp-gold);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.05em;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -.022em;
+}
+
+.corporate-page-hero p {
+  max-width: 480px;
+  margin: 18px 0 0;
+  color: var(--corp-text);
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+/* If your component already has CTA links/buttons in hero */
+.corporate-page-hero-inner > div:first-child > a,
+.corporate-page-hero-inner > div:first-child > div a {
+  margin-top: 18px;
+}
+
+.corporate-page-hero-photo {
+  position: relative;
+  min-height: 250px;
+  height: 250px;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+  background: #241f18;
+  box-shadow: 0 18px 42px rgba(45,33,19,.14);
+  transform: none;
+}
+
+.corporate-page-hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,16,11,.45), transparent 50%);
+  pointer-events: none;
+}
+
+.corporate-page-hero-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+
+.corporate-page-hero-photo:hover img { transform: scale(1.025); }
 .corporate-page-hero-photo--capabilities img { object-position: 60% center; }
 .corporate-page-hero-photo--who-we-support img { object-position: 72% center; }
-.corporate-page-hero-photo figcaption { position: absolute; z-index: 1; left: 25px; right: 25px; bottom: 22px; display: flex; align-items: center; justify-content: space-between; color: white; }
-.corporate-page-hero-photo figcaption span { color: #e0bd84; font-size: 10px; font-weight: 900; letter-spacing: .18em; }
-.corporate-page-hero-photo figcaption strong { font-size: 13px; }
 
-.corporate-page-jump { position: sticky; top: 68px; z-index: 20; border-top: 1px solid #eadfce; border-bottom: 1px solid #e5d8c5; background: rgba(255,253,248,.94); backdrop-filter: blur(14px); box-shadow: 0 7px 20px rgba(54,39,20,.05); }
-.corporate-page-jump .draa-corp-shell { min-height: 66px; display: flex; align-items: center; gap: 22px; }
-.corporate-page-jump strong { color: #8d5814; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
-.corporate-page-jump .draa-corp-shell>div { flex: 1; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
-.corporate-page-jump .draa-corp-shell>div::-webkit-scrollbar { display: none; }
-.corporate-page-jump .draa-corp-shell>div a { padding: 8px 11px; border-radius: 8px; color: #5f5549; background: #f4ede2; font-size: 11px; font-weight: 750; text-decoration: none; white-space: nowrap; }
-.corporate-page-jump .draa-corp-shell>div a:hover { color: white; background: #211c16; }
-.corporate-page-jump-help { display: inline-flex; align-items: center; gap: 5px; color: #211c16; font-size: 11px; font-weight: 850; text-decoration: none; white-space: nowrap; }
+.corporate-page-hero-photo figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 14px;
+  left: auto;
+  width: min(300px, calc(100% - 36px));
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 11px 16px;
+  border: 1px solid rgba(214,155,61,.42);
+  border-radius: 9px;
+  color: #fff;
+  background: rgba(24,21,16,.88);
+  backdrop-filter: blur(10px);
+}
 
-.corporate-page-section { padding: 82px 0; background: #fffdf8; scroll-margin-top: 134px; }
-.corporate-page-section--tint { background: #f6f1e8; }
-.corporate-page-heading { max-width: 780px; margin-bottom: 42px; }
-.corporate-page-heading h2 { margin: 0; color: #191611; font-size: clamp(34px, 4vw, 53px); line-height: 1.08; letter-spacing: -.04em; }
-.corporate-page-heading p { max-width: 670px; margin: 17px 0 0; color: #6a6155; font-size: 15px; line-height: 1.7; }
+.corporate-page-hero-photo figcaption span {
+  color: #e3b362;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 
-.corporate-page-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.corporate-page-items--journey { grid-template-columns: repeat(4, 1fr); }
-.corporate-page-items article { position: relative; overflow: hidden; min-height: 232px; padding: 24px; border: 1px solid rgba(45,35,23,.12); border-radius: 17px; background: linear-gradient(145deg, #fffdf8, #f8f1e6); box-shadow: 0 14px 30px rgba(65,45,18,.055); }
-.corporate-page-items article::after { content: ""; position: absolute; width: 120px; height: 120px; right: -65px; bottom: -68px; border: 1px solid rgba(189,123,32,.13); border-radius: 50%; box-shadow: 0 0 0 22px rgba(189,123,32,.028); }
-.corporate-page-item-number { position: absolute; top: 21px; right: 22px; color: #b3a796; font-size: 10px; font-weight: 850; }
-.corporate-page-item-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; color: #915b15; background: #f1e3cd; box-shadow: inset 0 0 0 1px rgba(189,123,32,.09); }
-.corporate-page-useful { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 17px; padding: 5px 8px; border: 1px solid #dec5a0; border-radius: 999px; color: #80500f; background: #f8eedf; font-size: 9px; font-weight: 900; letter-spacing: .03em; }
+.corporate-page-hero-photo figcaption strong {
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* Legacy hero mark kept compatible, but flatter */
+.corporate-page-hero-mark {
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(145deg, #2b261e, #15130f);
+  box-shadow: 0 18px 42px rgba(55,41,22,.18);
+  transform: none;
+}
+
+.corporate-page-hero-mark img {
+  position: relative;
+  z-index: 2;
+  width: 88px;
+  height: 88px;
+  padding: 5px;
+  object-fit: contain;
+  background: transparent;
+  filter: invert(1) drop-shadow(0 12px 10px rgba(0,0,0,.35));
+  transition: transform .35s ease;
+}
+
+.corporate-page-hero-mark:hover img { transform: scale(1.08); }
+.corporate-page-hero-mark strong {
+  position: relative;
+  z-index: 2;
+  margin-top: 16px;
+  font-size: 15px;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+.corporate-page-ring {
+  position: absolute;
+  border: 1px solid rgba(218,164,69,.22);
+  border-radius: 50%;
+}
+.corporate-page-ring-one { width: 220px; height: 220px; }
+.corporate-page-ring-two { width: 290px; height: 290px; }
+
+/* =========================================================
+   JUMP / FEATURE STRIP
+   ========================================================= */
+.corporate-page-jump {
+  position: relative;
+  top: auto;
+  z-index: 10;
+  border-top: 1px solid var(--corp-line);
+  border-bottom: 1px solid var(--corp-line);
+  background: rgba(255,253,248,.98);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.corporate-page-jump .draa-corp-shell {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 22px;
+}
+
+.corporate-page-jump strong {
+  color: var(--corp-gold-dark);
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.corporate-page-jump .draa-corp-shell > div {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  overflow: visible;
+}
+
+.corporate-page-jump .draa-corp-shell > div a {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 18px;
+  border-right: 1px solid var(--corp-line);
+  border-radius: 0;
+  color: #514a40;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.corporate-page-jump .draa-corp-shell > div a:first-child {
+  border-left: 1px solid var(--corp-line);
+}
+
+.corporate-page-jump .draa-corp-shell > div a:hover {
+  color: var(--corp-gold-dark);
+  background: #fbf3e7;
+}
+
+.corporate-page-jump-help {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #211c16;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CONTENT SECTIONS
+   ========================================================= */
+.corporate-page-section {
+  padding: 42px 0 46px;
+  background: var(--corp-bg);
+  scroll-margin-top: 88px;
+}
+
+.corporate-page-section--tint {
+  background: #f7f2e9;
+}
+
+/* Reference-style two-column section: copy left, cards right */
+.corporate-page-section > .draa-corp-shell {
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1fr);
+  align-items: start;
+  gap: 50px;
+}
+
+.corporate-page-heading {
+  max-width: 255px;
+  margin: 18px 0 0;
+}
+
+.corporate-page-heading h2 {
+  margin: 0;
+  color: var(--corp-ink);
+  font-size: clamp(30px, 2.45vw, 40px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+.corporate-page-heading p {
+  max-width: 250px;
+  margin: 14px 0 0;
+  color: var(--corp-text);
+  font-size: 12.5px;
+  line-height: 1.58;
+}
+
+.corporate-page-items {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* 5-card capabilities arrangement: 3 above, 2 below */
+.corporate-page-items:not(.corporate-page-items--journey) article {
+  grid-column: span 2;
+}
+
+.corporate-page-items:not(.corporate-page-items--journey) article:nth-child(4),
+.corporate-page-items:not(.corporate-page-items--journey) article:nth-child(5) {
+  grid-column: span 3;
+}
+
+.corporate-page-items--journey {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.corporate-page-items--journey article {
+  grid-column: auto;
+}
+
+.corporate-page-items article {
+  position: relative;
+  overflow: hidden;
+  min-height: 112px;
+  padding: 15px 17px 14px;
+  border: 1px solid #e5d8c5;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #fffefa, #fbf6ee);
+  box-shadow: 0 3px 10px rgba(65,45,18,.025);
+}
+
+.corporate-page-items article::after {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  right: -53px;
+  bottom: -57px;
+  border: 1px solid rgba(189,123,32,.17);
+  border-radius: 50%;
+  box-shadow: 0 0 0 17px rgba(189,123,32,.032);
+}
+
+.corporate-page-item-number {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  right: auto;
+  min-width: 28px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 7px;
+  border-radius: 5px;
+  color: #a56a19;
+  background: #f4e7d4;
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.corporate-page-item-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #a46312;
+  background: transparent;
+  box-shadow: none;
+}
+
+.corporate-page-useful {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 8px;
+  padding: 4px 7px;
+  border: 1px solid #dec5a0;
+  border-radius: 999px;
+  color: #80500f;
+  background: #f8eedf;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .03em;
+}
+
 .corporate-page-useful + .corporate-page-item-icon { margin-top: 0; }
-.corporate-page-items h3 { margin: 42px 0 10px; color: #282117; font-size: 19px; }
-.corporate-page-items p { margin: 0; color: #6e6559; font-size: 13px; line-height: 1.65; }
-.corporate-page-item-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 15px; color: #8b5714; font-size: 11px; font-weight: 850; text-decoration: none; }
-.corporate-page-item-link:hover { color: #5e390b; }
-.corporate-page-section--statement .corporate-page-heading { max-width: 920px; margin-bottom: 0; padding: 45px; border-left: 4px solid #bd7b20; border-radius: 0 22px 22px 0; background: #fffdf8; box-shadow: 0 18px 40px rgba(65,45,18,.07); }
-.corporate-page-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 30px; padding: 14px 18px; border-radius: 10px; color: #fff; background: #191611; font-size: 12px; font-weight: 800; text-decoration: none; }
-.corporate-page-cta:hover { color: #fff; }
 
-.corporate-page-partner { padding: 75px 0; color: #fff; background: radial-gradient(circle at 84% 15%, rgba(203,143,44,.27), transparent 28%), #191611; }
-.corporate-page-partner .draa-corp-shell { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
-.corporate-page-partner span { color: #dfa752; font-size: 10px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
-.corporate-page-partner h2 { margin: 10px 0 0; color: #fff; font-size: clamp(31px, 3.7vw, 48px); }
-.corporate-page-partner a { flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; padding: 15px 19px; border-radius: 11px; color: #2d261e; background: #fffdf8; font-size: 12px; font-weight: 850; text-decoration: none; }
-.corporate-page-footer .draa-corp-footer-bottom { padding-top: 25px; }
+.corporate-page-items h3 {
+  position: relative;
+  z-index: 2;
+  margin: 32px 42px 6px 0;
+  color: #272019;
+  font-size: 14px;
+  line-height: 1.18;
+  letter-spacing: -.012em;
+}
 
+.corporate-page-items p {
+  position: relative;
+  z-index: 2;
+  max-width: 92%;
+  margin: 0;
+  color: #6a6258;
+  font-size: 10px;
+  line-height: 1.48;
+}
+
+.corporate-page-item-link {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  color: #a36417;
+  font-size: 9px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.corporate-page-item-link:hover { color: #6f410c; }
+
+/* Statement section should stay full-width instead of the two-column grid */
+.corporate-page-section--statement > .draa-corp-shell {
+  display: block;
+}
+
+.corporate-page-section--statement .corporate-page-heading {
+  max-width: 900px;
+  margin: 0;
+  padding: 32px 36px;
+  border-left: 3px solid var(--corp-gold);
+  border-radius: 0 12px 12px 0;
+  background: #fffdf8;
+  box-shadow: 0 12px 30px rgba(65,45,18,.05);
+}
+
+.corporate-page-section--statement .corporate-page-heading p {
+  max-width: 650px;
+}
+
+.corporate-page-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 11px 15px;
+  border-radius: 7px;
+  color: #fff;
+  background: var(--corp-ink);
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.corporate-page-cta:hover {
+  color: #fff;
+  background: #2b251d;
+}
+
+/* =========================================================
+   BOTTOM CTA / FOOTER AREA
+   ========================================================= */
+.corporate-page-partner {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 24px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 86% 20%, rgba(203,143,44,.28), transparent 34%),
+    linear-gradient(100deg, #141410, #211c14 70%, #382814);
+}
+
+.corporate-page-partner::after {
+  content: "CONTENT\A LEARNING\A ADVISORY\A EVENTS\A DIGITAL";
+  white-space: pre;
+  position: absolute;
+  right: 9%;
+  top: 16px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(189,123,32,.22);
+  font-size: 26px;
+  font-weight: 900;
+  line-height: .92;
+  letter-spacing: .02em;
+  pointer-events: none;
+}
+
+.corporate-page-partner .draa-corp-shell {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 44px;
+}
+
+.corporate-page-partner span {
+  color: #dfa752;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.corporate-page-partner h2 {
+  max-width: 650px;
+  margin: 7px 0 0;
+  color: #fff;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(29px, 3vw, 43px);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.corporate-page-partner a {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 17px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 7px;
+  color: #2d261e;
+  background: #fffdf8;
+  font-size: 10px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.corporate-page-partner a:hover {
+  background: #f3e5cf;
+}
+
+.corporate-page-footer .draa-corp-footer-bottom {
+  padding-top: 18px;
+}
+
+/* ---------- page variants ---------- */
 .corporate-content-page--events .corporate-page-hero {
   color: #fff;
-  background: radial-gradient(circle at 82% 18%, rgba(190, 119, 30, .3), transparent 28%), #17140f;
+  background: radial-gradient(circle at 82% 18%, rgba(190,119,30,.30), transparent 28%), #17140f;
 }
+
 .corporate-content-page--events .corporate-page-grid { opacity: .14; }
 .corporate-content-page--events .corporate-page-hero h1 { color: #fff; }
 .corporate-content-page--events .corporate-page-hero p { color: #d5cbbd; }
-.corporate-content-page--events .corporate-page-hero-photo { border-color: rgba(255,255,255,.08); box-shadow: 0 30px 65px rgba(0,0,0,.38); }
-.corporate-content-page--events .corporate-page-hero-photo::after { background: linear-gradient(to top, rgba(15,12,8,.72), rgba(15,12,8,.08)); }
+.corporate-content-page--events .corporate-page-hero-photo {
+  box-shadow: 0 22px 52px rgba(0,0,0,.32);
+}
+.corporate-content-page--events .corporate-page-hero-photo::after {
+  background: linear-gradient(to top, rgba(15,12,8,.72), rgba(15,12,8,.08));
+}
 
 .corporate-content-page--resources .corporate-page-hero-photo,
-.corporate-content-page--learning-programs .corporate-page-hero-photo { transform: perspective(1000px) rotateY(-2deg) rotateZ(1deg); }
+.corporate-content-page--learning-programs .corporate-page-hero-photo {
+  transform: none;
+}
 
 .corporate-content-page--resources .corporate-page-items article:nth-child(2),
 .corporate-content-page--events .corporate-page-items article:nth-child(2) {
   color: #fff;
-  background: radial-gradient(circle at 88% 12%, rgba(195,127,34,.26), transparent 32%), #1a1712;
+  background: radial-gradient(circle at 88% 12%, rgba(195,127,34,.23), transparent 32%), #1a1712;
 }
+
 .corporate-content-page--resources .corporate-page-items article:nth-child(2) h3,
 .corporate-content-page--events .corporate-page-items article:nth-child(2) h3 { color: #fff; }
+
 .corporate-content-page--resources .corporate-page-items article:nth-child(2) p,
 .corporate-content-page--events .corporate-page-items article:nth-child(2) p { color: #c9beaf; }
 
+/* ---------- interaction ---------- */
 @media (hover: hover) and (pointer: fine) {
-  .corporate-page-items article { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
-  .corporate-page-items article:hover { transform: translateY(-5px); border-color: rgba(189,123,32,.24); box-shadow: 0 23px 43px rgba(65,45,18,.11); }
+  .corporate-page-items article {
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+
+  .corporate-page-items article:hover {
+    transform: translateY(-3px);
+    border-color: rgba(189,123,32,.30);
+    box-shadow: 0 13px 28px rgba(65,45,18,.09);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1100px) {
+  .corporate-content-page .draa-corp-shell,
+  .corporate-page-footer .draa-corp-shell {
+    width: min(calc(100% - 40px), 960px) !important;
+  }
+
+  .corporate-page-hero-inner {
+    grid-template-columns: minmax(0, .9fr) minmax(430px, 1.1fr);
+    gap: 36px;
+  }
+
+  .corporate-page-section > .draa-corp-shell {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 34px;
+  }
 }
 
 @media (max-width: 860px) {
-  .corporate-page-hero-inner { grid-template-columns: 1fr; gap: 45px; }
-  .corporate-page-hero-mark { width: min(100%, 520px); }
-  .corporate-page-hero-photo { width: min(100%, 620px); transform: none; }
-  .corporate-page-items, .corporate-page-items--journey { grid-template-columns: repeat(2, 1fr); }
-  .corporate-page-partner .draa-corp-shell { align-items: flex-start; flex-direction: column; }
-  .corporate-page-jump-help { display: none; }
+  .corporate-content-page .draa-corp-shell,
+  .corporate-page-footer .draa-corp-shell {
+    width: min(calc(100% - 32px), 720px) !important;
+  }
+
+  .corporate-page-hero {
+    padding: 38px 0 26px;
+  }
+
+  .corporate-page-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .corporate-page-hero h1,
+  .corporate-page-hero p {
+    max-width: 620px;
+  }
+
+  .corporate-page-hero-photo,
+  .corporate-page-hero-mark {
+    width: 100%;
+    min-height: 330px;
+    height: 330px;
+  }
+
+  .corporate-page-jump .draa-corp-shell {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-block: 10px;
+  }
+
+  .corporate-page-jump strong,
+  .corporate-page-jump-help {
+    display: none;
+  }
+
+  .corporate-page-jump .draa-corp-shell > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .corporate-page-jump .draa-corp-shell > div a {
+    border: 0;
+    border-radius: 6px;
+    background: #f8f1e6;
+  }
+
+  .corporate-page-jump .draa-corp-shell > div a:first-child {
+    border-left: 0;
+  }
+
+  .corporate-page-section > .draa-corp-shell {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .corporate-page-heading,
+  .corporate-page-heading p {
+    max-width: 640px;
+  }
+
+  .corporate-page-heading {
+    margin-top: 0;
+  }
+
+  .corporate-page-items,
+  .corporate-page-items--journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .corporate-page-items:not(.corporate-page-items--journey) article,
+  .corporate-page-items:not(.corporate-page-items--journey) article:nth-child(4),
+  .corporate-page-items:not(.corporate-page-items--journey) article:nth-child(5),
+  .corporate-page-items--journey article {
+    grid-column: auto;
+  }
+
+  .corporate-page-partner .draa-corp-shell {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .corporate-page-partner::after {
+    right: 4%;
+    opacity: .55;
+  }
 }
 
 @media (max-width: 580px) {
-  .corporate-page-hero { padding: 58px 0 65px; }
-  .corporate-page-hero h1 { font-size: 40px; }
-  .corporate-page-hero-mark { min-height: 320px; transform: none; }
-  .corporate-page-hero-photo { min-height: 310px; }
-  .corporate-page-hero-photo img { height: 310px; }
-  .corporate-page-section { padding: 70px 0; }
-  .corporate-page-items, .corporate-page-items--journey { grid-template-columns: 1fr; }
-  .corporate-page-section--statement .corporate-page-heading { padding: 28px 24px; }
-  .corporate-page-loading div, .corporate-page-loading div:nth-child(2), .corporate-page-loading div:nth-child(3) { width: 280px; }
-  .corporate-page-jump .draa-corp-shell { min-height: 58px; gap: 12px; }
-  .corporate-page-jump strong { display: none; }
+  .corporate-content-page .draa-corp-shell,
+  .corporate-page-footer .draa-corp-shell {
+    width: calc(100% - 28px) !important;
+  }
+
+  .corporate-page-hero {
+    padding: 32px 0 20px;
+  }
+
+  .corporate-page-hero h1 {
+    font-size: 38px;
+  }
+
+  .corporate-page-hero p {
+    font-size: 14px;
+  }
+
+  .corporate-page-hero-photo,
+  .corporate-page-hero-mark {
+    min-height: 265px;
+    height: 265px;
+    border-radius: 14px;
+  }
+
+  .corporate-page-hero-photo figcaption {
+    right: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .corporate-page-jump .draa-corp-shell > div {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-page-section {
+    padding: 34px 0 38px;
+  }
+
+  .corporate-page-heading h2 {
+    font-size: 32px;
+  }
+
+  .corporate-page-items,
+  .corporate-page-items--journey {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-page-items article {
+    min-height: 122px;
+    padding: 16px;
+  }
+
+  .corporate-page-section--statement .corporate-page-heading {
+    padding: 24px 20px;
+  }
+
+  .corporate-page-partner {
+    padding: 34px 0 24px;
+  }
+
+  .corporate-page-partner h2 {
+    font-size: 31px;
+  }
+
+  .corporate-page-partner::after {
+    display: none;
+  }
+
+  .corporate-page-loading div,
+  .corporate-page-loading div:nth-child(2),
+  .corporate-page-loading div:nth-child(3) {
+    width: 280px;
+  }
+}
+
+/* =========================================================
+   FULL-BACKGROUND HERO ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â REFERENCE MATCH
+   Appended last so it overrides all older hero rules.
+   ========================================================= */
+
+/* Taller hero like the reference screenshot */
+.corporate-page-hero {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  min-height: 650px !important;
+  padding: 104px 0 86px !important;
+  background: #ede4d7 !important;
+}
+
+/* Remove old decorative rings/circles */
+.corporate-page-grid,
+.corporate-page-ring,
+.corporate-page-ring-one,
+.corporate-page-ring-two {
+  display: none !important;
+}
+
+/* Turn the old two-column hero into one overlay composition */
+.corporate-page-hero-inner {
+  position: static !important;
+  display: block !important;
+  min-height: 460px !important;
+}
+
+/* Left copy sits over the photo */
+.corporate-page-hero-inner > div:first-child {
+  position: relative !important;
+  z-index: 5 !important;
+  width: min(38%, 485px) !important;
+  max-width: 485px !important;
+}
+
+.corporate-page-hero h1 {
+  max-width: 475px !important;
+  margin: 0 !important;
+  color: #15120e !important;
+  font-size: clamp(54px, 4.35vw, 70px) !important;
+  line-height: .97 !important;
+  font-weight: 800 !important;
+  letter-spacing: -.052em !important;
+}
+
+.corporate-page-hero h1 > span {
+  display: block !important;
+  margin-top: 8px !important;
+  color: #bd7b20 !important;
+  font-size: 1em !important;
+  line-height: 1.02 !important;
+}
+
+.corporate-page-hero p {
+  max-width: 360px !important;
+  margin-top: 24px !important;
+  color: #4f4941 !important;
+  font-size: 15px !important;
+  line-height: 1.62 !important;
+}
+
+/* Existing hero CTA, when present */
+.corporate-page-hero-inner > div:first-child > a,
+.corporate-page-hero-inner > div:first-child > div a,
+.corporate-page-hero .corporate-page-cta {
+  position: relative !important;
+  z-index: 6 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+  margin-top: 28px !important;
+  padding: 16px 22px !important;
+  border: 1px solid rgba(189,123,32,.55) !important;
+  border-radius: 7px !important;
+  color: #d69531 !important;
+  background: #181510 !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: .08em !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+}
+
+/* Photo fills the entire hero area */
+.corporate-page-hero-photo {
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #d8c8b0 !important;
+  transform: none !important;
+}
+
+.corporate-page-hero-photo img,
+.corporate-page-hero-photo--capabilities img,
+.corporate-page-hero-photo--who-we-support img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: 52% center !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Much narrower/softer left fade so the image stays visible behind the text */
+.corporate-page-hero-photo::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,248,.95) 0%,
+      rgba(255,253,248,.91) 10%,
+      rgba(255,253,248,.80) 20%,
+      rgba(255,253,248,.62) 29%,
+      rgba(255,253,248,.38) 36%,
+      rgba(255,253,248,.16) 43%,
+      rgba(255,253,248,.04) 49%,
+      rgba(255,253,248,0) 56%
+    ) !important;
+}
+
+/* Old image caption is not part of this hero style */
+.corporate-page-hero-photo figcaption {
+  display: none !important;
+}
+
+/* Jump bar stays below, not over the hero */
+.corporate-page-jump {
+  position: relative !important;
+  z-index: 8 !important;
+}
+
+@media (max-width: 1200px) {
+  .corporate-page-hero {
+    min-height: 610px !important;
+    padding: 88px 0 72px !important;
+  }
+
+  .corporate-page-hero-inner > div:first-child {
+    width: min(42%, 470px) !important;
+  }
+
+  .corporate-page-hero h1 {
+    font-size: clamp(50px, 5vw, 64px) !important;
+  }
+
+  .corporate-page-hero-photo img,
+  .corporate-page-hero-photo--capabilities img,
+  .corporate-page-hero-photo--who-we-support img {
+    object-position: 55% center !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .corporate-page-hero {
+    min-height: 620px !important;
+    padding: 64px 0 54px !important;
+  }
+
+  .corporate-page-hero-inner {
+    min-height: 500px !important;
+  }
+
+  .corporate-page-hero-inner > div:first-child {
+    width: min(72%, 520px) !important;
+    max-width: 520px !important;
+  }
+
+  .corporate-page-hero-photo img,
+  .corporate-page-hero-photo--capabilities img,
+  .corporate-page-hero-photo--who-we-support img {
+    object-position: 61% center !important;
+  }
+
+  .corporate-page-hero-photo::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,253,248,.96) 0%,
+        rgba(255,253,248,.90) 28%,
+        rgba(255,253,248,.62) 48%,
+        rgba(255,253,248,.22) 67%,
+        rgba(255,253,248,0) 84%
+      ) !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .corporate-page-hero {
+    min-height: 650px !important;
+    padding: 48px 0 44px !important;
+  }
+
+  .corporate-page-hero-inner {
+    min-height: 550px !important;
+  }
+
+  .corporate-page-hero-inner > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .corporate-page-hero h1 {
+    max-width: 370px !important;
+    font-size: clamp(40px, 11vw, 52px) !important;
+  }
+
+  .corporate-page-hero p {
+    max-width: 320px !important;
+    font-size: 14px !important;
+  }
+
+  .corporate-page-hero-photo img,
+  .corporate-page-hero-photo--capabilities img,
+  .corporate-page-hero-photo--who-we-support img {
+    object-position: 68% center !important;
+  }
+
+  .corporate-page-hero-photo::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,253,248,.98) 0%,
+        rgba(255,253,248,.93) 38%,
+        rgba(255,253,248,.62) 63%,
+        rgba(255,253,248,.15) 88%,
+        rgba(255,253,248,0) 100%
+      ) !important;
+  }
+}
+
+/* =========================================================
+   JUMP BAR ONLY ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â MATCH REFERENCE
+   IMPORTANT: This block does NOT modify the hero image/style.
+   Keep this block LAST.
+   ========================================================= */
+
+.corporate-page-jump {
+  position: relative !important;
+  z-index: 30 !important;
+  margin-top: -26px !important;
+  padding: 0 0 22px !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.corporate-page-jump .draa-corp-shell {
+  width: min(calc(100% - 40px), 1320px) !important;
+  max-width: 1320px !important;
+  min-height: 88px !important;
+  margin-inline: auto !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 190px minmax(0, 1fr) 360px !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid #eee5d9 !important;
+  border-radius: 18px !important;
+  background: rgba(255, 253, 249, .98) !important;
+  box-shadow: 0 12px 30px rgba(36, 24, 10, .10) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.corporate-page-jump strong {
+  min-height: 88px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 20px !important;
+  border-right: 1px solid #ece2d4 !important;
+  color: #b9781d !important;
+  background: transparent !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.corporate-page-jump .draa-corp-shell > div {
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  overflow: visible !important;
+}
+
+.corporate-page-jump .draa-corp-shell > div a {
+  min-height: 88px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 24px !important;
+  border: 0 !important;
+  border-right: 1px solid #ece2d4 !important;
+  border-radius: 0 !important;
+  color: #211c16 !important;
+  background: transparent !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  transition: color .2s ease, background .2s ease !important;
+}
+
+.corporate-page-jump .draa-corp-shell > div a:hover {
+  color: #b9781d !important;
+  background: rgba(189, 123, 32, .04) !important;
+}
+
+.corporate-page-jump-help {
+  min-height: 88px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 0 28px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #17130f 0%, #211a14 100%) !important;
+  box-shadow: inset 1px 0 0 rgba(189, 123, 32, .20) !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.corporate-page-jump-help:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #1b1712 0%, #292018 100%) !important;
+}
+
+.corporate-page-jump-help svg,
+.corporate-page-jump-help i {
+  flex: 0 0 auto !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  color: #fff !important;
+  background: #bd7b20 !important;
+}
+
+@media (max-width: 1100px) {
+  .corporate-page-jump .draa-corp-shell {
+    width: min(calc(100% - 30px), 1040px) !important;
+    grid-template-columns: 165px minmax(0, 1fr) 300px !important;
+  }
+
+  .corporate-page-jump strong,
+  .corporate-page-jump .draa-corp-shell > div a,
+  .corporate-page-jump-help {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .corporate-page-jump {
+    margin-top: -14px !important;
+    padding: 0 0 16px !important;
+  }
+
+  .corporate-page-jump .draa-corp-shell {
+    width: min(calc(100% - 24px), 740px) !important;
+    grid-template-columns: 1fr !important;
+    overflow: visible !important;
+    border-radius: 16px !important;
+  }
+
+  .corporate-page-jump strong {
+    min-height: 58px !important;
+    justify-content: flex-start !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid #ece2d4 !important;
+  }
+
+  .corporate-page-jump .draa-corp-shell > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .corporate-page-jump .draa-corp-shell > div a {
+    min-height: 64px !important;
+  }
+
+  .corporate-page-jump-help {
+    min-height: 68px !important;
+    border-radius: 0 0 16px 16px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .corporate-page-jump .draa-corp-shell > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .corporate-page-jump .draa-corp-shell > div a {
+    min-height: 56px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid #ece2d4 !important;
+  }
+
+  .corporate-page-jump-help {
+    padding-inline: 20px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* =========================================================
+   LEFT SIDE ONLY DARKER
+   Keeps hero image style and jump bar untouched.
+   Only darkens the left overlay.
+   ========================================================= */
+.corporate-page-hero-photo::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background: linear-gradient(
+    90deg,
+    rgba(214, 203, 189, .94) 0%,
+    rgba(214, 203, 189, .90) 10%,
+    rgba(214, 203, 189, .82) 20%,
+    rgba(214, 203, 189, .68) 29%,
+    rgba(214, 203, 189, .49) 37%,
+    rgba(214, 203, 189, .27) 45%,
+    rgba(214, 203, 189, .10) 52%,
+    rgba(214, 203, 189, 0) 59%
+  ) !important;
+}
+
+@media (max-width: 860px) {
+  .corporate-page-hero-photo::after {
+    background: linear-gradient(
+      90deg,
+      rgba(214, 203, 189, .95) 0%,
+      rgba(214, 203, 189, .89) 26%,
+      rgba(214, 203, 189, .67) 47%,
+      rgba(214, 203, 189, .30) 68%,
+      rgba(214, 203, 189, 0) 84%
+    ) !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .corporate-page-hero-photo::after {
+    background: linear-gradient(
+      90deg,
+      rgba(214, 203, 189, .96) 0%,
+      rgba(214, 203, 189, .90) 36%,
+      rgba(214, 203, 189, .63) 60%,
+      rgba(214, 203, 189, .20) 86%,
+      rgba(214, 203, 189, 0) 100%
+    ) !important;
+  }
+}
+/* =====================================================
+   CONTENT & PUBLISHING CARD BACKGROUND IMAGE
+   ===================================================== */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+article:first-child {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 253, 248, 0.98) 0%,
+      rgba(255, 253, 248, 0.94) 35%,
+      rgba(255, 253, 248, 0.72) 58%,
+      rgba(255, 253, 248, 0.28) 100%
+    ),
+    url("/brand/corporate/stock/writing-content.jpg");
+
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+/* =========================================================
+   FIVE CAPABILITY CARDS ONLY
+   Full image + dark overlay style
+   PUT THIS AT THE VERY END OF CorporateContentPage.css
+   ========================================================= */
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey) > article {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+
+  min-height: 255px !important;
+
+  padding: 20px 20px 22px !important;
+
+  border: 0 !important;
+  border-radius: 18px !important;
+
+  background: #191611 !important;
+
+  box-shadow:
+    0 12px 30px rgba(41, 29, 15, 0.13) !important;
+
+  transform: none;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease !important;
+}
+
+
+/* =========================================================
+   IMAGE LAYER
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article::before {
+  content: "" !important;
+
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background-image: var(--capability-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  transform: scale(1.01);
+
+  transition: transform 0.6s ease !important;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ASSIGN YOUR EXISTING 5 IMAGES
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article:nth-child(1) {
+  --capability-image:
+    url("/brand/corporate/stock/writing-content.webp");
+}
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article:nth-child(2) {
+  --capability-image:
+    url("/brand/corporate/stock/team-learning.jpg");
+}
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article:nth-child(3) {
+  --capability-image:
+    url("/brand/corporate/stock/event-stage.webp");
+}
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article:nth-child(4) {
+  --capability-image:
+    url("/brand/corporate/stock/classroom.webp");
+}
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article:nth-child(5) {
+  --capability-image:
+    url("/brand/corporate/stock/digital-learning.webp");
+}
+
+
+/* =========================================================
+   DARK GRADIENT OVER IMAGE
+   Replaces your old circular ::after decoration
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article::after {
+  content: "" !important;
+
+  position: absolute !important;
+  z-index: 1 !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  right: auto !important;
+  bottom: auto !important;
+
+  border: 0 !important;
+  border-radius: inherit !important;
+
+  box-shadow: none !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 12, 9, 0.08) 0%,
+      rgba(15, 12, 9, 0.14) 25%,
+      rgba(15, 12, 9, 0.30) 48%,
+      rgba(15, 12, 9, 0.66) 72%,
+      rgba(15, 12, 9, 0.90) 100%
+    ) !important;
+
+  pointer-events: none !important;
+}
+
+
+/* =========================================================
+   EVERYTHING ABOVE IMAGE
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article > * {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+
+/* =========================================================
+   HIDE POPULAR STARTING POINT
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+.corporate-page-useful {
+  display: none !important;
+}
+
+
+/* =========================================================
+   ICON Ã¢â‚¬â€ TOP LEFT LIKE YOUR REFERENCE
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+.corporate-page-item-icon {
+  position: absolute !important;
+
+  z-index: 5 !important;
+
+  top: 18px !important;
+  left: 18px !important;
+  right: auto !important;
+
+  width: 44px !important;
+  height: 44px !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  margin: 0 !important;
+
+  border: 0 !important;
+  border-radius: 11px !important;
+
+  color: #a4610c !important;
+
+  background:
+    rgba(255, 250, 239, 0.98) !important;
+
+  box-shadow:
+    0 5px 16px rgba(0, 0, 0, 0.13) !important;
+
+  backdrop-filter: blur(5px);
+}
+
+
+.corporate-page-items:not(.corporate-page-items--journey)
+.corporate-page-item-icon svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+
+
+/* =========================================================
+   NUMBER Ã¢â‚¬â€ TOP RIGHT
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+.corporate-page-item-number {
+  position: absolute !important;
+
+  z-index: 5 !important;
+
+  top: 20px !important;
+  right: 18px !important;
+  left: auto !important;
+
+  min-width: 0 !important;
+  width: auto !important;
+  height: auto !important;
+
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  color: #ffffff !important;
+  background: transparent !important;
+
+  font-size: 10px !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+
+  letter-spacing: 0.03em !important;
+
+  text-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   TITLE Ã¢â‚¬â€ BOTTOM
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article h3 {
+  position: relative !important;
+
+  z-index: 4 !important;
+
+  max-width: 92% !important;
+
+  margin: auto 0 8px !important;
+
+  padding: 0 !important;
+
+  color: #ffffff !important;
+
+  font-size: 17px !important;
+  font-weight: 800 !important;
+
+  line-height: 1.16 !important;
+
+  letter-spacing: -0.025em !important;
+
+  text-shadow:
+    0 2px 9px rgba(0, 0, 0, 0.55) !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+> article p {
+  position: relative !important;
+
+  z-index: 4 !important;
+
+  max-width: 95% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color:
+    rgba(255, 255, 255, 0.92) !important;
+
+  font-size: 11px !important;
+
+  line-height: 1.55 !important;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.58) !important;
+}
+
+
+/* =========================================================
+   REMOVE EXPLORE LINK
+   Your target reference doesn't show it
+   ========================================================= */
+
+.corporate-page-items:not(.corporate-page-items--journey)
+.corporate-page-item-link {
+  display: none !important;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   PREVENT OLD HOVER CSS FROM TURNING CARD WHITE
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .corporate-page-items:not(.corporate-page-items--journey)
+  > article:hover {
+
+    transform: translateY(-4px) !important;
+
+    border: 0 !important;
+
+    /* prevents old background:#fffdf9 */
+    background: #191611 !important;
+
+    box-shadow:
+      0 19px 38px rgba(40, 28, 13, 0.20) !important;
+  }
+
+
+  .corporate-page-items:not(.corporate-page-items--journey)
+  > article:hover::before {
+
+    transform: scale(1.065) !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 860px) {
+
+  .corporate-page-items:not(.corporate-page-items--journey)
+  > article {
+
+    min-height: 255px !important;
+
+    padding:
+      20px
+      20px
+      22px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   Override old min-height:122px rule
+   ========================================================= */
+
+@media (max-width: 580px) {
+
+  .corporate-page-items:not(.corporate-page-items--journey)
+  > article {
+
+    min-height: 270px !important;
+
+    padding:
+      20px
+      20px
+      22px !important;
+
+    border-radius: 18px !important;
+  }
+
+
+  .corporate-page-items:not(.corporate-page-items--journey)
+  > article h3 {
+
+    font-size: 18px !important;
+  }
+
+
+  .corporate-page-items:not(.corporate-page-items--journey)
+  > article p {
+
+    max-width: 94% !important;
+
+    font-size: 11.5px !important;
+  }
+}
+
+
+/* =========================================================
+   TEXT/CARD BALANCE Ã¢â‚¬â€ FINAL OVERRIDE
+   Keeps cards unchanged. Only balances the left copy against
+   the height/shape of the card group beside it.
+   ========================================================= */
+
+/* ---------- CAPABILITIES: two-row image-card section ---------- */
+.corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+> .draa-corp-shell {
+  align-items: stretch !important;
+}
+
+.corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+.corporate-page-heading {
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: 255px !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 28px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+.corporate-page-heading > span:first-child {
+  font-size: 9px !important;
+  line-height: 1 !important;
+  letter-spacing: .18em !important;
+}
+
+.corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+.corporate-page-heading h2 {
+  width: 100% !important;
+  max-width: 250px !important;
+  margin: 16px 0 0 !important;
+  font-size: clamp(38px, 3vw, 46px) !important;
+  line-height: .98 !important;
+  letter-spacing: -.05em !important;
+  text-wrap: balance;
+}
+
+.corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+.corporate-page-heading p {
+  width: 100% !important;
+  max-width: 230px !important;
+  margin: 20px 0 0 !important;
+  font-size: 12px !important;
+  line-height: 1.62 !important;
+}
+
+/* ---------- WAYS TO ENGAGE: one short row of cards ---------- */
+.corporate-page-section:has(.corporate-page-items--journey) {
+  padding-top: 34px !important;
+  padding-bottom: 36px !important;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+> .draa-corp-shell {
+  grid-template-columns: 250px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 50px !important;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-heading {
+  width: 100% !important;
+  max-width: 250px !important;
+  margin: 0 !important;
+  padding: 4px 0 0 !important;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-heading > span:first-child {
+  font-size: 8.5px !important;
+  line-height: 1 !important;
+  letter-spacing: .17em !important;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-heading h2 {
+  width: 100% !important;
+  max-width: 245px !important;
+  margin: 12px 0 0 !important;
+  font-size: clamp(26px, 2vw, 32px) !important;
+  line-height: 1 !important;
+  letter-spacing: -.043em !important;
+  text-wrap: balance;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-heading p {
+  width: 100% !important;
+  max-width: 225px !important;
+  margin: 12px 0 0 !important;
+  font-size: 9.5px !important;
+  line-height: 1.5 !important;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-cta {
+  margin-top: 14px !important;
+  padding: 9px 13px !important;
+  font-size: 8.5px !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+  .corporate-page-heading {
+    max-width: 220px !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+  .corporate-page-heading h2 {
+    max-width: 215px !important;
+    font-size: clamp(34px, 3.5vw, 40px) !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items--journey)
+  > .draa-corp-shell {
+    grid-template-columns: 220px minmax(0, 1fr) !important;
+    gap: 34px !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-heading,
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-heading h2 {
+    max-width: 220px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+  > .draa-corp-shell,
+  .corporate-page-section:has(.corporate-page-items--journey)
+  > .draa-corp-shell {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+  .corporate-page-heading,
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-heading {
+    max-width: 620px !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+  .corporate-page-heading h2,
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-heading h2 {
+    max-width: 560px !important;
+    font-size: 34px !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items:not(.corporate-page-items--journey))
+  .corporate-page-heading p,
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-heading p {
+    max-width: 520px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* =========================================================
+   WAYS TO ENGAGE â€” CLEAR WEBP BACKGROUND
+   Uses: public/brand/corporate/stock/support-levels-bg.webp
+   Only this section is affected.
+   ========================================================= */
+
+.corporate-page-section:has(.corporate-page-items--journey) {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: #f7f2e9 !important;
+}
+
+/* Background photo â€” clearer and more defined */
+.corporate-page-section:has(.corporate-page-items--journey)::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+
+  background-image: url("/brand/corporate/stock/support-levels-bg.webp");
+  background-size: cover;
+  background-position: center 48%;
+  background-repeat: no-repeat;
+
+  opacity: 0.58;
+  filter: contrast(1.08) saturate(1.02);
+  pointer-events: none;
+}
+
+/* Very light overlay: stronger only behind the left heading */
+.corporate-page-section:has(.corporate-page-items--journey)::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(247, 242, 233, 0.68) 0%,
+    rgba(247, 242, 233, 0.48) 19%,
+    rgba(247, 242, 233, 0.22) 38%,
+    rgba(247, 242, 233, 0.08) 58%,
+    rgba(247, 242, 233, 0.03) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* Keep heading, cards and CTA above the background */
+.corporate-page-section:has(.corporate-page-items--journey)
+> .draa-corp-shell {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Cards remain readable without washing out the full image */
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-items--journey > article {
+  background: rgba(255, 253, 248, 0.96) !important;
+  backdrop-filter: blur(1.5px);
+}
+
+@media (max-width: 860px) {
+  .corporate-page-section:has(.corporate-page-items--journey)::before {
+    background-position: center;
+    opacity: 0.46;
+  }
+
+  .corporate-page-section:has(.corporate-page-items--journey)::after {
+    background: rgba(247, 242, 233, 0.24);
+  }
+}
+
+/* =========================================================
+   WAYS TO ENGAGE â€” FINAL CARD + BACKGROUND TUNING
+   Scope: ONLY the journey/support section.
+   ========================================================= */
+
+/* Remove 01 / 02 / 03 / 04 badges from these four cards only */
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-items--journey .corporate-page-item-number {
+  display: none !important;
+}
+
+/* Make only the four support cards slightly larger */
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-items--journey {
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-items--journey > article {
+  min-height: 178px !important;
+  padding: 24px 22px 22px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 253, 248, 0.94) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+/* With the number removed, keep the icon cleanly at top-right */
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-items--journey .corporate-page-item-icon {
+  top: 19px !important;
+  right: 19px !important;
+}
+
+/* Give title/body a little more breathing room inside the larger cards */
+.corporate-page-section:has(.corporate-page-items--journey)
+.corporate-page-items--journey h3 {
+  margin-top: 26px !important;
+  margin-right: 44px !important;
+}
+
+/* Background image: smaller, fully easier to read, softly blurred */
+.corporate-page-section:has(.corporate-page-items--journey)::before {
+  inset: -12px !important;
+  background-image: url("/brand/corporate/stock/support-levels-bg.webp") !important;
+  background-size: min(1080px, 72vw) auto !important;
+  background-position: 72% 62% !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.46 !important;
+  filter: blur(5px) saturate(0.92) contrast(1.02) !important;
+  transform: scale(1.015);
+}
+
+/* Softer readability veil so the image remains visible */
+.corporate-page-section:has(.corporate-page-items--journey)::after {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 242, 233, 0.68) 0%,
+    rgba(247, 242, 233, 0.48) 22%,
+    rgba(247, 242, 233, 0.20) 46%,
+    rgba(247, 242, 233, 0.08) 72%,
+    rgba(247, 242, 233, 0.04) 100%
+  ) !important;
+}
+
+@media (max-width: 1100px) {
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-items--journey > article {
+    min-height: 170px !important;
+    padding: 22px 20px 20px !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items--journey)::before {
+    background-size: min(900px, 86vw) auto !important;
+    background-position: 68% 64% !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .corporate-page-section:has(.corporate-page-items--journey)
+  .corporate-page-items--journey > article {
+    min-height: 160px !important;
+  }
+
+  .corporate-page-section:has(.corporate-page-items--journey)::before {
+    background-size: 105% auto !important;
+    background-position: center 70% !important;
+    opacity: 0.34 !important;
+    filter: blur(6px) saturate(0.90) !important;
+  }
 }
