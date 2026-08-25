@@ -1964,16 +1964,11 @@
   }
 
   .draa-corp-solution-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .draa-corp-solution-card,
-  .draa-corp-solution-card:nth-child(4) {
-    grid-column: auto;
-  }
-
-  .draa-corp-solution-card:last-child {
-    grid-column: 1 / -1;
+  .draa-corp-solution-card {
+    grid-column: auto !important;
   }
 
   .draa-corp-study-card {
@@ -3188,13 +3183,13 @@
 /* 3. Solutions / Capabilities Section */
 .draa-corp-solution-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px;
 }
 
 .draa-corp-solution-card {
   position: relative;
-  grid-column: span 2;
+  grid-column: span 1 !important;
   border-radius: 22px;
   overflow: hidden;
   background: linear-gradient(150deg, #221D17 0%, #15130F 100%);
@@ -3204,10 +3199,6 @@
   display: flex;
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.draa-corp-solution-card:nth-child(4) {
-  grid-column: 2 / span 2;
 }
 
 .draa-corp-solution-card:hover {
