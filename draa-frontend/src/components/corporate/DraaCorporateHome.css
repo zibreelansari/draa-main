@@ -3916,4 +3916,59 @@
   .draa-corp-audience-grid {
     grid-template-columns: 1fr;
   }
-}
+}
+
+/* ==========================================================================
+   GLOBAL MINIMAL BACKGROUND MOTION (Whole Page Ambient Layer)
+   ========================================================================== */
+.draa-global-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.draa-global-bg-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.75;
+}
+
+.draa-global-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.draa-global-glow-top {
+  top: -10%;
+  right: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(189, 123, 32, 0.05) 0%, transparent 70%);
+}
+
+.draa-global-glow-middle {
+  top: 45%;
+  left: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(217, 164, 70, 0.045) 0%, transparent 70%);
+}
+
+.draa-global-glow-bottom {
+  bottom: 5%;
+  right: 5%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(189, 123, 32, 0.05) 0%, transparent 70%);
+}
+
+.draa-corp main {
+  position: relative;
+  z-index: 1;
+}
+

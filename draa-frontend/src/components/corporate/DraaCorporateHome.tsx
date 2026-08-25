@@ -31,6 +31,7 @@ import DraaCorporateFooter from './DraaCorporateFooter';
 import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
 import SEO from './SEO';
+import GlobalMinimalMotionBackground from './GlobalMinimalMotionBackground';
 import './DraaCorporateHome.css';
 
 const studyIndiaPortalUrl =
@@ -164,6 +165,7 @@ const audiences = [
 export default function DraaCorporateHome() {
   return (
     <div className="draa-corp draa-corp-home">
+      <GlobalMinimalMotionBackground />
       <SEO
         title="Education Services & Knowledge Management"
         siteName="DRAA"
