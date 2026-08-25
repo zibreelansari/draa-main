@@ -1,17 +1,16 @@
 import React, { useState, useRef } from 'react';
 import {
   ArrowRight,
-  BookOpen,
   Briefcase,
   BriefcaseBusiness,
   Building2,
-  Calendar,
   Check,
   CheckCircle2,
   Clock,
   Code2,
   Compass,
   FileCheck2,
+  Filter,
   GraduationCap,
   HeartHandshake,
   Laptop2,
@@ -20,12 +19,14 @@ import {
   MapPin,
   MessageSquare,
   PenTool,
+  RotateCcw,
   Search,
   Send,
   ShieldCheck,
   Sparkles,
   UploadCloud,
   Users,
+  X,
   Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -44,6 +45,7 @@ interface JobVacancy {
   department: string;
   deptKey: string;
   location: string;
+  locationKey: string;
   type: string;
   experience: string;
   openings: string;
@@ -59,6 +61,7 @@ const vacancies: JobVacancy[] = [
     department: 'Content & Editorial',
     deptKey: 'content',
     location: 'New Delhi HQ / Hybrid',
+    locationKey: 'delhi',
     type: 'Full-Time',
     experience: '4 - 8 Years',
     openings: '2 Positions',
@@ -81,6 +84,7 @@ const vacancies: JobVacancy[] = [
     department: 'Pedagogy & Curriculum',
     deptKey: 'training',
     location: 'New Delhi HQ / Hybrid',
+    locationKey: 'delhi',
     type: 'Full-Time',
     experience: '3 - 6 Years',
     openings: '2 Positions',
@@ -103,6 +107,7 @@ const vacancies: JobVacancy[] = [
     department: 'Advisory & Consultancy',
     deptKey: 'advisory',
     location: 'New Delhi HQ / Client Onsite',
+    locationKey: 'delhi',
     type: 'Full-Time / Consulting',
     experience: '5 - 10 Years',
     openings: '1 Position',
@@ -124,7 +129,8 @@ const vacancies: JobVacancy[] = [
     title: 'Faculty Training & Workshop Lead',
     department: 'Training & Development',
     deptKey: 'training',
-    location: 'New Delhi HQ / Pan-Bharat Travel',
+    location: 'Pan-Bharat / New Delhi',
+    locationKey: 'remote',
     type: 'Full-Time',
     experience: '4 - 7 Years',
     openings: '2 Positions',
@@ -147,6 +153,7 @@ const vacancies: JobVacancy[] = [
     department: 'Technology & Digital',
     deptKey: 'tech',
     location: 'Remote / Hybrid (New Delhi)',
+    locationKey: 'remote',
     type: 'Full-Time',
     experience: '3 - 6 Years',
     openings: '2 Positions',
@@ -169,6 +176,7 @@ const vacancies: JobVacancy[] = [
     department: 'Operations & Events',
     deptKey: 'operations',
     location: 'New Delhi HQ',
+    locationKey: 'delhi',
     type: 'Full-Time',
     experience: '2 - 5 Years',
     openings: '1 Position',
@@ -244,8 +252,14 @@ const candidateSteps = [
 ];
 
 export default function CareersPage() {
-  const [selectedDept, setSelectedDept] = useState<string>('all');
-  const [appliedRole, setAppliedRole] = useState<string>('Senior Subject Specialist & Academic Author');
+  // Search & Filter State
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedDept, setSelectedDept] = useState('all');
+  const [selectedLocation, setSelectedLocation] = useState('all');
+
+  // Application Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [appliedRole, setAppliedRole] = useState('Senior Subject Specialist & Academic Author');
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -260,19 +274,37 @@ export default function CareersPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const formRef = useRef<HTMLDivElement | null>(null);
+  const formSectionRef = useRef<HTMLDivElement | null>(null);
 
-  const filteredVacancies =
-    selectedDept === 'all'
-      ? vacancies
-      : vacancies.filter((v) => v.deptKey === selectedDept);
+  // Filter Vacancies
+  const filteredVacancies = vacancies.filter((job) => {
+    const matchesSearch =
+      searchQuery === '' ||
+      job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.desc.toLowerCase().includes(searchQuery.toLowerCase());
 
-  const handleApplyClick = (roleTitle: string) => {
+    const matchesDept = selectedDept === 'all' || job.deptKey === selectedDept;
+    const matchesLocation =
+      selectedLocation === 'all' || job.locationKey === selectedLocation;
+
+    return matchesSearch && matchesDept && matchesLocation;
+  });
+
+  const handleOpenModal = (roleTitle: string) => {
     setAppliedRole(roleTitle);
     setIsSubmitted(false);
-    if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleResetFilters = () => {
+    setSearchQuery('');
+    setSelectedDept('all');
+    setSelectedLocation('all');
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -285,192 +317,220 @@ export default function CareersPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate reliable application submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1000);
+    }, 900);
   };
 
   return (
     <div className="draa-corp careers-page-root">
       <SEO
-        title="Careers at DRAA | Join Our Education & Knowledge Team"
+        title="Careers at DRAA | Job Openings & Application Portal"
         siteName="DRAA"
-        description="Explore open vacancies at DRAA across educational content development, academic advisory, faculty training, EdTech engineering, and conference management."
-        keywords="DRAA careers, education jobs, textbook author jobs, instructional designer vacancy, NAAC consultant, EdTech software engineer, New Delhi education jobs"
-        ogImage="/brand/corporate/stock/university-building.jpg"
+        description="Search active job vacancies at DRAA in educational content authoring, academic advisory, faculty training, and EdTech software engineering. Apply online directly."
+        keywords="DRAA careers, job vacancies, textbook author jobs, instructional designer vacancy, NAAC consultant, EdTech software engineer, apply online"
+        ogImage="/brand/corporate/stock/academic_publishing_hero.jpg"
       />
       <DraaCorporateHeader />
 
       <main>
         {/* =========================================================================
-            1. HERO SECTION (Signature Warm Ivory & Gold Palette)
+            1. HERO SECTION WITH MODERN JOB SEARCH & FILTER HUB
             ========================================================================= */}
-        <section className="cp-hero">
+        <section className="cp-hero-hub">
           <LightLineMotionBackground />
-          <div className="draa-corp-shell cp-hero-grid">
-            <div>
+          <div className="draa-corp-shell">
+            <div className="cp-hero-content">
               <span className="cp-kicker">
-                <BriefcaseBusiness size={14} /> CAREERS AT DRAA
+                <BriefcaseBusiness size={14} /> CAREERS &amp; OPPORTUNITIES
               </span>
               <h1>
                 Build work that helps <span>learning move forward</span>
               </h1>
-              <p className="cp-hero-summary">
-                Join a purpose-driven education enterprise in New Delhi where academic rigor, publishing discipline, faculty empowerment, and digital technology come together to transform learning outcomes.
+              <p>
+                Find your next meaningful career opportunity at DRAA. Search open roles across academic publishing, institutional advisory, educator training, and learning technology.
               </p>
-              <div className="cp-hero-actions">
-                <a href="#vacancies" className="draa-corp-button draa-corp-button-gold">
-                  View Open Vacancies ({vacancies.length}) <ArrowRight size={17} />
-                </a>
-                <a href="#application-form" className="draa-corp-button draa-corp-button-light">
-                  Submit Direct Application
-                </a>
+
+              {/* Integrated Search & Filter Bar */}
+              <div className="cp-search-bar-wrap">
+                {/* Text Keyword Search */}
+                <div className="cp-search-input-box">
+                  <Search size={18} />
+                  <input
+                    type="text"
+                    placeholder="Search by role title, discipline, or keyword..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </div>
+
+                {/* Department Dropdown */}
+                <div className="cp-search-select-box">
+                  <Layers size={16} />
+                  <select
+                    value={selectedDept}
+                    onChange={(e) => setSelectedDept(e.target.value)}
+                    aria-label="Filter by department"
+                  >
+                    <option value="all">All Departments</option>
+                    <option value="content">Content &amp; Editorial</option>
+                    <option value="training">Training &amp; Pedagogy</option>
+                    <option value="advisory">Advisory &amp; Consultancy</option>
+                    <option value="tech">Technology &amp; Digital</option>
+                    <option value="operations">Operations &amp; Events</option>
+                  </select>
+                </div>
+
+                {/* Location / Work Mode Dropdown */}
+                <div className="cp-search-select-box">
+                  <MapPin size={16} />
+                  <select
+                    value={selectedLocation}
+                    onChange={(e) => setSelectedLocation(e.target.value)}
+                    aria-label="Filter by location"
+                  >
+                    <option value="all">All Locations</option>
+                    <option value="delhi">New Delhi HQ / Hybrid</option>
+                    <option value="remote">Remote / Pan-Bharat</option>
+                  </select>
+                </div>
+
+                {/* Reset Filters Button */}
+                {(searchQuery || selectedDept !== 'all' || selectedLocation !== 'all') && (
+                  <button
+                    type="button"
+                    className="cp-search-reset-btn"
+                    onClick={handleResetFilters}
+                    title="Reset all filters"
+                  >
+                    <RotateCcw size={14} /> Clear
+                  </button>
+                )}
               </div>
 
-              <div className="cp-hero-proof">
-                <div className="cp-proof-item">
-                  <strong>6+ Active Roles</strong>
-                  <span>Immediate Openings</span>
-                </div>
-                <div className="cp-proof-item">
-                  <strong>Hybrid &amp; Flexible</strong>
-                  <span>Workplace Modalities</span>
-                </div>
-                <div className="cp-proof-item">
-                  <strong>100% Merit-Based</strong>
-                  <span>Transparent Hiring</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Clean Hero Visual Card */}
-            <div className="cp-hero-visual">
-              <div className="cp-hero-card">
-                <img
-                  src="/brand/corporate/stock/academic_publishing_hero.jpg"
-                  alt="DRAA academic editorial workspace with books, research and digital devices"
-                  className="cp-hero-card-img"
-                  loading="eager"
-                />
-                <div className="cp-hero-floating-badge">
-                  <div className="cp-floating-icon-wrap">
-                    <Sparkles size={20} />
-                  </div>
-                  <div>
-                    <strong>Equal Opportunity Employer</strong>
-                    <small>Valuing Intellectual Rigor &amp; Creativity</small>
-                  </div>
-                </div>
+              {/* Quick Filter Tag Pills */}
+              <div className="cp-quick-tags">
+                <span className="cp-quick-tags-label">Popular Searches:</span>
+                {[
+                  { label: 'Academic Author', query: 'Author' },
+                  { label: 'Instructional Design', query: 'Instructional' },
+                  { label: 'Accreditation Auditor', query: 'Accreditation' },
+                  { label: 'Software Engineer', query: 'Engineer' },
+                  { label: 'Faculty Trainer', query: 'Workshop' },
+                ].map((item) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    className={`cp-quick-tag-pill ${searchQuery === item.query ? 'active' : ''}`}
+                    onClick={() => setSearchQuery(item.query)}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* =========================================================================
-            2. OPEN VACANCIES DIRECTORY WITH DEPARTMENT FILTERS
+            2. OPEN VACANCIES DIRECTORY
             ========================================================================= */}
         <section id="vacancies" className="cp-section">
           <div className="draa-corp-shell">
-            <div className="cp-section-header">
-              <span className="cp-section-pill">
-                <Zap size={14} /> CURRENT OPENINGS
-              </span>
-              <h2>Explore Open Vacancies &amp; Career Pathways</h2>
-              <p>
-                Find your next role across academic authoring, curriculum advisory, educator training, software engineering, and operations.
-              </p>
+            <div className="cp-vacancies-results-bar">
+              <div className="cp-vacancies-count">
+                Showing {filteredVacancies.length} of {vacancies.length} Open Positions
+              </div>
+              <button
+                type="button"
+                className="cp-apply-btn"
+                onClick={() => handleOpenModal('General Expression of Interest')}
+              >
+                Submit General Profile <ArrowRight size={14} />
+              </button>
             </div>
 
-            {/* Department Filter Tabs */}
-            <div className="cp-filters-row" role="tablist">
-              {[
-                { label: 'All Openings', key: 'all' },
-                { label: 'Content & Editorial', key: 'content' },
-                { label: 'Training & Pedagogy', key: 'training' },
-                { label: 'Advisory & Consultancy', key: 'advisory' },
-                { label: 'Technology & Digital', key: 'tech' },
-                { label: 'Operations & Events', key: 'operations' },
-              ].map((tab) => (
+            {filteredVacancies.length > 0 ? (
+              <div className="cp-vacancies-grid">
+                {filteredVacancies.map((job) => (
+                  <article key={job.id} className="cp-vacancy-card">
+                    <div className="cp-vacancy-top">
+                      <span className="cp-dept-badge">
+                        <Layers size={13} /> {job.department}
+                      </span>
+                      <span className="cp-job-type-tag">{job.type}</span>
+                    </div>
+
+                    <h3>{job.title}</h3>
+
+                    <div className="cp-vacancy-meta">
+                      <span className="cp-meta-item">
+                        <MapPin size={14} /> {job.location}
+                      </span>
+                      <span className="cp-meta-item">
+                        <Clock size={14} /> {job.experience}
+                      </span>
+                      <span className="cp-meta-item">
+                        <Users size={14} /> {job.openings}
+                      </span>
+                    </div>
+
+                    <p className="cp-vacancy-desc">{job.desc}</p>
+
+                    <div className="cp-vacancy-points-title">Key Responsibilities:</div>
+                    <ul className="cp-vacancy-points">
+                      {job.responsibilities.slice(0, 3).map((item) => (
+                        <li key={item}>
+                          <Check size={14} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="cp-vacancy-action-row">
+                      <span className="cp-openings-count">Immediate Review</span>
+                      <button
+                        type="button"
+                        className="cp-apply-btn"
+                        onClick={() => handleOpenModal(job.title)}
+                      >
+                        Apply for this Role <ArrowRight size={14} />
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="cp-empty-state">
+                <Search size={40} />
+                <h3>No Vacancies Match Your Criteria</h3>
+                <p>Try clearing your keyword filters or submit a general expression of interest.</p>
                 <button
-                  key={tab.key}
                   type="button"
-                  role="tab"
-                  aria-selected={selectedDept === tab.key}
-                  className={`cp-filter-tab ${selectedDept === tab.key ? 'active' : ''}`}
-                  onClick={() => setSelectedDept(tab.key)}
+                  className="cp-search-reset-btn"
+                  onClick={handleResetFilters}
+                  style={{ margin: '0 auto' }}
                 >
-                  {tab.label}
+                  <RotateCcw size={14} /> Reset Search Filters
                 </button>
-              ))}
-            </div>
-
-            {/* Vacancies Grid */}
-            <div className="cp-vacancies-grid">
-              {filteredVacancies.map((job) => (
-                <article key={job.id} className="cp-vacancy-card">
-                  <div className="cp-vacancy-top">
-                    <span className="cp-dept-badge">
-                      <Layers size={13} /> {job.department}
-                    </span>
-                    <span className="cp-job-type-tag">{job.type}</span>
-                  </div>
-
-                  <h3>{job.title}</h3>
-
-                  <div className="cp-vacancy-meta">
-                    <span className="cp-meta-item">
-                      <MapPin size={14} /> {job.location}
-                    </span>
-                    <span className="cp-meta-item">
-                      <Clock size={14} /> {job.experience}
-                    </span>
-                    <span className="cp-meta-item">
-                      <Users size={14} /> {job.openings}
-                    </span>
-                  </div>
-
-                  <p className="cp-vacancy-desc">{job.desc}</p>
-
-                  <div className="cp-vacancy-points-title">Key Responsibilities:</div>
-                  <ul className="cp-vacancy-points">
-                    {job.responsibilities.slice(0, 3).map((item) => (
-                      <li key={item}>
-                        <Check size={14} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="cp-vacancy-action-row">
-                    <span className="cp-openings-count">Applications Reviewed Promptly</span>
-                    <button
-                      type="button"
-                      className="cp-apply-btn"
-                      onClick={() => handleApplyClick(job.title)}
-                    >
-                      Apply for this Role <ArrowRight size={14} />
-                    </button>
-                  </div>
-                </article>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </section>
 
         {/* =========================================================================
-            3. INTERACTIVE DIRECT JOB APPLICATION FORM
+            3. IN-PAGE DIRECT APPLICATION FORM SECTION
             ========================================================================= */}
-        <section id="application-form" className="cp-section cp-section-tint" ref={formRef}>
+        <section id="application-form" className="cp-section cp-section-tint" ref={formSectionRef}>
           <div className="draa-corp-shell">
             <div className="cp-section-header">
               <span className="cp-section-pill">
-                <Send size={14} /> SUBMIT APPLICATION
+                <Send size={14} /> APPLICATION FORM
               </span>
-              <h2>Apply Directly for a Role or Share Your Profile</h2>
+              <h2>Direct Candidate Submission Portal</h2>
               <p>
-                Fill out the application form below. Our talent acquisition committee reviews every submission and will contact you for relevant opportunities.
+                Apply directly using the form below or through any specific opening above. Our hiring committee reviews every submission.
               </p>
             </div>
 
@@ -493,17 +553,12 @@ export default function CareersPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div className="cp-app-form-header">
-                    <h3>Candidate Application Form</h3>
-                    <p>Applying for: <strong>{appliedRole}</strong></p>
-                  </div>
-
                   <div className="cp-form-grid">
                     {/* Position Applied For */}
                     <div className="cp-form-field-full">
-                      <label className="cp-form-label" htmlFor="role-select">Position Applied For *</label>
+                      <label className="cp-form-label" htmlFor="role-select-inpage">Position Applied For *</label>
                       <select
-                        id="role-select"
+                        id="role-select-inpage"
                         className="cp-form-select"
                         value={appliedRole}
                         onChange={(e) => setAppliedRole(e.target.value)}
@@ -522,9 +577,9 @@ export default function CareersPage() {
 
                     {/* Full Name */}
                     <div>
-                      <label className="cp-form-label" htmlFor="full-name">Full Name *</label>
+                      <label className="cp-form-label" htmlFor="full-name-inpage">Full Name *</label>
                       <input
-                        id="full-name"
+                        id="full-name-inpage"
                         type="text"
                         className="cp-form-input"
                         placeholder="e.g. Dr. Rajesh Sharma"
@@ -536,9 +591,9 @@ export default function CareersPage() {
 
                     {/* Email */}
                     <div>
-                      <label className="cp-form-label" htmlFor="email-addr">Email Address *</label>
+                      <label className="cp-form-label" htmlFor="email-inpage">Email Address *</label>
                       <input
-                        id="email-addr"
+                        id="email-inpage"
                         type="email"
                         className="cp-form-input"
                         placeholder="e.g. rajesh@example.com"
@@ -550,9 +605,9 @@ export default function CareersPage() {
 
                     {/* Phone Number */}
                     <div>
-                      <label className="cp-form-label" htmlFor="phone-num">Phone / WhatsApp Number *</label>
+                      <label className="cp-form-label" htmlFor="phone-inpage">Phone / WhatsApp Number *</label>
                       <input
-                        id="phone-num"
+                        id="phone-inpage"
                         type="tel"
                         className="cp-form-input"
                         placeholder="e.g. +91 98765 43210"
@@ -564,9 +619,9 @@ export default function CareersPage() {
 
                     {/* Current Location */}
                     <div>
-                      <label className="cp-form-label" htmlFor="location">Current City / Location *</label>
+                      <label className="cp-form-label" htmlFor="location-inpage">Current City / Location *</label>
                       <input
-                        id="location"
+                        id="location-inpage"
                         type="text"
                         className="cp-form-input"
                         placeholder="e.g. New Delhi, Bengaluru, Mumbai"
@@ -578,9 +633,9 @@ export default function CareersPage() {
 
                     {/* Years of Experience */}
                     <div>
-                      <label className="cp-form-label" htmlFor="experience-select">Relevant Work Experience *</label>
+                      <label className="cp-form-label" htmlFor="exp-inpage">Relevant Work Experience *</label>
                       <select
-                        id="experience-select"
+                        id="exp-inpage"
                         className="cp-form-select"
                         value={formData.experience}
                         onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
@@ -594,9 +649,9 @@ export default function CareersPage() {
 
                     {/* Highest Qualification */}
                     <div>
-                      <label className="cp-form-label" htmlFor="qualification-select">Highest Academic Qualification *</label>
+                      <label className="cp-form-label" htmlFor="qual-inpage">Highest Academic Qualification *</label>
                       <select
-                        id="qualification-select"
+                        id="qual-inpage"
                         className="cp-form-select"
                         value={formData.qualification}
                         onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
@@ -611,9 +666,9 @@ export default function CareersPage() {
 
                     {/* LinkedIn / Portfolio URL */}
                     <div className="cp-form-field-full">
-                      <label className="cp-form-label" htmlFor="portfolio-url">LinkedIn Profile or Online Portfolio URL</label>
+                      <label className="cp-form-label" htmlFor="portfolio-inpage">LinkedIn Profile or Online Portfolio URL</label>
                       <input
-                        id="portfolio-url"
+                        id="portfolio-inpage"
                         type="url"
                         className="cp-form-input"
                         placeholder="https://linkedin.com/in/yourprofile or https://yourportfolio.com"
@@ -646,9 +701,9 @@ export default function CareersPage() {
 
                     {/* Cover Note */}
                     <div className="cp-form-field-full">
-                      <label className="cp-form-label" htmlFor="cover-note">Brief Candidate Note / Key Strengths</label>
+                      <label className="cp-form-label" htmlFor="note-inpage">Brief Candidate Note / Key Strengths</label>
                       <textarea
-                        id="cover-note"
+                        id="note-inpage"
                         className="cp-form-textarea"
                         placeholder="Share a brief overview of your expertise, recent achievements, or why you are interested in joining DRAA..."
                         value={formData.coverNote}
@@ -743,6 +798,199 @@ export default function CareersPage() {
           </div>
         </section>
       </main>
+
+      {/* =========================================================================
+          6. POPUP APPLICATION MODAL
+          ========================================================================= */}
+      {isModalOpen && (
+        <div className="cp-modal-backdrop" onClick={handleCloseModal}>
+          <div className="cp-modal-dialog" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="cp-modal-close-btn"
+              onClick={handleCloseModal}
+              aria-label="Close application modal"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="cp-modal-header">
+              <span className="cp-modal-badge">Direct Job Application</span>
+              <h3>{appliedRole}</h3>
+              <p>Fill out the application below. We will review your profile within 48 hours.</p>
+            </div>
+
+            {isSubmitted ? (
+              <div className="cp-success-banner">
+                <CheckCircle2 size={36} />
+                <h4>Application Received Successfully!</h4>
+                <p>
+                  Thank you for applying for <strong>{appliedRole}</strong>. Reference Code: <strong>DRAA-APP-{Math.floor(100000 + Math.random() * 900000)}</strong>.
+                </p>
+                <button
+                  type="button"
+                  className="cp-apply-btn"
+                  style={{ margin: '16px auto 0' }}
+                  onClick={handleCloseModal}
+                >
+                  Done
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="cp-form-grid">
+                  {/* Full Name */}
+                  <div>
+                    <label className="cp-form-label" htmlFor="modal-name">Full Name *</label>
+                    <input
+                      id="modal-name"
+                      type="text"
+                      className="cp-form-input"
+                      placeholder="e.g. Dr. Rajesh Sharma"
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="cp-form-label" htmlFor="modal-email">Email Address *</label>
+                    <input
+                      id="modal-email"
+                      type="email"
+                      className="cp-form-input"
+                      placeholder="e.g. rajesh@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label className="cp-form-label" htmlFor="modal-phone">Phone / WhatsApp *</label>
+                    <input
+                      id="modal-phone"
+                      type="tel"
+                      className="cp-form-input"
+                      placeholder="e.g. +91 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  {/* Location */}
+                  <div>
+                    <label className="cp-form-label" htmlFor="modal-location">City / Location *</label>
+                    <input
+                      id="modal-location"
+                      type="text"
+                      className="cp-form-input"
+                      placeholder="e.g. New Delhi, Bengaluru"
+                      value={formData.location}
+                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  {/* Experience */}
+                  <div>
+                    <label className="cp-form-label" htmlFor="modal-exp">Experience *</label>
+                    <select
+                      id="modal-exp"
+                      className="cp-form-select"
+                      value={formData.experience}
+                      onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
+                    >
+                      <option value="0-2 years">0 - 2 Years (Early Career)</option>
+                      <option value="3-5 years">3 - 5 Years (Mid-Level)</option>
+                      <option value="6-9 years">6 - 9 Years (Senior Specialist)</option>
+                      <option value="10+ years">10+ Years (Leadership / Expert)</option>
+                    </select>
+                  </div>
+
+                  {/* Highest Qualification */}
+                  <div>
+                    <label className="cp-form-label" htmlFor="modal-qual">Highest Qualification *</label>
+                    <select
+                      id="modal-qual"
+                      className="cp-form-select"
+                      value={formData.qualification}
+                      onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
+                    >
+                      <option value="Ph.D. / Doctorate">Ph.D. / Doctorate</option>
+                      <option value="Master's Degree (M.Sc / M.Tech / MA / MBA)">Master&apos;s Degree</option>
+                      <option value="Bachelor's Degree (B.Tech / B.Sc / BA)">Bachelor&apos;s Degree</option>
+                      <option value="B.Ed / M.Ed Education Certification">B.Ed / M.Ed</option>
+                      <option value="Other Professional Diploma">Other Diploma</option>
+                    </select>
+                  </div>
+
+                  {/* LinkedIn / Portfolio */}
+                  <div className="cp-form-field-full">
+                    <label className="cp-form-label" htmlFor="modal-portfolio">LinkedIn or Portfolio URL</label>
+                    <input
+                      id="modal-portfolio"
+                      type="url"
+                      className="cp-form-input"
+                      placeholder="https://linkedin.com/in/yourprofile"
+                      value={formData.portfolioUrl}
+                      onChange={(e) => setFormData({ ...formData, portfolioUrl: e.target.value })}
+                    />
+                  </div>
+
+                  {/* Resume Upload */}
+                  <div className="cp-form-field-full">
+                    <label className="cp-form-label">Attach Resume / CV *</label>
+                    <div className="cp-file-upload-box">
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        onChange={handleFileChange}
+                      />
+                      <div className="cp-file-upload-icon">
+                        <UploadCloud size={20} />
+                      </div>
+                      <strong>Upload Resume (PDF, DOC, DOCX)</strong>
+                      <small>Max file size: 10MB</small>
+                      {selectedFile && (
+                        <div className="cp-file-selected-pill">
+                          <FileCheck2 size={13} /> {selectedFile.name}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Cover Note */}
+                  <div className="cp-form-field-full">
+                    <label className="cp-form-label" htmlFor="modal-note">Short Introduction / Key Strengths</label>
+                    <textarea
+                      id="modal-note"
+                      className="cp-form-textarea"
+                      placeholder="Briefly describe your relevant strengths..."
+                      value={formData.coverNote}
+                      onChange={(e) => setFormData({ ...formData, coverNote: e.target.value })}
+                    />
+                  </div>
+
+                  {/* Submit */}
+                  <div className="cp-form-field-full">
+                    <button
+                      type="submit"
+                      className="cp-submit-btn"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Submitting Application...' : 'Send Application'}
+                    </button>
+                  </div>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
       <DraaCorporateFooter />
       <ScrollToTop />

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DRAA - CAREERS PAGE STYLES (Light-Theme, Clean, User-Friendly & Interactive)
+   DRAA - CAREERS PAGE STYLES (Modern Job Search Hub, Modal & Clean Filters)
    ========================================================================== */
 
 .careers-page-root {
@@ -17,23 +17,22 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. HERO SECTION
+   1. CAREERS HERO & INTEGRATED SEARCH HUB
    -------------------------------------------------------------------------- */
-.cp-hero {
+.cp-hero-hub {
   position: relative;
-  padding: 85px 0 75px;
+  padding: 80px 0 65px;
   overflow: hidden;
   background: linear-gradient(180deg, #FBF6EC 0%, #FFFDF8 100%);
   border-bottom: 1px solid var(--cp-border);
 }
 
-.cp-hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 50px;
+.cp-hero-content {
   position: relative;
   z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .cp-kicker {
@@ -52,136 +51,160 @@
   margin-bottom: 18px;
 }
 
-.cp-hero h1 {
+.cp-hero-hub h1 {
   font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(38px, 4.4vw, 56px);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--cp-ink);
-  margin: 0 0 20px;
+  margin: 0 0 16px;
 }
 
-.cp-hero h1 span {
-  display: block;
+.cp-hero-hub h1 span {
   color: var(--cp-gold);
   font-style: italic;
 }
 
-.cp-hero-summary {
+.cp-hero-hub p {
   font-size: 16px;
   line-height: 1.65;
   color: var(--cp-muted);
-  max-width: 540px;
-  margin: 0 0 28px;
+  max-width: 620px;
+  margin: 0 auto 32px;
 }
 
-.cp-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 35px;
-}
-
-.cp-hero-proof {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(39, 32, 23, 0.1);
-}
-
-.cp-proof-item strong {
-  display: block;
-  font-size: 17px;
-  font-weight: 900;
-  color: var(--cp-ink);
-}
-
-.cp-proof-item span {
-  font-size: 12.5px;
-  color: var(--cp-muted);
-  font-weight: 600;
-}
-
-/* Hero Right: Clean Graphic Card */
-.cp-hero-visual {
-  position: relative;
-}
-
-.cp-hero-card {
-  position: relative;
-  border-radius: 22px;
-  padding: 8px;
+/* Modern Integrated Job Search & Filter Bar */
+.cp-search-bar-wrap {
   background: #FFFFFF;
-  border: 1px solid rgba(39, 32, 23, 0.12);
+  border-radius: 20px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--cp-gold-border);
   box-shadow:
-    0 16px 36px rgba(71, 50, 22, 0.08),
+    0 16px 40px rgba(71, 50, 22, 0.09),
     0 2px 8px rgba(71, 50, 22, 0.04);
-  transition: transform 0.4s ease;
-}
-
-.cp-hero-card:hover {
-  transform: translateY(-4px);
-}
-
-.cp-hero-card-img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-}
-
-.cp-hero-floating-badge {
-  position: absolute;
-  bottom: -16px;
-  left: -14px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--cp-gold-border);
-  border-radius: 14px;
-  box-shadow:
-    0 10px 28px rgba(71, 50, 22, 0.1),
-    0 2px 6px rgba(71, 50, 22, 0.04);
+  margin-bottom: 24px;
+  text-align: left;
 }
 
-.cp-floating-icon-wrap {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(189, 123, 32, 0.12);
-  color: var(--cp-gold);
+.cp-search-input-box {
+  flex: 1.4;
+  min-width: 220px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #FFFDF8;
+  border: 1px solid rgba(39, 32, 23, 0.1);
+  border-radius: 12px;
+}
+
+.cp-search-input-box svg {
+  color: var(--cp-gold);
   flex-shrink: 0;
 }
 
-.cp-hero-floating-badge strong {
-  display: block;
-  font-size: 13.5px;
-  font-weight: 850;
+.cp-search-input-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 14px;
   color: var(--cp-ink);
+  outline: none;
+  font-family: inherit;
 }
 
-.cp-hero-floating-badge small {
-  display: block;
-  font-size: 11px;
+.cp-search-select-box {
+  flex: 1;
+  min-width: 170px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #FFFDF8;
+  border: 1px solid rgba(39, 32, 23, 0.1);
+  border-radius: 12px;
+}
+
+.cp-search-select-box svg {
+  color: var(--cp-gold);
+  flex-shrink: 0;
+}
+
+.cp-search-select-box select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 13.5px;
+  color: var(--cp-ink);
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.cp-search-reset-btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--cp-ink);
+  color: #FFFFFF;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cp-search-reset-btn:hover {
+  background: #332B22;
+}
+
+/* Quick Search Tags Row */
+.cp-quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.cp-quick-tags-label {
   color: var(--cp-muted);
-  font-weight: 600;
+  font-weight: 750;
+}
+
+.cp-quick-tag-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid var(--cp-border);
+  color: var(--cp-ink);
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cp-quick-tag-pill:hover,
+.cp-quick-tag-pill.active {
+  border-color: var(--cp-gold);
+  background: rgba(189, 123, 32, 0.1);
+  color: #925B13;
 }
 
 /* --------------------------------------------------------------------------
    2. SECTION COMMON STYLES
    -------------------------------------------------------------------------- */
 .cp-section {
-  padding: 85px 0;
+  padding: 80px 0;
   position: relative;
 }
 
@@ -193,7 +216,7 @@
 
 .cp-section-header {
   max-width: 680px;
-  margin: 0 auto 45px;
+  margin: 0 auto 40px;
   text-align: center;
 }
 
@@ -231,38 +254,21 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. OPEN VACANCIES DIRECTORY & FILTER TABS
+   3. OPEN VACANCIES DIRECTORY
    -------------------------------------------------------------------------- */
-.cp-filters-row {
+.cp-vacancies-results-bar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 36px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(39, 32, 23, 0.08);
 }
 
-.cp-filter-tab {
-  padding: 9px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--cp-border);
-  background: #FFFFFF;
-  color: var(--cp-muted);
-  font-size: 13px;
-  font-weight: 750;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.cp-filter-tab:hover {
-  border-color: var(--cp-gold-border);
+.cp-vacancies-count {
+  font-size: 15px;
+  font-weight: 850;
   color: var(--cp-ink);
-}
-
-.cp-filter-tab.active {
-  background: var(--cp-ink);
-  color: #FFFFFF;
-  border-color: var(--cp-ink);
-  box-shadow: 0 4px 14px rgba(25, 22, 17, 0.2);
 }
 
 .cp-vacancies-grid {
@@ -273,9 +279,9 @@
 
 .cp-vacancy-card {
   background: #FFFFFF;
-  border-radius: 18px;
-  padding: 28px 26px;
-  border: 1px solid var(--cp-border);
+  border-radius: 20px;
+  padding: 30px 28px;
+  border: 1.5px solid var(--cp-border);
   box-shadow: 0 4px 16px rgba(71, 50, 22, 0.04);
   display: flex;
   flex-direction: column;
@@ -285,7 +291,7 @@
 .cp-vacancy-card:hover {
   transform: translateY(-4px);
   border-color: var(--cp-gold-border);
-  box-shadow: 0 16px 36px rgba(71, 50, 22, 0.08);
+  box-shadow: 0 16px 36px rgba(71, 50, 22, 0.09);
 }
 
 .cp-vacancy-top {
@@ -301,7 +307,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 11px;
+  padding: 5px 12px;
   border-radius: 8px;
   background: rgba(189, 123, 32, 0.1);
   color: #925B13;
@@ -319,10 +325,10 @@
 }
 
 .cp-vacancy-card h3 {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 850;
   color: var(--cp-ink);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   line-height: 1.3;
 }
 
@@ -349,10 +355,10 @@
 }
 
 .cp-vacancy-desc {
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--cp-muted);
-  margin: 0 0 16px;
+  margin: 0 0 18px;
 }
 
 .cp-vacancy-points-title {
@@ -403,30 +409,155 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 9px 18px;
-  border-radius: 9px;
+  padding: 10px 20px;
+  border-radius: 10px;
   background: var(--cp-gold);
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 850;
   border: 1px solid var(--cp-gold);
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(189, 123, 32, 0.2);
 }
 
 .cp-apply-btn:hover {
   background: #A36715;
   border-color: #A36715;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(189, 123, 32, 0.3);
 }
 
-.cp-openings-count {
-  font-size: 12px;
+.cp-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1.5px dashed var(--cp-gold-border);
+}
+
+.cp-empty-state svg {
+  color: var(--cp-gold);
+  margin-bottom: 14px;
+}
+
+.cp-empty-state h3 {
+  font-size: 20px;
+  font-weight: 850;
+  color: var(--cp-ink);
+  margin: 0 0 8px;
+}
+
+.cp-empty-state p {
   color: var(--cp-muted);
-  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 18px;
 }
 
 /* --------------------------------------------------------------------------
-   4. INTERACTIVE JOB APPLICATION FORM
+   4. JOB APPLICATION POPUP MODAL
+   -------------------------------------------------------------------------- */
+.cp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 22, 17, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cp-modal-dialog {
+  background: #FFFFFF;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px 36px 32px;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid var(--cp-gold-border);
+  position: relative;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(30px) scale(0.97); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.cp-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--cp-border);
+  background: #FFFDF8;
+  color: var(--cp-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cp-modal-close-btn:hover {
+  background: #F2E8DC;
+  color: var(--cp-ink);
+  transform: rotate(90deg);
+}
+
+.cp-modal-header {
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(39, 32, 23, 0.08);
+}
+
+.cp-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(189, 123, 32, 0.12);
+  color: #925B13;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cp-modal-header h3 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--cp-ink);
+  margin: 0 0 6px;
+}
+
+.cp-modal-header p {
+  font-size: 13.5px;
+  color: var(--cp-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. INTERACTIVE FORM STYLES
    -------------------------------------------------------------------------- */
 .cp-app-form-wrap {
   max-width: 860px;
@@ -440,31 +571,10 @@
     0 2px 8px rgba(71, 50, 22, 0.03);
 }
 
-.cp-app-form-header {
-  text-align: center;
-  margin-bottom: 32px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(39, 32, 23, 0.08);
-}
-
-.cp-app-form-header h3 {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--cp-ink);
-  margin: 0 0 8px;
-}
-
-.cp-app-form-header p {
-  font-size: 14.5px;
-  color: var(--cp-muted);
-  margin: 0;
-}
-
 .cp-form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .cp-form-field-full {
@@ -473,17 +583,17 @@
 
 .cp-form-label {
   display: block;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 800;
   color: var(--cp-ink);
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .cp-form-input,
 .cp-form-select,
 .cp-form-textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: 11px 13px;
   border-radius: 10px;
   border: 1.5px solid rgba(39, 32, 23, 0.14);
   background: #FFFDF8;
@@ -504,15 +614,15 @@
 }
 
 .cp-form-textarea {
-  min-height: 110px;
+  min-height: 90px;
   resize: vertical;
 }
 
 /* File Upload Box */
 .cp-file-upload-box {
   border: 2px dashed var(--cp-gold-border);
-  border-radius: 14px;
-  padding: 22px;
+  border-radius: 12px;
+  padding: 18px;
   text-align: center;
   background: #FFFDF8;
   cursor: pointer;
@@ -533,36 +643,36 @@
 }
 
 .cp-file-upload-icon {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: rgba(189, 123, 32, 0.1);
   color: var(--cp-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px;
+  margin: 0 auto 8px;
 }
 
 .cp-file-upload-box strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 850;
   color: var(--cp-ink);
 }
 
 .cp-file-upload-box small {
   display: block;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--cp-muted);
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .cp-file-selected-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 8px;
   padding: 4px 12px;
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
@@ -573,11 +683,11 @@
 
 .cp-submit-btn {
   width: 100%;
-  padding: 15px 28px;
+  padding: 14px 24px;
   border-radius: 12px;
   background: var(--cp-gold);
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 850;
   border: none;
   cursor: pointer;
@@ -587,7 +697,7 @@
   gap: 10px;
   box-shadow: 0 6px 18px rgba(189, 123, 32, 0.25);
   transition: all 0.25s ease;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .cp-submit-btn:hover:not(:disabled) {
@@ -609,7 +719,7 @@
   padding: 24px 28px;
   text-align: center;
   margin-bottom: 24px;
-  animation: fadeIn 0.4s ease;
+  animation: modalFadeIn 0.3s ease;
 }
 
 .cp-success-banner svg {
@@ -631,7 +741,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   5. CULTURE & BENEFITS GRID
+   6. CULTURE & BENEFITS GRID
    -------------------------------------------------------------------------- */
 .cp-culture-grid {
   display: grid;
@@ -681,7 +791,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   6. CANDIDATE JOURNEY STEPS
+   7. CANDIDATE JOURNEY STEPS
    -------------------------------------------------------------------------- */
 .cp-journey-flow {
   display: grid;
@@ -735,10 +845,6 @@
    RESPONSIVE DESIGN
    -------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
-  .cp-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
   .cp-vacancies-grid {
     grid-template-columns: 1fr;
   }
@@ -751,8 +857,17 @@
 }
 
 @media (max-width: 768px) {
-  .cp-app-form-wrap {
-    padding: 30px 20px;
+  .cp-search-bar-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cp-search-input-box,
+  .cp-search-select-box {
+    width: 100%;
+    min-width: 0;
+  }
+  .cp-modal-dialog {
+    padding: 26px 20px 24px;
   }
   .cp-form-grid {
     grid-template-columns: 1fr;
