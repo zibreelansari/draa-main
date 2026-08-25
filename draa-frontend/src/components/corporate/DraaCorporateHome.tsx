@@ -41,21 +41,25 @@ const challenges = [
     icon: BookOpen,
     title: 'Quality content is hard to find',
     text: 'Learners and institutions need reliable, current, syllabus-aligned and well-structured educational resources.',
+    image: '/brand/corporate/stock/academic_publishing_hero.jpg',
   },
   {
     icon: Presentation,
     title: 'Learning needs practical exposure',
     text: 'Training must move beyond theory through workshops, dialogue, and applied capability development.',
+    image: '/brand/corporate/stock/student_skill_workshop.jpg',
   },
   {
     icon: Handshake,
     title: 'Institutions need expert direction',
     text: 'Academic planning, NEP 2020 alignment, and accreditation readiness require specialized advisory support.',
+    image: '/brand/corporate/stock/academic_consultancy_clean.jpg',
   },
   {
     icon: Laptop2,
     title: 'Knowledge remains fragmented',
     text: 'Digital tools should bring content, delivery, assessment, and learner progress into one connected system.',
+    image: '/brand/corporate/stock/web_dev_mockup.jpg',
   },
 ];
 
@@ -66,7 +70,7 @@ const solutions = [
     text: 'Research-led textbooks, digital publications, courseware, assessments, and custom learning resources.',
     tags: ['Books & e-books', 'Study resources', 'OBE Courseware'],
     path: '/services/content-publishing',
-    image: '/brand/corporate/stock/writing-content.jpg',
+    image: '/brand/corporate/stock/academic_publishing_hero.jpg',
     themeColor: '#D97706',
   },
   {
@@ -75,7 +79,7 @@ const solutions = [
     text: 'Faculty development, student skill programmes, leadership training, and career-readiness workshops.',
     tags: ['Faculty Workshops', 'Certifications', 'Skill Development'],
     path: '/services/professional-learning',
-    image: '/brand/corporate/stock/team-learning.jpg',
+    image: '/brand/corporate/stock/student_skill_workshop.jpg',
     themeColor: '#2563EB',
   },
   {
@@ -93,16 +97,16 @@ const solutions = [
     text: 'Practical consultancy for curriculum design, institutional development, NEP 2020 audits, and quality frameworks.',
     tags: ['Academic Planning', 'Accreditation', 'Strategy Audits'],
     path: '/services/academic-advisory',
-    image: '/brand/corporate/stock/classroom.jpg',
+    image: '/brand/corporate/stock/academic_consultancy_clean.jpg',
     themeColor: '#7C3AED',
   },
   {
     icon: Laptop2,
     title: 'Digital Learning Solutions',
-    text: 'Accessible LMS platforms, custom portals, virtual classrooms, and interactive assessment experiences.',
-    tags: ['LMS Platforms', 'Mobile Learning', 'Digital Portals'],
+    text: 'Modern websites, cross-platform mobile apps, portfolio designs, and accessible digital platforms.',
+    tags: ['Web & Mobile Apps', 'Portfolios', 'SME Tech Support'],
     path: '/services/digital-learning',
-    image: '/brand/corporate/stock/digital-learning.jpg',
+    image: '/brand/corporate/stock/web_dev_mockup.jpg',
     themeColor: '#0D9488',
   },
 ];
@@ -135,21 +139,25 @@ const audiences = [
     icon: Building2,
     title: 'Schools & K–12 Networks',
     text: 'Syllabus-aligned curriculum, educator empowerment workshops, and learner-engagement toolkits.',
+    image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
   },
   {
     icon: Landmark,
     title: 'Universities & Higher Education',
     text: 'OBE programme design, international-student guidance, academic conferences, and faculty development.',
+    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
   },
   {
     icon: GraduationCap,
     title: 'Learners & Educators',
     text: 'Structured self-study textbooks, interactive online courses, career bootcamps, and certifications.',
+    image: '/brand/corporate/stock/student_skill_workshop.jpg',
   },
   {
     icon: BriefcaseBusiness,
     title: 'Organisations & Partners',
     text: 'Custom corporate learning, capacity-building, and CSR education initiatives developed for defined outcomes.',
+    image: '/brand/corporate/stock/corporate_training_room.jpg',
   },
 ];
 
@@ -167,7 +175,7 @@ export default function DraaCorporateHome() {
 
       <main>
         {/* =========================================================================
-            1. HERO SECTION (Preserving Signature Signature Color Coding & Visuals)
+            1. HERO SECTION (Preserving Signature Banner Visuals Exactly as Requested)
             ========================================================================= */}
         <section className="draa-corp-hero" aria-labelledby="draa-corp-title">
           <div className="draa-corp-hero-grid" aria-hidden="true" />
@@ -275,7 +283,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            3. WHO WE ARE & 4-STAGE DELIVERY BLUEPRINT
+            3. WHO WE ARE & 4-STAGE DELIVERY BLUEPRINT (Enhanced with Visual Media)
             ========================================================================= */}
         <section id="about" className="draa-corp-section draa-corp-about">
           <div className="draa-corp-shell draa-corp-two-column">
@@ -287,7 +295,21 @@ export default function DraaCorporateHome() {
                 <span><CheckCircle2 size={17} /> 100% Client Ownership of IP</span>
                 <span><CheckCircle2 size={17} /> NEP 2020 &amp; OBE Aligned</span>
               </div>
+
+              {/* Graphic Visual Card */}
+              <div className="draa-about-card-visual">
+                <img
+                  src="/brand/corporate/stock/academic_publishing_hero.jpg"
+                  alt="Academic publishing and research editorial desk"
+                  className="draa-about-card-img"
+                  loading="lazy"
+                />
+                <div className="draa-about-card-badge">
+                  <Sparkles size={16} /> Outcome-Based Education Frameworks
+                </div>
+              </div>
             </div>
+
             <div className="draa-corp-about-copy">
               <p>
                 DRAA is a New Delhi-based education services and knowledge management enterprise established in June 2023 (CIN: U85491DL2023OPC416284). We bring together academic insight, content expertise, programme delivery, and technology to support the future of learning in Bharat and beyond.
@@ -317,7 +339,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            4. THE NEED WE ADDRESS (Challenges & Solutions Grid)
+            4. THE NEED WE ADDRESS (Graphical Problem Cards)
             ========================================================================= */}
         <section className="draa-corp-section draa-corp-challenges">
           <div className="draa-corp-shell">
@@ -327,11 +349,16 @@ export default function DraaCorporateHome() {
               <p>We connect the parts of education that are too often treated separately.</p>
             </div>
             <div className="draa-corp-challenge-grid">
-              {challenges.map(({ icon: Icon, title, text }) => (
+              {challenges.map(({ icon: Icon, title, text, image }) => (
                 <article key={title} className="draa-corp-challenge-card">
-                  <span className="draa-corp-icon-box"><Icon size={23} /></span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
+                  <div className="draa-challenge-media">
+                    <img src={image} alt={title} className="draa-challenge-img" loading="lazy" />
+                    <span className="draa-corp-icon-box"><Icon size={20} /></span>
+                  </div>
+                  <div className="draa-challenge-body">
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -354,13 +381,11 @@ export default function DraaCorporateHome() {
                 <Link key={title} to={path} className="draa-corp-solution-card">
                   <div className="draa-corp-solution-media">
                     <img className="draa-corp-solution-image" src={image} alt={title} loading="lazy" />
+                    <div className="draa-corp-sol-icon-floating" style={{ color: themeColor }}>
+                      <Icon size={20} />
+                    </div>
                   </div>
                   <div className="draa-corp-solution-content">
-                    <div className="draa-corp-solution-top">
-                      <div className="draa-corp-sol-icon" style={{ color: themeColor }}>
-                        <Icon size={22} />
-                      </div>
-                    </div>
                     <h3>{title}</h3>
                     <p>{text}</p>
                     <ul className="draa-corp-tags-list">
@@ -453,7 +478,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            7. LEARNING & EVENTS PATHWAYS
+            7. LEARNING & EVENTS PATHWAYS (Enhanced with Visual Media)
             ========================================================================= */}
         <section id="learning-events" className="draa-corp-section draa-corp-learning-events">
           <div className="draa-corp-shell draa-corp-two-column">
@@ -466,8 +491,8 @@ export default function DraaCorporateHome() {
             </div>
             <div className="draa-corp-learning-list">
               <Link to="/services/professional-learning" className="draa-learning-card">
-                <div className="draa-learning-icon">
-                  <Presentation size={24} />
+                <div className="draa-learning-thumb">
+                  <img src="/brand/corporate/stock/student_skill_workshop.jpg" alt="Faculty training workshop" />
                 </div>
                 <div className="draa-learning-info">
                   <strong>Professional Learning &amp; Faculty Enablement</strong>
@@ -477,8 +502,8 @@ export default function DraaCorporateHome() {
               </Link>
 
               <Link to="/services/education-events" className="draa-learning-card">
-                <div className="draa-learning-icon">
-                  <CalendarDays size={24} />
+                <div className="draa-learning-thumb">
+                  <img src="/brand/corporate/stock/event-stage.jpg" alt="Academic summit stage" />
                 </div>
                 <div className="draa-learning-info">
                   <strong>Knowledge-Sharing Events &amp; Summits</strong>
@@ -488,8 +513,8 @@ export default function DraaCorporateHome() {
               </Link>
 
               <Link to="/contact?subject=Custom%20Institutional%20Programme" className="draa-learning-card">
-                <div className="draa-learning-icon">
-                  <Users size={24} />
+                <div className="draa-learning-thumb">
+                  <img src="/brand/corporate/stock/corporate_training_room.jpg" alt="Corporate training suite" />
                 </div>
                 <div className="draa-learning-info">
                   <strong>Custom Institutional Programs</strong>
@@ -502,7 +527,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            8. WHO WE SUPPORT (Ecosystem Partners)
+            8. WHO WE SUPPORT (Ecosystem Partners with Rich Imagery)
             ========================================================================= */}
         <section id="institutions" className="draa-corp-section draa-corp-institutions">
           <div className="draa-corp-shell">
@@ -512,16 +537,21 @@ export default function DraaCorporateHome() {
               <p>We begin with the audience, the academic context, and the desired outcome—not with a one-size-fits-all product.</p>
             </div>
             <div className="draa-corp-audience-grid">
-              {audiences.map(({ icon: Icon, title, text }) => (
+              {audiences.map(({ icon: Icon, title, text, image }) => (
                 <article key={title} className="draa-corp-audience-card">
-                  <div className="draa-aud-icon-wrap">
-                    <Icon size={24} />
+                  <div className="draa-aud-media">
+                    <img src={image} alt={title} className="draa-aud-img" loading="lazy" />
+                    <div className="draa-aud-icon-wrap">
+                      <Icon size={20} />
+                    </div>
                   </div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                  <Link to="/who-we-support" className="draa-aud-link">
-                    Explore solutions <ChevronRight size={15} />
-                  </Link>
+                  <div className="draa-aud-body">
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                    <Link to="/who-we-support" className="draa-aud-link">
+                      Explore solutions <ChevronRight size={15} />
+                    </Link>
+                  </div>
                 </article>
               ))}
             </div>
