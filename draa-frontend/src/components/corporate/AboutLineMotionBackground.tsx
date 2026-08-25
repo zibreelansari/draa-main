@@ -35,7 +35,7 @@ export default function AboutLineMotionBackground({
     const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * width,
       lineIndex: Math.floor(Math.random() * 8),
-      speed: 0.4 + Math.random() * 0.8,
+      speed: 0.07 + Math.random() * 0.09,
       size: 1.5 + Math.random() * 2.5,
       opacity: 0.25 + Math.random() * 0.65,
       pulse: Math.random() * Math.PI * 2,
@@ -44,7 +44,7 @@ export default function AboutLineMotionBackground({
     let time = 0;
 
     const render = () => {
-      time += 0.007;
+      time += 0.0013;
       ctx.clearRect(0, 0, width, height);
 
       // 8 Harmonically Blended Sine/Cosine Wave Filaments

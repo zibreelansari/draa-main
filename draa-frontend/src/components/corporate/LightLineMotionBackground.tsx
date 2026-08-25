@@ -35,7 +35,7 @@ export default function LightLineMotionBackground({
     const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * width,
       lineIndex: Math.floor(Math.random() * 6),
-      speed: 0.35 + Math.random() * 0.65,
+      speed: 0.06 + Math.random() * 0.08,
       size: 1.5 + Math.random() * 2,
       opacity: 0.2 + Math.random() * 0.5,
       pulse: Math.random() * Math.PI * 2,
@@ -44,7 +44,7 @@ export default function LightLineMotionBackground({
     let time = 0;
 
     const render = () => {
-      time += 0.006;
+      time += 0.0012;
       ctx.clearRect(0, 0, width, height);
 
       // 6 Harmonically Blended Sine/Cosine Wave Filaments for Light Theme
@@ -95,7 +95,7 @@ export default function LightLineMotionBackground({
         p.x += p.speed;
         if (p.x > width + 20) p.x = -20;
 
-        p.pulse += 0.03;
+        p.pulse += 0.008;
         const currentOpacity = p.opacity * (0.6 + Math.sin(p.pulse) * 0.4);
 
         const yBase = height * 0.25 + (p.lineIndex / (waveCount - 1)) * (height * 0.52);
