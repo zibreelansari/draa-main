@@ -35,6 +35,7 @@ import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
 import SEO from './SEO';
 import { services, servicesBySlug, type ServiceIcon } from './serviceData';
+import LightLineMotionBackground from './LightLineMotionBackground';
 import './DraaCorporateHome.css';
 import './ServiceDetailPage.css';
 
@@ -92,9 +93,10 @@ export default function ServiceDetailPage() {
 
       <main>
         {/* =========================================================================
-            1. HERO SECTION
+            1. HERO SECTION (Light-Theme Animated Background & Non-Human Capability Card)
             ========================================================================= */}
         <section className="sd-hero">
+          <LightLineMotionBackground accentColor={service.themeColor} />
           <div className="sd-hero-mesh" aria-hidden="true" />
           <div className="draa-corp-shell sd-hero-inner">
             <div className="sd-hero-copy">
@@ -138,17 +140,63 @@ export default function ServiceDetailPage() {
               </div>
             </div>
 
-            {/* 3D Visual */}
+            {/* Light-Theme Non-Human Corporate Capability Console */}
             <div className="sd-hero-visual">
-              <div className="sd-hero-image-box">
-                <img src={service.image} alt={service.imageAlt} className="sd-hero-img" />
-                <div className="sd-floating-card">
-                  <div className="sd-floating-icon" style={{ background: `${service.themeColor}18`, color: service.themeColor }}>
-                    <HeroIcon size={20} />
+              <div className="sd-light-emblem-card">
+                <div className="sd-light-card-glow" />
+                <div className="sd-light-card-rim" />
+
+                {/* Central Brand & Service Insignia Hub with Concentric Celestial Rings */}
+                <div className="sd-light-insignia-stage">
+                  <div className="sd-light-orbit-ring sd-light-orbit-ring--1" />
+                  <div className="sd-light-orbit-ring sd-light-orbit-ring--2" />
+                  <div className="sd-light-orbit-spark sd-light-orbit-spark--1" />
+                  <div className="sd-light-orbit-spark sd-light-orbit-spark--2" />
+
+                  <div className="sd-light-mark-wrap" style={{ borderColor: `${service.themeColor}50` }}>
+                    <div className="sd-light-mark-inner" style={{ background: `radial-gradient(circle at 35% 30%, #FFFFFF 0%, #FAF3E6 60%, ${service.themeColor}20 100%)` }}>
+                      <HeroIcon size={36} style={{ color: service.themeColor }} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Corporate Credentials Header */}
+                <div className="sd-light-credentials">
+                  <span className="sd-light-reg-tag">
+                    <Building2 size={12} /> ROC DELHI · CIN U85491DL2023OPC416284
+                  </span>
+                  <h2>{service.title}</h2>
+                  <p>Turnkey Institutional Solutions &amp; Governance</p>
+                </div>
+
+                {/* Key Deliverables Scope Grid */}
+                <div className="sd-light-scope-grid">
+                  {service.bulletPoints.slice(0, 4).map((bullet) => (
+                    <div key={bullet} className="sd-light-scope-chip">
+                      <span className="sd-light-chip-dot" style={{ background: service.themeColor }} />
+                      <span>{bullet}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Floating Credential Badges */}
+                <div className="sd-light-float-badge sd-light-float-badge--top">
+                  <div className="sd-light-badge-icon" style={{ color: service.themeColor, background: `${service.themeColor}15`, borderColor: `${service.themeColor}30` }}>
+                    <Building2 size={16} />
                   </div>
                   <div>
-                    <strong>{service.shortTitle}</strong>
-                    <small>Turnkey Institutional Delivery</small>
+                    <strong>New Delhi HQ</strong>
+                    <small>Serving Bharat &amp; Beyond</small>
+                  </div>
+                </div>
+
+                <div className="sd-light-float-badge sd-light-float-badge--bottom">
+                  <div className="sd-light-badge-icon" style={{ color: service.themeColor, background: `${service.themeColor}15`, borderColor: `${service.themeColor}30` }}>
+                    <ShieldCheck size={16} />
+                  </div>
+                  <div>
+                    <strong>100% Client Ownership</strong>
+                    <small>Full Master IP &amp; Source Assets</small>
                   </div>
                 </div>
               </div>
