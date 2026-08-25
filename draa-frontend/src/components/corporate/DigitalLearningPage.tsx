@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
 import {
   ArrowRight,
-  BarChart3,
-  BookOpen,
+  Briefcase,
   Check,
   CheckCircle2,
-  Cloud,
   Code2,
   Cpu,
-  Database,
+  Globe,
   GraduationCap,
-  Laptop,
-  Laptop2,
   Layers,
+  Layout,
   LayoutDashboard,
   Lock,
-  MonitorPlay,
-  Play,
+  MonitorSmartphone,
+  Paintbrush,
+  Palette,
   Rocket,
   Search,
   Server,
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Terminal,
-  Users,
-  Video,
+  UserCheck,
+  Wrench,
   Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -49,195 +46,195 @@ interface ServiceCardItem {
 
 const digitalServices: ServiceCardItem[] = [
   {
-    icon: LayoutDashboard,
-    tagline: 'Custom LMS & Portals',
-    title: 'Institutional LMS & Learning Portals',
-    desc: 'Bespoke learning management environments tailored for university faculties, student cohorts, and corporate training programs with full branding control.',
+    icon: Globe,
+    tagline: 'Custom Web Solutions',
+    title: 'Website & Web Application Development',
+    desc: 'Modern, ultra-fast, and responsive websites engineered for small-to-medium businesses, schools, startups, and corporate brands.',
     points: [
-      'Role-based dashboards for Learners, Instructors & Admins',
-      'Automated grading, gradebook sync & attendance tracking',
-      'Interactive discussion forums & live webinar integrations',
-      'LTI 1.3 Advantage & SCORM 2004 compliance',
+      'Corporate, institutional & e-commerce websites',
+      'High-converting landing pages & lead generation forms',
+      'SEO-friendly, mobile-first design with instant page loads',
+      'React, Next.js, WordPress & modern headless CMS setups',
     ],
-    link: '/contact?subject=Custom%20LMS%20%26%20Portal%20Development',
-  },
-  {
-    icon: MonitorPlay,
-    tagline: 'Interactive Courseware',
-    title: 'SCORM & Digital Courseware Packaging',
-    desc: 'High-engagement digital course assets, micro-learning video modules, and H5P interactive simulations architected for maximum learner retention.',
-    points: [
-      'Bite-sized micro-modules indexed to Bloom’s Taxonomy',
-      'H5P interactive quizzes, branch scenarios & drag-and-drop',
-      'High-definition video production & animated motion graphics',
-      'Responsive delivery across desktop, tablet, and mobile',
-    ],
-    link: '/contact?subject=Interactive%20Courseware%20Packaging',
-  },
-  {
-    icon: CheckCircle2,
-    tagline: 'Assessment Engines',
-    title: 'Digital Assessment & Evaluation Systems',
-    desc: 'Secure, high-concurrency examination platforms, adaptive question banks, and automated grading systems for reliable evaluation.',
-    points: [
-      'Multi-format questions (MCQs, coding sandboxes, descriptive)',
-      'Automated anti-cheating, proctoring & tab-lockout protocols',
-      'Instant outcome analytics & verifiable digital transcripts',
-      'CBSE, University & Corporate certification readiness',
-    ],
-    link: '/contact?subject=Digital%20Assessment%20Engines',
+    link: '/contact?subject=Website%20Development%20Inquiry',
   },
   {
     icon: Smartphone,
-    tagline: 'Mobile Learning Apps',
-    title: 'Cross-Platform Mobile Learning Applications',
-    desc: 'Native and Progressive Web Apps (PWAs) that allow learners to access lectures, download offline study materials, and track progress on iOS and Android.',
+    tagline: 'iOS & Android Apps',
+    title: 'Mobile App Development',
+    desc: 'Intuitive, high-performance mobile applications built for small and mid-sized businesses, service providers, and educational platforms.',
     points: [
-      'Offline caching & background synchronization',
-      'Personalized push notifications & streak gamification',
-      'Low-bandwidth video streaming optimizations',
-      'App Store & Google Play Store release management',
+      'Cross-platform iOS & Android mobile applications (React Native / Flutter)',
+      'Push notifications, user login & seamless payment gateways',
+      'Offline data caching & smooth user navigation',
+      'Full deployment to Apple App Store & Google Play Store',
     ],
-    link: '/contact?subject=Mobile%20Learning%20App%20Development',
+    link: '/contact?subject=Mobile%20App%20Development%20Inquiry',
   },
   {
-    icon: Server,
-    tagline: 'Institutional ERP & Portals',
-    title: 'Student ERP & Campus Workflow Systems',
-    desc: 'Integrated web applications simplifying student admissions, fee payments, document verification, and academic transcripts.',
+    icon: Palette,
+    tagline: 'Personal & Professional Brands',
+    title: 'Portfolio & Showcase Website Design',
+    desc: 'Sleek, bespoke portfolio websites for doctors, professors, consultants, researchers, freelancers, and creative professionals to showcase their work.',
     points: [
-      'Single Sign-On (SSO) with OAuth, Google & SAML',
-      'Payment gateway integrations (Razorpay, UPI, Stripe)',
-      'Verifiable QR-coded digital diplomas & certificates',
-      'NAAC / NIRF audit-ready data export pipelines',
+      'Interactive project galleries & dynamic case studies',
+      'One-click CV/resume downloads & social links integration',
+      'Direct inquiry & appointment booking forms',
+      'Custom domain setup & personalized corporate email',
     ],
-    link: '/contact?subject=Institutional%20ERP%20%26%20Portal%20Development',
+    link: '/contact?subject=Portfolio%20Website%20Design',
   },
   {
-    icon: Cloud,
-    tagline: 'Cloud & 24/7 DevOps',
-    title: 'Cloud Architecture, Security & Support',
-    desc: 'High-availability AWS/GCP cloud deployments, data encryption, and dedicated DevOps support to guarantee 99.9% uptime for digital learning.',
+    icon: Wrench,
+    tagline: 'SME Tech Maintenance',
+    title: 'Small & Medium-Sized Tech Solutions',
+    desc: 'Reliable technical support for routine fixes, speed optimization, plugin upgrades, payment gateway integration, and workflow automation.',
     points: [
-      'Auto-scaling server clusters handling 50,000+ concurrent users',
-      'End-to-end SSL encryption & GDPR/DPDP compliant storage',
-      'Daily automated database snapshots & disaster recovery',
-      '24/7 technical monitoring & uptime guarantees',
+      'Website bug fixes, malware removal & performance tuning',
+      'Payment gateways (Razorpay, Stripe, UPI) & form integrations',
+      'Database updates, API connectors & third-party tools setup',
+      'Monthly technical maintenance & security backup packages',
     ],
-    link: '/contact?subject=Cloud%20Architecture%20%26%20Maintenance',
+    link: '/contact?subject=Tech%20Support%20%26%20Maintenance',
+  },
+  {
+    icon: LayoutDashboard,
+    tagline: 'Portals & LMS',
+    title: 'Client Portals & Learning Platforms',
+    desc: 'Lightweight, custom management portals and learning dashboards designed around your specific team workflows and customer needs.',
+    points: [
+      'Client login areas, invoice tracking & document sharing',
+      'Course video players, quiz modules & certificate issuance',
+      'Role-based admin dashboards with actionable analytics',
+      'Single Sign-On (SSO) & passwordless authentication',
+    ],
+    link: '/contact?subject=Client%20Portal%20Development',
+  },
+  {
+    icon: Paintbrush,
+    tagline: 'UI/UX & Prototyping',
+    title: 'UI/UX Design & Brand Prototyping',
+    desc: 'Clean, user-friendly interface designs and clickable Figma prototypes that give your product a modern, trustworthy look before development.',
+    points: [
+      'User journey mapping, wireframing & design systems',
+      'Clickable interactive prototypes for investor & client demos',
+      'Modern aesthetics with dark/light themes & micro-animations',
+      'Turnkey asset handover with complete design tokens',
+    ],
+    link: '/contact?subject=UI%20UX%20Design%20Inquiry',
   },
 ];
 
 const audienceTabs = [
   {
-    id: 'higher-ed',
-    label: 'Higher Education',
-    kicker: 'Universities & Autonomous Colleges',
-    title: 'Connected Digital Campuses for Modern Higher Ed',
-    desc: 'We engineer enterprise-grade LMS architectures and computer lab learning platforms that unite degree courseware, OBE assessment rubrics, and NAAC reporting under one roof.',
+    id: 'sme-business',
+    label: 'Small & Medium Businesses',
+    kicker: 'Growing Companies & Service Providers',
+    title: 'Professional Web & Mobile Solutions for Businesses',
+    desc: 'We build high-converting websites, booking apps, and client portals that establish credibility, automate routine tasks, and generate consistent customer inquiries.',
+    image: '/brand/corporate/stock/edtech_code_workspace.jpg',
+    features: [
+      'Responsive, branded websites with Google Local SEO setup',
+      'Integrated contact forms, WhatsApp chat & appointment booking',
+      'Automated invoice generation & secure UPI/Card checkout',
+      'Fast turnaround (1–3 weeks) with full source code ownership',
+    ],
+  },
+  {
+    id: 'portfolios',
+    label: 'Portfolios & Professionals',
+    kicker: 'Consultants, Academics & Creators',
+    title: 'Standout Portfolio Websites That Build Authority',
+    desc: 'Elevate your personal brand with an executive showcase site highlighting your publications, client testimonials, media appearances, and key career achievements.',
     image: '/brand/corporate/stock/edtech_campus_lab.jpg',
     features: [
-      'OBE Courseware mapping directly linked to Bloom’s taxonomy',
-      'Turnkey NAAC/NIRF criteria data collection dashboards',
-      'High-concurrency semester exam & viva scheduling portals',
-      'Full institutional branding with custom domain & SSO',
+      'Custom layout reflecting your personal discipline & tone',
+      'Interactive project showcases & verified case studies',
+      'Direct contact buttons & calendar booking links (Calendly)',
+      '100% mobile-optimized with instant page loading',
     ],
   },
   {
     id: 'schools',
-    label: 'K–12 School Networks',
-    kicker: 'Progressive Schools & Smart Classrooms',
-    title: 'Smart Classroom & Tablet Learning Systems',
-    desc: 'Give teachers, students, and parents an interactive digital ecosystem with touchscreen tablet support, interactive smart board lessons, and NEP 2020 competency report cards.',
+    label: 'Schools & Institutes',
+    kicker: 'Institutions & Coaching Centers',
+    title: 'Intuitive Websites & Portals for Education',
+    desc: 'Modernize your institution’s digital presence with admission inquiry portals, student noticeboards, faculty directories, and downloadable prospectus pages.',
     image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
     features: [
-      'Interactive smart screen & tablet lesson synchronization',
-      'Parent-teacher communication & real-time attendance',
-      'Gamified quiz arenas with instant score feedback',
-      'Accessible on entry-level tablets and smartphones',
+      'Online admission forms with fee payment integration',
+      'Faculty profiles, course prospectus & event photo galleries',
+      'Mobile-friendly student noticeboards & downloadable resources',
+      'Simple admin panel for non-technical staff to update notices',
     ],
   },
   {
-    id: 'corporate',
-    label: 'Corporate Enterprise L&D',
-    kicker: 'Workforce Upskilling & Academies',
-    title: 'Custom Corporate Learning & Onboarding Hubs',
-    desc: 'Deliver measurable employee upskilling with modular micro-learning courses, executive leadership simulation briefs, and detailed team capability matrices.',
-    image: '/brand/corporate/stock/corporate_training_room.jpg',
+    id: 'startups',
+    label: 'Startups & MVPs',
+    kicker: 'Founders & Product Creators',
+    title: 'Rapid MVP & Prototype Development',
+    desc: 'Launch your digital product fast with clean React/Next.js web apps and cross-platform mobile prototypes ready for real user testing and investor pitches.',
+    image: '/brand/corporate/stock/ai_tech_lab.jpg',
     features: [
-      'Role-based learning tracks with executive certification',
-      'SCORM integration with existing enterprise HRMS platforms',
-      'Manager dashboards tracking completion & skill mastery',
-      '100% enterprise copyright and proprietary IP transfer',
-    ],
-  },
-  {
-    id: 'edtech',
-    label: 'EdTech Brands',
-    kicker: 'Engineering & EdTech Platforms',
-    title: 'Modern Software Engineering Foundations for EdTech',
-    desc: 'Accelerate your time-to-market with modern React/Next.js frontend architectures, scalable video streaming pipelines, code sandboxes, and cloud infrastructure.',
-    image: '/brand/corporate/stock/edtech_code_workspace.jpg',
-    features: [
-      'Next.js 14 & React architectures with instant page loads',
-      'Adaptive testing algorithms & personalized recommendation engines',
-      'Interactive coding sandboxes & live whiteboard tools',
-      'Scalable multi-tenant SaaS architecture for rapid growth',
+      'Full-stack Next.js & React architectures with Node.js backend',
+      'Authentication, database setup & third-party API hooks',
+      'Rapid sprint delivery with weekly milestone demos',
+      '100% clean code handover with no vendor lock-in',
     ],
   },
 ];
 
 const interactiveDemos = [
   {
-    id: 'lms-core',
-    name: 'Smart LMS Portal',
-    icon: LayoutDashboard,
+    id: 'web-showcase',
+    name: 'Modern Web Portal',
+    icon: Globe,
     image: '/brand/corporate/stock/digital-learning.jpg',
-    title: 'Personalized Learner Dashboard & Course Hub',
-    desc: 'Clean, responsive interface with syllabus progress tracking, lecture recordings, peer discussions, and downloadable study resources.',
+    title: 'Responsive Business & Service Website',
+    desc: 'Clean, modern typography and intuitive navigation that clearly showcases services, customer reviews, and direct call-to-action touchpoints.',
     features: [
-      'Dynamic course progress indicators & milestone checklists',
-      'Live synchronized streaming with interactive transcripts',
-      'Integrated assignment submission with plagiarism detection',
+      'Instant page loading with optimized assets & clean HTML/CSS',
+      'Interactive contact forms with instant email/WhatsApp alerts',
+      'Fully responsive across mobile phones, tablets, and desktops',
     ],
   },
   {
-    id: 'lab-campus',
-    name: 'Campus Tech Lab',
-    icon: Laptop2,
-    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
-    title: 'University Computer Lab & Research Portal',
-    desc: 'High-performance cloud workstation environment for university computer labs, data analytics courses, and faculty research.',
-    features: [
-      'Cloud compute sandboxes pre-configured for STEM & AI',
-      'Role-based professor & student lab permission controls',
-      'Instant compile and automated code evaluation rubrics',
-    ],
-  },
-  {
-    id: 'smart-class',
-    name: 'Interactive Classroom',
-    icon: MonitorPlay,
+    id: 'app-showcase',
+    name: 'Mobile App Engine',
+    icon: Smartphone,
     image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
-    title: 'Connected Tablet & Smart Screen Sync',
-    desc: 'Real-time bidirectional synchronization between educator smart screens and learner tablets for immersive participatory learning.',
+    title: 'Cross-Platform Mobile Application',
+    desc: 'Fluid user interface with smooth swipe transitions, push notification channels, and offline access for iOS and Android devices.',
     features: [
-      'Live interactive polling with instant visual charts',
-      'Tablet stylus handwriting support & digital whiteboards',
-      'Automated session summary generated for revision',
+      'Fast cross-platform code for Android & iOS simultaneously',
+      'Secure user authentication & cloud database synchronization',
+      'Native device feature access (Camera, Geolocation, Storage)',
     ],
   },
   {
-    id: 'code-ide',
-    name: 'EdTech Code Studio',
+    id: 'portfolio-showcase',
+    name: 'Portfolio Showcase',
+    icon: Palette,
+    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
+    title: 'Executive Portfolio & CV Hub',
+    desc: 'Distinguished personal branding platform featuring interactive publication lists, client case studies, and appointment scheduling.',
+    features: [
+      'Showcase your career highlights, credentials, and achievements',
+      'Interactive PDF resume preview & one-click download',
+      'Custom domain with personalized business email configuration',
+    ],
+  },
+  {
+    id: 'devops-showcase',
+    name: 'Code & Tech Support',
     icon: Code2,
     image: '/brand/corporate/stock/edtech_code_workspace.jpg',
-    title: 'Modern Multi-Monitor Engineering Stack',
-    desc: 'Production-ready full-stack software development with automated test suites, CI/CD deployment pipelines, and LTI 1.3 bridges.',
+    title: 'Full-Stack Development & Maintenance',
+    desc: 'Agile coding sprints, API integrations, database optimization, and ongoing technical maintenance for growing small and medium businesses.',
     features: [
-      'Microservice architecture running on AWS auto-scaling clusters',
-      'GraphQL & REST APIs with 99.98% uptime SLA guarantee',
-      'Zero-downtime blue/green deployment workflows',
+      'Clean, maintainable TypeScript & React codebase',
+      'Seamless payment gateway & CRM tool integrations',
+      'Dependable monthly maintenance and bug fix support',
     ],
   },
 ];
@@ -245,29 +242,29 @@ const interactiveDemos = [
 const lifecycleSteps = [
   {
     icon: Search,
-    title: 'Discover & Blueprint',
-    desc: 'Comprehensive analysis of learner journeys, technical constraints, LTI/SIS integrations, and UI/UX wireframing.',
+    title: 'Understand & Scope',
+    desc: 'We discuss your goals, target audience, preferred design style, and exact technical requirements.',
+  },
+  {
+    icon: Layout,
+    title: 'Design & Prototype',
+    desc: 'We create clean wireframes and visual mockups so you can review the look and feel before coding begins.',
   },
   {
     icon: Code2,
-    title: 'Agile Engineering',
-    desc: 'Sprint-based full-stack software development with clean TypeScript, modular components, and database schemas.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'QA & Compliance Audit',
-    desc: 'Rigorous cross-device testing, WCAG 2.1 AA accessibility checks, SCORM validation, and load testing.',
+    title: 'Develop & Test',
+    desc: 'We build your web or mobile app using clean, fast code and test across all phone and desktop screen sizes.',
   },
   {
     icon: Rocket,
-    title: 'Deployment & Training',
-    desc: 'Seamless cloud production launch, administrator masterclasses, educator onboarding, and 24/7 maintenance.',
+    title: 'Launch & Handover',
+    desc: 'We deploy your site or app live, connect your custom domain, and hand over 100% of all source code files.',
   },
 ];
 
 export default function DigitalLearningPage() {
-  const [activeTabId, setActiveTabId] = useState('higher-ed');
-  const [activeDemoId, setActiveDemoId] = useState('lms-core');
+  const [activeTabId, setActiveTabId] = useState('sme-business');
+  const [activeDemoId, setActiveDemoId] = useState('web-showcase');
 
   const activeTab = audienceTabs.find((t) => t.id === activeTabId) || audienceTabs[0];
   const activeDemo = interactiveDemos.find((d) => d.id === activeDemoId) || interactiveDemos[0];
@@ -275,17 +272,17 @@ export default function DigitalLearningPage() {
   return (
     <div className="draa-corp dl-page-root">
       <SEO
-        title="Digital Learning Solutions & EdTech Architecture | DRAA"
+        title="Web Development, App Development & Tech Services | DRAA"
         siteName="DRAA"
-        description="DRAA engineers customized LMS portals, SCORM courseware, digital assessment engines, mobile learning apps, and institutional ERP platforms for schools and universities."
-        keywords="digital learning solutions, custom LMS development, EdTech software engineering, SCORM packaging, online examination system, higher ed student portal, New Delhi EdTech"
-        ogImage="/brand/corporate/stock/edtech_campus_lab.jpg"
+        description="DRAA builds custom websites, mobile applications, portfolio websites, and reliable digital solutions for small and medium businesses, professionals, and institutes."
+        keywords="web development, mobile app development, portfolio website design, small business tech services, React website development, iOS Android app, New Delhi web agency"
+        ogImage="/brand/corporate/stock/edtech_code_workspace.jpg"
       />
       <DraaCorporateHeader />
 
       <main>
         {/* =========================================================================
-            1. HERO SECTION WITH DEDICATED TECH LATTICE CANVAS
+            1. HERO SECTION WITH MODERN TECH CANVAS
             ========================================================================= */}
         <section className="dl-hero">
           <DigitalTechLatticeBackground />
@@ -293,40 +290,40 @@ export default function DigitalLearningPage() {
             {/* Hero Left Content */}
             <div>
               <span className="dl-kicker">
-                <Cpu size={14} /> EDTECH &amp; DIGITAL LEARNING ARCHITECTURE
+                <Cpu size={14} /> WEB, APP &amp; DIGITAL DEVELOPMENT
               </span>
               <h1>
-                Scalable digital platforms <span>built for learning impact</span>
+                Web, App &amp; Tech Solutions <span>built for your growth</span>
               </h1>
               <p className="dl-hero-summary">
-                From custom institutional LMS portals and smart classrooms to code sandboxes and campus ERPs—we engineer secure, accessible, high-retention digital education platforms.
+                From fast business websites and custom mobile apps to standout personal portfolios and day-to-day tech support—we deliver practical, high-performance digital solutions tailored for small and medium-sized projects.
               </p>
               <div className="dl-hero-actions">
-                <Link to="/contact?subject=Digital%20Learning%20Solutions" className="draa-corp-button draa-corp-button-gold">
-                  Request a Tech Consultation <ArrowRight size={17} />
+                <Link to="/contact?subject=Tech%20Project%20Inquiry" className="draa-corp-button draa-corp-button-gold">
+                  Discuss Your Project <ArrowRight size={17} />
                 </Link>
-                <a href="#interactive-preview" className="draa-corp-button draa-corp-button-light">
-                  View Live Platform Demos
+                <a href="#services" className="draa-corp-button draa-corp-button-light">
+                  Explore Services
                 </a>
               </div>
 
               <div className="dl-hero-proof">
                 <div className="dl-proof-item">
-                  <strong>SCORM &amp; LTI 1.3</strong>
-                  <span>Global Standard Compliant</span>
+                  <strong>Web &amp; Mobile Apps</strong>
+                  <span>Cross-Platform Ready</span>
                 </div>
                 <div className="dl-proof-item">
-                  <strong>99.9% Cloud Uptime</strong>
-                  <span>AWS &amp; Microservices</span>
+                  <strong>Fast Delivery</strong>
+                  <span>Agile 1–3 Week Sprints</span>
                 </div>
                 <div className="dl-proof-item">
-                  <strong>100% IP Ownership</strong>
-                  <span>Client-Owned Source Code</span>
+                  <strong>100% Code Handover</strong>
+                  <span>You Own Everything</span>
                 </div>
               </div>
             </div>
 
-            {/* Hero Right: Interactive LMS & Tech Console Visual */}
+            {/* Hero Right: Interactive Tech Console Visual */}
             <div className="dl-hero-console">
               <div className="dl-console-header">
                 <div className="dl-console-dots">
@@ -335,34 +332,34 @@ export default function DigitalLearningPage() {
                   <i />
                 </div>
                 <span className="dl-console-badge">
-                  <Sparkles size={12} /> Enterprise EdTech Stack
+                  <Sparkles size={12} /> Custom Digital Solutions
                 </span>
               </div>
 
               <div className="dl-console-media-box">
                 <img
-                  src="/brand/corporate/stock/edtech_campus_lab.jpg"
-                  alt="High-tech university computer learning laboratory with dual monitors"
+                  src="/brand/corporate/stock/edtech_code_workspace.jpg"
+                  alt="Modern web and mobile software development studio workspace"
                   className="dl-console-img"
                   loading="eager"
                 />
                 <div className="dl-console-overlay-tag">
-                  <Laptop2 size={15} /> Turnkey LMS &amp; Portal Hub
+                  <MonitorSmartphone size={15} /> Web · Mobile · Portfolios
                 </div>
               </div>
 
               <div className="dl-console-metrics-grid">
                 <div className="dl-console-metric-item">
-                  <strong>WCAG 2.1</strong>
-                  <small>Accessible UI</small>
+                  <strong>Responsive</strong>
+                  <small>Mobile &amp; Desktop</small>
                 </div>
                 <div className="dl-console-metric-item">
-                  <strong>SSO &amp; SAML</strong>
-                  <small>Secure Auth</small>
+                  <strong>Fast &amp; SEO</strong>
+                  <small>Optimized Speed</small>
                 </div>
                 <div className="dl-console-metric-item">
-                  <strong>REST &amp; GraphQL</strong>
-                  <small>API Integration</small>
+                  <strong>Full Support</strong>
+                  <small>Maintenance Ready</small>
                 </div>
               </div>
             </div>
@@ -374,15 +371,15 @@ export default function DigitalLearningPage() {
             ========================================================================= */}
         <section className="dl-tech-strip">
           <div className="draa-corp-shell dl-tech-strip-inner">
-            <span className="dl-tech-strip-label">Supported Tech Ecosystem:</span>
+            <span className="dl-tech-strip-label">Technologies We Use:</span>
             <div className="dl-tech-pills-row">
               {[
-                { icon: Code2, label: 'React & Next.js 14' },
-                { icon: Database, label: 'TypeScript & Node' },
-                { icon: Layers, label: 'SCORM & LTI 1.3' },
-                { icon: Cloud, label: 'AWS & Cloud Hosting' },
-                { icon: Lock, label: 'Role-Based RBAC' },
-                { icon: Smartphone, label: 'iOS & Android PWAs' },
+                { icon: Code2, label: 'React & Next.js' },
+                { icon: Smartphone, label: 'React Native & Flutter' },
+                { icon: Layout, label: 'HTML5, CSS3 & JS' },
+                { icon: Globe, label: 'WordPress & Headless CMS' },
+                { icon: Zap, label: 'Payment Gateways & APIs' },
+                { icon: ShieldCheck, label: 'SSL & Secure Cloud Hosting' },
               ].map((tech) => {
                 const Icon = tech.icon;
                 return (
@@ -403,11 +400,11 @@ export default function DigitalLearningPage() {
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
-                <Terminal size={14} /> LIVE PLATFORM EXPERIENCE
+                <MonitorSmartphone size={14} /> WHAT WE BUILD
               </span>
-              <h2>Interactive Software &amp; EdTech Architecture Preview</h2>
+              <h2>Interactive Showcase of Our Digital Solutions</h2>
               <p>
-                Switch between components below to explore our modular learning interfaces, classroom synchronization tools, and developer architectures.
+                Switch between solutions below to explore how we design websites, mobile apps, portfolios, and custom tools for our clients.
               </p>
             </div>
 
@@ -421,7 +418,7 @@ export default function DigitalLearningPage() {
                     <i />
                   </div>
                   <span style={{ fontSize: 13, fontWeight: 800, color: '#FFFFFF' }}>
-                    DRAA EdTech Engine v3.4 · Live Simulation
+                    DRAA Digital Studio · Solution Preview
                   </span>
                 </div>
 
@@ -456,7 +453,7 @@ export default function DigitalLearningPage() {
 
                 <div className="dl-demo-stage-info">
                   <span style={{ fontSize: 11, fontWeight: 850, color: '#F59E0B', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: 8 }}>
-                    Active Module
+                    Featured Capability
                   </span>
                   <h3>{activeDemo.title}</h3>
                   <p>{activeDemo.desc}</p>
@@ -469,11 +466,11 @@ export default function DigitalLearningPage() {
                     ))}
                   </ul>
                   <Link
-                    to="/contact?subject=Live%20EdTech%20Platform%20Inquiry"
+                    to="/contact?subject=Digital%20Project%20Consultation"
                     className="draa-corp-button draa-corp-button-gold"
                     style={{ display: 'inline-flex' }}
                   >
-                    Request Full Platform Demo <ArrowRight size={15} />
+                    Start Your Project With Us <ArrowRight size={15} />
                   </Link>
                 </div>
               </div>
@@ -482,17 +479,17 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            4. 6 CORE DIGITAL LEARNING SERVICES
+            4. 6 CORE DIGITAL & TECH SERVICES
             ========================================================================= */}
         <section id="services" className="dl-section dl-section-tint">
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
-                <Layers size={14} /> CORE CAPABILITIES
+                <Layers size={14} /> OUR CORE SERVICES
               </span>
-              <h2>End-to-End Digital Learning &amp; EdTech Services</h2>
+              <h2>Digital &amp; Tech Services Tailored for Your Needs</h2>
               <p>
-                From single interactive modules to campus-wide learning architectures, our team delivers high-performing educational software.
+                Whether you need a brand-new website, a custom mobile app, a stunning portfolio, or regular tech maintenance—we have you covered.
               </p>
             </div>
 
@@ -516,7 +513,7 @@ export default function DigitalLearningPage() {
                       ))}
                     </ul>
                     <Link to={svc.link} className="dl-service-action">
-                      Discuss this solution <ArrowRight size={14} />
+                      Get a quote for this service <ArrowRight size={14} />
                     </Link>
                   </article>
                 );
@@ -526,17 +523,17 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            5. TABBED SOLUTION ARCHITECTURE EXPLORER
+            5. TABBED SOLUTIONS BY CLIENT SECTOR
             ========================================================================= */}
         <section className="dl-section">
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
-                <Laptop size={14} /> TAILORED ARCHITECTURES
+                <Briefcase size={14} /> WHO WE HELP
               </span>
-              <h2>Digital Solutions Engineered for Your Sector</h2>
+              <h2>Digital Solutions Tailored for Every Client</h2>
               <p>
-                Explore how we architect learning platforms across higher education, K–12 schools, enterprise teams, and EdTech innovators.
+                Discover how we customize our development, design, and tech support for businesses, professionals, schools, and founders.
               </p>
             </div>
 
@@ -575,7 +572,7 @@ export default function DigitalLearningPage() {
                   className="draa-corp-button draa-corp-button-gold"
                   style={{ alignSelf: 'flex-start' }}
                 >
-                  Consult on {activeTab.label} Architecture <ArrowRight size={16} />
+                  Consult on {activeTab.label} Project <ArrowRight size={16} />
                 </Link>
               </div>
 
@@ -592,17 +589,17 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            6. 4-STAGE AGILE ENGINEERING LIFECYCLE
+            6. 4-STAGE AGILE WORKFLOW
             ========================================================================= */}
         <section className="dl-section dl-section-tint">
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
-                <Zap size={14} /> ENGINEERING WORKFLOW
+                <Zap size={14} /> HOW WE WORK
               </span>
-              <h2>How We Deliver Your Digital Learning Platform</h2>
+              <h2>A Simple, Transparent Route from Idea to Launch</h2>
               <p>
-                A transparent, agile development lifecycle ensuring on-time milestone releases, comprehensive testing, and effortless faculty adoption.
+                Clear milestones, regular progress updates, and dependable delivery so you are always in full control of your project.
               </p>
             </div>
 
@@ -624,13 +621,13 @@ export default function DigitalLearningPage() {
             {/* Conversion CTA Banner */}
             <div className="dl-cta-banner">
               <div className="dl-cta-copy">
-                <h2>Ready to build your custom digital learning environment?</h2>
+                <h2>Have a website, mobile app, or tech project in mind?</h2>
                 <p>
-                  Schedule a technical discovery session with our senior learning software architects. We will evaluate your scope, outline a component architecture, and provide a clear timeline.
+                  Reach out today for a friendly, no-obligation conversation. We will review your requirements, recommend the best tech approach, and share a clear estimate and timeline.
                 </p>
               </div>
-              <Link to="/contact?subject=Digital%20Learning%20Architecture" className="dl-cta-btn">
-                Start Architecture Dialogue <ArrowRight size={17} />
+              <Link to="/contact?subject=Digital%20Development%20Project" className="dl-cta-btn">
+                Get a Free Estimate <ArrowRight size={17} />
               </Link>
             </div>
           </div>
