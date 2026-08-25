@@ -148,26 +148,34 @@ const deliverySteps = [
 const audiences = [
   {
     icon: Building2,
+    badge: 'K–12 & Schools',
     title: 'Schools & K–12 Networks',
-    text: 'Syllabus-aligned curriculum, educator empowerment workshops, and learner-engagement toolkits.',
+    text: 'Syllabus-aligned curriculum, educator empowerment workshops, and learner-engagement toolkits tailored to institutional syllabi.',
+    tags: ['Curriculum Design', 'Faculty Enablement', 'Resource Kits'],
     image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
   },
   {
     icon: Landmark,
+    badge: 'Higher Education',
     title: 'Universities & Higher Education',
-    text: 'OBE programme design, international-student guidance, academic conferences, and faculty development.',
+    text: 'OBE programme design, international-student guidance, academic conferences, and NAAC/NIRF accreditation readiness.',
+    tags: ['NAAC Alignment', 'Conferences', 'Global Outreach'],
     image: '/brand/corporate/stock/edtech_campus_lab.jpg',
   },
   {
     icon: GraduationCap,
+    badge: 'Students & Faculty',
     title: 'Learners & Educators',
-    text: 'Structured self-study textbooks, interactive online courses, career bootcamps, and certifications.',
+    text: 'Structured self-study textbooks, interactive online courses, career bootcamps, and professional certifications.',
+    tags: ['Self-Paced Learning', 'Bootcamps', 'Certifications'],
     image: '/brand/corporate/stock/student_skill_workshop.jpg',
   },
   {
     icon: BriefcaseBusiness,
+    badge: 'Enterprises & NGOs',
     title: 'Organisations & Partners',
-    text: 'Custom corporate learning, capacity-building, and CSR education initiatives developed for defined outcomes.',
+    text: 'Custom corporate learning, capacity-building, and CSR education initiatives developed for measurable social outcomes.',
+    tags: ['Executive Upskilling', 'CSR Delivery', 'Custom Modules'],
     image: '/brand/corporate/stock/corporate_training_room.jpg',
   },
 ];
@@ -569,11 +577,12 @@ export default function DraaCorporateHome() {
               <p>We begin with the audience, the academic context, and the desired outcome—not with a one-size-fits-all product.</p>
             </div>
             <div className="draa-corp-audience-grid">
-              {audiences.map(({ icon: Icon, title, text, image }) => (
+              {audiences.map(({ icon: Icon, badge, title, text, tags, image }) => (
                 <article key={title} className="draa-corp-audience-card">
                   <div className="draa-aud-media">
                     <img src={image} alt={title} className="draa-aud-img" loading="lazy" />
                     <div className="draa-aud-scrim" />
+                    <span className="draa-aud-pill-badge">{badge}</span>
                     <div className="draa-aud-icon-wrap">
                       <Icon size={20} />
                     </div>
@@ -581,6 +590,11 @@ export default function DraaCorporateHome() {
                   <div className="draa-aud-body">
                     <h3>{title}</h3>
                     <p>{text}</p>
+                    <div className="draa-aud-tags">
+                      {tags.map((t) => (
+                        <span key={t} className="draa-aud-tag-chip">{t}</span>
+                      ))}
+                    </div>
                     <Link to="/who-we-support" className="draa-aud-link">
                       Explore solutions <ChevronRight size={15} />
                     </Link>
