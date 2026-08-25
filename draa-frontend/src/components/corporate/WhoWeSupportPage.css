@@ -1,0 +1,627 @@
+/* ==========================================================================
+   DRAA - WHO WE SUPPORT PAGE STYLES (Light-Theme, Clean, Executive & Responsive)
+   ========================================================================== */
+
+.support-page-root {
+  --sp-gold: #BD7B20;
+  --sp-gold-light: #FDF8F0;
+  --sp-gold-border: rgba(189, 123, 32, 0.25);
+  --sp-ink: #191611;
+  --sp-muted: #6B6255;
+  --sp-bg: #FFFDF8;
+  --sp-card-bg: #FFFFFF;
+  --sp-border: rgba(39, 32, 23, 0.1);
+  background: var(--sp-bg);
+  color: var(--sp-ink);
+  min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.sp-hero {
+  position: relative;
+  padding: 80px 0 70px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #FBF6EC 0%, #FFFDF8 100%);
+  border-bottom: 1px solid var(--sp-border);
+}
+
+.sp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.sp-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(189, 123, 32, 0.1);
+  border: 1px solid var(--sp-gold-border);
+  color: #925B13;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.sp-hero h1 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--sp-ink);
+  margin: 0 0 20px;
+}
+
+.sp-hero h1 span {
+  display: block;
+  color: var(--sp-gold);
+  font-style: italic;
+}
+
+.sp-hero-summary {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--sp-muted);
+  max-width: 540px;
+  margin: 0 0 28px;
+}
+
+.sp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 35px;
+}
+
+.sp-hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(39, 32, 23, 0.1);
+}
+
+.sp-proof-item strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--sp-ink);
+}
+
+.sp-proof-item span {
+  font-size: 12.5px;
+  color: var(--sp-muted);
+  font-weight: 600;
+}
+
+/* Hero Right: Clean Graphic Card */
+.sp-hero-visual {
+  position: relative;
+}
+
+.sp-hero-card {
+  position: relative;
+  border-radius: 22px;
+  padding: 8px;
+  background: #FFFFFF;
+  border: 1px solid rgba(39, 32, 23, 0.12);
+  box-shadow:
+    0 16px 36px rgba(71, 50, 22, 0.08),
+    0 2px 8px rgba(71, 50, 22, 0.04);
+  transition: transform 0.4s ease;
+}
+
+.sp-hero-card:hover {
+  transform: translateY(-4px);
+}
+
+.sp-hero-card-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.sp-hero-floating-badge {
+  position: absolute;
+  bottom: -16px;
+  left: -14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--sp-gold-border);
+  border-radius: 14px;
+  box-shadow:
+    0 10px 28px rgba(71, 50, 22, 0.1),
+    0 2px 6px rgba(71, 50, 22, 0.04);
+}
+
+.sp-floating-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(189, 123, 32, 0.12);
+  color: var(--sp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sp-hero-floating-badge strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 850;
+  color: var(--sp-ink);
+}
+
+.sp-hero-floating-badge small {
+  display: block;
+  font-size: 11px;
+  color: var(--sp-muted);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   2. AUDIENCES BENTO SHOWCASE
+   -------------------------------------------------------------------------- */
+.sp-section {
+  padding: 85px 0;
+  position: relative;
+}
+
+.sp-section-tint {
+  background: #FAF5EB;
+  border-top: 1px solid var(--sp-border);
+  border-bottom: 1px solid var(--sp-border);
+}
+
+.sp-section-header {
+  max-width: 680px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.sp-section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(189, 123, 32, 0.1);
+  border: 1px solid var(--sp-gold-border);
+  color: #925B13;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.sp-section-header h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(30px, 3.6vw, 42px);
+  font-weight: 400;
+  color: var(--sp-ink);
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+
+.sp-section-header p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--sp-muted);
+  margin: 0;
+}
+
+/* Audiences Grid */
+.sp-audiences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sp-audiences-grid .sp-audience-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.sp-audience-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid var(--sp-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(71, 50, 22, 0.04);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.sp-audience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(71, 50, 22, 0.09);
+  border-color: var(--sp-gold-border);
+}
+
+.sp-audience-media {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.sp-audience-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sp-audience-card:hover .sp-audience-img {
+  transform: scale(1.06);
+}
+
+.sp-audience-icon-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  color: var(--sp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--sp-gold-border);
+}
+
+.sp-audience-body {
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.sp-audience-body h3 {
+  font-size: 18px;
+  font-weight: 850;
+  color: var(--sp-ink);
+  margin: 0 0 6px;
+}
+
+.sp-audience-tagline {
+  display: block;
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--sp-gold);
+  margin-bottom: 10px;
+}
+
+.sp-audience-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--sp-muted);
+  margin: 0 0 16px;
+}
+
+.sp-audience-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sp-audience-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--sp-ink);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.sp-audience-checklist svg {
+  color: var(--sp-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sp-audience-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 850;
+  color: var(--sp-gold);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.sp-audience-link:hover {
+  gap: 9px;
+}
+
+/* --------------------------------------------------------------------------
+   3. SOLUTIONS BY DOMAIN
+   -------------------------------------------------------------------------- */
+.sp-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sp-solution-item {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0 4px 14px rgba(71, 50, 22, 0.03);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-solution-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--sp-gold-border);
+  box-shadow: 0 12px 28px rgba(71, 50, 22, 0.08);
+}
+
+.sp-solution-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(189, 123, 32, 0.1);
+  color: var(--sp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.sp-solution-item h3 {
+  font-size: 17px;
+  font-weight: 850;
+  color: var(--sp-ink);
+  margin: 0 0 8px;
+}
+
+.sp-solution-item p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--sp-muted);
+  margin: 0 0 14px;
+}
+
+.sp-solution-action {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--sp-gold);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. WHY PARTNER WITH DRAA (5 CORE PILLARS)
+   -------------------------------------------------------------------------- */
+.sp-why-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.sp-why-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 22px 18px;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0 4px 12px rgba(71, 50, 22, 0.03);
+  transition: all 0.3s ease;
+}
+
+.sp-why-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--sp-gold-border);
+  box-shadow: 0 12px 24px rgba(71, 50, 22, 0.08);
+}
+
+.sp-why-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(189, 123, 32, 0.1);
+  color: var(--sp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.sp-why-card h3 {
+  font-size: 15px;
+  font-weight: 850;
+  color: var(--sp-ink);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.sp-why-card p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--sp-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. COLLABORATION ROADMAP
+   -------------------------------------------------------------------------- */
+.sp-roadmap-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.sp-roadmap-step {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px 18px;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0 4px 14px rgba(71, 50, 22, 0.03);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.sp-roadmap-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--sp-gold-border);
+  box-shadow: 0 12px 28px rgba(71, 50, 22, 0.08);
+}
+
+.sp-roadmap-step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(189, 123, 32, 0.1);
+  color: var(--sp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.sp-roadmap-step h3 {
+  font-size: 15.5px;
+  font-weight: 850;
+  color: var(--sp-ink);
+  margin: 0 0 6px;
+}
+
+.sp-roadmap-step p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--sp-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. CONVERSION CTA BANNER
+   -------------------------------------------------------------------------- */
+.sp-cta-banner {
+  background: linear-gradient(135deg, #1C1914 0%, #2A2319 60%, #BD7B20 100%);
+  border-radius: 24px;
+  padding: 50px 48px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 50px rgba(28, 25, 20, 0.25);
+  margin-top: 20px;
+}
+
+.sp-cta-copy h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 400;
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+
+.sp-cta-copy p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #E6DCCD;
+  margin: 0;
+  max-width: 580px;
+}
+
+.sp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  color: #191611;
+  font-size: 14px;
+  font-weight: 850;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sp-cta-btn:hover {
+  transform: translateY(-2px);
+  background: #FDF8F0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .sp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sp-audiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sp-audiences-grid .sp-audience-card:last-child {
+    grid-column: auto;
+  }
+  .sp-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sp-why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sp-roadmap-flow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-audiences-grid {
+    grid-template-columns: 1fr;
+  }
+  .sp-solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  .sp-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .sp-roadmap-flow {
+    grid-template-columns: 1fr;
+  }
+  .sp-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 28px;
+  }
+}
