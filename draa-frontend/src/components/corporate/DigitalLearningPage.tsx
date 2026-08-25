@@ -1,586 +1,497 @@
+import React, { useState } from 'react';
 import {
   ArrowRight,
   BarChart3,
-  BookOpenCheck,
+  BookOpen,
   Check,
-  CirclePlay,
-  ClipboardCheck,
+  CheckCircle2,
   Cloud,
   Code2,
+  Cpu,
+  Database,
   GraduationCap,
+  Laptop,
   Laptop2,
+  Layers,
   LayoutDashboard,
+  Lock,
   MonitorPlay,
-  Palette,
-  Settings2,
+  Rocket,
+  Search,
+  Server,
   ShieldCheck,
   Smartphone,
   Sparkles,
   Users,
   Video,
-} from "lucide-react";
-import { Link } from "react-router-dom";
-import DraaCorporateFooter from "./DraaCorporateFooter";
-import DraaCorporateHeader from "./DraaCorporateHeader";
-import SEO from "./SEO";
-import ScrollToTop from "./ScrollToTop";
-import ScrollTop from "./ScrollTop";
-import "./DraaCorporateHome.css";
-import "./DigitalLearningPage.css";
+  Zap,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import DigitalTechLatticeBackground from './DigitalTechLatticeBackground';
+import DraaCorporateFooter from './DraaCorporateFooter';
+import DraaCorporateHeader from './DraaCorporateHeader';
+import ScrollToTop from './ScrollToTop';
+import ScrollTop from './ScrollTop';
+import SEO from './SEO';
+import './DraaCorporateHome.css';
+import './DigitalLearningPage.css';
 
-const remoteImage = (id: string, width: number) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=88`;
+interface ServiceCardItem {
+  icon: React.ComponentType<{ size?: number }>;
+  tagline: string;
+  title: string;
+  desc: string;
+  points: string[];
+  link: string;
+}
 
-const capabilities = [
+const digitalServices: ServiceCardItem[] = [
   {
     icon: LayoutDashboard,
-    title: "Learning platforms & LMS",
-    text: "Structured portals for courses, resources, learner progress, communication and administration.",
+    tagline: 'Custom LMS & Portals',
+    title: 'Institutional LMS & Learning Portals',
+    desc: 'Bespoke learning management environments tailored for university faculties, student cohorts, and corporate training programs with full branding control.',
     points: [
-      "Role-based dashboards",
-      "Course and cohort management",
-      "Progress visibility",
+      'Role-based dashboards for Learners, Instructors & Admins',
+      'Automated grading, gradebook sync & attendance tracking',
+      'Interactive discussion forums & live webinar integrations',
+      'LTI 1.3 Advantage & SCORM 2004 compliance',
     ],
-    className: "digital-cap-platform",
+    link: '/contact?subject=Custom%20LMS%20%26%20Portal%20Development',
   },
   {
-    icon: BookOpenCheck,
-    title: "Digital course experiences",
-    text: "Outcome-led courses that combine clear content, activities, media and guided practice.",
-    points: [
-      "Learning architecture",
-      "Interactive content",
-      "Accessible delivery",
-    ],
-    image: remoteImage("photo-1516321318423-f06f85e504b3", 1200),
-    className: "digital-cap-course",
-  },
-  {
-    icon: Video,
-    title: "Virtual classrooms",
-    text: "Live and blended learning spaces designed around participation and continuity.",
-    className: "digital-cap-small",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Digital assessment",
-    text: "Question banks, assignments, feedback and reporting connected to learning outcomes.",
-    className: "digital-cap-small",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile learning",
-    text: "Responsive experiences that keep essential learning usable across devices and contexts.",
-    className: "digital-cap-small",
-  },
-  {
-    icon: Settings2,
-    title: "Implementation support",
-    text: "Content migration, onboarding, training and adoption support for a confident launch.",
-    className: "digital-cap-small",
-  },
-];
-
-const useCases = [
-  {
-    label: "Higher education",
-    title: "Connected learning for modern campuses",
-    text: "Bring courses, faculty resources, assessment and learner support into one coherent experience.",
-    image: remoteImage("photo-1522202176988-66273c2fd55f", 1100),
-    icon: GraduationCap,
-  },
-  {
-    label: "Schools & training providers",
-    title: "Blended programmes that stay organised",
-    text: "Support classroom teaching with structured content, practice, communication and progress tracking.",
-    image: remoteImage("photo-1509062522246-3755977927d7", 1100),
     icon: MonitorPlay,
-  },
-  {
-    label: "Organisations & teams",
-    title: "Learning built around capability goals",
-    text: "Deliver onboarding, professional learning and role-based development with clearer evidence of participation.",
-    image: remoteImage("photo-1521737711867-e3b97375f902", 1100),
-    icon: Users,
-  },
-];
-
-const journey = [
-  ["Discover", "Audience, constraints and outcomes"],
-  ["Architect", "Content, pathways and platform"],
-  ["Build & launch", "Experience, testing and onboarding"],
-  ["Measure & improve", "Usage, feedback and iteration"],
-];
-
-const digitalRoutes = [
-  { icon: Code2, title: "Website or web portal", text: "For services, admissions, information and business workflows" },
-  { icon: Smartphone, title: "Mobile application", text: "For learners, customers and teams on the move" },
-  { icon: GraduationCap, title: "Learning platform or LMS", text: "For courses, cohorts, resources and learner progress" },
-  { icon: ClipboardCheck, title: "Assessment or exam system", text: "For practice, feedback, reporting and certification" },
-];
-
-const developmentServices = [
-  {
-    icon: Code2,
-    title: "Website Development",
-    category: "Custom web solutions",
-    delivery: "Responsive + SEO-ready",
-    text: "Professional websites and web applications designed around your audience, services and business goals.",
-    skills: [
-      "Corporate and institutional websites",
-      "Portals and custom web applications",
-      "CMS, forms and third-party integrations",
+    tagline: 'Interactive Courseware',
+    title: 'SCORM & Digital Courseware Packaging',
+    desc: 'High-engagement digital course assets, micro-learning video modules, and H5P interactive simulations architected for maximum learner retention.',
+    points: [
+      'Bite-sized micro-modules indexed to Bloom’s Taxonomy',
+      'H5P interactive quizzes, branch scenarios & drag-and-drop',
+      'High-definition video production & animated motion graphics',
+      'Responsive delivery across desktop, tablet, and mobile',
     ],
+    link: '/contact?subject=Interactive%20Courseware%20Packaging',
+  },
+  {
+    icon: CheckCircle2,
+    tagline: 'Assessment Engines',
+    title: 'Digital Assessment & Evaluation Systems',
+    desc: 'Secure, high-concurrency examination platforms, adaptive question banks, and automated grading systems for reliable evaluation.',
+    points: [
+      'Multi-format questions (MCQs, coding sandboxes, descriptive)',
+      'Automated anti-cheating, proctoring & tab-lockout protocols',
+      'Instant outcome analytics & verifiable digital transcripts',
+      'CBSE, University & Corporate certification readiness',
+    ],
+    link: '/contact?subject=Digital%20Assessment%20Engines',
   },
   {
     icon: Smartphone,
-    title: "Mobile App Development",
-    category: "Android & iOS",
-    delivery: "Prototype to launch",
-    text: "Useful, reliable mobile applications shaped for learners, customers, teams and everyday operations.",
-    skills: [
-      "Cross-platform application development",
-      "Authentication and notifications",
-      "Testing and store-launch support",
+    tagline: 'Mobile Learning Apps',
+    title: 'Cross-Platform Mobile Learning Applications',
+    desc: 'Native and Progressive Web Apps (PWAs) that allow learners to access lectures, download offline study materials, and track progress on iOS and Android.',
+    points: [
+      'Offline caching & background synchronization',
+      'Personalized push notifications & streak gamification',
+      'Low-bandwidth video streaming optimizations',
+      'App Store & Google Play Store release management',
     ],
+    link: '/contact?subject=Mobile%20Learning%20App%20Development',
   },
   {
-    icon: GraduationCap,
-    title: "LMS & Learning Platforms",
-    category: "Education technology",
-    delivery: "Platform + content",
-    text: "Branded learning environments that organise programmes, resources, assessment and learner progress.",
-    skills: [
-      "Learner and educator dashboards",
-      "Course, cohort and resource management",
-      "Assessment, reporting and certificates",
+    icon: Server,
+    tagline: 'Institutional ERP & Portals',
+    title: 'Student ERP & Campus Workflow Systems',
+    desc: 'Integrated web applications simplifying student admissions, fee payments, document verification, and academic transcripts.',
+    points: [
+      'Single Sign-On (SSO) with OAuth, Google & SAML',
+      'Payment gateway integrations (Razorpay, UPI, Stripe)',
+      'Verifiable QR-coded digital diplomas & certificates',
+      'NAAC / NIRF audit-ready data export pipelines',
     ],
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Institution Portals & ERP",
-    category: "Workflow automation",
-    delivery: "Connected operations",
-    text: "Secure portals that simplify information, requests and routine workflows for institutions and organisations.",
-    skills: [
-      "Admissions and student portals",
-      "Document, fee and request workflows",
-      "Role-based administrative dashboards",
-    ],
-  },
-  {
-    icon: Palette,
-    title: "UI/UX & Product Design",
-    category: "Research-led design",
-    delivery: "Prototype + design system",
-    text: "Clear interfaces and user journeys that make websites, applications and platforms easier to understand and use.",
-    skills: [
-      "User research and journey mapping",
-      "Wireframes and interactive prototypes",
-      "Accessible UI and reusable design systems",
-    ],
+    link: '/contact?subject=Institutional%20ERP%20%26%20Portal%20Development',
   },
   {
     icon: Cloud,
-    title: "Cloud, Maintenance & Support",
-    category: "Ongoing technology support",
-    delivery: "Secure + scalable",
-    text: "Technical support that keeps your digital product stable, current and ready to grow after launch.",
-    skills: [
-      "Cloud deployment and hosting support",
-      "Monitoring, backups and security updates",
-      "Ongoing improvements and technical help",
+    tagline: 'Cloud & 24/7 DevOps',
+    title: 'Cloud Architecture, Security & Support',
+    desc: 'High-availability AWS/GCP cloud deployments, data encryption, and dedicated DevOps support to guarantee 99.9% uptime for digital learning.',
+    points: [
+      'Auto-scaling server clusters handling 50,000+ concurrent users',
+      'End-to-end SSL encryption & GDPR/DPDP compliant storage',
+      'Daily automated database snapshots & disaster recovery',
+      '24/7 technical monitoring & uptime guarantees',
     ],
+    link: '/contact?subject=Cloud%20Architecture%20%26%20Maintenance',
+  },
+];
+
+const audienceTabs = [
+  {
+    id: 'higher-ed',
+    label: 'Higher Education',
+    kicker: 'Universities & Autonomous Colleges',
+    title: 'Connected Digital Campuses for Modern Higher Ed',
+    desc: 'We engineer enterprise-grade LMS architectures and student information systems that unite degree courseware, OBE assessment rubrics, and NAAC reporting under one roof.',
+    image: '/brand/corporate/stock/university-building.jpg',
+    features: [
+      'OBE Courseware mapping directly linked to Bloom’s taxonomy',
+      'Turnkey NAAC/NIRF criteria data collection dashboards',
+      'High-concurrency semester exam & viva scheduling portals',
+      'Full institutional branding with custom domain & SSO',
+    ],
+  },
+  {
+    id: 'schools',
+    label: 'K–12 School Networks',
+    kicker: 'Progressive Schools & Chain Networks',
+    title: 'Blended Learning Platforms for Schools',
+    desc: 'Give teachers, students, and parents a unified digital portal with interactive curriculum workbooks, automated homework trackers, and NEP 2020 skill report cards.',
+    image: '/brand/corporate/stock/classroom.jpg',
+    features: [
+      'Syllabus-aligned digital worksheets & video lessons',
+      'Parent-teacher communication & real-time attendance',
+      'Gamified quiz arenas with badges & leaderboards',
+      'Accessible on entry-level tablets and smartphones',
+    ],
+  },
+  {
+    id: 'corporate',
+    label: 'Corporate Enterprise L&D',
+    kicker: 'Workforce Upskilling & Academies',
+    title: 'Custom Corporate Learning & Onboarding Hubs',
+    desc: 'Deliver measurable employee upskilling with modular micro-learning courses, executive leadership simulation briefs, and detailed team capability matrices.',
+    image: '/brand/corporate/stock/corporate_training_room.jpg',
+    features: [
+      'Role-based learning tracks with executive certification',
+      'SCORM integration with existing enterprise HRMS platforms',
+      'Manager dashboards tracking completion & skill mastery',
+      '100% enterprise copyright and proprietary IP transfer',
+    ],
+  },
+  {
+    id: 'edtech',
+    label: 'EdTech Brands',
+    kicker: 'Fast-Growing EdTech Startups',
+    title: 'Scalable Platform Foundations for EdTech Innovators',
+    desc: 'Accelerate your time-to-market with modern React/Next.js frontend architectures, scalable video streaming pipelines, and secure payment workflows.',
+    image: '/brand/corporate/stock/ai_tech_lab.jpg',
+    features: [
+      'Next.js 14 & React architectures with instant page loads',
+      'Adaptive testing algorithms & personalized recommendation engines',
+      'Live streaming virtual classroom with whiteboard tools',
+      'Scalable multi-tenant SaaS architecture for rapid growth',
+    ],
+  },
+];
+
+const lifecycleSteps = [
+  {
+    icon: Search,
+    title: 'Discover & Blueprint',
+    desc: 'Comprehensive analysis of learner journeys, technical constraints, LTI/SIS integrations, and UI/UX wireframing.',
+  },
+  {
+    icon: Code2,
+    title: 'Agile Engineering',
+    desc: 'Sprint-based full-stack software development with clean TypeScript, modular components, and database schemas.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'QA & Compliance Audit',
+    desc: 'Rigorous cross-device testing, WCAG 2.1 AA accessibility checks, SCORM validation, and load testing.',
+  },
+  {
+    icon: Rocket,
+    title: 'Deployment & Training',
+    desc: 'Seamless cloud production launch, administrator masterclasses, educator onboarding, and 24/7 maintenance.',
   },
 ];
 
 export default function DigitalLearningPage() {
+  const [activeTabId, setActiveTabId] = useState('higher-ed');
+  const activeTab = audienceTabs.find((t) => t.id === activeTabId) || audienceTabs[0];
+
   return (
-    <div className="draa-corp digital-page">
+    <div className="draa-corp dl-page-root">
       <SEO
-        title="Digital Learning Solutions"
+        title="Digital Learning Solutions & EdTech Architecture | DRAA"
         siteName="DRAA"
-        description="DRAA designs websites, mobile apps, learning platforms, institution portals, digital courses and supported technology solutions for education institutions and organisations."
-        ogImage={remoteImage("photo-1522202176988-66273c2fd55f", 1600)}
+        description="DRAA engineers customized LMS portals, SCORM courseware, digital assessment engines, mobile learning apps, and institutional ERP platforms for schools and universities."
+        keywords="digital learning solutions, custom LMS development, EdTech software engineering, SCORM packaging, online examination system, higher ed student portal, New Delhi EdTech"
+        ogImage="/brand/corporate/stock/digital-learning.jpg"
       />
       <DraaCorporateHeader />
+
       <main>
-        <section className="digital-hero">
-          <img className="digital-hero-background" src={remoteImage("photo-1706016899218-ebe36844f70e", 2200)} alt="" />
-          <div className="digital-hero-wash" aria-hidden="true" />
-          <div className="draa-corp-shell digital-hero-grid">
-            <div className="digital-hero-copy">
-              <span className="digital-kicker">
-                <Sparkles size={15} /> Digital products, built around people
-              </span>
-              <p className="digital-overline">
-                DRAA DIGITAL EXPERIENCES & PLATFORMS
-              </p>
-              <h1>
-                Digital experiences people <em>understand</em>
-                <span>and teams can rely on</span>
-              </h1>
-              <p className="digital-hero-lead">
-                From a corporate website or mobile app to a learning platform or
-                institutional portal, DRAA creates connected digital products
-                with a clear purpose, a confident user journey and reliable support.
-              </p>
-              <div className="digital-actions">
-                <Link
-                  to="/contact?subject=Digital%20Experiences%20%26%20Platforms"
-                  className="digital-button digital-button-dark"
-                >
-                  Discuss your requirement <ArrowRight size={17} />
-                </Link>
-                <a
-                  href="#digital-capabilities"
-                  className="digital-button digital-button-light"
-                >
-                  Explore capabilities
-                </a>
-              </div>
-              <div className="digital-proof-row">
-                <span>
-                  <ShieldCheck size={17} />
-                  <strong>Accessible</strong>
-                  <small>Designed for real learners</small>
-                </span>
-                <span>
-                  <Cloud size={17} />
-                  <strong>Scalable</strong>
-                  <small>Built around your scope</small>
-                </span>
-                <span>
-                  <BarChart3 size={17} />
-                  <strong>Measurable</strong>
-                  <small>Clear progress signals</small>
-                </span>
-              </div>
-            </div>
-            <div className="digital-hero-media">
-              <img
-                src={remoteImage("photo-1680060731105-325991d05343", 1600)}
-                alt="University building in Sonepat, India"
-              />
-              <div className="digital-media-shade" />
-              <div className="digital-media-panel">
-                <span>ONE CONNECTED EXPERIENCE</span>
-                <strong>Plan, build and grow with confidence</strong>
-                <ul>
-                  <li>
-                    <CirclePlay size={14} /> Engage
-                  </li>
-                  <li>
-                    <ClipboardCheck size={14} /> Manage
-                  </li>
-                  <li>
-                    <BarChart3 size={14} /> Improve
-                  </li>
-                </ul>
-              </div>
-              <div className="digital-media-badge">
-                <Laptop2 size={18} />
-                <span>
-                  <strong>Multi-device</strong>
-                  <small>Responsive by design</small>
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="digital-route-strip" aria-labelledby="digital-route-title">
-          <div className="draa-corp-shell">
-            <div className="digital-route-heading">
-              <span>Start with your need</span>
-              <h2 id="digital-route-title">What are you looking to build?</h2>
-            </div>
-            <div className="digital-route-grid">
-              {digitalRoutes.map(({ icon: Icon, title, text }) => (
-                <a key={title} href="#digital-courses">
-                  <span><Icon size={20} /></span>
-                  <div>
-                    <strong>{title}</strong>
-                    <small>{text}</small>
-                  </div>
-                  <ArrowRight size={16} />
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="digital-ecosystem">
-          <div className="draa-corp-shell digital-ecosystem-grid">
+        {/* =========================================================================
+            1. HERO SECTION WITH DEDICATED TECH LATTICE CANVAS
+            ========================================================================= */}
+        <section className="dl-hero">
+          <DigitalTechLatticeBackground />
+          <div className="draa-corp-shell dl-hero-grid">
+            {/* Hero Left Content */}
             <div>
-              <span className="digital-section-label">
-                A complete learning system
+              <span className="dl-kicker">
+                <Cpu size={14} /> EDTECH &amp; DIGITAL LEARNING ARCHITECTURE
               </span>
-              <h2>
-                Effective technology begins with a clearly designed learning
-                journey
-              </h2>
-              <p>
-                We define the audience, objectives and operational context
-                before shaping the content, platform and support model around
-                measurable requirements.
+              <h1>
+                Scalable digital platforms <span>built for learning impact</span>
+              </h1>
+              <p className="dl-hero-summary">
+                From custom institutional LMS portals and SCORM courseware to adaptive testing engines and campus ERPs—we engineer secure, accessible, high-retention digital education solutions.
               </p>
+              <div className="dl-hero-actions">
+                <Link to="/contact?subject=Digital%20Learning%20Solutions" className="draa-corp-button draa-corp-button-gold">
+                  Request a Tech Consultation <ArrowRight size={17} />
+                </Link>
+                <a href="#services" className="draa-corp-button draa-corp-button-light">
+                  Explore Capabilities
+                </a>
+              </div>
+
+              <div className="dl-hero-proof">
+                <div className="dl-proof-item">
+                  <strong>SCORM &amp; LTI 1.3</strong>
+                  <span>Global Standard Compliant</span>
+                </div>
+                <div className="dl-proof-item">
+                  <strong>99.9% Cloud Uptime</strong>
+                  <span>AWS &amp; Microservices</span>
+                </div>
+                <div className="dl-proof-item">
+                  <strong>100% IP Ownership</strong>
+                  <span>Client-Owned Source Code</span>
+                </div>
+              </div>
             </div>
-            <div className="digital-ecosystem-flow">
-              <article>
-                <span>
-                  <BookOpenCheck size={21} />
+
+            {/* Hero Right: Interactive LMS & Tech Console Visual */}
+            <div className="dl-hero-console">
+              <div className="dl-console-header">
+                <div className="dl-console-dots">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+                <span className="dl-console-badge">
+                  <Sparkles size={12} style={{ display: 'inline', marginRight: 4 }} /> Enterprise EdTech Stack
                 </span>
-                <strong>Design</strong>
-                <small>Purposeful content and pathways</small>
-              </article>
-              <i />
-              <article>
-                <span>
-                  <MonitorPlay size={21} />
-                </span>
-                <strong>Deliver</strong>
-                <small>Accessible learning experiences</small>
-              </article>
-              <i />
-              <article>
-                <span>
-                  <BarChart3 size={21} />
-                </span>
-                <strong>Improve</strong>
-                <small>Evidence, feedback and iteration</small>
-              </article>
+              </div>
+
+              <div className="dl-console-media-box">
+                <img
+                  src="/brand/corporate/stock/digital-learning.jpg"
+                  alt="Modern digital learning and LMS workstation"
+                  className="dl-console-img"
+                  loading="eager"
+                />
+                <div className="dl-console-overlay-tag">
+                  <Laptop2 size={15} /> Turnkey LMS &amp; Portal Hub
+                </div>
+              </div>
+
+              <div className="dl-console-metrics-grid">
+                <div className="dl-console-metric-item">
+                  <strong>WCAG 2.1</strong>
+                  <small>Accessible UI</small>
+                </div>
+                <div className="dl-console-metric-item">
+                  <strong>SSO &amp; SAML</strong>
+                  <small>Secure Auth</small>
+                </div>
+                <div className="dl-console-metric-item">
+                  <strong>REST &amp; GraphQL</strong>
+                  <small>API Integration</small>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="digital-capabilities" className="digital-capabilities">
-          <div className="draa-corp-shell">
-            <div className="digital-heading-row">
-              <div>
-                <span className="digital-section-label">What we can build</span>
-                <h2>
-                  An integrated digital ecosystem—not a collection of
-                  disconnected tools
-                </h2>
-              </div>
-              <p>
-                Select a focused engagement or combine capabilities into a
-                complete digital learning environment with one accountable
-                delivery partner.
-              </p>
-            </div>
-            <div className="digital-bento">
-              {capabilities.map(
-                (
-                  { icon: Icon, title, text, points, image, className },
-                ) => (
-                  <article key={title} className={className}>
-                    {image && (
-                      <img
-                        src={image}
-                        alt="People designing a digital learning experience on a laptop"
-                        loading="lazy"
-                      />
-                    )}
-                    <div className="digital-cap-body">
-                      <span className="digital-cap-icon">
-                        <Icon size={22} />
-                      </span>
-                      <h3>{title}</h3>
-                      <p>{text}</p>
-                      {points && (
-                        <ul>
-                          {points.map((point) => (
-                            <li key={point}>
-                              <Check size={13} />
-                              {point}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  </article>
-                ),
-              )}
-            </div>
-          </div>
-        </section>
-
-        <section className="digital-use-cases">
-          <div className="draa-corp-shell">
-            <div className="digital-heading-row">
-              <div>
-                <span className="digital-section-label">
-                  Designed for context
-                </span>
-                <h2>
-                  Designed for different learners, environments and
-                  institutional priorities
-                </h2>
-              </div>
-              <p>
-                Each solution is aligned with your users, programme model,
-                infrastructure and evidence requirements.
-              </p>
-            </div>
-            <div className="digital-use-grid">
-              {useCases.map(({ label, title, text, image, icon: Icon }) => (
-                <article key={title}>
-                  <img src={image} alt="" loading="lazy" />
-                  <div>
-                    <span>
-                      <Icon size={17} />
-                      {label}
-                    </span>
-                    <h3>{title}</h3>
-                    <p>{text}</p>
+        {/* =========================================================================
+            2. TECH COMPATIBILITY & STANDARDS STRIP
+            ========================================================================= */}
+        <section className="dl-tech-strip">
+          <div className="draa-corp-shell dl-tech-strip-inner">
+            <span className="dl-tech-strip-label">Supported Technologies:</span>
+            <div className="dl-tech-pills-row">
+              {[
+                { icon: Code2, label: 'React & Next.js' },
+                { icon: Database, label: 'TypeScript & Node' },
+                { icon: Layers, label: 'SCORM & LTI 1.3' },
+                { icon: Cloud, label: 'AWS & Cloud Hosting' },
+                { icon: Lock, label: 'Role-Based RBAC' },
+                { icon: Smartphone, label: 'iOS & Android PWAs' },
+              ].map((tech) => {
+                const Icon = tech.icon;
+                return (
+                  <div key={tech.label} className="dl-tech-pill">
+                    <Icon size={14} />
+                    <span>{tech.label}</span>
                   </div>
-                </article>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section id="digital-courses" className="digital-courses">
+        {/* =========================================================================
+            3. 6 CORE DIGITAL LEARNING SERVICES
+            ========================================================================= */}
+        <section id="services" className="dl-section">
           <div className="draa-corp-shell">
-            <div className="digital-course-intro">
-              <div>
-                <span className="digital-section-label">
-                  Digital development services
-                </span>
-                <h2>Technology services built around real business needs</h2>
-              </div>
-              <div>
-                <p>
-                  DRAA can design, develop and support digital products for
-                  schools, colleges, education providers, organisations and
-                  growing businesses.
-                </p>
-                <span className="digital-course-note">
-                  Every engagement is scoped around your users, workflow,
-                  timeline and long-term support needs.
-                </span>
-              </div>
+            <div className="dl-section-header">
+              <span className="dl-section-pill">
+                <Layers size={14} /> CORE CAPABILITIES
+              </span>
+              <h2>End-to-End Digital Learning &amp; EdTech Services</h2>
+              <p>
+                From single interactive modules to campus-wide learning architectures, our team delivers high-performing educational software.
+              </p>
             </div>
-            <div className="digital-course-grid">
-              {developmentServices.map(
-                (
-                  { icon: Icon, title, category, delivery, text, skills },
-                ) => (
-                  <article key={title}>
-                    <div className="digital-service-visual" aria-hidden="true">
-                      <div className="digital-service-screen">
-                        <span className="digital-service-screen-top">
-                          <i />
-                          <i />
-                          <i />
-                        </span>
-                        <span className="digital-service-screen-content">
-                          <b />
-                          <b />
-                          <b />
-                        </span>
-                      </div>
-                      <span className="digital-service-float">
-                        <Icon size={23} />
-                      </span>
-                      <i className="digital-service-orbit" />
+
+            <div className="dl-services-grid">
+              {digitalServices.map((svc) => {
+                const Icon = svc.icon;
+                return (
+                  <article key={svc.title} className="dl-service-card">
+                    <div className="dl-service-icon-box">
+                      <Icon size={24} />
                     </div>
-                    <div className="digital-course-top">
-                      <span className="digital-course-icon">
-                        <Icon size={22} />
-                      </span>
-                      <small>BUILT AROUND YOUR USERS</small>
-                    </div>
-                    <h3>{title}</h3>
-                    <div className="digital-course-meta">
-                      <span>{category}</span>
-                      <span>{delivery}</span>
-                    </div>
-                    <p>{text}</p>
-                    <ul>
-                      {skills.map((skill) => (
-                        <li key={skill}>
-                          <Check size={13} />
-                          {skill}
+                    <span className="dl-service-tagline">{svc.tagline}</span>
+                    <h3>{svc.title}</h3>
+                    <p className="dl-service-desc">{svc.desc}</p>
+                    <ul className="dl-service-checklist">
+                      {svc.points.map((pt) => (
+                        <li key={pt}>
+                          <Check size={14} />
+                          <span>{pt}</span>
                         </li>
                       ))}
                     </ul>
-                    <Link to={`/contact?subject=${encodeURIComponent(title)}`}>
-                      Discuss this service <ArrowRight size={15} />
+                    <Link to={svc.link} className="dl-service-action">
+                      Discuss this solution <ArrowRight size={14} />
                     </Link>
                   </article>
-                ),
-              )}
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section className="digital-outcomes">
+        {/* =========================================================================
+            4. TABBED SOLUTION ARCHITECTURE EXPLORER
+            ========================================================================= */}
+        <section className="dl-section dl-section-tint">
           <div className="draa-corp-shell">
-            <div>
-              <span className="digital-section-label">
-                What good looks like
+            <div className="dl-section-header">
+              <span className="dl-section-pill">
+                <Laptop size={14} /> TAILORED ARCHITECTURES
               </span>
-              <h2>Effective from first interaction to measurable outcome</h2>
-            </div>
-            <div className="digital-outcome-list">
-              <span>
-                <b>Simple to navigate</b>
-                <small>Clear pathways reduce learner friction.</small>
-              </span>
-              <span>
-                <b>Ready for adoption</b>
-                <small>Training and onboarding support teams.</small>
-              </span>
-              <span>
-                <b>Visible progress</b>
-                <small>Useful signals support timely decisions.</small>
-              </span>
-              <span>
-                <b>Designed to evolve</b>
-                <small>Modular systems grow with the programme.</small>
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <section className="digital-journey">
-          <div className="draa-corp-shell digital-journey-card">
-            <div className="digital-journey-copy">
-              <span className="digital-section-label">Our delivery model</span>
-              <h2>A structured route from requirement to successful launch</h2>
+              <h2>Digital Solutions Engineered for Your Sector</h2>
               <p>
-                One accountable team connects learning design, content,
-                technology and implementation.
+                Explore how we architect learning platforms across higher education, K–12 schools, enterprise teams, and EdTech innovators.
               </p>
             </div>
-            <div className="digital-journey-steps">
-              {journey.map(([title, text]) => (
-                <article key={title}>
-                  <strong>{title}</strong>
-                  <small>{text}</small>
-                </article>
+
+            {/* Tab Selector Buttons */}
+            <div className="dl-tab-buttons-row" role="tablist">
+              {audienceTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTabId === tab.id}
+                  className={`dl-tab-btn ${activeTabId === tab.id ? 'active' : ''}`}
+                  onClick={() => setActiveTabId(tab.id)}
+                >
+                  {tab.label}
+                </button>
               ))}
+            </div>
+
+            {/* Active Tab Showcase Box */}
+            <div className="dl-tab-showcase-box">
+              <div className="dl-tab-showcase-content">
+                <span className="kicker">{activeTab.kicker}</span>
+                <h3>{activeTab.title}</h3>
+                <p>{activeTab.desc}</p>
+                <ul className="dl-tab-showcase-features">
+                  {activeTab.features.map((feat) => (
+                    <li key={feat}>
+                      <CheckCircle2 size={16} />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to={`/contact?subject=${encodeURIComponent(activeTab.title)}`}
+                  className="draa-corp-button draa-corp-button-gold"
+                  style={{ alignSelf: 'flex-start' }}
+                >
+                  Consult on {activeTab.label} Architecture <ArrowRight size={16} />
+                </Link>
+              </div>
+
+              <div className="dl-tab-showcase-media">
+                <img
+                  src={activeTab.image}
+                  alt={activeTab.title}
+                  className="dl-tab-showcase-img"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="digital-final">
+        {/* =========================================================================
+            5. 4-STAGE AGILE ENGINEERING LIFECYCLE
+            ========================================================================= */}
+        <section className="dl-section">
           <div className="draa-corp-shell">
-            <div>
-              <span>READY TO BUILD?</span>
-              <h2>
-                Let’s create a digital learning environment that is practical,
-                scalable and ready to evolve
-              </h2>
+            <div className="dl-section-header">
+              <span className="dl-section-pill">
+                <Zap size={14} /> ENGINEERING WORKFLOW
+              </span>
+              <h2>How We Deliver Your Digital Learning Platform</h2>
+              <p>
+                A transparent, agile development lifecycle ensuring on-time milestone releases, comprehensive testing, and effortless faculty adoption.
+              </p>
             </div>
-            <Link to="/contact?subject=Digital%20Experiences%20%26%20Platforms">
-              Start a conversation <ArrowRight size={17} />
-            </Link>
+
+            <div className="dl-lifecycle-grid">
+              {lifecycleSteps.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.title} className="dl-lifecycle-card">
+                    <div className="dl-lifecycle-icon">
+                      <Icon size={22} />
+                    </div>
+                    <h3>{step.title}</h3>
+                    <p>{step.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Conversion CTA Banner */}
+            <div className="dl-cta-banner">
+              <div className="dl-cta-copy">
+                <h2>Ready to build your custom digital learning environment?</h2>
+                <p>
+                  Schedule a technical discovery session with our senior learning software architects. We will evaluate your scope, outline a component architecture, and provide a clear timeline.
+                </p>
+              </div>
+              <Link to="/contact?subject=Digital%20Learning%20Architecture" className="dl-cta-btn">
+                Start Architecture Dialogue <ArrowRight size={17} />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
+
       <DraaCorporateFooter />
       <ScrollToTop />
       <ScrollTop />
