@@ -17,12 +17,13 @@ const companyLinks: NavMenuLink[] = [
 ];
 
 const serviceLinks: NavMenuLink[] = [
-  { label: 'All Services', description: 'Overview of all 5 core business activities', href: '/capabilities', featured: true },
+  { label: 'All Services', description: 'Overview of all 6 core business activities', href: '/capabilities', featured: true },
   { label: 'Educational Content Development', description: 'Study materials, textbooks, question banks & curriculum content', href: '/services/educational-content-development' },
   { label: 'Academic & Professional Training', description: 'Faculty development, student workshops & corporate training', href: '/services/academic-professional-training' },
   { label: 'Educational Events & Conferences', description: 'Conferences, seminars, webinars, competitions & summits', href: '/services/educational-events-conferences' },
   { label: 'Educational Consultancy', description: 'Curriculum planning, accreditation support & academic guidance', href: '/services/educational-consultancy' },
-  { label: 'Digital Learning Solutions', description: 'LMS platforms, virtual classrooms, mobile apps & AI tracking', href: '/services/digital-learning-solutions' },
+  { label: 'Digital Learning Solutions', description: 'LMS platforms, web & mobile apps, portfolios & AI tracking', href: '/services/digital-learning-solutions' },
+  { label: 'Study in India Guidance', description: 'International admissions, university matching & scholarship advisory', href: studyIndiaPortalUrl },
 ];
 
 const insightLinks: NavMenuLink[] = [

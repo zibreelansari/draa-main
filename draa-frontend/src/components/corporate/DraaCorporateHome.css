@@ -1081,10 +1081,6 @@
   box-shadow: 0 0 0 25px rgba(221, 168, 75, .035), 0 0 0 50px rgba(221, 168, 75, .018);
 }
 
-.draa-corp-solution-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
 .draa-corp-solution-top {
   display: flex;
   align-items: center;

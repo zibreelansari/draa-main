@@ -110,6 +110,16 @@ const solutions = [
     image: '/brand/corporate/stock/web_dev_mockup.jpg',
     themeColor: '#0D9488',
   },
+  {
+    icon: Landmark,
+    title: 'Study in India Strategic Guidance',
+    text: 'International student admissions advisory, campus matching, scholarship assistance, and visa roadmap preparation for Indian higher education.',
+    tags: ['Admissions Advisory', 'Scholarships', 'Campus Matching'],
+    path: studyIndiaPortalUrl,
+    image: '/brand/corporate/stock/delhi_university_heritage_hd.jpg',
+    themeColor: '#059669',
+    isExternal: true,
+  },
 ];
 
 const deliverySteps = [
@@ -369,42 +379,60 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            5. FIVE CORE SERVICES SHOWCASE (Naturally Blended Bento Capabilities)
+            5. SIX CORE SERVICES SHOWCASE (Naturally Blended Bento Capabilities)
             ========================================================================= */}
         <section id="solutions" className="draa-corp-section draa-corp-solutions">
           <div className="draa-corp-shell">
             <div className="draa-corp-section-heading draa-corp-section-heading-light">
               <span className="draa-corp-section-label">What we do</span>
-              <h2>Five core services — One connected partner</h2>
+              <h2>Six core services — One connected partner</h2>
               <p>Each engagement can stand alone or combine into a complete institutional solution.</p>
             </div>
 
             <div className="draa-corp-solution-grid">
-              {solutions.map(({ icon: Icon, title, text, tags, path, image, themeColor }) => (
-                <Link key={title} to={path} className="draa-corp-solution-card">
-                  <div className="draa-corp-solution-media">
-                    <img className="draa-corp-solution-image" src={image} alt={title} loading="lazy" />
-                    <div className="draa-solution-scrim" />
-                    <div className="draa-corp-sol-icon-floating" style={{ color: themeColor }}>
-                      <Icon size={20} />
+              {solutions.map(({ icon: Icon, title, text, tags, path, image, themeColor, isExternal }) => {
+                const cardInner = (
+                  <>
+                    <div className="draa-corp-solution-media">
+                      <img className="draa-corp-solution-image" src={image} alt={title} loading="lazy" />
+                      <div className="draa-solution-scrim" />
+                      <div className="draa-corp-sol-icon-floating" style={{ color: themeColor }}>
+                        <Icon size={20} />
+                      </div>
                     </div>
-                  </div>
-                  <div className="draa-corp-solution-content">
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                    <ul className="draa-corp-tags-list">
-                      {tags.map((tag) => (
-                        <li key={tag}>
-                          <Check size={13} style={{ color: themeColor }} /> {tag}
-                        </li>
-                      ))}
-                    </ul>
-                    <span className="draa-corp-solution-link">
-                      Explore service <ArrowRight size={14} />
-                    </span>
-                  </div>
-                </Link>
-              ))}
+                    <div className="draa-corp-solution-content">
+                      <h3>{title}</h3>
+                      <p>{text}</p>
+                      <ul className="draa-corp-tags-list">
+                        {tags.map((tag) => (
+                          <li key={tag}>
+                            <Check size={13} style={{ color: themeColor }} /> {tag}
+                          </li>
+                        ))}
+                      </ul>
+                      <span className="draa-corp-solution-link">
+                        {isExternal ? 'Open guidance portal' : 'Explore service'} <ArrowRight size={14} />
+                      </span>
+                    </div>
+                  </>
+                );
+
+                return isExternal ? (
+                  <a
+                    key={title}
+                    href={path}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="draa-corp-solution-card"
+                  >
+                    {cardInner}
+                  </a>
+                ) : (
+                  <Link key={title} to={path} className="draa-corp-solution-card">
+                    {cardInner}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="draa-corp-solutions-cta">

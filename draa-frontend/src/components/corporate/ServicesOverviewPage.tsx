@@ -85,8 +85,8 @@ export default function ServicesOverviewPage() {
       <SEO
         title="Our Capabilities & Educational Services | DRAA"
         siteName="DRAA"
-        description="Explore DRAA's five integrated core capabilities: Educational Content Development, Academic Training, Events & Conferences, Consultancy, and Digital Learning."
-        keywords="DRAA capabilities, educational services, academic publishing, faculty training, education events, educational consultancy, digital learning solutions"
+        description="Explore DRAA's six integrated core capabilities: Educational Content Development, Academic Training, Events & Conferences, Consultancy, Digital Learning, and Study in India Guidance."
+        keywords="DRAA capabilities, educational services, academic publishing, faculty training, education events, educational consultancy, digital learning solutions, study in india"
         ogImage="/brand/corporate/stock/academic_publishing_hero.jpg"
       />
       <DraaCorporateHeader />
@@ -120,7 +120,7 @@ export default function ServicesOverviewPage() {
 
               <div className="cap-hero-actions">
                 <a href="#what-we-do" className="draa-corp-button draa-corp-button-gold">
-                  Explore 5 Capabilities <ArrowRight size={16} />
+                  Explore 6 Capabilities <ArrowRight size={16} />
                 </a>
                 <Link to="/contact" className="draa-corp-button draa-corp-button-light">
                   Discuss Your Needs <MessageCircle size={16} />
