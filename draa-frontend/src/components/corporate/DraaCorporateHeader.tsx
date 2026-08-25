@@ -10,6 +10,8 @@ interface NavMenuLink {
   featured?: boolean;
 }
 
+const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
+
 const companyLinks: NavMenuLink[] = [
   { label: 'About DRAA', description: 'Purpose, approach and company story', href: '/about-draa' },
   { label: 'Who We Support', description: 'Schools, universities, brands and partners', href: '/who-we-support' },
@@ -30,8 +32,6 @@ const insightLinks: NavMenuLink[] = [
   { label: 'Resources', description: 'Guides, perspectives and case studies', href: '/resources' },
   { label: 'Learning Programs', description: 'Programmes for every ambition', href: '/learning-programs' },
 ];
-
-const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
 
 function DesktopMenu({ label, links, wide = false, active = false }: { label: string; links: NavMenuLink[]; wide?: boolean; active?: boolean }) {
   return (
