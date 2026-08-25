@@ -15,7 +15,6 @@ import CareersPage from './components/corporate/CareersPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <MotionEnhancer />
       <Routes>
         <Route path="/" element={<DraaCorporateHome />} />
         <Route path="/about-draa" element={<AboutDraaPage />} />
