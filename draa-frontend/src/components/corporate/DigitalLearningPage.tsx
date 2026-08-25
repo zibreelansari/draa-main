@@ -40,6 +40,8 @@ interface ServiceCardItem {
   tagline: string;
   title: string;
   desc: string;
+  image: string;
+  imageAlt: string;
   points: string[];
   link: string;
 }
@@ -50,6 +52,8 @@ const digitalServices: ServiceCardItem[] = [
     tagline: 'Custom Web Solutions',
     title: 'Website & Web Application Development',
     desc: 'Modern, ultra-fast, and responsive websites engineered for small-to-medium businesses, schools, startups, and corporate brands.',
+    image: '/brand/corporate/stock/web_dev_mockup.jpg',
+    imageAlt: 'Photorealistic modern responsive website mockup on MacBook Pro',
     points: [
       'Corporate, institutional & e-commerce websites',
       'High-converting landing pages & lead generation forms',
@@ -63,6 +67,8 @@ const digitalServices: ServiceCardItem[] = [
     tagline: 'iOS & Android Apps',
     title: 'Mobile App Development',
     desc: 'Intuitive, high-performance mobile applications built for small and mid-sized businesses, service providers, and educational platforms.',
+    image: '/brand/corporate/stock/app_dev_mockup.jpg',
+    imageAlt: 'Two modern smartphones displaying sleek mobile application UI screens',
     points: [
       'Cross-platform iOS & Android mobile applications (React Native / Flutter)',
       'Push notifications, user login & seamless payment gateways',
@@ -76,6 +82,8 @@ const digitalServices: ServiceCardItem[] = [
     tagline: 'Personal & Professional Brands',
     title: 'Portfolio & Showcase Website Design',
     desc: 'Sleek, bespoke portfolio websites for doctors, professors, consultants, researchers, freelancers, and creative professionals to showcase their work.',
+    image: '/brand/corporate/stock/portfolio_mockup.jpg',
+    imageAlt: 'Executive personal portfolio website mockup on a tablet screen',
     points: [
       'Interactive project galleries & dynamic case studies',
       'One-click CV/resume downloads & social links integration',
@@ -89,6 +97,8 @@ const digitalServices: ServiceCardItem[] = [
     tagline: 'SME Tech Maintenance',
     title: 'Small & Medium-Sized Tech Solutions',
     desc: 'Reliable technical support for routine fixes, speed optimization, plugin upgrades, payment gateway integration, and workflow automation.',
+    image: '/brand/corporate/stock/tech_support_mockup.jpg',
+    imageAlt: 'Developer workstation with clean code debugging and API integration',
     points: [
       'Website bug fixes, malware removal & performance tuning',
       'Payment gateways (Razorpay, Stripe, UPI) & form integrations',
@@ -102,6 +112,8 @@ const digitalServices: ServiceCardItem[] = [
     tagline: 'Portals & LMS',
     title: 'Client Portals & Learning Platforms',
     desc: 'Lightweight, custom management portals and learning dashboards designed around your specific team workflows and customer needs.',
+    image: '/brand/corporate/stock/client_portal_mockup.jpg',
+    imageAlt: 'Modern SaaS client portal dashboard with project cards and analytics',
     points: [
       'Client login areas, invoice tracking & document sharing',
       'Course video players, quiz modules & certificate issuance',
@@ -115,6 +127,8 @@ const digitalServices: ServiceCardItem[] = [
     tagline: 'UI/UX & Prototyping',
     title: 'UI/UX Design & Brand Prototyping',
     desc: 'Clean, user-friendly interface designs and clickable Figma prototypes that give your product a modern, trustworthy look before development.',
+    image: '/brand/corporate/stock/uiux_design_mockup.jpg',
+    imageAlt: 'Designer desktop monitor displaying Figma UI wireframes and design system',
     points: [
       'User journey mapping, wireframing & design systems',
       'Clickable interactive prototypes for investor & client demos',
@@ -132,7 +146,7 @@ const audienceTabs = [
     kicker: 'Growing Companies & Service Providers',
     title: 'Professional Web & Mobile Solutions for Businesses',
     desc: 'We build high-converting websites, booking apps, and client portals that establish credibility, automate routine tasks, and generate consistent customer inquiries.',
-    image: '/brand/corporate/stock/edtech_code_workspace.jpg',
+    image: '/brand/corporate/stock/web_dev_mockup.jpg',
     features: [
       'Responsive, branded websites with Google Local SEO setup',
       'Integrated contact forms, WhatsApp chat & appointment booking',
@@ -146,7 +160,7 @@ const audienceTabs = [
     kicker: 'Consultants, Academics & Creators',
     title: 'Standout Portfolio Websites That Build Authority',
     desc: 'Elevate your personal brand with an executive showcase site highlighting your publications, client testimonials, media appearances, and key career achievements.',
-    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
+    image: '/brand/corporate/stock/portfolio_mockup.jpg',
     features: [
       'Custom layout reflecting your personal discipline & tone',
       'Interactive project showcases & verified case studies',
@@ -174,7 +188,7 @@ const audienceTabs = [
     kicker: 'Founders & Product Creators',
     title: 'Rapid MVP & Prototype Development',
     desc: 'Launch your digital product fast with clean React/Next.js web apps and cross-platform mobile prototypes ready for real user testing and investor pitches.',
-    image: '/brand/corporate/stock/ai_tech_lab.jpg',
+    image: '/brand/corporate/stock/app_dev_mockup.jpg',
     features: [
       'Full-stack Next.js & React architectures with Node.js backend',
       'Authentication, database setup & third-party API hooks',
@@ -189,7 +203,7 @@ const interactiveDemos = [
     id: 'web-showcase',
     name: 'Modern Web Portal',
     icon: Globe,
-    image: '/brand/corporate/stock/digital-learning.jpg',
+    image: '/brand/corporate/stock/web_dev_mockup.jpg',
     title: 'Responsive Business & Service Website',
     desc: 'Clean, modern typography and intuitive navigation that clearly showcases services, customer reviews, and direct call-to-action touchpoints.',
     features: [
@@ -202,7 +216,7 @@ const interactiveDemos = [
     id: 'app-showcase',
     name: 'Mobile App Engine',
     icon: Smartphone,
-    image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
+    image: '/brand/corporate/stock/app_dev_mockup.jpg',
     title: 'Cross-Platform Mobile Application',
     desc: 'Fluid user interface with smooth swipe transitions, push notification channels, and offline access for iOS and Android devices.',
     features: [
@@ -215,7 +229,7 @@ const interactiveDemos = [
     id: 'portfolio-showcase',
     name: 'Portfolio Showcase',
     icon: Palette,
-    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
+    image: '/brand/corporate/stock/portfolio_mockup.jpg',
     title: 'Executive Portfolio & CV Hub',
     desc: 'Distinguished personal branding platform featuring interactive publication lists, client case studies, and appointment scheduling.',
     features: [
@@ -228,7 +242,7 @@ const interactiveDemos = [
     id: 'devops-showcase',
     name: 'Code & Tech Support',
     icon: Code2,
-    image: '/brand/corporate/stock/edtech_code_workspace.jpg',
+    image: '/brand/corporate/stock/tech_support_mockup.jpg',
     title: 'Full-Stack Development & Maintenance',
     desc: 'Agile coding sprints, API integrations, database optimization, and ongoing technical maintenance for growing small and medium businesses.',
     features: [
@@ -276,7 +290,7 @@ export default function DigitalLearningPage() {
         siteName="DRAA"
         description="DRAA builds custom websites, mobile applications, portfolio websites, and reliable digital solutions for small and medium businesses, professionals, and institutes."
         keywords="web development, mobile app development, portfolio website design, small business tech services, React website development, iOS Android app, New Delhi web agency"
-        ogImage="/brand/corporate/stock/edtech_code_workspace.jpg"
+        ogImage="/brand/corporate/stock/web_dev_mockup.jpg"
       />
       <DraaCorporateHeader />
 
@@ -338,7 +352,7 @@ export default function DigitalLearningPage() {
 
               <div className="dl-console-media-box">
                 <img
-                  src="/brand/corporate/stock/edtech_code_workspace.jpg"
+                  src="/brand/corporate/stock/web_dev_mockup.jpg"
                   alt="Modern web and mobile software development studio workspace"
                   className="dl-console-img"
                   loading="eager"
@@ -479,7 +493,7 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            4. 6 CORE DIGITAL & TECH SERVICES
+            4. 6 CORE DIGITAL & TECH SERVICES WITH ACCURATE IMAGERY
             ========================================================================= */}
         <section id="services" className="dl-section dl-section-tint">
           <div className="draa-corp-shell">
@@ -498,23 +512,33 @@ export default function DigitalLearningPage() {
                 const Icon = svc.icon;
                 return (
                   <article key={svc.title} className="dl-service-card">
-                    <div className="dl-service-icon-box">
-                      <Icon size={24} />
+                    <div className="dl-service-media">
+                      <img
+                        src={svc.image}
+                        alt={svc.imageAlt}
+                        className="dl-service-img"
+                        loading="lazy"
+                      />
+                      <div className="dl-service-icon-badge">
+                        <Icon size={22} />
+                      </div>
                     </div>
-                    <span className="dl-service-tagline">{svc.tagline}</span>
-                    <h3>{svc.title}</h3>
-                    <p className="dl-service-desc">{svc.desc}</p>
-                    <ul className="dl-service-checklist">
-                      {svc.points.map((pt) => (
-                        <li key={pt}>
-                          <Check size={14} />
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to={svc.link} className="dl-service-action">
-                      Get a quote for this service <ArrowRight size={14} />
-                    </Link>
+                    <div className="dl-service-body">
+                      <span className="dl-service-tagline">{svc.tagline}</span>
+                      <h3>{svc.title}</h3>
+                      <p className="dl-service-desc">{svc.desc}</p>
+                      <ul className="dl-service-checklist">
+                        {svc.points.map((pt) => (
+                          <li key={pt}>
+                            <Check size={13} />
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link to={svc.link} className="dl-service-action">
+                        Get a quote for this service <ArrowRight size={14} />
+                      </Link>
+                    </div>
                   </article>
                 );
               })}
