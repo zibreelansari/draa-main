@@ -16,12 +16,14 @@ import {
   LayoutDashboard,
   Lock,
   MonitorPlay,
+  Play,
   Rocket,
   Search,
   Server,
   ShieldCheck,
   Smartphone,
   Sparkles,
+  Terminal,
   Users,
   Video,
   Zap,
@@ -132,8 +134,8 @@ const audienceTabs = [
     label: 'Higher Education',
     kicker: 'Universities & Autonomous Colleges',
     title: 'Connected Digital Campuses for Modern Higher Ed',
-    desc: 'We engineer enterprise-grade LMS architectures and student information systems that unite degree courseware, OBE assessment rubrics, and NAAC reporting under one roof.',
-    image: '/brand/corporate/stock/university-building.jpg',
+    desc: 'We engineer enterprise-grade LMS architectures and computer lab learning platforms that unite degree courseware, OBE assessment rubrics, and NAAC reporting under one roof.',
+    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
     features: [
       'OBE Courseware mapping directly linked to Bloom’s taxonomy',
       'Turnkey NAAC/NIRF criteria data collection dashboards',
@@ -144,14 +146,14 @@ const audienceTabs = [
   {
     id: 'schools',
     label: 'K–12 School Networks',
-    kicker: 'Progressive Schools & Chain Networks',
-    title: 'Blended Learning Platforms for Schools',
-    desc: 'Give teachers, students, and parents a unified digital portal with interactive curriculum workbooks, automated homework trackers, and NEP 2020 skill report cards.',
-    image: '/brand/corporate/stock/classroom.jpg',
+    kicker: 'Progressive Schools & Smart Classrooms',
+    title: 'Smart Classroom & Tablet Learning Systems',
+    desc: 'Give teachers, students, and parents an interactive digital ecosystem with touchscreen tablet support, interactive smart board lessons, and NEP 2020 competency report cards.',
+    image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
     features: [
-      'Syllabus-aligned digital worksheets & video lessons',
+      'Interactive smart screen & tablet lesson synchronization',
       'Parent-teacher communication & real-time attendance',
-      'Gamified quiz arenas with badges & leaderboards',
+      'Gamified quiz arenas with instant score feedback',
       'Accessible on entry-level tablets and smartphones',
     ],
   },
@@ -172,15 +174,70 @@ const audienceTabs = [
   {
     id: 'edtech',
     label: 'EdTech Brands',
-    kicker: 'Fast-Growing EdTech Startups',
-    title: 'Scalable Platform Foundations for EdTech Innovators',
-    desc: 'Accelerate your time-to-market with modern React/Next.js frontend architectures, scalable video streaming pipelines, and secure payment workflows.',
-    image: '/brand/corporate/stock/ai_tech_lab.jpg',
+    kicker: 'Engineering & EdTech Platforms',
+    title: 'Modern Software Engineering Foundations for EdTech',
+    desc: 'Accelerate your time-to-market with modern React/Next.js frontend architectures, scalable video streaming pipelines, code sandboxes, and cloud infrastructure.',
+    image: '/brand/corporate/stock/edtech_code_workspace.jpg',
     features: [
       'Next.js 14 & React architectures with instant page loads',
       'Adaptive testing algorithms & personalized recommendation engines',
-      'Live streaming virtual classroom with whiteboard tools',
+      'Interactive coding sandboxes & live whiteboard tools',
       'Scalable multi-tenant SaaS architecture for rapid growth',
+    ],
+  },
+];
+
+const interactiveDemos = [
+  {
+    id: 'lms-core',
+    name: 'Smart LMS Portal',
+    icon: LayoutDashboard,
+    image: '/brand/corporate/stock/digital-learning.jpg',
+    title: 'Personalized Learner Dashboard & Course Hub',
+    desc: 'Clean, responsive interface with syllabus progress tracking, lecture recordings, peer discussions, and downloadable study resources.',
+    features: [
+      'Dynamic course progress indicators & milestone checklists',
+      'Live synchronized streaming with interactive transcripts',
+      'Integrated assignment submission with plagiarism detection',
+    ],
+  },
+  {
+    id: 'lab-campus',
+    name: 'Campus Tech Lab',
+    icon: Laptop2,
+    image: '/brand/corporate/stock/edtech_campus_lab.jpg',
+    title: 'University Computer Lab & Research Portal',
+    desc: 'High-performance cloud workstation environment for university computer labs, data analytics courses, and faculty research.',
+    features: [
+      'Cloud compute sandboxes pre-configured for STEM & AI',
+      'Role-based professor & student lab permission controls',
+      'Instant compile and automated code evaluation rubrics',
+    ],
+  },
+  {
+    id: 'smart-class',
+    name: 'Interactive Classroom',
+    icon: MonitorPlay,
+    image: '/brand/corporate/stock/edtech_smart_classroom.jpg',
+    title: 'Connected Tablet & Smart Screen Sync',
+    desc: 'Real-time bidirectional synchronization between educator smart screens and learner tablets for immersive participatory learning.',
+    features: [
+      'Live interactive polling with instant visual charts',
+      'Tablet stylus handwriting support & digital whiteboards',
+      'Automated session summary generated for revision',
+    ],
+  },
+  {
+    id: 'code-ide',
+    name: 'EdTech Code Studio',
+    icon: Code2,
+    image: '/brand/corporate/stock/edtech_code_workspace.jpg',
+    title: 'Modern Multi-Monitor Engineering Stack',
+    desc: 'Production-ready full-stack software development with automated test suites, CI/CD deployment pipelines, and LTI 1.3 bridges.',
+    features: [
+      'Microservice architecture running on AWS auto-scaling clusters',
+      'GraphQL & REST APIs with 99.98% uptime SLA guarantee',
+      'Zero-downtime blue/green deployment workflows',
     ],
   },
 ];
@@ -210,7 +267,10 @@ const lifecycleSteps = [
 
 export default function DigitalLearningPage() {
   const [activeTabId, setActiveTabId] = useState('higher-ed');
+  const [activeDemoId, setActiveDemoId] = useState('lms-core');
+
   const activeTab = audienceTabs.find((t) => t.id === activeTabId) || audienceTabs[0];
+  const activeDemo = interactiveDemos.find((d) => d.id === activeDemoId) || interactiveDemos[0];
 
   return (
     <div className="draa-corp dl-page-root">
@@ -219,7 +279,7 @@ export default function DigitalLearningPage() {
         siteName="DRAA"
         description="DRAA engineers customized LMS portals, SCORM courseware, digital assessment engines, mobile learning apps, and institutional ERP platforms for schools and universities."
         keywords="digital learning solutions, custom LMS development, EdTech software engineering, SCORM packaging, online examination system, higher ed student portal, New Delhi EdTech"
-        ogImage="/brand/corporate/stock/digital-learning.jpg"
+        ogImage="/brand/corporate/stock/edtech_campus_lab.jpg"
       />
       <DraaCorporateHeader />
 
@@ -239,14 +299,14 @@ export default function DigitalLearningPage() {
                 Scalable digital platforms <span>built for learning impact</span>
               </h1>
               <p className="dl-hero-summary">
-                From custom institutional LMS portals and SCORM courseware to adaptive testing engines and campus ERPs—we engineer secure, accessible, high-retention digital education solutions.
+                From custom institutional LMS portals and smart classrooms to code sandboxes and campus ERPs—we engineer secure, accessible, high-retention digital education platforms.
               </p>
               <div className="dl-hero-actions">
                 <Link to="/contact?subject=Digital%20Learning%20Solutions" className="draa-corp-button draa-corp-button-gold">
                   Request a Tech Consultation <ArrowRight size={17} />
                 </Link>
-                <a href="#services" className="draa-corp-button draa-corp-button-light">
-                  Explore Capabilities
+                <a href="#interactive-preview" className="draa-corp-button draa-corp-button-light">
+                  View Live Platform Demos
                 </a>
               </div>
 
@@ -275,14 +335,14 @@ export default function DigitalLearningPage() {
                   <i />
                 </div>
                 <span className="dl-console-badge">
-                  <Sparkles size={12} style={{ display: 'inline', marginRight: 4 }} /> Enterprise EdTech Stack
+                  <Sparkles size={12} /> Enterprise EdTech Stack
                 </span>
               </div>
 
               <div className="dl-console-media-box">
                 <img
-                  src="/brand/corporate/stock/digital-learning.jpg"
-                  alt="Modern digital learning and LMS workstation"
+                  src="/brand/corporate/stock/edtech_campus_lab.jpg"
+                  alt="High-tech university computer learning laboratory with dual monitors"
                   className="dl-console-img"
                   loading="eager"
                 />
@@ -314,10 +374,10 @@ export default function DigitalLearningPage() {
             ========================================================================= */}
         <section className="dl-tech-strip">
           <div className="draa-corp-shell dl-tech-strip-inner">
-            <span className="dl-tech-strip-label">Supported Technologies:</span>
+            <span className="dl-tech-strip-label">Supported Tech Ecosystem:</span>
             <div className="dl-tech-pills-row">
               {[
-                { icon: Code2, label: 'React & Next.js' },
+                { icon: Code2, label: 'React & Next.js 14' },
                 { icon: Database, label: 'TypeScript & Node' },
                 { icon: Layers, label: 'SCORM & LTI 1.3' },
                 { icon: Cloud, label: 'AWS & Cloud Hosting' },
@@ -337,9 +397,94 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            3. 6 CORE DIGITAL LEARNING SERVICES
+            3. INTERACTIVE LIVE PLATFORM DEMO SIMULATOR
             ========================================================================= */}
-        <section id="services" className="dl-section">
+        <section id="interactive-preview" className="dl-section">
+          <div className="draa-corp-shell">
+            <div className="dl-section-header">
+              <span className="dl-section-pill">
+                <Terminal size={14} /> LIVE PLATFORM EXPERIENCE
+              </span>
+              <h2>Interactive Software &amp; EdTech Architecture Preview</h2>
+              <p>
+                Switch between components below to explore our modular learning interfaces, classroom synchronization tools, and developer architectures.
+              </p>
+            </div>
+
+            {/* Interactive Demo Player Card */}
+            <div className="dl-interactive-demo-card">
+              <div className="dl-demo-topbar">
+                <div className="dl-demo-topbar-left">
+                  <div className="dl-console-dots">
+                    <i />
+                    <i />
+                    <i />
+                  </div>
+                  <span style={{ fontSize: 13, fontWeight: 800, color: '#FFFFFF' }}>
+                    DRAA EdTech Engine v3.4 · Live Simulation
+                  </span>
+                </div>
+
+                <div className="dl-demo-tabs" role="tablist">
+                  {interactiveDemos.map((demo) => {
+                    const Icon = demo.icon;
+                    return (
+                      <button
+                        key={demo.id}
+                        type="button"
+                        role="tab"
+                        aria-selected={activeDemoId === demo.id}
+                        className={`dl-demo-tab-btn ${activeDemoId === demo.id ? 'active' : ''}`}
+                        onClick={() => setActiveDemoId(demo.id)}
+                      >
+                        <Icon size={14} />
+                        <span>{demo.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="dl-demo-stage">
+                <div className="dl-demo-stage-screen">
+                  <img
+                    src={activeDemo.image}
+                    alt={activeDemo.title}
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="dl-demo-stage-info">
+                  <span style={{ fontSize: 11, fontWeight: 850, color: '#F59E0B', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: 8 }}>
+                    Active Module
+                  </span>
+                  <h3>{activeDemo.title}</h3>
+                  <p>{activeDemo.desc}</p>
+                  <ul className="dl-demo-features-list">
+                    {activeDemo.features.map((f) => (
+                      <li key={f}>
+                        <CheckCircle2 size={15} />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to="/contact?subject=Live%20EdTech%20Platform%20Inquiry"
+                    className="draa-corp-button draa-corp-button-gold"
+                    style={{ display: 'inline-flex' }}
+                  >
+                    Request Full Platform Demo <ArrowRight size={15} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            4. 6 CORE DIGITAL LEARNING SERVICES
+            ========================================================================= */}
+        <section id="services" className="dl-section dl-section-tint">
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
@@ -381,9 +526,9 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            4. TABBED SOLUTION ARCHITECTURE EXPLORER
+            5. TABBED SOLUTION ARCHITECTURE EXPLORER
             ========================================================================= */}
-        <section className="dl-section dl-section-tint">
+        <section className="dl-section">
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
@@ -447,9 +592,9 @@ export default function DigitalLearningPage() {
         </section>
 
         {/* =========================================================================
-            5. 4-STAGE AGILE ENGINEERING LIFECYCLE
+            6. 4-STAGE AGILE ENGINEERING LIFECYCLE
             ========================================================================= */}
-        <section className="dl-section">
+        <section className="dl-section dl-section-tint">
           <div className="draa-corp-shell">
             <div className="dl-section-header">
               <span className="dl-section-pill">
