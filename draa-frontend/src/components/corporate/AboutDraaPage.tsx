@@ -215,7 +215,9 @@ export default function AboutDraaPage() {
               {/* Clarity Delivery Flow */}
               <div className="about-clarity-strip">
                 <div className="about-clarity-step">
-                  <div className="about-clarity-num">01</div>
+                  <div className="about-clarity-icon-wrap">
+                    <Search size={16} />
+                  </div>
                   <div>
                     <strong>Understand</strong>
                     <small>The Real Need</small>
@@ -223,7 +225,9 @@ export default function AboutDraaPage() {
                 </div>
                 <div className="about-clarity-divider" />
                 <div className="about-clarity-step">
-                  <div className="about-clarity-num">02</div>
+                  <div className="about-clarity-icon-wrap">
+                    <Lightbulb size={16} />
+                  </div>
                   <div>
                     <strong>Architect</strong>
                     <small>The Right Strategy</small>
@@ -231,7 +235,9 @@ export default function AboutDraaPage() {
                 </div>
                 <div className="about-clarity-divider" />
                 <div className="about-clarity-step">
-                  <div className="about-clarity-num">03</div>
+                  <div className="about-clarity-icon-wrap">
+                    <CheckCircle2 size={16} />
+                  </div>
                   <div>
                     <strong>Deliver</strong>
                     <small>Measurable Value</small>
@@ -427,9 +433,6 @@ export default function AboutDraaPage() {
                 >
                   <div className="about-service-img-wrap">
                     <img src={item.image} alt={item.title} loading="lazy" />
-                    <div className="about-service-num-badge" style={{ background: item.themeColor }}>
-                      {item.number}
-                    </div>
                   </div>
                   <div className="about-service-content">
                     <h3>{item.title}</h3>
@@ -520,9 +523,8 @@ export default function AboutDraaPage() {
               {methodologySteps.map((step) => {
                 const Icon = step.icon;
                 return (
-                  <div key={step.number} className="about-process-step">
+                  <div key={step.title} className="about-process-step">
                     <div className="about-process-step-top">
-                      <div className="about-process-badge">{step.number}</div>
                       <div className="about-process-icon">
                         <Icon size={20} />
                       </div>

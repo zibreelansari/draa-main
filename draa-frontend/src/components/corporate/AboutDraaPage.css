@@ -111,13 +111,17 @@
   flex: 1;
 }
 
-.about-clarity-num {
-  font-size: 12px;
-  font-weight: 900;
+.about-clarity-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--ab-gold-dark);
   background: rgba(217, 119, 6, 0.1);
-  padding: 4px 8px;
-  border-radius: 8px;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  border-radius: 9px;
+  flex-shrink: 0;
 }
 
 .about-clarity-step strong {

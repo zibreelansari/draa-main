@@ -472,9 +472,8 @@ export default function ContentPublishingPage() {
               {pedagogicalPillars.map((pillar) => {
                 const Icon = pillar.icon;
                 return (
-                  <div key={pillar.number} className="cp-pillar-card draa-card-3d">
+                  <div key={pillar.title} className="cp-pillar-card draa-card-3d">
                     <div className="cp-pillar-top">
-                      <span className="cp-pillar-num">{pillar.number}</span>
                       <div className="cp-pillar-icon">
                         <Icon size={20} />
                       </div>

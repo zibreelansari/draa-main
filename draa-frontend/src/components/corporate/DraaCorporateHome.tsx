@@ -61,7 +61,6 @@ const challenges = [
 
 const solutions = [
   {
-    number: '01',
     icon: BookOpen,
     title: 'Educational Content Development',
     text: 'Research-led textbooks, digital publications, courseware, assessments, and custom learning resources.',
@@ -71,7 +70,6 @@ const solutions = [
     themeColor: '#D97706',
   },
   {
-    number: '02',
     icon: GraduationCap,
     title: 'Academic & Professional Training',
     text: 'Faculty development, student skill programmes, leadership training, and career-readiness workshops.',
@@ -81,7 +79,6 @@ const solutions = [
     themeColor: '#2563EB',
   },
   {
-    number: '03',
     icon: CalendarDays,
     title: 'Educational Events & Conferences',
     text: 'Conferences, seminars, webinars, competitions, and knowledge-sharing summits with turnkey production.',
@@ -91,7 +88,6 @@ const solutions = [
     themeColor: '#EA580C',
   },
   {
-    number: '04',
     icon: BriefcaseBusiness,
     title: 'Educational Consultancy',
     text: 'Practical consultancy for curriculum design, institutional development, NEP 2020 audits, and quality frameworks.',
@@ -101,7 +97,6 @@ const solutions = [
     themeColor: '#7C3AED',
   },
   {
-    number: '05',
     icon: Laptop2,
     title: 'Digital Learning Solutions',
     text: 'Accessible LMS platforms, custom portals, virtual classrooms, and interactive assessment experiences.',
@@ -114,25 +109,21 @@ const solutions = [
 
 const deliverySteps = [
   {
-    num: '01',
     icon: Search,
     title: 'Discover & Diagnose',
     desc: 'Deep institutional assessment of syllabus frameworks, learner profiles, and capability gaps.',
   },
   {
-    num: '02',
     icon: Lightbulb,
     title: 'Architect & Blueprint',
     desc: 'Designing outcome-aligned pedagogical structures, curriculum maps, and technology blueprints.',
   },
   {
-    num: '03',
     icon: Presentation,
     title: 'Deliver & Author',
     desc: 'Specialist faculty authoring, turnkey production, enablement workshops, and quality audits.',
   },
   {
-    num: '04',
     icon: CheckCircle2,
     title: 'Measure & Evolve',
     desc: 'Continuous feedback loops, learning analytics, accreditation readiness, and ongoing support.',
@@ -310,10 +301,9 @@ export default function DraaCorporateHome() {
                 {deliverySteps.map((step, idx) => {
                   const StepIcon = step.icon;
                   return (
-                    <React.Fragment key={step.num}>
+                    <React.Fragment key={step.title}>
                       <div className="draa-delivery-step-card">
                         <span><StepIcon size={18} /></span>
-                        <small className="draa-step-num">{step.num}</small>
                         <strong>{step.title}</strong>
                         <p>{step.desc}</p>
                       </div>
@@ -360,11 +350,10 @@ export default function DraaCorporateHome() {
             </div>
 
             <div className="draa-corp-solution-grid">
-              {solutions.map(({ number, icon: Icon, title, text, tags, path, image, themeColor }) => (
+              {solutions.map(({ icon: Icon, title, text, tags, path, image, themeColor }) => (
                 <Link key={title} to={path} className="draa-corp-solution-card">
                   <div className="draa-corp-solution-media">
                     <img className="draa-corp-solution-image" src={image} alt={title} loading="lazy" />
-                    <span className="draa-corp-sol-num">{number}</span>
                   </div>
                   <div className="draa-corp-solution-content">
                     <div className="draa-corp-solution-top">
@@ -434,28 +423,28 @@ export default function DraaCorporateHome() {
               <div className="draa-study-tool-item">
                 <Search size={22} className="text-gold" />
                 <div>
-                  <strong>01. Discover</strong>
+                  <strong>Discover</strong>
                   <span>Courses, Rankings &amp; Campus Portals</span>
                 </div>
               </div>
               <div className="draa-study-tool-item">
                 <ClipboardCheck size={22} className="text-gold" />
                 <div>
-                  <strong>02. Prepare</strong>
+                  <strong>Prepare</strong>
                   <span>Eligibility, Equivalence &amp; Documents</span>
                 </div>
               </div>
               <div className="draa-study-tool-item">
                 <Lightbulb size={22} className="text-gold" />
                 <div>
-                  <strong>03. Explore</strong>
+                  <strong>Explore</strong>
                   <span>Scholarship &amp; Financial Aid Guidance</span>
                 </div>
               </div>
               <div className="draa-study-tool-item">
                 <ShieldCheck size={22} className="text-gold" />
                 <div>
-                  <strong>04. Navigate</strong>
+                  <strong>Navigate</strong>
                   <span>Visa, FRRO &amp; Campus Arrival Steps</span>
                 </div>
               </div>

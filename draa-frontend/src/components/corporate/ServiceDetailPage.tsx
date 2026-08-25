@@ -358,10 +358,10 @@ export default function ServiceDetailPage() {
             </div>
 
             <div className="sd-process-timeline">
-              {service.process.map((step, idx) => (
+              {service.process.map((step) => (
                 <div key={step.title} className="sd-process-card">
-                  <div className="sd-process-step-num" style={{ background: service.themeColor, color: '#fff' }}>
-                    0{idx + 1}
+                  <div className="sd-process-step-indicator" style={{ background: `${service.themeColor}18`, color: service.themeColor, borderColor: `${service.themeColor}35` }}>
+                    <CheckCircle2 size={16} />
                   </div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
