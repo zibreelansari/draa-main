@@ -17,7 +17,9 @@ export type ServiceIcon =
   | 'award'
   | 'briefcase'
   | 'building'
-  | 'compass';
+  | 'compass'
+  | 'landmark'
+  | 'globe';
 
 export interface CapabilityItem {
   text: string;

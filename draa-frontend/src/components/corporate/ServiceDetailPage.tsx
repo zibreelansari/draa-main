@@ -14,6 +14,7 @@ import {
   Globe2,
   GraduationCap,
   Handshake,
+  Landmark,
   Laptop2,
   Layers,
   Lightbulb,
@@ -60,6 +61,7 @@ const iconMap: Record<ServiceIcon, React.ComponentType<{ size?: number; classNam
   building: Building2,
   compass: Compass,
   globe: Globe2,
+  landmark: Landmark,
 };
 
 export default function ServiceDetailPage() {

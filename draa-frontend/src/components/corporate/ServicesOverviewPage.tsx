@@ -10,8 +10,10 @@ import {
   ClipboardList,
   Compass,
   GraduationCap,
+  Globe2,
   Handshake,
   HeartHandshake,
+  Landmark,
   Laptop2,
   Layers,
   MessageCircle,
@@ -48,6 +50,8 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
   compass: Compass,
   briefcase: BriefcaseBusiness,
   building: Building2,
+  landmark: Landmark,
+  globe: Globe2,
 };
 
 const engagementModels = [
