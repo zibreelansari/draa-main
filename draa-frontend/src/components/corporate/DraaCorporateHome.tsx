@@ -162,7 +162,7 @@ const audiences = [
     icon: GraduationCap,
     title: 'Learners & Educators',
     text: 'Structured self-study textbooks, interactive online courses, career bootcamps, and certifications.',
-    image: '/brand/corporate/stock/home_content_publishing.jpg',
+    image: '/brand/corporate/stock/student_skill_workshop.jpg',
   },
   {
     icon: BriefcaseBusiness,
