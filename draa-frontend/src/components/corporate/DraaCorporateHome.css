@@ -3654,7 +3654,7 @@
    HOMEPAGE VISUAL ENHANCEMENTS (Clean, Intuitive & Media-Rich)
    ========================================================================== */
 
-/* 1. About Section Visual Card */
+/* 1. About Section Visual Card with Warm Inner Blend */
 .draa-about-card-visual {
   position: relative;
   margin-top: 24px;
@@ -3662,6 +3662,7 @@
   overflow: hidden;
   border: 1px solid var(--corp-line);
   box-shadow: 0 16px 36px rgba(71, 50, 22, 0.08);
+  background: #FAF5EB;
 }
 
 .draa-about-card-img {
@@ -3669,6 +3670,9 @@
   height: 220px;
   object-fit: cover;
   display: block;
+  filter: contrast(1.02) saturate(0.95);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0.85) 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0.85) 100%);
 }
 
 .draa-about-card-badge {
@@ -3686,12 +3690,13 @@
   font-weight: 800;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* 2. Challenge Card Media */
+/* 2. Challenge Card Media with Natural Bottom Fade */
 .draa-challenge-media {
   position: relative;
-  height: 140px;
+  height: 145px;
   margin: -25px -25px 16px;
   overflow: hidden;
   background: #EDE4D4;
@@ -3701,6 +3706,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.02) brightness(0.92);
   transition: transform 0.5s ease;
 }
 
@@ -3708,15 +3714,24 @@
   transform: scale(1.06);
 }
 
+.draa-challenge-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0) 35%, rgba(255, 253, 248, 0.6) 75%, rgba(255, 253, 248, 1) 100%);
+  pointer-events: none;
+}
+
 .draa-challenge-media .draa-corp-icon-box {
   position: absolute;
   bottom: 10px;
-  left: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  left: 14px;
+  box-shadow: 0 6px 16px rgba(71, 50, 22, 0.14);
+  z-index: 2;
 }
 
 .draa-challenge-body {
   position: relative;
+  z-index: 2;
 }
 
 .draa-challenge-body h3 {
@@ -3733,24 +3748,55 @@
   line-height: 1.55;
 }
 
-/* 3. Floating Solution Icon Badge */
+/* 3. Solutions Bento Media with Obsidian Blend Scrim */
+.draa-corp-solution-media {
+  position: relative;
+  margin: -27px -27px 22px;
+  height: 155px;
+  overflow: hidden;
+  background: #110F0C;
+}
+
+.draa-corp-solution-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.06) brightness(0.82);
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.4s ease;
+}
+
+.draa-corp-solution-card:hover .draa-corp-solution-image {
+  transform: scale(1.06);
+  filter: saturate(0.95) contrast(1.08) brightness(0.9);
+}
+
+.draa-solution-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 23, 18, 0.05) 0%, rgba(26, 23, 18, 0.45) 55%, rgba(26, 23, 18, 0.95) 100%);
+  pointer-events: none;
+}
+
 .draa-corp-sol-icon-floating {
   position: absolute;
   bottom: 12px;
-  left: 14px;
+  left: 16px;
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(25, 22, 17, 0.85);
+  background: rgba(25, 22, 17, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  z-index: 2;
 }
 
-/* 4. Learning Card Thumbnails */
+/* 4. Learning Card Thumbnails with Soft Edges */
 .draa-learning-card {
   display: flex;
   align-items: center;
@@ -3773,18 +3819,25 @@
 }
 
 .draa-learning-thumb {
-  width: 100px;
-  height: 75px;
-  border-radius: 12px;
+  width: 105px;
+  height: 80px;
+  border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
   border: 1px solid var(--corp-line);
+  background: #FAF6EF;
 }
 
 .draa-learning-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.02) brightness(0.95);
+  transition: transform 0.4s ease;
+}
+
+.draa-learning-card:hover .draa-learning-thumb img {
+  transform: scale(1.06);
 }
 
 .draa-learning-info {
@@ -3811,7 +3864,7 @@
   flex-shrink: 0;
 }
 
-/* 5. Audience Cards with Photographic Headers */
+/* 5. Audience Cards with Natural Vignette Blend */
 .draa-corp-audience-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3837,14 +3890,16 @@
 
 .draa-aud-media {
   position: relative;
-  height: 160px;
+  height: 165px;
   overflow: hidden;
+  background: #FAF5EB;
 }
 
 .draa-aud-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.02) brightness(0.94);
   transition: transform 0.5s ease;
 }
 
@@ -3852,27 +3907,37 @@
   transform: scale(1.06);
 }
 
+.draa-aud-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+}
+
 .draa-aud-media .draa-aud-icon-wrap {
   position: absolute;
   bottom: 10px;
-  left: 12px;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  left: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background: #FFFFFF;
   color: var(--corp-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(71, 50, 22, 0.15);
   border: 1px solid rgba(189, 123, 32, 0.2);
+  z-index: 2;
 }
 
 .draa-aud-body {
-  padding: 20px 18px;
+  padding: 16px 20px 22px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .draa-aud-body h3 {

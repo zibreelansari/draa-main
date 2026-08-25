@@ -42,13 +42,13 @@ const challenges = [
     icon: BookOpen,
     title: 'Quality content is hard to find',
     text: 'Learners and institutions need reliable, current, syllabus-aligned and well-structured educational resources.',
-    image: '/brand/corporate/stock/academic_publishing_hero.jpg',
+    image: '/brand/corporate/stock/home_content_publishing.jpg',
   },
   {
     icon: Presentation,
     title: 'Learning needs practical exposure',
     text: 'Training must move beyond theory through workshops, dialogue, and applied capability development.',
-    image: '/brand/corporate/stock/student_skill_workshop.jpg',
+    image: '/brand/corporate/stock/home_faculty_training.jpg',
   },
   {
     icon: Handshake,
@@ -71,7 +71,7 @@ const solutions = [
     text: 'Research-led textbooks, digital publications, courseware, assessments, and custom learning resources.',
     tags: ['Books & e-books', 'Study resources', 'OBE Courseware'],
     path: '/services/content-publishing',
-    image: '/brand/corporate/stock/academic_publishing_hero.jpg',
+    image: '/brand/corporate/stock/home_content_publishing.jpg',
     themeColor: '#D97706',
   },
   {
@@ -80,7 +80,7 @@ const solutions = [
     text: 'Faculty development, student skill programmes, leadership training, and career-readiness workshops.',
     tags: ['Faculty Workshops', 'Certifications', 'Skill Development'],
     path: '/services/professional-learning',
-    image: '/brand/corporate/stock/student_skill_workshop.jpg',
+    image: '/brand/corporate/stock/home_faculty_training.jpg',
     themeColor: '#2563EB',
   },
   {
@@ -89,7 +89,7 @@ const solutions = [
     text: 'Conferences, seminars, webinars, competitions, and knowledge-sharing summits with turnkey production.',
     tags: ['Conferences', 'Webinars', 'Academic Summits'],
     path: '/services/education-events',
-    image: '/brand/corporate/stock/event-stage.jpg',
+    image: '/brand/corporate/stock/home_conference_summit.jpg',
     themeColor: '#EA580C',
   },
   {
@@ -152,7 +152,7 @@ const audiences = [
     icon: GraduationCap,
     title: 'Learners & Educators',
     text: 'Structured self-study textbooks, interactive online courses, career bootcamps, and certifications.',
-    image: '/brand/corporate/stock/student_skill_workshop.jpg',
+    image: '/brand/corporate/stock/home_content_publishing.jpg',
   },
   {
     icon: BriefcaseBusiness,
@@ -177,7 +177,7 @@ export default function DraaCorporateHome() {
 
       <main>
         {/* =========================================================================
-            1. HERO SECTION (Preserving Signature Banner Visuals Exactly as Requested)
+            1. HERO SECTION (Banner Section Preserved Intact as Requested)
             ========================================================================= */}
         <section className="draa-corp-hero" aria-labelledby="draa-corp-title">
           <div className="draa-corp-hero-grid" aria-hidden="true" />
@@ -285,7 +285,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            3. WHO WE ARE & 4-STAGE DELIVERY BLUEPRINT (Enhanced with Visual Media)
+            3. WHO WE ARE & 4-STAGE DELIVERY BLUEPRINT (Blended Visual Media)
             ========================================================================= */}
         <section id="about" className="draa-corp-section draa-corp-about">
           <div className="draa-corp-shell draa-corp-two-column">
@@ -298,11 +298,11 @@ export default function DraaCorporateHome() {
                 <span><CheckCircle2 size={17} /> NEP 2020 &amp; OBE Aligned</span>
               </div>
 
-              {/* Graphic Visual Card */}
+              {/* Naturally Blended Visual Card */}
               <div className="draa-about-card-visual">
                 <img
-                  src="/brand/corporate/stock/academic_publishing_hero.jpg"
-                  alt="Academic publishing and research editorial desk"
+                  src="/brand/corporate/stock/home_content_publishing.jpg"
+                  alt="Academic curriculum authoring and research editorial workspace"
                   className="draa-about-card-img"
                   loading="lazy"
                 />
@@ -341,7 +341,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            4. THE NEED WE ADDRESS (Graphical Problem Cards)
+            4. THE NEED WE ADDRESS (Naturally Blended Problem Cards)
             ========================================================================= */}
         <section className="draa-corp-section draa-corp-challenges">
           <div className="draa-corp-shell">
@@ -355,6 +355,7 @@ export default function DraaCorporateHome() {
                 <article key={title} className="draa-corp-challenge-card">
                   <div className="draa-challenge-media">
                     <img src={image} alt={title} className="draa-challenge-img" loading="lazy" />
+                    <div className="draa-challenge-scrim" />
                     <span className="draa-corp-icon-box"><Icon size={20} /></span>
                   </div>
                   <div className="draa-challenge-body">
@@ -368,7 +369,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            5. FIVE CORE SERVICES SHOWCASE (Bento Capabilities Hub)
+            5. FIVE CORE SERVICES SHOWCASE (Naturally Blended Bento Capabilities)
             ========================================================================= */}
         <section id="solutions" className="draa-corp-section draa-corp-solutions">
           <div className="draa-corp-shell">
@@ -383,6 +384,7 @@ export default function DraaCorporateHome() {
                 <Link key={title} to={path} className="draa-corp-solution-card">
                   <div className="draa-corp-solution-media">
                     <img className="draa-corp-solution-image" src={image} alt={title} loading="lazy" />
+                    <div className="draa-solution-scrim" />
                     <div className="draa-corp-sol-icon-floating" style={{ color: themeColor }}>
                       <Icon size={20} />
                     </div>
@@ -480,7 +482,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            7. LEARNING & EVENTS PATHWAYS (Enhanced with Visual Media)
+            7. LEARNING & EVENTS PATHWAYS (Naturally Blended Thumbnails)
             ========================================================================= */}
         <section id="learning-events" className="draa-corp-section draa-corp-learning-events">
           <div className="draa-corp-shell draa-corp-two-column">
@@ -494,7 +496,7 @@ export default function DraaCorporateHome() {
             <div className="draa-corp-learning-list">
               <Link to="/services/professional-learning" className="draa-learning-card">
                 <div className="draa-learning-thumb">
-                  <img src="/brand/corporate/stock/student_skill_workshop.jpg" alt="Faculty training workshop" />
+                  <img src="/brand/corporate/stock/home_faculty_training.jpg" alt="Faculty training workshop" />
                 </div>
                 <div className="draa-learning-info">
                   <strong>Professional Learning &amp; Faculty Enablement</strong>
@@ -505,7 +507,7 @@ export default function DraaCorporateHome() {
 
               <Link to="/services/education-events" className="draa-learning-card">
                 <div className="draa-learning-thumb">
-                  <img src="/brand/corporate/stock/event-stage.jpg" alt="Academic summit stage" />
+                  <img src="/brand/corporate/stock/home_conference_summit.jpg" alt="Academic summit stage" />
                 </div>
                 <div className="draa-learning-info">
                   <strong>Knowledge-Sharing Events &amp; Summits</strong>
@@ -529,7 +531,7 @@ export default function DraaCorporateHome() {
         </section>
 
         {/* =========================================================================
-            8. WHO WE SUPPORT (Ecosystem Partners with Rich Imagery)
+            8. WHO WE SUPPORT (Naturally Blended Photographic Cards)
             ========================================================================= */}
         <section id="institutions" className="draa-corp-section draa-corp-institutions">
           <div className="draa-corp-shell">
@@ -543,6 +545,7 @@ export default function DraaCorporateHome() {
                 <article key={title} className="draa-corp-audience-card">
                   <div className="draa-aud-media">
                     <img src={image} alt={title} className="draa-aud-img" loading="lazy" />
+                    <div className="draa-aud-scrim" />
                     <div className="draa-aud-icon-wrap">
                       <Icon size={20} />
                     </div>
