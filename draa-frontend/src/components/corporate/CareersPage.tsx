@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {
   ArrowRight,
+  BookOpen,
   Briefcase,
   BriefcaseBusiness,
   Building2,
@@ -10,7 +11,6 @@ import {
   Code2,
   Compass,
   FileCheck2,
-  Filter,
   GraduationCap,
   HeartHandshake,
   Laptop2,
@@ -30,9 +30,9 @@ import {
   Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import CareerKineticBackground from './CareerKineticBackground';
 import DraaCorporateFooter from './DraaCorporateFooter';
 import DraaCorporateHeader from './DraaCorporateHeader';
-import LightLineMotionBackground from './LightLineMotionBackground';
 import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
 import SEO from './SEO';
@@ -274,6 +274,7 @@ export default function CareersPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const vacanciesSectionRef = useRef<HTMLDivElement | null>(null);
   const formSectionRef = useRef<HTMLDivElement | null>(null);
 
   // Filter Vacancies
@@ -307,6 +308,13 @@ export default function CareersPage() {
     setSelectedLocation('all');
   };
 
+  const handleDeptCardClick = (deptKey: string) => {
+    setSelectedDept(deptKey);
+    if (vacanciesSectionRef.current) {
+      vacanciesSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setSelectedFile(e.target.files[0]);
@@ -336,98 +344,162 @@ export default function CareersPage() {
 
       <main>
         {/* =========================================================================
-            1. HERO SECTION WITH MODERN JOB SEARCH & FILTER HUB
+            1. HERO SECTION WITH SPLIT-COLUMN SEARCH & TALENT RADAR CONSOLE
             ========================================================================= */}
         <section className="cp-hero-hub">
-          <LightLineMotionBackground />
+          <CareerKineticBackground />
           <div className="draa-corp-shell">
-            <div className="cp-hero-content">
-              <span className="cp-kicker">
-                <BriefcaseBusiness size={14} /> CAREERS &amp; OPPORTUNITIES
-              </span>
-              <h1>
-                Build work that helps <span>learning move forward</span>
-              </h1>
-              <p>
-                Find your next meaningful career opportunity at DRAA. Search open roles across academic publishing, institutional advisory, educator training, and learning technology.
-              </p>
+            <div className="cp-hero-grid">
+              {/* Left Column: Headline & Smart Search Bar */}
+              <div className="cp-hero-left">
+                <span className="cp-kicker">
+                  <BriefcaseBusiness size={14} /> CAREERS &amp; TALENT ECOSYSTEM
+                </span>
+                <h1>
+                  Build work that helps <span>learning move forward</span>
+                </h1>
+                <p className="cp-hero-summary">
+                  Join a multidisciplinary education enterprise in New Delhi where academic insight, publishing discipline, faculty enablement, and digital technology unite to transform educational outcomes.
+                </p>
 
-              {/* Integrated Search & Filter Bar */}
-              <div className="cp-search-bar-wrap">
-                {/* Text Keyword Search */}
-                <div className="cp-search-input-box">
-                  <Search size={18} />
-                  <input
-                    type="text"
-                    placeholder="Search by role title, discipline, or keyword..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
+                {/* Integrated Search & Filter Pod */}
+                <div className="cp-search-pod">
+                  {/* Keyword Input */}
+                  <div className="cp-search-input-wrap">
+                    <Search size={18} />
+                    <input
+                      type="text"
+                      placeholder="Search roles, skills, disciplines (e.g. Author, NAAC, React)..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </div>
+
+                  {/* Filter Selectors Grid */}
+                  <div className="cp-search-filters-grid">
+                    <div className="cp-filter-select-box">
+                      <Layers size={14} />
+                      <select
+                        value={selectedDept}
+                        onChange={(e) => setSelectedDept(e.target.value)}
+                        aria-label="Filter by department"
+                      >
+                        <option value="all">All Disciplines</option>
+                        <option value="content">Content &amp; Publishing</option>
+                        <option value="training">Training &amp; Pedagogy</option>
+                        <option value="advisory">Advisory &amp; Quality</option>
+                        <option value="tech">Technology &amp; EdTech</option>
+                        <option value="operations">Operations &amp; Events</option>
+                      </select>
+                    </div>
+
+                    <div className="cp-filter-select-box">
+                      <MapPin size={14} />
+                      <select
+                        value={selectedLocation}
+                        onChange={(e) => setSelectedLocation(e.target.value)}
+                        aria-label="Filter by location"
+                      >
+                        <option value="all">All Locations</option>
+                        <option value="delhi">New Delhi HQ / Hybrid</option>
+                        <option value="remote">Remote / Pan-Bharat</option>
+                      </select>
+                    </div>
+
+                    {(searchQuery || selectedDept !== 'all' || selectedLocation !== 'all') && (
+                      <button
+                        type="button"
+                        className="cp-clear-btn"
+                        onClick={handleResetFilters}
+                        title="Clear filters"
+                      >
+                        <RotateCcw size={13} /> Reset
+                      </button>
+                    )}
+                  </div>
                 </div>
 
-                {/* Department Dropdown */}
-                <div className="cp-search-select-box">
-                  <Layers size={16} />
-                  <select
-                    value={selectedDept}
-                    onChange={(e) => setSelectedDept(e.target.value)}
-                    aria-label="Filter by department"
-                  >
-                    <option value="all">All Departments</option>
-                    <option value="content">Content &amp; Editorial</option>
-                    <option value="training">Training &amp; Pedagogy</option>
-                    <option value="advisory">Advisory &amp; Consultancy</option>
-                    <option value="tech">Technology &amp; Digital</option>
-                    <option value="operations">Operations &amp; Events</option>
-                  </select>
+                {/* Popular Searches */}
+                <div className="cp-quick-tags">
+                  <span className="cp-quick-tags-label">Trending Searches:</span>
+                  {[
+                    { label: 'Academic Author', query: 'Author' },
+                    { label: 'Instructional Design', query: 'Instructional' },
+                    { label: 'NAAC Auditor', query: 'Accreditation' },
+                    { label: 'EdTech Engineer', query: 'Engineer' },
+                    { label: 'Faculty Trainer', query: 'Workshop' },
+                  ].map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      className={`cp-quick-tag-pill ${searchQuery === item.query ? 'active' : ''}`}
+                      onClick={() => setSearchQuery(item.query)}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
                 </div>
-
-                {/* Location / Work Mode Dropdown */}
-                <div className="cp-search-select-box">
-                  <MapPin size={16} />
-                  <select
-                    value={selectedLocation}
-                    onChange={(e) => setSelectedLocation(e.target.value)}
-                    aria-label="Filter by location"
-                  >
-                    <option value="all">All Locations</option>
-                    <option value="delhi">New Delhi HQ / Hybrid</option>
-                    <option value="remote">Remote / Pan-Bharat</option>
-                  </select>
-                </div>
-
-                {/* Reset Filters Button */}
-                {(searchQuery || selectedDept !== 'all' || selectedLocation !== 'all') && (
-                  <button
-                    type="button"
-                    className="cp-search-reset-btn"
-                    onClick={handleResetFilters}
-                    title="Reset all filters"
-                  >
-                    <RotateCcw size={14} /> Clear
-                  </button>
-                )}
               </div>
 
-              {/* Quick Filter Tag Pills */}
-              <div className="cp-quick-tags">
-                <span className="cp-quick-tags-label">Popular Searches:</span>
-                {[
-                  { label: 'Academic Author', query: 'Author' },
-                  { label: 'Instructional Design', query: 'Instructional' },
-                  { label: 'Accreditation Auditor', query: 'Accreditation' },
-                  { label: 'Software Engineer', query: 'Engineer' },
-                  { label: 'Faculty Trainer', query: 'Workshop' },
-                ].map((item) => (
-                  <button
-                    key={item.label}
-                    type="button"
-                    className={`cp-quick-tag-pill ${searchQuery === item.query ? 'active' : ''}`}
-                    onClick={() => setSearchQuery(item.query)}
-                  >
-                    {item.label}
-                  </button>
-                ))}
+              {/* Right Column: Aesthetic Talent Radar Hub Card */}
+              <div className="cp-hero-right">
+                <div className="cp-talent-card">
+                  <div className="cp-talent-header">
+                    <div className="cp-talent-header-left">
+                      <div className="cp-talent-icon-mark">
+                        <Sparkles size={18} />
+                      </div>
+                      <div>
+                        <strong>DRAA Talent Ecosystem</strong>
+                        <small>New Delhi HQ · Pan-Bharat &amp; Global</small>
+                      </div>
+                    </div>
+                    <span className="cp-live-hiring-badge">
+                      <span className="cp-live-dot" /> 6 Active Openings
+                    </span>
+                  </div>
+
+                  {/* Interactive Domain Radar Grid */}
+                  <div className="cp-dept-radar-grid">
+                    {[
+                      { icon: PenTool, name: 'Content & Publishing', count: '2 Roles', key: 'content' },
+                      { icon: GraduationCap, name: 'Training & Pedagogy', count: '2 Roles', key: 'training' },
+                      { icon: Compass, name: 'Advisory & Accreditation', count: '1 Role', key: 'advisory' },
+                      { icon: Laptop2, name: 'Technology & EdTech', count: '2 Roles', key: 'tech' },
+                      { icon: Users, name: 'Events & Operations', count: '1 Role', key: 'operations' },
+                    ].map((dept) => {
+                      const Icon = dept.icon;
+                      return (
+                        <div
+                          key={dept.key}
+                          className={`cp-dept-radar-item ${selectedDept === dept.key ? 'active' : ''}`}
+                          onClick={() => handleDeptCardClick(dept.key)}
+                        >
+                          <div className="cp-dept-radar-item-left">
+                            <div className="cp-radar-icon">
+                              <Icon size={14} />
+                            </div>
+                            <div>
+                              <strong>{dept.name}</strong>
+                              <small>Click to view department roles</small>
+                            </div>
+                          </div>
+                          <span className="cp-radar-count">{dept.count}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Floating Highlights */}
+                  <div className="cp-talent-footer">
+                    <span className="cp-talent-footer-pill">
+                      <ShieldCheck size={14} /> 100% Merit-Based
+                    </span>
+                    <span className="cp-talent-footer-pill">
+                      <Clock size={14} /> Hybrid Modalities
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -436,7 +508,7 @@ export default function CareersPage() {
         {/* =========================================================================
             2. OPEN VACANCIES DIRECTORY
             ========================================================================= */}
-        <section id="vacancies" className="cp-section">
+        <section id="vacancies" className="cp-section" ref={vacanciesSectionRef}>
           <div className="draa-corp-shell">
             <div className="cp-vacancies-results-bar">
               <div className="cp-vacancies-count">
@@ -489,7 +561,7 @@ export default function CareersPage() {
                     </ul>
 
                     <div className="cp-vacancy-action-row">
-                      <span className="cp-openings-count">Immediate Review</span>
+                      <span className="cp-openings-count">Prompt Candidate Review</span>
                       <button
                         type="button"
                         className="cp-apply-btn"
@@ -505,10 +577,10 @@ export default function CareersPage() {
               <div className="cp-empty-state">
                 <Search size={40} />
                 <h3>No Vacancies Match Your Criteria</h3>
-                <p>Try clearing your keyword filters or submit a general expression of interest.</p>
+                <p>Try resetting your search query or submit a general profile for future opportunities.</p>
                 <button
                   type="button"
-                  className="cp-search-reset-btn"
+                  className="cp-clear-btn"
                   onClick={handleResetFilters}
                   style={{ margin: '0 auto' }}
                 >
@@ -530,7 +602,7 @@ export default function CareersPage() {
               </span>
               <h2>Direct Candidate Submission Portal</h2>
               <p>
-                Apply directly using the form below or through any specific opening above. Our hiring committee reviews every submission.
+                Apply directly using the form below. Our hiring committee reviews every submission within 48 hours.
               </p>
             </div>
 
@@ -540,7 +612,7 @@ export default function CareersPage() {
                   <CheckCircle2 size={36} />
                   <h4>Application Received Successfully!</h4>
                   <p>
-                    Thank you for applying for <strong>{appliedRole}</strong>. Your profile has been logged in our talent database with reference ID <strong>DRAA-APP-{Math.floor(100000 + Math.random() * 900000)}</strong>. Our hiring team will review your credentials and get back to you.
+                    Thank you for applying for <strong>{appliedRole}</strong>. Your profile has been logged in our talent database with reference ID <strong>DRAA-APP-{Math.floor(100000 + Math.random() * 900000)}</strong>.
                   </p>
                   <button
                     type="button"
