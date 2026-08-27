@@ -3063,7 +3063,7 @@
     transition-duration: .01ms !important;
   }
 
-  .draa-corp-home .draa-corp-delivery-visual > i {
+  .draa-corp-home .draa-corp-delivery-visual>i {
     transform: scaleX(1);
   }
 
@@ -3138,7 +3138,7 @@
   box-shadow: 0 8px 20px rgba(73, 48, 17, 0.08);
 }
 
-.draa-delivery-step-card > span {
+.draa-delivery-step-card>span {
   width: 40px;
   height: 40px;
   display: grid;
@@ -3173,7 +3173,7 @@
   margin: 0;
 }
 
-.draa-corp-delivery-visual > i {
+.draa-corp-delivery-visual>i {
   width: 20px;
   height: 2px;
   background: linear-gradient(90deg, rgba(189, 123, 32, 0.2), rgba(189, 123, 32, 0.65));
@@ -3565,29 +3565,36 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-  .draa-corp-delivery-visual > i {
+
+  .draa-corp-delivery-visual>i {
     display: none;
   }
+
   .draa-corp-solution-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .draa-corp-solution-card,
   .draa-corp-solution-card:nth-child(4) {
     grid-column: span 1;
   }
+
   .draa-corp-study-card {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 40px 30px;
   }
+
   .draa-corp-audience-grid,
   .draa-corp-advantage-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .draa-corp-partner-inner {
     flex-direction: column;
     text-align: center;
   }
+
   .draa-partner-actions {
     flex-direction: row;
   }
@@ -3597,19 +3604,24 @@
   .draa-corp-proof-track {
     grid-template-columns: 1fr 1fr;
   }
+
   .draa-corp-delivery-visual {
     grid-template-columns: 1fr;
   }
+
   .draa-corp-solution-grid {
     grid-template-columns: 1fr;
   }
+
   .draa-corp-study-tools {
     grid-template-columns: 1fr;
   }
+
   .draa-corp-audience-grid,
   .draa-corp-advantage-grid {
     grid-template-columns: 1fr;
   }
+
   .draa-partner-actions {
     flex-direction: column;
     width: 100%;
@@ -3626,9 +3638,9 @@
   margin-top: 24px;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid var(--corp-line);
-  box-shadow: 0 16px 36px rgba(71, 50, 22, 0.08);
-  background: #FAF5EB;
+  border: 1.5px solid rgba(221, 168, 75, 0.25);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  background: #110F0C;
 }
 
 .draa-about-card-img {
@@ -3636,9 +3648,7 @@
   height: 220px;
   object-fit: cover;
   display: block;
-  filter: contrast(1.02) saturate(0.95);
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0.85) 100%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0.85) 100%);
+  filter: contrast(1.04) saturate(0.95) brightness(0.9);
 }
 
 .draa-about-card-badge {
@@ -3650,53 +3660,70 @@
   gap: 7px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(25, 22, 17, 0.88);
-  color: #F59E0B;
+  background: rgba(14, 12, 9, 0.9);
+  color: #DFAB58;
   font-size: 11.5px;
   font-weight: 800;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(221, 168, 75, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
-/* 2. Challenge Card Media with Natural Bottom Fade */
+/* 2. Challenge Card Media with Natural Dark Obsidian Fade */
+.draa-corp-challenge-card {
+  background: linear-gradient(150deg, rgba(32, 27, 21, 0.94) 0%, rgba(16, 14, 11, 0.98) 100%) !important;
+  border: 1.5px solid rgba(221, 168, 75, 0.25) !important;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.draa-corp-challenge-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(221, 168, 75, 0.5) !important;
+  box-shadow: 0 24px 55px -10px rgba(0, 0, 0, 0.65), 0 0 24px rgba(189, 123, 32, 0.18) !important;
+}
+
 .draa-challenge-media {
   position: relative;
-  height: 145px;
-  margin: -25px -25px 16px;
+  height: 150px;
+  margin: -24px -24px 18px;
   overflow: hidden;
-  background: #EDE4D4;
+  background: #110F0C;
 }
 
 .draa-challenge-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.02) brightness(0.92);
+  filter: saturate(0.85) contrast(1.06) brightness(0.85);
   transition: transform 0.5s ease;
 }
 
 .draa-corp-challenge-card:hover .draa-challenge-img {
   transform: scale(1.06);
+  filter: saturate(0.95) contrast(1.08) brightness(0.92);
 }
 
 .draa-challenge-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 253, 248, 0) 35%, rgba(255, 253, 248, 0.6) 75%, rgba(255, 253, 248, 1) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(18, 15, 12, 0.5) 60%, rgba(18, 15, 12, 0.98) 100%);
   pointer-events: none;
 }
 
 .draa-challenge-media .draa-corp-icon-box {
   position: absolute;
-  bottom: 10px;
+  bottom: 12px;
   left: 14px;
-  box-shadow: 0 6px 16px rgba(71, 50, 22, 0.14);
-  z-index: 2;
-}
-
-.draa-challenge-body {
-  position: relative;
+  background: rgba(22, 19, 15, 0.92) !important;
+  border: 1px solid rgba(221, 168, 75, 0.35) !important;
+  color: #DFAB58 !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
@@ -3704,14 +3731,14 @@
   margin: 0 0 8px;
   font-size: 16.5px;
   font-weight: 850;
-  color: var(--corp-ink);
+  color: #FFFFFF !important;
 }
 
 .draa-challenge-body p {
   margin: 0;
-  color: var(--corp-muted);
-  font-size: 12.5px;
-  line-height: 1.55;
+  color: #D4CABE !important;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 /* 3. Solutions Bento Media with Obsidian Blend Scrim */
@@ -3762,16 +3789,16 @@
   z-index: 2;
 }
 
-/* 4. Learning Card Thumbnails with Soft Edges */
+/* 4. Learning & Events Pathways - Dark Luxury Obsidian Horizontal Cards */
 .draa-learning-card {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 16px;
+  padding: 18px 20px;
   border-radius: 18px;
-  background: #FFFFFF;
-  border: 1px solid var(--corp-line);
-  box-shadow: 0 4px 16px rgba(71, 50, 22, 0.04);
+  background: linear-gradient(150deg, rgba(32, 27, 21, 0.92) 0%, rgba(16, 14, 11, 0.96) 100%) !important;
+  border: 1.5px solid rgba(221, 168, 75, 0.24) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
@@ -3779,9 +3806,10 @@
 }
 
 .draa-learning-card:hover {
-  transform: translateX(4px);
-  border-color: var(--corp-gold);
-  box-shadow: 0 12px 28px rgba(71, 50, 22, 0.08);
+  transform: translateX(6px);
+  border-color: rgba(221, 168, 75, 0.5) !important;
+  background: linear-gradient(150deg, rgba(38, 32, 25, 0.96) 0%, rgba(22, 18, 14, 0.98) 100%) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(189, 123, 32, 0.15) !important;
 }
 
 .draa-learning-thumb {
@@ -3790,15 +3818,15 @@
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid var(--corp-line);
-  background: #FAF6EF;
+  border: 1px solid rgba(221, 168, 75, 0.25);
+  background: #110F0C;
 }
 
 .draa-learning-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.02) brightness(0.95);
+  filter: saturate(0.9) contrast(1.05) brightness(0.9);
   transition: transform 0.4s ease;
 }
 
@@ -3814,23 +3842,28 @@
   display: block;
   font-size: 15.5px;
   font-weight: 850;
-  color: var(--corp-ink);
-  margin-bottom: 4px;
+  color: #FFFFFF !important;
+  margin-bottom: 5px;
 }
 
 .draa-learning-info p {
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: var(--corp-muted);
+  font-size: 13px;
+  line-height: 1.55;
+  color: #D4CABE !important;
   margin: 0;
 }
 
 .draa-learning-arrow {
-  color: var(--corp-gold);
+  color: #DFAB58 !important;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
-/* 5. Audience Cards with Crisp Modern Imagery and Alignment */
+.draa-learning-card:hover .draa-learning-arrow {
+  transform: translateX(4px);
+}
+
+/* 5. Audience Cards with Rich Dark Obsidian Glass & High Contrast */
 .draa-corp-audience-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3838,45 +3871,46 @@
 }
 
 .draa-corp-audience-card {
-  background: #FFFFFF;
+  background: linear-gradient(150deg, rgba(32, 27, 21, 0.94) 0%, rgba(16, 14, 11, 0.98) 100%) !important;
   border-radius: 20px;
-  border: 1px solid var(--corp-line);
+  border: 1.5px solid rgba(221, 168, 75, 0.25) !important;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 18px rgba(71, 50, 22, 0.05);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   transition: all 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .draa-corp-audience-card:hover {
   transform: translateY(-5px);
-  border-color: var(--corp-gold);
-  box-shadow: 0 18px 38px rgba(71, 50, 22, 0.11);
+  border-color: rgba(221, 168, 75, 0.5) !important;
+  box-shadow: 0 24px 55px -10px rgba(0, 0, 0, 0.65), 0 0 24px rgba(189, 123, 32, 0.18) !important;
 }
 
 .draa-aud-media {
   position: relative;
   height: 180px;
   overflow: hidden;
-  background: #25201A;
+  background: #110F0C;
 }
 
 .draa-aud-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.04) brightness(0.98);
+  filter: saturate(0.9) contrast(1.05) brightness(0.88);
   transition: transform 0.5s ease;
 }
 
 .draa-corp-audience-card:hover .draa-aud-img {
   transform: scale(1.06);
+  filter: saturate(1.0) contrast(1.08) brightness(0.95);
 }
 
 .draa-aud-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.12) 60%, rgba(0, 0, 0, 0.45) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(18, 15, 12, 0.45) 60%, rgba(18, 15, 12, 0.98) 100%);
   pointer-events: none;
 }
 
@@ -3887,13 +3921,31 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: #FFFFFF;
-  color: var(--corp-gold);
+  background: rgba(22, 19, 15, 0.92) !important;
+  color: #DFAB58 !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-  border: 1.5px solid rgba(189, 123, 32, 0.28);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(221, 168, 75, 0.35) !important;
+  z-index: 2;
+}
+
+.draa-aud-media .draa-aud-pill-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(14, 12, 9, 0.88) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(221, 168, 75, 0.3) !important;
+  color: #DFAB58 !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
@@ -3909,34 +3961,16 @@
 .draa-aud-body h3 {
   font-size: 17px;
   font-weight: 850;
-  color: var(--corp-ink);
+  color: #FFFFFF !important;
   margin: 0 0 10px;
   line-height: 1.3;
 }
 
 .draa-aud-body p {
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.6;
-  color: var(--corp-muted);
+  color: #D4CABE !important;
   margin: 0 0 18px;
-}
-
-.draa-aud-media .draa-aud-pill-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(25, 22, 17, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #F8F3EA;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 2;
 }
 
 .draa-aud-tags {
@@ -3949,13 +3983,13 @@
 .draa-aud-tag-chip {
   display: inline-flex;
   align-items: center;
-  padding: 4px 8px;
+  padding: 5px 10px;
   border-radius: 6px;
-  background: #F8F4EC;
-  border: 1px solid rgba(189, 123, 32, 0.12);
-  color: #7D5114;
-  font-size: 10.5px;
-  font-weight: 750;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(221, 168, 75, 0.22) !important;
+  color: #DFAB58 !important;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -3964,24 +3998,25 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 850;
-  color: var(--corp-gold);
+  color: #DFAB58 !important;
   text-decoration: none;
-  padding-top: 12px;
-  border-top: 1px solid rgba(39, 32, 23, 0.07);
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   transition: gap 0.2s ease, color 0.2s ease;
 }
 
 .draa-aud-link:hover {
   gap: 10px;
-  color: #925B13;
+  color: #F8F3EA !important;
 }
 
 @media (max-width: 1080px) {
   .draa-corp-challenge-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .draa-corp-audience-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3991,13 +4026,14 @@
   .draa-corp-challenge-grid {
     grid-template-columns: 1fr;
   }
+
   .draa-corp-audience-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* ==========================================================================
-   GLOBAL MINIMAL BACKGROUND MOTION (Whole Page Ambient Layer)
+   GLOBAL LUXURY MOTION BACKGROUND (Whole Page Ambient Layer)
    ========================================================================== */
 .draa-global-bg-wrapper {
   position: fixed;
@@ -4005,48 +4041,101 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  background:
+    radial-gradient(1200px circle at 50% 10%, rgba(221, 168, 75, 0.12) 0%, transparent 60%),
+    radial-gradient(950px circle at 85% 55%, rgba(16, 185, 129, 0.065) 0%, transparent 55%),
+    radial-gradient(900px circle at 15% 75%, rgba(245, 158, 11, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #13100C 0%, #0A0907 40%, #0C0A08 75%, #060504 100%);
+}
+
+.draa-global-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(221, 168, 75, 0.16) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.4;
+  mask-image: radial-gradient(circle at 50% 45%, black 45%, transparent 92%);
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, black 45%, transparent 92%);
+  pointer-events: none;
 }
 
 .draa-global-bg-canvas {
   width: 100%;
   height: 100%;
   display: block;
-  opacity: 0.75;
+  opacity: 0.95;
 }
 
 .draa-global-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   pointer-events: none;
 }
 
 .draa-global-glow-top {
-  top: -10%;
-  right: 10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(189, 123, 32, 0.05) 0%, transparent 70%);
+  top: -12%;
+  right: 8%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgba(221, 168, 75, 0.09) 0%, transparent 70%);
 }
 
 .draa-global-glow-middle {
-  top: 45%;
-  left: -5%;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(217, 164, 70, 0.045) 0%, transparent 70%);
+  top: 42%;
+  left: -8%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(217, 164, 70, 0.075) 0%, transparent 70%);
 }
 
 .draa-global-glow-bottom {
-  bottom: 5%;
-  right: 5%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(189, 123, 32, 0.05) 0%, transparent 70%);
+  bottom: 2%;
+  right: 2%;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(189, 123, 32, 0.08) 0%, transparent 70%);
+}
+
+.draa-global-vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 180px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
 }
 
 .draa-corp main {
   position: relative;
   z-index: 1;
 }
-
+
+.draa-corp-home .draa-learning-card:hover {
+  background: linear-gradient(150deg, rgba(36, 30, 24, 0.9) 0%, rgba(20, 17, 13, 0.96) 100%) !important;
+  border-color: rgba(221, 168, 75, 0.45) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5) !important;
+  transform: translateX(6px) !important;
+}
+
+.draa-corp-home .draa-learning-info strong {
+  color: #FFFFFF !important;
+}
+
+.draa-corp-home .draa-learning-info p {
+  color: #C2B9AC !important;
+}
+
+/* 7. Translucent Final Partner Banner */
+.draa-corp-home .draa-corp-partner-inner {
+  background: linear-gradient(135deg, rgba(34, 29, 23, 0.92) 0%, rgba(18, 15, 12, 0.98) 100%) !important;
+  border: 1.5px solid rgba(221, 168, 75, 0.26) !important;
+  box-shadow: 0 32px 75px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.draa-corp-home .draa-corp-partner-inner h2 {
+  color: #FFFFFF !important;
+}
+
+.draa-corp-home .draa-corp-partner-inner p {
+  color: #C7BEB0 !important;
+}

@@ -1,0 +1,12 @@
+export { default as HomePage } from '../components/corporate/DraaCorporateHome';
+export { default as AboutPage } from '../components/corporate/AboutDraaPage';
+export { default as CareersPage } from '../components/corporate/CareersPage';
+export { default as ServicesOverviewPage } from '../components/corporate/ServicesOverviewPage';
+export { default as ServiceDetailPage } from '../components/corporate/ServiceDetailPage';
+export { default as ServiceExperiencePage } from '../components/corporate/ServiceExperiencePage';
+export { default as ContentPublishingPage } from '../components/corporate/ContentPublishingPage';
+export { default as DigitalLearningPage } from '../components/corporate/DigitalLearningPage';
+export { default as EventsPage } from '../components/corporate/EventsPage';
+export { default as WhoWeSupportPage } from '../components/corporate/WhoWeSupportPage';
+export { default as ContactPage } from '../components/corporate/DraaCorporateContact';
+export { default as CorporateContentPage } from '../components/corporate/CorporateContentPage';

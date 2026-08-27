@@ -1,0 +1,28 @@
+{
+  "name": "draa-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "draa-frontend",
+    "draa-study-india"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @draa/shared",
+    "build:database": "npm run build -w @draa/database",
+    "build:packages": "npm run build:shared && npm run build:database",
+    "build:api": "npm run build -w @draa/api",
+    "build:corporate": "npm run build --prefix draa-frontend",
+    "build:all": "npm run build:packages && npm run build:api && npm run build:corporate",
+    "dev:api": "npm run dev -w @draa/api",
+    "dev:corporate": "npm run dev --prefix draa-frontend",
+    "dev:all": "concurrently -n PKG,API,CORP -c blue,green,yellow \"npm run build:packages\" \"npm run dev -w @draa/api\" \"npm run dev --prefix draa-frontend\"",
+    "db:seed": "node --loader ts-node/esm packages/database/src/seeders/index.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "~5.6.2"
+  }
+}
