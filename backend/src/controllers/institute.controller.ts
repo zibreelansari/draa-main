@@ -1,5 +1,5 @@
 import type { Response, NextFunction } from 'express';
-import { Application, Course, Institute } from '@draa/database';
+import { Application, Course, Institute } from '../models/index';
 import type { AuthenticatedRequest } from '../middleware/auth.middleware';
 
 export async function updateApplicationStatus(req: AuthenticatedRequest, res: Response, next: NextFunction) {

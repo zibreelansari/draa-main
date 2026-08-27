@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
 import type { PublicUser, UserRole } from '@draa/shared';
-import { getSessionUser } from '@draa/database';
+import { getSessionUser } from '../operations';
 import { hashToken } from '../utils/security';
 
 export const SESSION_COOKIE = 'draa_session';

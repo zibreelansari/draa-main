@@ -1,5 +1,5 @@
 import type { Response, NextFunction } from 'express';
-import { InstituteProfile, SupportTicket } from '@draa/database';
+import { InstituteProfile, SupportTicket } from '../models/index';
 import type { AuthenticatedRequest } from '../middleware/auth.middleware';
 
 export async function updateInstituteApproval(req: AuthenticatedRequest, res: Response, next: NextFunction) {

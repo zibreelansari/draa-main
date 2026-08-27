@@ -3,7 +3,7 @@ import {
   getDashboardWorkspace,
   markNotificationAsRead,
   createSupportTicket,
-} from '@draa/database';
+} from '../operations';
 import type { AuthenticatedRequest } from '../middleware/auth.middleware';
 
 export async function getDashboard(req: AuthenticatedRequest, res: Response, next: NextFunction) {

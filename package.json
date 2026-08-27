@@ -5,21 +5,20 @@
   "type": "module",
   "workspaces": [
     "packages/*",
-    "apps/*",
-    "draa-frontend",
-    "draa-study-india"
+    "backend",
+    "frontend/*"
   ],
   "scripts": {
     "build:shared": "npm run build -w @draa/shared",
-    "build:database": "npm run build -w @draa/database",
-    "build:packages": "npm run build:shared && npm run build:database",
-    "build:api": "npm run build -w @draa/api",
-    "build:corporate": "npm run build --prefix draa-frontend",
-    "build:all": "npm run build:packages && npm run build:api && npm run build:corporate",
-    "dev:api": "npm run dev -w @draa/api",
-    "dev:corporate": "npm run dev --prefix draa-frontend",
-    "dev:all": "concurrently -n PKG,API,CORP -c blue,green,yellow \"npm run build:packages\" \"npm run dev -w @draa/api\" \"npm run dev --prefix draa-frontend\"",
-    "db:seed": "node --loader ts-node/esm packages/database/src/seeders/index.ts"
+    "build:backend": "npm run build:shared && npm run build -w @draa/backend",
+    "build:corporate": "npm run build --prefix frontend/corporate",
+    "build:study-india": "npm run build:shared && npm run build --prefix frontend/study-india",
+    "build:all": "npm run build:shared && npm run build:backend && npm run build:corporate && npm run build:study-india",
+    "dev:backend": "npm run dev -w @draa/backend",
+    "dev:corporate": "npm run dev --prefix frontend/corporate",
+    "dev:study-india": "npm run dev --prefix frontend/study-india",
+    "dev:all": "concurrently -n BACKEND,CORP -c green,blue \"npm run dev:backend\" \"npm run dev:corporate\"",
+    "db:seed": "npm run seed -w @draa/backend"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
 import { contactInquirySchema, newsletterSchema } from '@draa/shared';
-import { createContactInquiry, subscribeNewsletter } from '@draa/database';
+import { createContactInquiry, subscribeNewsletter } from '../operations';
 
 export async function submitContact(req: Request, res: Response, next: NextFunction) {
   try {

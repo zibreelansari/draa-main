@@ -4,7 +4,7 @@ import {
   listStudentApplications,
   createStudentApplication,
   toggleSavedCourse,
-} from '@draa/database';
+} from '../operations';
 import type { AuthenticatedRequest } from '../middleware/auth.middleware';
 
 export async function getApplications(req: AuthenticatedRequest, res: Response, next: NextFunction) {

@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from 'express';
-import { listInstitutes, getInstituteBySlug, listCourses, getCourseBySlug } from '@draa/database';
+import { listInstitutes, getInstituteBySlug, listCourses, getCourseBySlug } from '../operations';
 
 export async function getInstitutes(_req: Request, res: Response, next: NextFunction) {
   try {

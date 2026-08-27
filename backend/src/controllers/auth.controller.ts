@@ -11,7 +11,7 @@ import {
   deleteSession,
   createStudentUser,
   createInstituteUser,
-} from '@draa/database';
+} from '../operations';
 import { config } from '../config';
 import { hashPassword, verifyPassword, createSessionToken, hashToken } from '../utils/security';
 import { SESSION_COOKIE, sessionFromRequest, type AuthenticatedRequest } from '../middleware/auth.middleware';
