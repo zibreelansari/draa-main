@@ -255,36 +255,6 @@ export default function LoginPage() {
               </button>
             </form>
 
-            {/* Quick 1-Click Demo Fillers */}
-            <div style={{ marginTop: "20px", padding: "12px 14px", borderRadius: "10px", background: "#f8fafc", border: "1px solid #e2e8f0" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "5px", color: "#0b655d", fontSize: "12px", fontWeight: "750", marginBottom: "8px" }}>
-                <Zap size={13} color="#ea580c" /> Instant Demo Login (Click to Autofill):
-              </div>
-              <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemoFill("student")}
-                  style={{ padding: "5px 9px", borderRadius: "6px", border: "1px solid #cbd5e1", background: "#fff", color: "#0f172a", fontSize: "11.5px", fontWeight: "700", cursor: "pointer" }}
-                >
-                  🎓 Student ({rolesConfig.student.demoPass})
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemoFill("institute")}
-                  style={{ padding: "5px 9px", borderRadius: "6px", border: "1px solid #cbd5e1", background: "#fff", color: "#0f172a", fontSize: "11.5px", fontWeight: "700", cursor: "pointer" }}
-                >
-                  🏛️ Institute ({rolesConfig.institute.demoPass})
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemoFill("admin")}
-                  style={{ padding: "5px 9px", borderRadius: "6px", border: "1px solid #cbd5e1", background: "#fff", color: "#0f172a", fontSize: "11.5px", fontWeight: "700", cursor: "pointer" }}
-                >
-                  🛡️ Admin ({rolesConfig.admin.demoPass})
-                </button>
-              </div>
-            </div>
-
             {activeTab !== "admin" && (
               <p style={{ textAlign: "center", fontSize: "13px", color: "#64748b", marginTop: "18px", marginBottom: 0 }}>
                 Don't have an account yet?{" "}
