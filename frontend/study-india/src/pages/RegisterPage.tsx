@@ -5,9 +5,11 @@ import {
   Award,
   BookOpen,
   Building2,
+  Calendar,
   CheckCircle2,
   Eye,
   EyeOff,
+  FileText,
   Flame,
   Globe2,
   GraduationCap,
@@ -15,7 +17,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  Quote,
   ShieldCheck,
   Sparkles,
   Star,
@@ -222,14 +223,14 @@ export default function RegisterPage() {
   }
 
   return (
-    <section className="world-grid-bg" style={{ minHeight: "calc(100vh - 72px)", padding: "48px 0 80px" }}>
+    <section className="world-grid-bg" style={{ minHeight: "calc(100vh - 72px)", padding: "40px 0 70px" }}>
       <div className="portal-shell" style={{ maxWidth: "1200px" }}>
         
         {/* Main Split Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "48px", alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "44px", alignItems: "start" }}>
           
-          {/* Left Column: Prestigious Government & International Showcase Canvas */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          {/* Left Column: Prestigious Government Authority & Showcase */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             
             {/* Government Authority Badge */}
             <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", borderRadius: "9999px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#065f46", fontSize: "12px", fontWeight: "750", width: "max-content" }}>
@@ -238,7 +239,7 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <h1 style={{ fontSize: "clamp(34px, 3.6vw, 46px)", fontWeight: "800", lineHeight: "1.12", color: "#0f172a", letterSpacing: "-0.035em", margin: "0 0 16px" }}>
+              <h1 style={{ fontSize: "clamp(32px, 3.4vw, 44px)", fontWeight: "800", lineHeight: "1.12", color: "#0f172a", letterSpacing: "-0.035em", margin: "0 0 14px" }}>
                 {activeRole === "student" ? (
                   <>
                     Study at India’s Premier <span style={{ color: "#0b655d" }}>Ranked Universities</span>.
@@ -249,15 +250,15 @@ export default function RegisterPage() {
                   </>
                 )}
               </h1>
-              <p style={{ color: "#475569", fontSize: "15px", lineHeight: "1.65", margin: 0, maxWidth: "520px" }}>
+              <p style={{ color: "#475569", fontSize: "14.5px", lineHeight: "1.65", margin: 0, maxWidth: "520px" }}>
                 {activeRole === "student"
                   ? "Access top UGC & NAAC accredited degree programmes with transparent multi-currency tuition in USD, scholarship waivers up to 100%, and direct provisional admission offer letters."
                   : "Register your university on India's centralized global education corridor. Evaluate international credentials, issue automated offers, and manage overseas student quotas."}
               </p>
             </div>
 
-            {/* Feature Highlights */}
-            <div style={{ display: "grid", gap: "12px" }}>
+            {/* Feature Highlights with icons */}
+            <div style={{ display: "grid", gap: "10px" }}>
               {[
                 { icon: Zap, color: "#ea580c", title: "Direct Provisional Offer Letters", desc: "Download visa-ready admission certificates with embedded verification QR code." },
                 { icon: Award, color: "#0b655d", title: "Study in India (SII) Scholarships", desc: "Merit fee waivers up to 100% full tuition for qualifying international students." },
@@ -271,11 +272,11 @@ export default function RegisterPage() {
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "14px",
-                      padding: "14px 18px",
+                      padding: "13px 16px",
                       borderRadius: "12px",
                       background: "#ffffff",
                       border: "1px solid #e2e8f0",
-                      boxShadow: "0 1px 3px rgba(0, 0, 0, 0.04)",
+                      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.03)",
                     }}
                   >
                     <span style={{ display: "grid", width: "34px", height: "34px", placeItems: "center", borderRadius: "8px", background: item.color === "#ea580c" ? "#fff7ed" : item.color === "#0b655d" ? "#f0fdfa" : "#eff6ff", color: item.color, flexShrink: 0 }}>
@@ -291,17 +292,17 @@ export default function RegisterPage() {
             </div>
 
             {/* Verified Student Social Proof Quote */}
-            <div style={{ padding: "20px 22px", borderRadius: "14px", background: "linear-gradient(135deg, #093f3c 0%, #0f2c2e 100%)", color: "#ffffff", boxShadow: "0 10px 25px rgba(9, 63, 60, 0.2)" }}>
+            <div style={{ padding: "18px 20px", borderRadius: "14px", background: "linear-gradient(135deg, #093f3c 0%, #0f2c2e 100%)", color: "#ffffff", boxShadow: "0 10px 25px rgba(9, 63, 60, 0.2)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#ffb07b", fontSize: "11.5px", fontWeight: "800", marginBottom: "8px" }}>
                 <Star size={13} fill="#ffb07b" /> Verified International Scholar
               </div>
-              <p style={{ margin: "0 0 12px", fontSize: "13.5px", lineHeight: "1.6", color: "#e6f4f1", fontStyle: "italic" }}>
+              <p style={{ margin: "0 0 10px", fontSize: "13px", lineHeight: "1.55", color: "#e6f4f1", fontStyle: "italic" }}>
                 "The Study in India platform made securing my admission and 50% tuition waiver at NIT seamless. The offer letter was accepted by the embassy without hassle."
               </p>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: "10px" }}>
                 <div style={{ fontSize: "12px" }}>
                   <strong style={{ color: "#ffffff" }}>Amina D. (Nigeria 🇳🇬)</strong>
-                  <span style={{ color: "#99d1c7", display: "block" }}>B.Tech Computer Science & AI</span>
+                  <span style={{ color: "#99d1c7", display: "block", fontSize: "11px" }}>B.Tech Computer Science & AI</span>
                 </div>
                 <span style={{ padding: "3px 9px", borderRadius: "9999px", background: "rgba(255,255,255,0.15)", fontSize: "11px", fontWeight: "750", color: "#ffb07b" }}>
                   50% Scholarship
@@ -310,27 +311,27 @@ export default function RegisterPage() {
             </div>
 
             {/* Live Stats Bar */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", padding: "16px 20px", borderRadius: "12px", background: "#ffffff", border: "1px solid #e2e8f0" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px", padding: "14px 18px", borderRadius: "12px", background: "#ffffff", border: "1px solid #e2e8f0" }}>
               <div>
-                <div style={{ fontSize: "20px", fontWeight: "800", color: "#0b655d" }}>5,400+</div>
-                <small style={{ color: "#64748b", fontSize: "11.5px", fontWeight: "600" }}>Foreign Students</small>
+                <div style={{ fontSize: "18px", fontWeight: "800", color: "#0b655d" }}>5,400+</div>
+                <small style={{ color: "#64748b", fontSize: "11px", fontWeight: "600" }}>Foreign Students</small>
               </div>
-              <div style={{ borderLeft: "1px solid #e2e8f0", paddingLeft: "14px" }}>
-                <div style={{ fontSize: "20px", fontWeight: "800", color: "#ea580c" }}>80+</div>
-                <small style={{ color: "#64748b", fontSize: "11.5px", fontWeight: "600" }}>Partner Nations</small>
+              <div style={{ borderLeft: "1px solid #e2e8f0", paddingLeft: "12px" }}>
+                <div style={{ fontSize: "18px", fontWeight: "800", color: "#ea580c" }}>80+</div>
+                <small style={{ color: "#64748b", fontSize: "11px", fontWeight: "600" }}>Partner Nations</small>
               </div>
-              <div style={{ borderLeft: "1px solid #e2e8f0", paddingLeft: "14px" }}>
-                <div style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a" }}>500+</div>
-                <small style={{ color: "#64748b", fontSize: "11.5px", fontWeight: "600" }}>Accredited Inst.</small>
+              <div style={{ borderLeft: "1px solid #e2e8f0", paddingLeft: "12px" }}>
+                <div style={{ fontSize: "18px", fontWeight: "800", color: "#0f172a" }}>500+</div>
+                <small style={{ color: "#64748b", fontSize: "11px", fontWeight: "600" }}>Accredited Inst.</small>
               </div>
             </div>
           </div>
 
-          {/* Right Column: World-Class Clean Registration Card */}
-          <div className="premium-form-card">
+          {/* Right Column: World-Class Precision Form Card */}
+          <div className="premium-form-card" style={{ padding: "32px 34px" }}>
             
-            {/* Segmented Role Tabs */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", padding: "4px", borderRadius: "10px", background: "#f1f5f9", marginBottom: "24px" }}>
+            {/* Segmented Role Switcher */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", padding: "4px", borderRadius: "10px", background: "#f1f5f9", marginBottom: "22px" }}>
               <button
                 type="button"
                 onClick={() => { setActiveRole("student"); setError(""); setMessage(""); }}
@@ -339,7 +340,7 @@ export default function RegisterPage() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "8px",
-                  padding: "10px 14px",
+                  padding: "9px 14px",
                   borderRadius: "8px",
                   border: 0,
                   background: activeRole === "student" ? "#ffffff" : "transparent",
@@ -362,7 +363,7 @@ export default function RegisterPage() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "8px",
-                  padding: "10px 14px",
+                  padding: "9px 14px",
                   borderRadius: "8px",
                   border: 0,
                   background: activeRole === "institute" ? "#ffffff" : "transparent",
@@ -380,12 +381,12 @@ export default function RegisterPage() {
             </div>
 
             {/* Header with Title and 1-Click Demo Fill */}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "20px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "18px" }}>
               <div>
-                <h2 style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a", margin: "0 0 4px", letterSpacing: "-0.02em" }}>
+                <h2 style={{ fontSize: "19px", fontWeight: "800", color: "#0f172a", margin: "0 0 3px", letterSpacing: "-0.02em" }}>
                   {activeRole === "student" ? "Student Registration" : "Institution Registration"}
                 </h2>
-                <small style={{ color: "#64748b", fontSize: "12.5px" }}>
+                <small style={{ color: "#64748b", fontSize: "12px" }}>
                   {activeRole === "student" ? "Create your verified profile to apply and track offers" : "Register your university authority credentials"}
                 </small>
               </div>
@@ -401,7 +402,7 @@ export default function RegisterPage() {
                   border: "1px solid #fed7aa",
                   background: "#fff7ed",
                   color: "#c2410c",
-                  fontSize: "12px",
+                  fontSize: "11.5px",
                   fontWeight: "750",
                   cursor: "pointer",
                 }}
@@ -411,65 +412,79 @@ export default function RegisterPage() {
               </button>
             </div>
 
-            {error && <div className="form-error" style={{ marginBottom: "16px" }}><AlertCircle size={16} />{error}</div>}
-            {message && <div className="form-success" style={{ marginBottom: "16px" }}><CheckCircle2 size={16} />{message}</div>}
+            {error && <div className="form-error" style={{ marginBottom: "14px" }}><AlertCircle size={16} />{error}</div>}
+            {message && <div className="form-success" style={{ marginBottom: "14px" }}><CheckCircle2 size={16} />{message}</div>}
 
-            <form onSubmit={handleSubmit} style={{ display: "grid", gap: "16px" }}>
+            <form onSubmit={handleSubmit} style={{ display: "grid", gap: "14px" }}>
               {activeRole === "student" ? (
                 <>
+                  {/* Section 1: Candidate Identity */}
+                  <div className="form-section-title">
+                    <span>1</span> Candidate Identity & Contact
+                  </div>
+
                   {/* Name fields */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
                     <div className="premium-input-group">
-                      <label>First Name <span style={{ color: "#ea580c" }}>*</span></label>
-                      <input
-                        className="premium-input"
-                        placeholder="e.g. Amina"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        required
-                        minLength={2}
-                      />
+                      <label>First Name <span className="required-star">*</span></label>
+                      <div className="input-with-icon">
+                        <User size={15} />
+                        <input
+                          className="premium-input"
+                          placeholder="e.g. Amina"
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
+                          required
+                          minLength={2}
+                        />
+                      </div>
                     </div>
                     <div className="premium-input-group">
-                      <label>Last Name <span style={{ color: "#ea580c" }}>*</span></label>
-                      <input
-                        className="premium-input"
-                        placeholder="e.g. Diallo"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        required
-                        minLength={2}
-                      />
+                      <label>Last Name <span className="required-star">*</span></label>
+                      <div className="input-with-icon">
+                        <User size={15} />
+                        <input
+                          className="premium-input"
+                          placeholder="e.g. Diallo"
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
+                          required
+                          minLength={2}
+                        />
+                      </div>
                     </div>
                   </div>
 
                   {/* Country & Phone */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "14px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "12px" }}>
                     <div className="premium-input-group">
-                      <label>Country of Citizenship <span style={{ color: "#ea580c" }}>*</span></label>
-                      <select
-                        className="premium-select"
-                        value={selectedCountry}
-                        onChange={(e) => handleCountryChange(e.target.value)}
-                        required
-                      >
-                        {COUNTRIES.map((c) => (
-                          <option key={c.name} value={c.name}>
-                            {c.flag} {c.name} ({c.code})
-                          </option>
-                        ))}
-                      </select>
+                      <label>Country of Citizenship <span className="required-star">*</span></label>
+                      <div className="input-with-icon">
+                        <Globe2 size={15} />
+                        <select
+                          className="premium-select"
+                          value={selectedCountry}
+                          onChange={(e) => handleCountryChange(e.target.value)}
+                          required
+                        >
+                          {COUNTRIES.map((c) => (
+                            <option key={c.name} value={c.name}>
+                              {c.flag} {c.name} ({c.code})
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
 
                     <div className="premium-input-group">
                       <label>WhatsApp / Phone</label>
                       <div style={{ display: "flex", gap: "6px" }}>
-                        <span style={{ display: "grid", placeItems: "center", padding: "0 10px", background: "#f1f5f9", border: "1px solid #cbd5e1", borderRadius: "10px", fontSize: "12.5px", color: "#475569", fontWeight: "750" }}>
+                        <span style={{ display: "grid", placeItems: "center", padding: "0 9px", background: "#f1f5f9", border: "1px solid #cbd5e1", borderRadius: "10px", fontSize: "12px", color: "#475569", fontWeight: "750" }}>
                           {phoneCode}
                         </span>
                         <input
                           className="premium-input"
-                          placeholder="e.g. 8012345678"
+                          placeholder="8012345678"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           style={{ flex: 1 }}
@@ -478,100 +493,133 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
+                  {/* Section 2: Study Interests */}
+                  <div className="form-section-title">
+                    <span>2</span> Academic Program & Goals
+                  </div>
+
                   {/* Academic Preferences */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
                     <div className="premium-input-group">
                       <label>Target Degree Level</label>
-                      <select className="premium-select" value={preferredLevel} onChange={(e) => setPreferredLevel(e.target.value)}>
-                        <option value="UNDERGRADUATE">Undergraduate (Bachelor's)</option>
-                        <option value="POSTGRADUATE">Postgraduate (Master's / MBA)</option>
-                        <option value="DOCTORAL">Doctoral (Ph.D / Research)</option>
-                        <option value="DIPLOMA">Diploma & Certificate</option>
-                      </select>
+                      <div className="input-with-icon">
+                        <GraduationCap size={15} />
+                        <select className="premium-select" value={preferredLevel} onChange={(e) => setPreferredLevel(e.target.value)}>
+                          <option value="UNDERGRADUATE">Undergraduate (Bachelor's)</option>
+                          <option value="POSTGRADUATE">Postgraduate (Master's / MBA)</option>
+                          <option value="DOCTORAL">Doctoral (Ph.D / Research)</option>
+                          <option value="DIPLOMA">Diploma & Certificate</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div className="premium-input-group">
                       <label>Intended Intake</label>
-                      <select className="premium-select" value={targetIntake} onChange={(e) => setTargetIntake(e.target.value)}>
-                        <option value="Fall 2026">Fall Intake 2026 (August)</option>
-                        <option value="Spring 2027">Spring Intake 2027 (January)</option>
-                        <option value="Summer 2027">Summer Intensive 2027</option>
-                      </select>
+                      <div className="input-with-icon">
+                        <Calendar size={15} />
+                        <select className="premium-select" value={targetIntake} onChange={(e) => setTargetIntake(e.target.value)}>
+                          <option value="Fall 2026">Fall Intake 2026 (August)</option>
+                          <option value="Spring 2027">Spring Intake 2027 (January)</option>
+                          <option value="Summer 2027">Summer Intensive 2027</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
 
                   <div className="premium-input-group">
                     <label>Preferred Major / Discipline</label>
-                    <select className="premium-select" value={preferredDiscipline} onChange={(e) => setPreferredDiscipline(e.target.value)}>
-                      {DISCIPLINES.map((d) => (
-                        <option key={d} value={d}>
-                          {d}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="input-with-icon">
+                      <BookOpen size={15} />
+                      <select className="premium-select" value={preferredDiscipline} onChange={(e) => setPreferredDiscipline(e.target.value)}>
+                        {DISCIPLINES.map((d) => (
+                          <option key={d} value={d}>
+                            {d}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
 
                   {/* Passport / National ID */}
                   <div className="premium-input-group">
-                    <label>Passport / National ID Number (Optional at registration)</label>
-                    <input
-                      className="premium-input"
-                      placeholder="e.g. A12345678"
-                      value={passportNumber}
-                      onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
-                    />
+                    <label>Passport / National ID (Optional at registration)</label>
+                    <div className="input-with-icon">
+                      <FileText size={15} />
+                      <input
+                        className="premium-input"
+                        placeholder="e.g. A12345678"
+                        value={passportNumber}
+                        onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
+                      />
+                    </div>
                   </div>
                 </>
               ) : (
                 <>
                   {/* Institute Fields */}
+                  <div className="form-section-title">
+                    <span>1</span> Institution Details
+                  </div>
+
                   <div className="premium-input-group">
-                    <label>Official Institution / University Name <span style={{ color: "#ea580c" }}>*</span></label>
-                    <input
-                      className="premium-input"
-                      placeholder="e.g. Indian Institute of Technology & AI"
-                      value={instituteName}
-                      onChange={(e) => setInstituteName(e.target.value)}
-                      required
-                      minLength={3}
-                    />
-                  </div>
-
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
-                    <div className="premium-input-group">
-                      <label>Nodal Officer Name <span style={{ color: "#ea580c" }}>*</span></label>
+                    <label>Official University Name <span className="required-star">*</span></label>
+                    <div className="input-with-icon">
+                      <Building2 size={15} />
                       <input
                         className="premium-input"
-                        placeholder="e.g. Prof. Arvind Rao"
-                        value={contactName}
-                        onChange={(e) => setContactName(e.target.value)}
+                        placeholder="e.g. Indian Institute of Technology & AI"
+                        value={instituteName}
+                        onChange={(e) => setInstituteName(e.target.value)}
                         required
-                      />
-                    </div>
-                    <div className="premium-input-group">
-                      <label>Helpline Phone</label>
-                      <input
-                        className="premium-input"
-                        placeholder="+91 11 2345 6789"
-                        value={instPhone}
-                        onChange={(e) => setInstPhone(e.target.value)}
+                        minLength={3}
                       />
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
                     <div className="premium-input-group">
-                      <label>City in India <span style={{ color: "#ea580c" }}>*</span></label>
-                      <input
-                        className="premium-input"
-                        placeholder="e.g. Bengaluru, New Delhi"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        required
-                      />
+                      <label>Nodal Officer Name <span className="required-star">*</span></label>
+                      <div className="input-with-icon">
+                        <User size={15} />
+                        <input
+                          className="premium-input"
+                          placeholder="e.g. Prof. Arvind Rao"
+                          value={contactName}
+                          onChange={(e) => setContactName(e.target.value)}
+                          required
+                        />
+                      </div>
                     </div>
                     <div className="premium-input-group">
-                      <label>State / Territory <span style={{ color: "#ea580c" }}>*</span></label>
+                      <label>Campus Helpline Phone</label>
+                      <div className="input-with-icon">
+                        <Phone size={15} />
+                        <input
+                          className="premium-input"
+                          placeholder="+91 11 2345 6789"
+                          value={instPhone}
+                          onChange={(e) => setInstPhone(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                    <div className="premium-input-group">
+                      <label>City in India <span className="required-star">*</span></label>
+                      <div className="input-with-icon">
+                        <MapPin size={15} />
+                        <input
+                          className="premium-input"
+                          placeholder="e.g. Bengaluru, New Delhi"
+                          value={city}
+                          onChange={(e) => setCity(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="premium-input-group">
+                      <label>State / Territory <span className="required-star">*</span></label>
                       <select className="premium-select" value={state} onChange={(e) => setState(e.target.value)}>
                         {INDIAN_STATES.map((s) => (
                           <option key={s} value={s}>
@@ -582,7 +630,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "14px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "12px" }}>
                     <div className="premium-input-group">
                       <label>Website URL</label>
                       <input
@@ -606,13 +654,18 @@ export default function RegisterPage() {
                 </>
               )}
 
-              {/* Account Credentials */}
-              <div style={{ borderTop: "1px solid #e2e8f0", paddingTop: "16px", marginTop: "4px", display: "grid", gap: "14px" }}>
-                <div className="premium-input-group">
-                  <label>
-                    {activeRole === "student" ? "Email Address (Login ID)" : "Official Institutional Email (.edu / .ac.in)"}{" "}
-                    <span style={{ color: "#ea580c" }}>*</span>
-                  </label>
+              {/* Section 3: Account Credentials */}
+              <div className="form-section-title">
+                <span>{activeRole === "student" ? "3" : "2"}</span> Account Credentials & Access
+              </div>
+
+              <div className="premium-input-group">
+                <label>
+                  {activeRole === "student" ? "Email Address (Login ID)" : "Official Institutional Email (.edu / .ac.in)"}{" "}
+                  <span className="required-star">*</span>
+                </label>
+                <div className="input-with-icon">
+                  <Mail size={15} />
                   <input
                     className="premium-input"
                     type="email"
@@ -622,54 +675,54 @@ export default function RegisterPage() {
                     required
                   />
                 </div>
+              </div>
 
-                <div className="premium-input-group">
-                  <label>Create Password <span style={{ color: "#ea580c" }}>*</span></label>
-                  <div className="password-field">
-                    <Lock size={16} />
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      placeholder="Minimum 8 characters with letters & numbers"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                      minLength={8}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      aria-label={showPassword ? "Hide password" : "Show password"}
-                    >
-                      {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
-                    </button>
-                  </div>
-
-                  {password && (
-                    <div style={{ marginTop: "4px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      <div style={{ display: "flex", gap: "4px", width: "130px" }}>
-                        {[1, 2, 3, 4].map((bar) => (
-                          <div
-                            key={bar}
-                            style={{
-                              height: "4px",
-                              flex: 1,
-                              borderRadius: "2px",
-                              background: passwordStrength >= bar ? getStrengthLabel().color : "#e2e8f0",
-                              transition: "background 0.25s ease",
-                            }}
-                          />
-                        ))}
-                      </div>
-                      <span style={{ fontSize: "11.5px", color: getStrengthLabel().color, fontWeight: "750" }}>
-                        {getStrengthLabel().label}
-                      </span>
-                    </div>
-                  )}
+              <div className="premium-input-group">
+                <label>Create Password <span className="required-star">*</span></label>
+                <div className="password-field">
+                  <Lock size={15} color="#94a3b8" />
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Minimum 8 characters with letters & numbers"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={8}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
+                  </button>
                 </div>
+
+                {password && (
+                  <div style={{ marginTop: "3px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <div style={{ display: "flex", gap: "4px", width: "130px" }}>
+                      {[1, 2, 3, 4].map((bar) => (
+                        <div
+                          key={bar}
+                          style={{
+                            height: "4px",
+                            flex: 1,
+                            borderRadius: "2px",
+                            background: passwordStrength >= bar ? getStrengthLabel().color : "#e2e8f0",
+                            transition: "background 0.25s ease",
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <span style={{ fontSize: "11px", color: getStrengthLabel().color, fontWeight: "750" }}>
+                      {getStrengthLabel().label}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Terms Consent */}
-              <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "12.5px", color: "#475569", cursor: "pointer", marginTop: "2px" }}>
+              <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "12px", color: "#475569", cursor: "pointer", marginTop: "2px" }}>
                 <input
                   type="checkbox"
                   checked={agreed}
@@ -683,13 +736,13 @@ export default function RegisterPage() {
               </label>
 
               {/* Submit CTA */}
-              <button className="auth-submit" type="submit" disabled={busy || !agreed}>
+              <button className="auth-submit" type="submit" disabled={busy || !agreed} style={{ minHeight: "46px" }}>
                 {busy ? "Creating Account…" : activeRole === "student" ? "Create Free Student Account" : "Submit Institution Registration"}
                 <ArrowRight size={16} />
               </button>
 
               <div style={{ textAlign: "center", fontSize: "13px", color: "#64748b", marginTop: "2px" }}>
-                Already registered? <Link to={`/login/${activeRole}`} style={{ color: "#0b655d", fontWeight: "800" }}>Log in here</Link>
+                Already registered? <Link to={`/login/${activeRole}`} style={{ color: "#0b655d", fontWeight: "800", textDecoration: "none" }}>Log in here</Link>
               </div>
             </form>
           </div>
