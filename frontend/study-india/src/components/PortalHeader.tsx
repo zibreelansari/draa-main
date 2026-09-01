@@ -80,73 +80,73 @@ export default function PortalHeader() {
   };
 
   return (
-    <header className="portal-header" ref={headerRef}>
-      {/* Indian Tricolour Hairline Ribbon */}
-      <div
-        className="india-tricolour-hairline"
+    <header className="portal-header" ref={headerRef} style={{ position: "relative", overflow: "hidden" }}>
+      {/* 3D Flying Indian Silk Ribbon Wave across Header Bar (No Chakra, Aesthetic Blend) */}
+      <svg
+        viewBox="0 0 1440 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
         style={{
-          height: "3px",
+          position: "absolute",
+          inset: 0,
           width: "100%",
-          background: "linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #ffffff 33.33%, #ffffff 66.66%, #138808 66.66%, #138808 100%)",
+          height: "100%",
+          pointerEvents: "none",
+          zIndex: 0,
+          opacity: 0.9,
         }}
-      />
+        aria-hidden="true"
+      >
+        <defs>
+          {/* Saffron Silk Flow */}
+          <linearGradient id="hdrSaffronFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FF9933" stopOpacity="0.75" />
+            <stop offset="25%" stopColor="#FF8000" stopOpacity="0.65" />
+            <stop offset="65%" stopColor="#FFA43B" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#FF9933" stopOpacity="0.08" />
+          </linearGradient>
 
-      <div className="portal-shell portal-header-inner">
-        {/* Brand with 3-Colour Flowing Ribbon from Upper to Down Line */}
+          {/* White Silk Flow */}
+          <linearGradient id="hdrWhiteFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+            <stop offset="30%" stopColor="#F8FAFC" stopOpacity="0.75" />
+            <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.45" />
+            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.1" />
+          </linearGradient>
+
+          {/* Green Silk Flow */}
+          <linearGradient id="hdrGreenFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#138808" stopOpacity="0.75" />
+            <stop offset="25%" stopColor="#0E7006" stopOpacity="0.65" />
+            <stop offset="65%" stopColor="#16A34A" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#0B655D" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+
+        {/* Saffron Top Flying Ribbon Wave */}
+        <path
+          d="M0 24C180 8 380 32 600 16C840 -2 1100 22 1440 8V0H0V24Z"
+          fill="url(#hdrSaffronFlow)"
+        />
+
+        {/* White Middle Flying Ribbon Wave */}
+        <path
+          d="M0 42C180 24 380 48 600 32C840 14 1100 38 1440 22V8C1100 22 840 -2 600 16C380 32 180 8 0 24V42Z"
+          fill="url(#hdrWhiteFlow)"
+        />
+
+        {/* Green Bottom Flying Ribbon Wave */}
+        <path
+          d="M0 60C180 40 380 64 600 48C840 30 1100 54 1440 36V22C1100 38 840 14 600 32C380 48 180 24 0 42V60Z"
+          fill="url(#hdrGreenFlow)"
+        />
+      </svg>
+
+      <div className="portal-shell portal-header-inner" style={{ position: "relative", zIndex: 1 }}>
+        {/* Brand */}
         <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            {/* Flying 3-Colour Flowing Ribbon (Upper line to Down line) */}
-            <svg
-              width="18"
-              height="44"
-              viewBox="0 0 18 44"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{
-                flexShrink: 0,
-                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.08))",
-              }}
-              aria-hidden="true"
-            >
-              <defs>
-                <linearGradient id="flowSaffron" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FF9933" />
-                  <stop offset="100%" stopColor="#EA580C" />
-                </linearGradient>
-                <linearGradient id="flowWhite" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FFFFFF" />
-                  <stop offset="100%" stopColor="#E2E8F0" />
-                </linearGradient>
-                <linearGradient id="flowGreen" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#138808" />
-                  <stop offset="100%" stopColor="#0B655D" />
-                </linearGradient>
-              </defs>
-              {/* Upper Saffron Wave Arc */}
-              <path
-                d="M4 2C9 4 14 8 16 14C12 12 7 11 2 15C3 10 3 5 4 2Z"
-                fill="url(#flowSaffron)"
-              />
-              {/* Middle White Wave Arc */}
-              <path
-                d="M2 15C7 11 12 12 16 14C14 20 10 24 2 28C3 23 3 19 2 15Z"
-                fill="url(#flowWhite)"
-                stroke="rgba(0,0,0,0.08)"
-                strokeWidth="0.5"
-              />
-              {/* Lower Green Wave Arc */}
-              <path
-                d="M2 28C10 24 14 20 16 28C14 36 9 40 4 42C3 37 3 32 2 28Z"
-                fill="url(#flowGreen)"
-              />
-            </svg>
-
-            <img
-              src="/media/draa-mark.png"
-              alt="DRAA Logo"
-              style={{ width: "36px", height: "36px", objectFit: "contain" }}
-            />
-          </div>
+          <img src="/media/draa-mark.png" alt="DRAA Logo" />
           <span>
             <strong>DRAA STUDY IN INDIA</strong>
             <small>LEARN &middot; DISCOVER &middot; GROW</small>
@@ -344,7 +344,6 @@ export default function PortalHeader() {
           </NavLink>
         </nav>
       )}
-
     </header>
   );
 }
