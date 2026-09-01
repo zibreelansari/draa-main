@@ -1,4 +1,4 @@
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   AlertCircle,
   ArrowRight,
@@ -83,6 +83,16 @@ export default function RegisterPage() {
   const [activeRole, setActiveRole] = useState<"student" | "institute">(
     initialRole === "institute" ? "institute" : "student"
   );
+
+  useEffect(() => {
+    if (initialRole === "institute") {
+      setActiveRole("institute");
+    } else {
+      setActiveRole("student");
+    }
+    setError("");
+    setMessage("");
+  }, [initialRole]);
 
   // Student Form State
   const [firstName, setFirstName] = useState("");
@@ -339,7 +349,12 @@ export default function RegisterPage() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", padding: "4px", borderRadius: "10px", background: "#f1f5f9", marginBottom: "22px" }}>
               <button
                 type="button"
-                onClick={() => { setActiveRole("student"); setError(""); setMessage(""); }}
+                onClick={() => {
+                  setActiveRole("student");
+                  setError("");
+                  setMessage("");
+                  navigate("/register/student", { replace: true });
+                }}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -362,7 +377,12 @@ export default function RegisterPage() {
               </button>
               <button
                 type="button"
-                onClick={() => { setActiveRole("institute"); setError(""); setMessage(""); }}
+                onClick={() => {
+                  setActiveRole("institute");
+                  setError("");
+                  setMessage("");
+                  navigate("/register/institute", { replace: true });
+                }}
                 style={{
                   display: "flex",
                   alignItems: "center",

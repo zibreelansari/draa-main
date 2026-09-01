@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import type { UserRole } from "@draa/shared";
 import {
   AlertCircle,
@@ -57,6 +57,17 @@ export default function LoginPage() {
   const [activeTab, setActiveTab] = useState<"student" | "institute" | "admin">(
     roleSlug === "institute" ? "institute" : roleSlug === "admin" ? "admin" : "student"
   );
+
+  useEffect(() => {
+    if (roleSlug === "institute") {
+      setActiveTab("institute");
+    } else if (roleSlug === "admin") {
+      setActiveTab("admin");
+    } else {
+      setActiveTab("student");
+    }
+    setError("");
+  }, [roleSlug]);
 
   const current = rolesConfig[activeTab] || rolesConfig.student;
   const Icon = current.icon;
@@ -164,7 +175,11 @@ export default function LoginPage() {
                 <button
                   key={r}
                   type="button"
-                  onClick={() => { setActiveTab(r); setError(""); }}
+                  onClick={() => {
+                    setActiveTab(r);
+                    setError("");
+                    navigate(`/login/${r}`, { replace: true });
+                  }}
                   style={{
                     padding: "8px 6px",
                     borderRadius: "7px",
