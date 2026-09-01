@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { apiRequest } from "../lib/api";
+import CountrySelector from "../components/CountrySelector";
 
 const COUNTRIES = [
   { name: "Nepal", code: "+977", flag: "🇳🇵" },
@@ -114,10 +115,14 @@ export default function RegisterPage() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
-  function handleCountryChange(countryName: string) {
+  function handleCountryChange(countryName: string, code?: string) {
     setSelectedCountry(countryName);
-    const found = COUNTRIES.find((c) => c.name === countryName);
-    if (found) setPhoneCode(found.code);
+    if (code) {
+      setPhoneCode(code);
+    } else {
+      const found = COUNTRIES.find((c) => c.name === countryName);
+      if (found) setPhoneCode(found.code);
+    }
   }
 
   // Password strength calculation
@@ -456,24 +461,10 @@ export default function RegisterPage() {
                   </div>
 
                   {/* Country & Phone */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "12px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1.15fr 0.85fr", gap: "12px" }}>
                     <div className="premium-input-group">
                       <label>Country of Citizenship <span className="required-star">*</span></label>
-                      <div className="input-with-icon">
-                        <Globe2 size={15} />
-                        <select
-                          className="premium-select"
-                          value={selectedCountry}
-                          onChange={(e) => handleCountryChange(e.target.value)}
-                          required
-                        >
-                          {COUNTRIES.map((c) => (
-                            <option key={c.name} value={c.name}>
-                              {c.flag} {c.name} ({c.code})
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                      <CountrySelector value={selectedCountry} onChange={handleCountryChange} />
                     </div>
 
                     <div className="premium-input-group">
