@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BookOpen, ChevronDown, LogIn, Menu, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "../context/LanguageContext";
 
 const chooseIndia = [
   ["About DRAA Study in India", "/about"],
@@ -23,6 +25,7 @@ const resourceNav = [
 ];
 
 export default function PortalHeader() {
+  const { t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const closeTimeoutRef = useRef<number | null>(null);
@@ -102,7 +105,7 @@ export default function PortalHeader() {
               onClick={() => toggleMenu("choose-india")}
               aria-expanded={activeMenu === "choose-india"}
             >
-              Choose India <ChevronDown size={15} className="menu-chevron" />
+              {t("nav.chooseIndia", "Choose India")} <ChevronDown size={15} className="menu-chevron" />
             </button>
             {activeMenu === "choose-india" && (
               <div className="nav-dropdown animate-dropdown">
@@ -127,7 +130,7 @@ export default function PortalHeader() {
               onClick={() => toggleMenu("plan-studies")}
               aria-expanded={activeMenu === "plan-studies"}
             >
-              Plan your Studies <ChevronDown size={15} className="menu-chevron" />
+              {t("nav.planStudies", "Plan your Studies")} <ChevronDown size={15} className="menu-chevron" />
             </button>
             {activeMenu === "plan-studies" && (
               <div className="nav-dropdown animate-dropdown">
@@ -153,7 +156,7 @@ export default function PortalHeader() {
               aria-expanded={activeMenu === "free-resources"}
             >
               <BookOpen size={15} aria-hidden="true" />
-              Free Resources <ChevronDown size={15} className="menu-chevron" />
+              {t("nav.freeResources", "Free Resources")} <ChevronDown size={15} className="menu-chevron" />
             </button>
             {activeMenu === "free-resources" && (
               <div className="nav-dropdown animate-dropdown">
@@ -167,8 +170,10 @@ export default function PortalHeader() {
           </div>
         </nav>
 
-        {/* Right Action Dropdowns: Register & Log in */}
-        <div className="account-actions">
+        {/* Right Action Dropdowns: Language Switcher, Register & Log in */}
+        <div className="account-actions" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <LanguageSelector />
+
           {/* Register Dropdown */}
           <div
             className={`account-menu register-menu ${activeMenu === "register" ? "open" : ""}`}
@@ -181,15 +186,15 @@ export default function PortalHeader() {
               onClick={() => toggleMenu("register")}
               aria-expanded={activeMenu === "register"}
             >
-              Register <ChevronDown size={15} className="menu-chevron" />
+              {t("nav.register", "Register")} <ChevronDown size={15} className="menu-chevron" />
             </button>
             {activeMenu === "register" && (
               <div className="account-dropdown animate-dropdown">
                 <Link to="/register/student" onClick={() => setActiveMenu(null)}>
-                  Student Registration
+                  {t("nav.studentReg", "Student Registration")}
                 </Link>
                 <Link to="/register/institute" onClick={() => setActiveMenu(null)}>
-                  Institute Registration
+                  {t("nav.instituteReg", "Institute Registration")}
                 </Link>
               </div>
             )}
@@ -208,18 +213,18 @@ export default function PortalHeader() {
               aria-expanded={activeMenu === "login"}
             >
               <LogIn size={15} />
-              Log in <ChevronDown size={14} className="menu-chevron" />
+              {t("nav.login", "Log in")} <ChevronDown size={14} className="menu-chevron" />
             </button>
             {activeMenu === "login" && (
               <div className="account-dropdown animate-dropdown">
                 <Link to="/login/student" onClick={() => setActiveMenu(null)}>
-                  Student Login
+                  {t("nav.studentLogin", "Student Login")}
                 </Link>
                 <Link to="/login/institute" onClick={() => setActiveMenu(null)}>
-                  Institute Login
+                  {t("nav.instituteLogin", "Institute Login")}
                 </Link>
                 <Link to="/login/admin" onClick={() => setActiveMenu(null)}>
-                  Admin Login
+                  {t("nav.adminLogin", "Admin Login")}
                 </Link>
               </div>
             )}
@@ -227,14 +232,19 @@ export default function PortalHeader() {
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="mobile-toggle"
-          aria-label="Toggle navigation"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X /> : <Menu />}
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "auto" }} className="mobile-actions-wrapper">
+          <div className="mobile-lang-wrapper" style={{ display: "none" }}>
+            <LanguageSelector />
+          </div>
+          <button
+            className="mobile-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}

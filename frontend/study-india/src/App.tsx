@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { LanguageProvider } from "./context/LanguageContext";
 import PortalLayout from "./components/PortalLayout";
 import ContentPage from "./pages/ContentPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
@@ -28,8 +29,9 @@ const contentPaths = [
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Routes>
         <Route element={<PortalLayout />}>
           <Route index element={<HomePage />} />
           <Route path="courses" element={<CoursesPage />} />
@@ -53,5 +55,6 @@ export default function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
+  </LanguageProvider>
   );
 }

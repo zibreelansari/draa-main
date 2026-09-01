@@ -1671,6 +1671,9 @@ img {
   .portal-brand {
     min-width: 0;
   }
+  .mobile-lang-wrapper {
+    display: block !important;
+  }
   .reference-hero {
     height: 380px;
   }
