@@ -81,12 +81,64 @@ export default function PortalHeader() {
 
   return (
     <header className="portal-header" ref={headerRef}>
+      {/* Indian Tricolour Hairline Ribbon */}
+      <div
+        className="india-tricolour-hairline"
+        style={{
+          height: "3px",
+          width: "100%",
+          background: "linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #ffffff 33.33%, #ffffff 66.66%, #138808 66.66%, #138808 100%)",
+        }}
+      />
+
       <div className="portal-shell portal-header-inner">
-        {/* Brand */}
+        {/* Brand with Flying 3-Colour Ribbon Accent */}
         <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
           <img src="/media/draa-mark.png" alt="DRAA Logo" />
           <span>
-            <strong>DRAA STUDY IN INDIA</strong>
+            <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              DRAA STUDY IN INDIA
+              {/* Flying 3-Colour Waving Ribbon (No Chakra) */}
+              <svg
+                width="30"
+                height="20"
+                viewBox="0 0 30 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ flexShrink: 0, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.1))" }}
+                aria-hidden="true"
+              >
+                <defs>
+                  <linearGradient id="flySaffron" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#FF9933" />
+                    <stop offset="100%" stopColor="#E66A00" />
+                  </linearGradient>
+                  <linearGradient id="flyWhite" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#FFFFFF" />
+                    <stop offset="100%" stopColor="#CBD5E1" />
+                  </linearGradient>
+                  <linearGradient id="flyGreen" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#138808" />
+                    <stop offset="100%" stopColor="#0B655D" />
+                  </linearGradient>
+                </defs>
+                {/* Saffron Wave Ribbon */}
+                <path
+                  d="M1 5.5C6 3 12 7.5 18 4.5C23 2 27.5 3 29 4C27 6 22.5 5.5 17.5 8C12 10.5 6 6.5 1 9V5.5Z"
+                  fill="url(#flySaffron)"
+                />
+                {/* White Wave Ribbon */}
+                <path
+                  d="M1 9C6 6.5 12 10.5 17.5 8C22.5 5.5 27 6 29 4C27.5 6.5 23 8.5 18 11C12.5 13.5 6.5 9.5 1 12.5V9Z"
+                  fill="url(#flyWhite)"
+                />
+                {/* Green Wave Ribbon */}
+                <path
+                  d="M1 12.5C6.5 9.5 12.5 13.5 18 11C23 8.5 27.5 6.5 29 4C27 7.5 22 11.5 17 14C11.5 16.5 5.5 13 1 16V12.5Z"
+                  fill="url(#flyGreen)"
+                />
+              </svg>
+            </strong>
             <small>LEARN &middot; DISCOVER &middot; GROW</small>
           </span>
         </Link>
