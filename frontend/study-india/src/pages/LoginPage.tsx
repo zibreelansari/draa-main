@@ -289,7 +289,7 @@ export default function LoginPage() {
               <p style={{ textAlign: "center", fontSize: "13px", color: "#64748b", marginTop: "18px", marginBottom: 0 }}>
                 Don't have an account yet?{" "}
                 <Link to={`/register/${activeTab}`} style={{ color: "#0b655d", fontWeight: "800", textDecoration: "none" }}>
-                  Create Free {activeTab === "student" ? "Student Account" : "Institution Portal"}
+                  Create Free {activeTab === "student" ? "Student Account" : "Institute Account"}
                 </Link>
               </p>
             )}

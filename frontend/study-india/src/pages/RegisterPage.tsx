@@ -381,7 +381,7 @@ export default function RegisterPage() {
                 }}
               >
                 <Building2 size={16} color={activeRole === "institute" ? "#0b655d" : "#94a3b8"} />
-                University Portal
+                Institute Account
               </button>
             </div>
 
@@ -389,10 +389,10 @@ export default function RegisterPage() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "18px" }}>
               <div>
                 <h2 style={{ fontSize: "19px", fontWeight: "800", color: "#0f172a", margin: "0 0 3px", letterSpacing: "-0.02em" }}>
-                  {activeRole === "student" ? "Student Registration" : "Institution Registration"}
+                  {activeRole === "student" ? "Student Registration" : "Institute Registration"}
                 </h2>
                 <small style={{ color: "#64748b", fontSize: "12px" }}>
-                  {activeRole === "student" ? "Create your verified profile to apply and track offers" : "Register your university authority credentials"}
+                  {activeRole === "student" ? "Create your verified profile to apply and track offers" : "Register your institute credentials & nodal authority"}
                 </small>
               </div>
               <button
