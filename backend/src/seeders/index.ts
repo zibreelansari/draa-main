@@ -2,6 +2,7 @@ import { connectDatabase, disconnectDatabase } from '../connection';
 import { seedInstitutes } from './institutes.seeder';
 import { seedCourses } from './courses.seeder';
 import { seedDemoUsers } from './demo-users.seeder';
+import { seedOrientationModules } from './orientation.seeder';
 
 export async function runAllSeeders(): Promise<void> {
   console.log('[Seed] Starting database seeding...');
@@ -9,6 +10,7 @@ export async function runAllSeeders(): Promise<void> {
   await seedInstitutes();
   await seedCourses();
   await seedDemoUsers();
+  await seedOrientationModules();
   console.log('[Seed] Database seeding completed successfully.');
 }
 

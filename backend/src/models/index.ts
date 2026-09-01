@@ -8,6 +8,8 @@ export { InstituteProfile, type IInstituteProfile } from './InstituteProfile.mod
 export { Institute, type IInstitute } from './Institute.model';
 export { Course, type ICourse } from './Course.model';
 export { Application, type IApplication } from './Application.model';
+export { ApplicationMessage, type IApplicationMessage } from './ApplicationMessage.model';
+export { OrientationModule, StudentOrientationProgress, type IOrientationModule, type IStudentOrientationProgress } from './OrientationModule.model';
 export { Session, type ISession } from './Session.model';
 export { SavedCourse, type ISavedCourse } from './SavedCourse.model';
 export { StudentDocument, type IStudentDocument } from './StudentDocument.model';

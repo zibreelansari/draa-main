@@ -12,7 +12,8 @@ export async function getInstitutes(_req: Request, res: Response, next: NextFunc
 
 export async function getInstitute(req: Request, res: Response, next: NextFunction) {
   try {
-    const institute = await getInstituteBySlug(req.params.slug);
+    const slug = typeof req.params.slug === 'string' ? req.params.slug : String(req.params.slug || '');
+    const institute = await getInstituteBySlug(slug);
     if (!institute) {
       res.status(404).json({ error: 'Institution not found.' });
       return;
@@ -38,7 +39,8 @@ export async function getCourses(req: Request, res: Response, next: NextFunction
 
 export async function getCourse(req: Request, res: Response, next: NextFunction) {
   try {
-    const course = await getCourseBySlug(req.params.slug);
+    const slug = typeof req.params.slug === 'string' ? req.params.slug : String(req.params.slug || '');
+    const course = await getCourseBySlug(slug);
     if (!course) {
       res.status(404).json({ error: 'Programme not found.' });
       return;

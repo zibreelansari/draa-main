@@ -14,6 +14,9 @@ export type PublishStatus = (typeof PUBLISH_STATUSES)[number];
 export const APPROVAL_STATUSES = ['PENDING', 'APPROVED', 'REJECTED'] as const;
 export type ApprovalStatus = (typeof APPROVAL_STATUSES)[number];
 
+export const CURRENCIES = ['USD', 'INR', 'EUR', 'GBP', 'AED', 'CAD', 'AUD', 'SGD'] as const;
+export type CurrencyCode = (typeof CURRENCIES)[number];
+
 export interface InstituteDocument {
   _id: string;
   name: string;
@@ -36,7 +39,9 @@ export interface CourseDocument {
   discipline: string;
   level: CourseLevel;
   durationMonths: number;
+  tuitionFee?: number;
   tuitionFeeInr?: number;
+  currency?: CurrencyCode | string;
   mode: CourseMode;
   courseType: CourseType;
   scholarshipAvailable: boolean;

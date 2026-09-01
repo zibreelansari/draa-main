@@ -1,47 +1,126 @@
 import type { PublicUser, UserRole } from "@draa/shared";
 
 export type NotificationItem = {
-  id: number;
+  id: string | number;
   title: string;
   body: string;
   kind: "INFO" | "ACTION" | "SUCCESS" | "WARNING";
-  isRead: number;
+  isRead: number | boolean;
   createdAt: string;
 };
 
+export type OfferDetails = {
+  tuitionFee?: number;
+  currency?: string;
+  scholarshipWaiverPercent?: number;
+  finalTuitionFee?: number;
+  reportingDate?: string;
+  conditions?: string;
+  issuedAt?: string;
+  acceptedAt?: string;
+  declinedAt?: string;
+};
+
+export type EvaluationDetails = {
+  academicScore?: number;
+  sopScore?: number;
+  languageScore?: number;
+  totalScore?: number;
+  reviewerNotes?: string;
+  evaluatedBy?: string;
+  evaluatedAt?: string;
+};
+
+export type ApplicationMessageItem = {
+  _id: string;
+  applicationId: string;
+  senderUserId: string;
+  senderRole: "STUDENT" | "INSTITUTE" | "ADMIN";
+  senderName: string;
+  message: string;
+  createdAt: string;
+};
+
+export type OrientationModuleItem = {
+  moduleKey: string;
+  title: string;
+  category: "VISA_FRRO" | "HEALTH_SAFETY" | "CAMPUS_LIFE" | "FINANCE_BANKING" | "ACADEMIC_PREP";
+  description: string;
+  order: number;
+  estimatedMinutes: number;
+  badgeName: string;
+  topics: Array<{
+    title: string;
+    content: string;
+    keyTakeaway: string;
+  }>;
+  checklist: string[];
+  completed: boolean;
+  completedAt?: string;
+  checklistCompleted: string[];
+};
+
 export type StudentApplication = {
-  id: number;
+  id: string | number;
   status: string;
   submittedAt: string;
   updatedAt: string;
   decisionNote?: string;
   offerLetterUrl?: string;
-  courseId: number;
+  courseId: string | number;
   title: string;
   slug: string;
   discipline: string;
   level: string;
   startDate?: string;
+  tuitionFee?: number;
   tuitionFeeInr?: number;
+  currency?: string;
   instituteName: string;
   city: string;
   state: string;
+  statement?: string;
+  academicHistory?: {
+    previousSchool?: string;
+    degreeAttained?: string;
+    gpaOrPercentage?: string;
+    graduationYear?: number;
+  };
+  passportDetails?: {
+    passportNumber?: string;
+    nationality?: string;
+    expiryDate?: string;
+  };
+  englishProficiency?: {
+    testType?: string;
+    score?: string;
+    exemptReason?: string;
+  };
+  sop?: {
+    text?: string;
+    careerGoals?: string;
+  };
+  scholarshipRequested?: boolean;
+  offerDetails?: OfferDetails;
+  evaluation?: EvaluationDetails;
 };
 
 export type SavedCourse = {
-  id: number;
+  id: string | number;
   title: string;
   slug: string;
   level: string;
   discipline: string;
   startDate?: string;
+  tuitionFee?: number;
   tuitionFeeInr?: number;
+  currency?: string;
   instituteName: string;
   city: string;
 };
 
 export type StudentDocument = {
-  id: number;
+  id: string | number;
   documentType: string;
   fileName?: string;
   status: string;
@@ -60,7 +139,7 @@ export type StudentWorkspace = {
 };
 
 export type InstituteApplicant = {
-  id: number;
+  id: string | number;
   status: string;
   submittedAt: string;
   updatedAt: string;
@@ -71,10 +150,36 @@ export type InstituteApplicant = {
   country?: string;
   courseTitle: string;
   level: string;
+  statement?: string;
+  academicHistory?: {
+    previousSchool?: string;
+    degreeAttained?: string;
+    gpaOrPercentage?: string;
+    graduationYear?: number;
+  };
+  passportDetails?: {
+    passportNumber?: string;
+    nationality?: string;
+    expiryDate?: string;
+  };
+  englishProficiency?: {
+    testType?: string;
+    score?: string;
+    exemptReason?: string;
+  };
+  sop?: {
+    text?: string;
+    careerGoals?: string;
+  };
+  scholarshipRequested?: boolean;
+  offerDetails?: OfferDetails;
+  evaluation?: EvaluationDetails;
+  flaggedSuspicious?: boolean;
+  flagReason?: string;
 };
 
 export type InstituteProgramme = {
-  id: number;
+  id: string | number;
   title: string;
   slug: string;
   level: string;
@@ -82,7 +187,9 @@ export type InstituteProgramme = {
   mode: string;
   status: string;
   startDate?: string;
+  tuitionFee?: number;
   tuitionFeeInr?: number;
+  currency?: string;
   applications: number;
 };
 
@@ -90,7 +197,7 @@ export type InstituteWorkspace = {
   role: "INSTITUTE";
   user: PublicUser;
   profile: { instituteName?: string; contactName?: string; city?: string; website?: string; approvalStatus?: string };
-  institute?: { id?: number; name?: string; slug?: string; city?: string; state?: string; type?: string; description?: string; status?: string };
+  institute?: { id?: string | number; name?: string; slug?: string; city?: string; state?: string; type?: string; description?: string; status?: string };
   metrics: { programmes: number; applicants: number; awaitingReview: number; offers: number };
   programmes: InstituteProgramme[];
   applicants: InstituteApplicant[];
@@ -102,11 +209,11 @@ export type AdminWorkspace = {
   role: "ADMIN";
   user: PublicUser;
   metrics: { students: number; institutes: number; pendingInstitutes: number; applications: number; openTickets: number; publishedCourses: number };
-  instituteApprovals: Array<{ userId: number; instituteName: string; contactName: string; city: string; website?: string; approvalStatus: string; email: string; createdAt: string }>;
-  applications: Array<{ id: number; status: string; updatedAt: string; studentName: string; country?: string; courseTitle: string; instituteName: string }>;
-  recentUsers: Array<{ id: number; displayName: string; email: string; role: UserRole; status: string; createdAt: string }>;
-  tickets: Array<{ id: number; subject: string; category: string; status: string; priority: string; createdAt: string; raisedBy: string; role: UserRole }>;
-  audit: Array<{ id: number; action: string; entityType: string; entityId?: string; createdAt: string; actor?: string }>;
+  instituteApprovals: Array<{ userId: string | number; instituteName: string; contactName: string; city: string; website?: string; approvalStatus: string; email: string; createdAt: string }>;
+  applications: Array<{ id: string | number; status: string; updatedAt: string; studentName: string; country?: string; courseTitle: string; instituteName: string }>;
+  recentUsers: Array<{ id: string | number; displayName: string; email: string; role: UserRole; status: string; createdAt: string }>;
+  tickets: Array<{ id: string | number; subject: string; category: string; status: string; priority: string; createdAt: string; raisedBy: string; role: UserRole }>;
+  audit: Array<{ id: string | number; action: string; entityType: string; entityId?: string; createdAt: string; actor?: string }>;
   notifications: NotificationItem[];
 };
 

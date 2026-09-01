@@ -5,6 +5,7 @@ import {
   Building2,
   ChevronDown,
   CircleHelp,
+  Compass,
   FileCheck2,
   FileText,
   GraduationCap,
@@ -30,6 +31,7 @@ const navigation = {
   STUDENT: [
     ["overview", "Overview", LayoutDashboard],
     ["applications", "My applications", FileCheck2],
+    ["orientation", "Pre-Departure LMS", Compass],
     ["saved", "Saved programmes", Heart],
     ["documents", "Documents", FileText],
     ["support", "Support", CircleHelp],
@@ -44,7 +46,9 @@ const navigation = {
   ADMIN: [
     ["overview", "Overview", LayoutDashboard],
     ["institutes", "Institutes", Building2],
+    ["courses", "Programmes & Fees", BookOpenText],
     ["applications", "Applications", FileCheck2],
+    ["fraud", "Fraud & Verification", ShieldCheck],
     ["users", "Users & access", Users],
     ["support", "Support queue", LifeBuoy],
     ["audit", "Audit activity", ShieldCheck],
@@ -89,7 +93,7 @@ export default function DashboardShell({ user, activeSection, onNavigate, notifi
     navigate("/");
   }
 
-  async function readNotification(id: number) {
+  async function readNotification(id: string | number) {
     await apiRequest(`/api/dashboard/notifications/${id}/read`, { method: "POST" });
     await onRefresh();
   }

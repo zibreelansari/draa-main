@@ -1,5 +1,5 @@
 import mongoose, { Schema, type Document, type Types } from 'mongoose';
-import type { CourseLevel, CourseMode, CourseType, PublishStatus } from '@draa/shared';
+import type { CourseLevel, CourseMode, CourseType, PublishStatus, CurrencyCode } from '@draa/shared';
 
 export interface ICourse extends Document {
   instituteId: Types.ObjectId;
@@ -8,7 +8,9 @@ export interface ICourse extends Document {
   discipline: string;
   level: CourseLevel;
   durationMonths: number;
+  tuitionFee?: number;
   tuitionFeeInr?: number;
+  currency: CurrencyCode | string;
   mode: CourseMode;
   courseType: CourseType;
   scholarshipAvailable: boolean;
@@ -34,7 +36,16 @@ const CourseSchema = new Schema<ICourse>(
       enum: ['UNDERGRADUATE', 'POSTGRADUATE', 'DOCTORAL', 'CERTIFICATE'],
     },
     durationMonths: { type: Number, required: true, min: 1, max: 96 },
+    tuitionFee: { type: Number },
     tuitionFeeInr: { type: Number },
+    currency: {
+      type: String,
+      required: true,
+      default: 'USD',
+      trim: true,
+      uppercase: true,
+      enum: ['USD', 'INR', 'EUR', 'GBP', 'AED', 'CAD', 'AUD', 'SGD'],
+    },
     mode: {
       type: String,
       required: true,
@@ -70,6 +81,7 @@ const CourseSchema = new Schema<ICourse>(
 // Compound index for discovery filters
 CourseSchema.index({ level: 1, discipline: 1, status: 1 });
 CourseSchema.index({ courseType: 1, mode: 1, scholarshipAvailable: 1, discipline: 1 });
+CourseSchema.index({ currency: 1, status: 1 });
 
 // Text index for search
 CourseSchema.index({ title: 'text', discipline: 'text', eligibility: 'text' });

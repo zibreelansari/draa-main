@@ -7,9 +7,15 @@ export function formatDate(value?: string, options: Intl.DateTimeFormatOptions =
   return Number.isNaN(date.getTime()) ? "To be confirmed" : date.toLocaleDateString("en-IN", options);
 }
 
-export function formatMoney(value?: number) {
-  if (!value) return "Confirm fee";
-  return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(value);
+export function formatMoney(value?: number, currency: string = "USD") {
+  if (value === undefined || value === null) return "Confirm fee";
+  const curr = (currency || "USD").toUpperCase();
+  try {
+    const locale = curr === "INR" ? "en-IN" : "en-US";
+    return new Intl.NumberFormat(locale, { style: "currency", currency: curr, maximumFractionDigits: 0 }).format(value);
+  } catch {
+    return `${curr} ${value.toLocaleString()}`;
+  }
 }
 
 export function titleCase(value: string) {

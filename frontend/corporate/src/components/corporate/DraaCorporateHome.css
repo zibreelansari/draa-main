@@ -1369,6 +1369,8 @@
 .draa-corp-footer {
   color: #c9c0b2;
   background: #100e0b;
+  position: relative;
+  z-index: 2;
 }
 
 .draa-corp-footer-main {

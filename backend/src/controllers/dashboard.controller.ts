@@ -17,7 +17,8 @@ export async function getDashboard(req: AuthenticatedRequest, res: Response, nex
 
 export async function markNotificationRead(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {
-    await markNotificationAsRead(req.user!.id, req.params.id);
+    const notificationId = String(req.params.id || '');
+    await markNotificationAsRead(req.user!.id, notificationId);
     res.json({ data: { success: true } });
   } catch (err) {
     next(err);
