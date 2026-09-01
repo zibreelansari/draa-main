@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   Eye,
   EyeOff,
+  Flame,
   Globe2,
   GraduationCap,
   HelpCircle,
@@ -131,9 +132,9 @@ export default function RegisterPage() {
   }, [password]);
 
   function getStrengthLabel() {
-    if (passwordStrength <= 1) return { label: "Weak", color: "#e53e3e" };
-    if (passwordStrength <= 3) return { label: "Medium", color: "#dd6b20" };
-    return { label: "Strong & Secure", color: "#148a79" };
+    if (passwordStrength <= 1) return { label: "Weak", color: "#f43f5e" };
+    if (passwordStrength <= 3) return { label: "Medium", color: "#f59e0b" };
+    return { label: "Strong & Secure", color: "#10b981" };
   }
 
   function handleDemoFill() {
@@ -221,70 +222,141 @@ export default function RegisterPage() {
   }
 
   return (
-    <section className="registration-page" style={{ minHeight: "calc(100vh - 70px)", background: "linear-gradient(135deg, #f7faf9 0%, #fdf9f4 50%, #f4f8f7 100%)", padding: "40px 0 60px" }}>
-      <div className="portal-shell registration-grid" style={{ maxWidth: "1220px", gap: "45px" }}>
+    <section
+      className="registration-page"
+      style={{
+        position: "relative",
+        minHeight: "calc(100vh - 70px)",
+        background: "linear-gradient(135deg, #f3f8f7 0%, #fdf8f3 45%, #eff6f5 100%)",
+        padding: "45px 0 70px",
+        overflow: "hidden",
+      }}
+    >
+      {/* iOS 27 Liquid Ambient Glowing Mesh Orbs */}
+      <div className="glass-mesh-backdrop">
+        <div className="glass-mesh-orb orb-1" />
+        <div className="glass-mesh-orb orb-2" />
+        <div className="glass-mesh-orb orb-3" />
+      </div>
+
+      <div className="portal-shell registration-grid" style={{ position: "relative", zIndex: 1, maxWidth: "1240px", gap: "48px" }}>
         
-        {/* Left Side: Modern Visual Hero & Trust Authority */}
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "7px", padding: "5px 12px", borderRadius: "999px", background: "#fff0e4", color: "#e87524", fontSize: "11.5px", fontWeight: "800", letterSpacing: "0.12em", width: "max-content", marginBottom: "14px" }}>
-            <Sparkles size={15} /> OFFICIAL ADMISSIONS PORTAL 2026-2027
+        {/* Left Side: Modern Visual Hero & Glass Badges */}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", animation: "ios27Enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both" }}>
+          
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", borderRadius: "999px", background: "rgba(255, 240, 228, 0.8)", backdropFilter: "blur(12px)", border: "1px solid rgba(232, 117, 36, 0.3)", color: "#e87524", fontSize: "11.5px", fontWeight: "800", letterSpacing: "0.12em", width: "max-content", marginBottom: "16px", boxShadow: "0 4px 15px rgba(232, 117, 36, 0.12)" }}>
+            <span className="live-pulse-dot" />
+            <Sparkles size={14} /> ADMISSIONS GATEWAY 2026–2027
           </div>
 
-          <h1 style={{ fontSize: "clamp(32px, 3.4vw, 46px)", lineHeight: "1.08", color: "#143338", letterSpacing: "-0.03em", margin: "0 0 14px" }}>
+          <h1 style={{ fontSize: "clamp(34px, 3.8vw, 48px)", lineHeight: "1.06", color: "#113338", letterSpacing: "-0.035em", margin: "0 0 16px" }}>
             {activeRole === "student" ? (
               <>
-                Unlock Your Academic Journey in <span style={{ color: "#e87524" }}>India</span>.
+                Your Global Passport to <span style={{ background: "linear-gradient(135deg, #e87524 0%, #f97316 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Higher Education</span> in India.
               </>
             ) : (
               <>
-                Join India's Global <span style={{ color: "#0b655d" }}>University Network</span>.
+                Connect with Over <span style={{ background: "linear-gradient(135deg, #0b655d 0%, #14b8a6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>5,000+ Overseas</span> Applicants.
               </>
             )}
           </h1>
 
-          <p style={{ color: "#5d7377", fontSize: "14px", lineHeight: "1.65", margin: "0 0 24px", maxWidth: "480px" }}>
+          <p style={{ color: "#546e72", fontSize: "14.5px", lineHeight: "1.68", margin: "0 0 26px", maxWidth: "500px" }}>
             {activeRole === "student"
-              ? "Join 5,400+ international students from over 80 countries. Access accredited degree programmes, fee waivers up to 100%, and fast-track student visa support."
-              : "Register your institution on India's centralized international education corridor. Connect with verified overseas applicants and streamline admissions."}
+              ? "Join verified learners from 80+ countries. Compare accredited degrees in USD, unlock 100% tuition scholarships, and receive official offer letters."
+              : "Onboard your university to India's unified international education portal. Manage quotas, review overseas credentials, and issue automated offer letters."}
           </p>
 
-          {/* Value proposition badges */}
-          <div style={{ display: "grid", gap: "12px", marginBottom: "26px" }}>
+          {/* iOS 27 Frosted Value Cards */}
+          <div style={{ display: "grid", gap: "12px", marginBottom: "28px" }}>
             {[
-              { icon: Zap, title: "1-Click Direct Admissions", desc: "Interactive application wizard with instant status tracking." },
-              { icon: Award, title: "Study in India (SII) Scholarships", desc: "Merit fee concessions up to 100% full tuition waiver." },
-              { icon: ShieldCheck, title: "Official Govt. Recognition", desc: "UGC, AICTE & Association of Indian Universities compliance." },
+              { icon: Zap, color: "#e87524", title: "Provisional Offer Letters", desc: "Download visa-ready admission certificates in minutes." },
+              { icon: Award, color: "#0b655d", title: "Study in India (SII) Scholarships", desc: "Merit fee waivers ranging from 25% to 100% full tuition." },
+              { icon: ShieldCheck, color: "#2563eb", title: "National Compliance & FRRO Help", desc: "Pre-departure visa guidance and mandatory 14-day FRRO support." },
             ].map((item, idx) => {
               const IconComp = item.icon;
               return (
-                <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "12px", padding: "12px 14px", borderRadius: "10px", background: "rgba(255,255,255,0.85)", border: "1px solid rgba(20,50,55,0.08)", boxShadow: "0 4px 15px rgba(20,50,55,0.03)" }}>
-                  <span style={{ display: "grid", width: "32px", height: "32px", placeItems: "center", borderRadius: "8px", background: "#eef7f5", color: "#0b655d", flexShrink: 0 }}>
-                    <IconComp size={17} />
+                <div
+                  key={idx}
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "14px",
+                    padding: "13px 16px",
+                    borderRadius: "14px",
+                    background: "rgba(255, 255, 255, 0.65)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.8)",
+                    boxShadow: "0 10px 25px rgba(20, 50, 55, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.9)",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <span
+                    style={{
+                      display: "grid",
+                      width: "34px",
+                      height: "34px",
+                      placeItems: "center",
+                      borderRadius: "10px",
+                      background: `rgba(${item.color === "#e87524" ? "232,117,36" : item.color === "#0b655d" ? "11,101,93" : "37,99,235"}, 0.12)`,
+                      color: item.color,
+                      flexShrink: 0,
+                    }}
+                  >
+                    <IconComp size={18} />
                   </span>
                   <div>
-                    <strong style={{ fontSize: "13px", color: "#16383c", display: "block" }}>{item.title}</strong>
-                    <small style={{ color: "#6a7f83", fontSize: "11.5px" }}>{item.desc}</small>
+                    <strong style={{ fontSize: "13.5px", color: "#14373b", display: "block" }}>{item.title}</strong>
+                    <small style={{ color: "#617b7f", fontSize: "12px" }}>{item.desc}</small>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Social Proof Counter */}
-          <div style={{ padding: "14px 18px", borderRadius: "12px", background: "#153d3f", color: "#fff", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          {/* Liquid Glass Counter Strip */}
+          <div
+            style={{
+              padding: "16px 20px",
+              borderRadius: "16px",
+              background: "linear-gradient(135deg, rgba(14, 46, 49, 0.92) 0%, rgba(20, 58, 62, 0.88) 100%)",
+              backdropFilter: "blur(24px)",
+              border: "1px solid rgba(255, 255, 255, 0.18)",
+              boxShadow: "0 20px 40px rgba(10, 34, 38, 0.25)",
+              color: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
             <div>
-              <div style={{ fontSize: "18px", fontWeight: "800", color: "#ffb07b" }}>5,400+ International Learners</div>
-              <small style={{ color: "#c1dcd7", fontSize: "11.5px" }}>Representing 80+ Countries across 500+ Universities</small>
+              <div style={{ fontSize: "19px", fontWeight: "800", color: "#ffb07b", display: "flex", alignItems: "center", gap: "6px" }}>
+                <Flame size={18} color="#ff813d" /> 5,400+ Foreign Learners
+              </div>
+              <small style={{ color: "#c1deda", fontSize: "12px" }}>Representing 80+ Nations across 500+ Universities</small>
             </div>
-            <Globe2 size={32} color="#77b8ae" />
+            <Globe2 size={34} color="#77b8ae" />
           </div>
         </div>
 
-        {/* Right Side: Ultra-Modern Registration Card */}
-        <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid var(--ws-border)", boxShadow: "0 20px 60px rgba(18,48,51,0.08)", padding: "32px 36px", overflow: "hidden" }}>
+        {/* Right Side: Ultra-Modern macOS/iOS 27 Glassmorphic Form Card */}
+        <div className="ios27-glass-card" style={{ padding: "34px 38px" }}>
           
-          {/* Role Switcher Tabs */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px", padding: "4px", borderRadius: "10px", background: "#f0f4f3", marginBottom: "22px" }}>
+          {/* iOS Segmented Pill Role Switcher */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "4px",
+              padding: "4px",
+              borderRadius: "12px",
+              background: "rgba(225, 235, 233, 0.7)",
+              backdropFilter: "blur(14px)",
+              border: "1px solid rgba(255, 255, 255, 0.8)",
+              marginBottom: "24px",
+            }}
+          >
             <button
               type="button"
               onClick={() => { setActiveRole("student"); setError(""); setMessage(""); }}
@@ -292,20 +364,20 @@ export default function RegisterPage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "7px",
-                padding: "9px 14px",
-                borderRadius: "8px",
+                gap: "8px",
+                padding: "10px 14px",
+                borderRadius: "10px",
                 border: 0,
                 background: activeRole === "student" ? "#fff" : "transparent",
                 color: activeRole === "student" ? "#0b655d" : "#5d7579",
-                fontWeight: "750",
+                fontWeight: "800",
                 fontSize: "13px",
-                boxShadow: activeRole === "student" ? "0 2px 8px rgba(0,0,0,0.06)" : "none",
+                boxShadow: activeRole === "student" ? "0 4px 15px rgba(0,0,0,0.06), inset 0 1px 1px #fff" : "none",
                 cursor: "pointer",
-                transition: "all 0.2s ease",
+                transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
-              <GraduationCap size={16} color={activeRole === "student" ? "#0b655d" : "#7c9397"} />
+              <GraduationCap size={17} color={activeRole === "student" ? "#0b655d" : "#7c9397"} />
               Student Registration
             </button>
             <button
@@ -315,62 +387,75 @@ export default function RegisterPage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "7px",
-                padding: "9px 14px",
-                borderRadius: "8px",
+                gap: "8px",
+                padding: "10px 14px",
+                borderRadius: "10px",
                 border: 0,
                 background: activeRole === "institute" ? "#fff" : "transparent",
                 color: activeRole === "institute" ? "#0b655d" : "#5d7579",
-                fontWeight: "750",
+                fontWeight: "800",
                 fontSize: "13px",
-                boxShadow: activeRole === "institute" ? "0 2px 8px rgba(0,0,0,0.06)" : "none",
+                boxShadow: activeRole === "institute" ? "0 4px 15px rgba(0,0,0,0.06), inset 0 1px 1px #fff" : "none",
                 cursor: "pointer",
-                transition: "all 0.2s ease",
+                transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
-              <Building2 size={16} color={activeRole === "institute" ? "#0b655d" : "#7c9397"} />
+              <Building2 size={17} color={activeRole === "institute" ? "#0b655d" : "#7c9397"} />
               Institution Portal
             </button>
           </div>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
             <div>
-              <h2 style={{ fontSize: "19px", color: "#14383c", margin: "0 0 2px" }}>
-                {activeRole === "student" ? "Create Student Account" : "Register Educational Institution"}
+              <h2 style={{ fontSize: "20px", color: "#13383c", margin: "0 0 3px", letterSpacing: "-0.02em" }}>
+                {activeRole === "student" ? "Create Student Profile" : "Register Academic Institution"}
               </h2>
               <small style={{ color: "#74888b", fontSize: "12px" }}>
-                {activeRole === "student" ? "Fill your identity & academic preferences below" : "Enter your nodal authority & accreditation credentials"}
+                {activeRole === "student" ? "Official Study in India admissions registration" : "Official nodal authority & AISHE university credentials"}
               </small>
             </div>
             <button
               type="button"
               onClick={handleDemoFill}
-              style={{ display: "inline-flex", alignItems: "center", gap: "4px", padding: "5px 10px", borderRadius: "6px", border: "1px solid #d5e8e3", background: "#f2f9f7", color: "#0b655d", fontSize: "11.5px", fontWeight: "750", cursor: "pointer" }}
-              title="Autofill sample form data for testing"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                padding: "6px 12px",
+                borderRadius: "8px",
+                border: "1px solid rgba(232, 117, 36, 0.3)",
+                background: "rgba(255, 240, 228, 0.8)",
+                color: "#c95d14",
+                fontSize: "11.5px",
+                fontWeight: "800",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+              }}
+              title="Autofill sample form data for instant testing"
             >
-              <Zap size={12} color="#e87524" /> Autofill Demo
+              <Zap size={13} color="#e87524" /> Autofill Demo
             </button>
           </div>
 
           {error && (
-            <div style={{ padding: "10px 14px", borderRadius: "8px", background: "#fde8e8", color: "#9c1c1c", fontSize: "12.5px", display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
+            <div style={{ padding: "11px 14px", borderRadius: "10px", background: "rgba(254, 226, 226, 0.9)", backdropFilter: "blur(10px)", color: "#991b1b", fontSize: "12.5px", display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px", border: "1px solid #fca5a5" }}>
               <AlertCircle size={16} />
               {error}
             </div>
           )}
 
           {message && (
-            <div style={{ padding: "10px 14px", borderRadius: "8px", background: "#e5f5f1", color: "#0b655d", fontSize: "12.5px", display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
+            <div style={{ padding: "11px 14px", borderRadius: "10px", background: "rgba(209, 250, 229, 0.9)", backdropFilter: "blur(10px)", color: "#065f46", fontSize: "12.5px", display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px", border: "1px solid #6ee7b7" }}>
               <CheckCircle2 size={16} />
               {message}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} style={{ display: "grid", gap: "14px" }}>
+          <form onSubmit={handleSubmit} style={{ display: "grid", gap: "15px" }}>
             {activeRole === "student" ? (
               <>
                 {/* Name fields */}
-                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
                   <label>
                     First Name <span style={{ color: "#e87524" }}>*</span>
                     <input
@@ -379,6 +464,7 @@ export default function RegisterPage() {
                       onChange={(e) => setFirstName(e.target.value)}
                       required
                       minLength={2}
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     />
                   </label>
                   <label>
@@ -389,18 +475,20 @@ export default function RegisterPage() {
                       onChange={(e) => setLastName(e.target.value)}
                       required
                       minLength={2}
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     />
                   </label>
                 </div>
 
                 {/* Country & Phone */}
-                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "12px" }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "14px" }}>
                   <label>
                     Country of Citizenship <span style={{ color: "#e87524" }}>*</span>
                     <select
                       value={selectedCountry}
                       onChange={(e) => handleCountryChange(e.target.value)}
                       required
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     >
                       {COUNTRIES.map((c) => (
                         <option key={c.name} value={c.name}>
@@ -411,26 +499,26 @@ export default function RegisterPage() {
                   </label>
 
                   <label>
-                    WhatsApp / Mobile Phone
+                    WhatsApp / Contact Phone
                     <div style={{ display: "flex", gap: "6px" }}>
-                      <span style={{ display: "grid", placeItems: "center", padding: "0 10px", background: "#f2f5f4", border: "1px solid var(--ws-border)", borderRadius: "7px", fontSize: "12.5px", color: "#546d71", fontWeight: "700" }}>
+                      <span style={{ display: "grid", placeItems: "center", padding: "0 10px", background: "#edf4f3", border: "1px solid var(--ws-border)", borderRadius: "10px", fontSize: "12.5px", color: "#546d71", fontWeight: "750" }}>
                         {phoneCode}
                       </span>
                       <input
                         placeholder="e.g. 8012345678"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        style={{ flex: 1 }}
+                        style={{ flex: 1, background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                       />
                     </div>
                   </label>
                 </div>
 
                 {/* Academic Preferences */}
-                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
                   <label>
                     Target Degree Level
-                    <select value={preferredLevel} onChange={(e) => setPreferredLevel(e.target.value)}>
+                    <select value={preferredLevel} onChange={(e) => setPreferredLevel(e.target.value)} style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}>
                       <option value="UNDERGRADUATE">Undergraduate (Bachelor's)</option>
                       <option value="POSTGRADUATE">Postgraduate (Master's / MBA)</option>
                       <option value="DOCTORAL">Doctoral (Ph.D / Research)</option>
@@ -439,8 +527,8 @@ export default function RegisterPage() {
                   </label>
 
                   <label>
-                    Target Intake Season
-                    <select value={targetIntake} onChange={(e) => setTargetIntake(e.target.value)}>
+                    Intended Intake Season
+                    <select value={targetIntake} onChange={(e) => setTargetIntake(e.target.value)} style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}>
                       <option value="Fall 2026">Fall Intake 2026 (August)</option>
                       <option value="Spring 2027">Spring Intake 2027 (January)</option>
                       <option value="Summer 2027">Summer Intensive 2027</option>
@@ -450,7 +538,7 @@ export default function RegisterPage() {
 
                 <label>
                   Preferred Academic Field / Major
-                  <select value={preferredDiscipline} onChange={(e) => setPreferredDiscipline(e.target.value)}>
+                  <select value={preferredDiscipline} onChange={(e) => setPreferredDiscipline(e.target.value)} style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}>
                     {DISCIPLINES.map((d) => (
                       <option key={d} value={d}>
                         {d}
@@ -466,6 +554,7 @@ export default function RegisterPage() {
                     placeholder="e.g. A12345678"
                     value={passportNumber}
                     onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
+                    style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                   />
                 </label>
               </>
@@ -480,10 +569,11 @@ export default function RegisterPage() {
                     onChange={(e) => setInstituteName(e.target.value)}
                     required
                     minLength={3}
+                    style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                   />
                 </label>
 
-                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
                   <label>
                     Nodal Officer / Registrar Name <span style={{ color: "#e87524" }}>*</span>
                     <input
@@ -491,6 +581,7 @@ export default function RegisterPage() {
                       value={contactName}
                       onChange={(e) => setContactName(e.target.value)}
                       required
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     />
                   </label>
                   <label>
@@ -499,11 +590,12 @@ export default function RegisterPage() {
                       placeholder="+91 11 2345 6789"
                       value={instPhone}
                       onChange={(e) => setInstPhone(e.target.value)}
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     />
                   </label>
                 </div>
 
-                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
                   <label>
                     City in India <span style={{ color: "#e87524" }}>*</span>
                     <input
@@ -511,11 +603,12 @@ export default function RegisterPage() {
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       required
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     />
                   </label>
                   <label>
                     State / Union Territory <span style={{ color: "#e87524" }}>*</span>
-                    <select value={state} onChange={(e) => setState(e.target.value)}>
+                    <select value={state} onChange={(e) => setState(e.target.value)} style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}>
                       {INDIAN_STATES.map((s) => (
                         <option key={s} value={s}>
                           {s}
@@ -525,7 +618,7 @@ export default function RegisterPage() {
                   </label>
                 </div>
 
-                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "12px" }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "14px" }}>
                   <label>
                     Official Website URL
                     <input
@@ -533,11 +626,12 @@ export default function RegisterPage() {
                       placeholder="https://www.university.ac.in"
                       value={website}
                       onChange={(e) => setWebsite(e.target.value)}
+                      style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                     />
                   </label>
                   <label>
                     NAAC Accreditation Grade
-                    <select value={naacGrade} onChange={(e) => setNaacGrade(e.target.value)}>
+                    <select value={naacGrade} onChange={(e) => setNaacGrade(e.target.value)} style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}>
                       <option value="A++">A++ (Highest Tier)</option>
                       <option value="A+">A+ Grade</option>
                       <option value="A">A Grade</option>
@@ -549,7 +643,7 @@ export default function RegisterPage() {
             )}
 
             {/* Common Account Credentials */}
-            <div style={{ borderTop: "1px solid var(--ws-border)", paddingTop: "14px", marginTop: "4px", display: "grid", gap: "14px" }}>
+            <div style={{ borderTop: "1px solid rgba(20,50,55,0.1)", paddingTop: "16px", marginTop: "4px", display: "grid", gap: "14px" }}>
               <label>
                 {activeRole === "student" ? "Email Address (Login ID)" : "Official Institutional Email (.edu / .ac.in)"}{" "}
                 <span style={{ color: "#e87524" }}>*</span>
@@ -559,12 +653,13 @@ export default function RegisterPage() {
                   value={activeRole === "student" ? email : instEmail}
                   onChange={(e) => (activeRole === "student" ? setEmail(e.target.value) : setInstEmail(e.target.value))}
                   required
+                  style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}
                 />
               </label>
 
               <label>
                 Create Account Password <span style={{ color: "#e87524" }}>*</span>
-                <div className="password-field">
+                <div className="password-field" style={{ background: "rgba(255,255,255,0.85)", borderRadius: "10px" }}>
                   <Lock size={16} />
                   <input
                     type={showPassword ? "text" : "password"}
@@ -585,7 +680,7 @@ export default function RegisterPage() {
 
                 {password && (
                   <div style={{ marginTop: "6px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div style={{ display: "flex", gap: "4px", width: "120px" }}>
+                    <div style={{ display: "flex", gap: "4px", width: "130px" }}>
                       {[1, 2, 3, 4].map((bar) => (
                         <div
                           key={bar}
@@ -599,7 +694,7 @@ export default function RegisterPage() {
                         />
                       ))}
                     </div>
-                    <span style={{ fontSize: "11px", color: getStrengthLabel().color, fontWeight: "700" }}>
+                    <span style={{ fontSize: "11px", color: getStrengthLabel().color, fontWeight: "800" }}>
                       {getStrengthLabel().label}
                     </span>
                   </div>
@@ -608,15 +703,16 @@ export default function RegisterPage() {
             </div>
 
             {/* Terms Consent */}
-            <label style={{ display: "flex", alignItems: "flex-start", gap: "9px", fontSize: "12px", color: "#455e63", cursor: "pointer", marginTop: "2px" }}>
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "12px", color: "#455e63", cursor: "pointer", marginTop: "2px" }}>
               <input
                 type="checkbox"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
                 required
+                style={{ marginTop: "2px" }}
               />
               <span>
-                I agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>. I consent to receive official admissions updates from verified Indian institutions.
+                I agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>. I consent to receive official admissions updates and scholarship notices from Study in India.
               </span>
             </label>
 
@@ -629,15 +725,16 @@ export default function RegisterPage() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "8px",
-                minHeight: "46px",
-                borderRadius: "9px",
+                minHeight: "48px",
+                borderRadius: "12px",
                 background: "linear-gradient(135deg, #e87524 0%, #c95d14 100%)",
                 color: "#fff",
                 fontSize: "14px",
                 fontWeight: "800",
                 border: 0,
                 cursor: "pointer",
-                boxShadow: "0 8px 20px rgba(232,117,36,0.25)",
+                boxShadow: "0 10px 25px rgba(232,117,36,0.3), inset 0 1px 1px rgba(255,255,255,0.4)",
+                transition: "all 0.25s ease",
               }}
             >
               {busy ? "Creating your account…" : activeRole === "student" ? "Create Free Student Account" : "Submit Institution Registration"}
