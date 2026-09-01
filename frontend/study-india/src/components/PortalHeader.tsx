@@ -92,53 +92,68 @@ export default function PortalHeader() {
       />
 
       <div className="portal-shell portal-header-inner">
-        {/* Brand with Flying 3-Colour Ribbon Accent */}
+        {/* Brand with Blended Flying 3-Colour Ribbon Waves */}
         <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
-          <img src="/media/draa-mark.png" alt="DRAA Logo" />
+          <div style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
+            {/* Blended Flying 3-Colour Silk Ribbon Wave */}
+            <svg
+              width="68"
+              height="48"
+              viewBox="0 0 68 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{
+                position: "absolute",
+                left: "-18px",
+                top: "-4px",
+                pointerEvents: "none",
+                zIndex: 0,
+                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.06))",
+              }}
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="blendSaffronStream" x1="0%" y1="0%" x2="100%" y2="80%">
+                  <stop offset="0%" stopColor="#FF9933" stopOpacity="0.95" />
+                  <stop offset="70%" stopColor="#FF7700" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#FF9933" stopOpacity="0.05" />
+                </linearGradient>
+                <linearGradient id="blendWhiteStream" x1="0%" y1="0%" x2="100%" y2="80%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+                  <stop offset="60%" stopColor="#F1F5F9" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.05" />
+                </linearGradient>
+                <linearGradient id="blendGreenStream" x1="0%" y1="0%" x2="100%" y2="80%">
+                  <stop offset="0%" stopColor="#138808" stopOpacity="0.95" />
+                  <stop offset="70%" stopColor="#0B655D" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#138808" stopOpacity="0.05" />
+                </linearGradient>
+              </defs>
+              {/* Saffron Silk Stream */}
+              <path
+                d="M2 15C12 7 24 10 38 6C50 2 60 5 66 9C56 10 46 9 36 13C26 17 14 15 2 21V15Z"
+                fill="url(#blendSaffronStream)"
+              />
+              {/* White Silk Stream */}
+              <path
+                d="M2 21C13 14 25 16 39 12C51 8 61 11 66 15C56 16 46 15 36 19C26 23 14 21 2 28V21Z"
+                fill="url(#blendWhiteStream)"
+              />
+              {/* Green Silk Stream */}
+              <path
+                d="M2 28C14 21 26 23 40 19C52 15 62 18 66 22C56 23 46 22 36 26C26 30 14 28 2 35V28Z"
+                fill="url(#blendGreenStream)"
+              />
+            </svg>
+
+            <img
+              src="/media/draa-mark.png"
+              alt="DRAA Logo"
+              style={{ position: "relative", zIndex: 1 }}
+            />
+          </div>
           <span>
-            <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              DRAA STUDY IN INDIA
-              {/* Flying 3-Colour Waving Ribbon (No Chakra) */}
-              <svg
-                width="30"
-                height="20"
-                viewBox="0 0 30 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ flexShrink: 0, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.1))" }}
-                aria-hidden="true"
-              >
-                <defs>
-                  <linearGradient id="flySaffron" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#FF9933" />
-                    <stop offset="100%" stopColor="#E66A00" />
-                  </linearGradient>
-                  <linearGradient id="flyWhite" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#FFFFFF" />
-                    <stop offset="100%" stopColor="#CBD5E1" />
-                  </linearGradient>
-                  <linearGradient id="flyGreen" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#138808" />
-                    <stop offset="100%" stopColor="#0B655D" />
-                  </linearGradient>
-                </defs>
-                {/* Saffron Wave Ribbon */}
-                <path
-                  d="M1 5.5C6 3 12 7.5 18 4.5C23 2 27.5 3 29 4C27 6 22.5 5.5 17.5 8C12 10.5 6 6.5 1 9V5.5Z"
-                  fill="url(#flySaffron)"
-                />
-                {/* White Wave Ribbon */}
-                <path
-                  d="M1 9C6 6.5 12 10.5 17.5 8C22.5 5.5 27 6 29 4C27.5 6.5 23 8.5 18 11C12.5 13.5 6.5 9.5 1 12.5V9Z"
-                  fill="url(#flyWhite)"
-                />
-                {/* Green Wave Ribbon */}
-                <path
-                  d="M1 12.5C6.5 9.5 12.5 13.5 18 11C23 8.5 27.5 6.5 29 4C27 7.5 22 11.5 17 14C11.5 16.5 5.5 13 1 16V12.5Z"
-                  fill="url(#flyGreen)"
-                />
-              </svg>
-            </strong>
+            <strong>DRAA STUDY IN INDIA</strong>
             <small>LEARN &middot; DISCOVER &middot; GROW</small>
           </span>
         </Link>
