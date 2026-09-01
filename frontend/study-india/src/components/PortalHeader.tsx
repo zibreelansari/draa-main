@@ -92,64 +92,59 @@ export default function PortalHeader() {
       />
 
       <div className="portal-shell portal-header-inner">
-        {/* Brand with Blended Flying 3-Colour Ribbon Waves */}
+        {/* Brand with 3-Colour Flowing Ribbon from Upper to Down Line */}
         <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
-          <div style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
-            {/* Blended Flying 3-Colour Silk Ribbon Wave */}
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            {/* Flying 3-Colour Flowing Ribbon (Upper line to Down line) */}
             <svg
-              width="68"
-              height="48"
-              viewBox="0 0 68 48"
+              width="18"
+              height="44"
+              viewBox="0 0 18 44"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               style={{
-                position: "absolute",
-                left: "-18px",
-                top: "-4px",
-                pointerEvents: "none",
-                zIndex: 0,
-                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.06))",
+                flexShrink: 0,
+                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.08))",
               }}
               aria-hidden="true"
             >
               <defs>
-                <linearGradient id="blendSaffronStream" x1="0%" y1="0%" x2="100%" y2="80%">
-                  <stop offset="0%" stopColor="#FF9933" stopOpacity="0.95" />
-                  <stop offset="70%" stopColor="#FF7700" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#FF9933" stopOpacity="0.05" />
+                <linearGradient id="flowSaffron" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#FF9933" />
+                  <stop offset="100%" stopColor="#EA580C" />
                 </linearGradient>
-                <linearGradient id="blendWhiteStream" x1="0%" y1="0%" x2="100%" y2="80%">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
-                  <stop offset="60%" stopColor="#F1F5F9" stopOpacity="0.85" />
-                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.05" />
+                <linearGradient id="flowWhite" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#FFFFFF" />
+                  <stop offset="100%" stopColor="#E2E8F0" />
                 </linearGradient>
-                <linearGradient id="blendGreenStream" x1="0%" y1="0%" x2="100%" y2="80%">
-                  <stop offset="0%" stopColor="#138808" stopOpacity="0.95" />
-                  <stop offset="70%" stopColor="#0B655D" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#138808" stopOpacity="0.05" />
+                <linearGradient id="flowGreen" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#138808" />
+                  <stop offset="100%" stopColor="#0B655D" />
                 </linearGradient>
               </defs>
-              {/* Saffron Silk Stream */}
+              {/* Upper Saffron Wave Arc */}
               <path
-                d="M2 15C12 7 24 10 38 6C50 2 60 5 66 9C56 10 46 9 36 13C26 17 14 15 2 21V15Z"
-                fill="url(#blendSaffronStream)"
+                d="M4 2C9 4 14 8 16 14C12 12 7 11 2 15C3 10 3 5 4 2Z"
+                fill="url(#flowSaffron)"
               />
-              {/* White Silk Stream */}
+              {/* Middle White Wave Arc */}
               <path
-                d="M2 21C13 14 25 16 39 12C51 8 61 11 66 15C56 16 46 15 36 19C26 23 14 21 2 28V21Z"
-                fill="url(#blendWhiteStream)"
+                d="M2 15C7 11 12 12 16 14C14 20 10 24 2 28C3 23 3 19 2 15Z"
+                fill="url(#flowWhite)"
+                stroke="rgba(0,0,0,0.08)"
+                strokeWidth="0.5"
               />
-              {/* Green Silk Stream */}
+              {/* Lower Green Wave Arc */}
               <path
-                d="M2 28C14 21 26 23 40 19C52 15 62 18 66 22C56 23 46 22 36 26C26 30 14 28 2 35V28Z"
-                fill="url(#blendGreenStream)"
+                d="M2 28C10 24 14 20 16 28C14 36 9 40 4 42C3 37 3 32 2 28Z"
+                fill="url(#flowGreen)"
               />
             </svg>
 
             <img
               src="/media/draa-mark.png"
               alt="DRAA Logo"
-              style={{ position: "relative", zIndex: 1 }}
+              style={{ width: "36px", height: "36px", objectFit: "contain" }}
             />
           </div>
           <span>
