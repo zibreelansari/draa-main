@@ -80,70 +80,8 @@ export default function PortalHeader() {
   };
 
   return (
-    <header className="portal-header" ref={headerRef} style={{ position: "relative", overflow: "hidden" }}>
-      {/* 3D Flying Indian Silk Ribbon Wave across Header Bar (No Chakra, Aesthetic Blend) */}
-      <svg
-        viewBox="0 0 1440 80"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-          zIndex: 0,
-          opacity: 0.9,
-        }}
-        aria-hidden="true"
-      >
-        <defs>
-          {/* Saffron Silk Flow */}
-          <linearGradient id="hdrSaffronFlow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FF9933" stopOpacity="0.75" />
-            <stop offset="25%" stopColor="#FF8000" stopOpacity="0.65" />
-            <stop offset="65%" stopColor="#FFA43B" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#FF9933" stopOpacity="0.08" />
-          </linearGradient>
-
-          {/* White Silk Flow */}
-          <linearGradient id="hdrWhiteFlow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
-            <stop offset="30%" stopColor="#F8FAFC" stopOpacity="0.75" />
-            <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.45" />
-            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.1" />
-          </linearGradient>
-
-          {/* Green Silk Flow */}
-          <linearGradient id="hdrGreenFlow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#138808" stopOpacity="0.75" />
-            <stop offset="25%" stopColor="#0E7006" stopOpacity="0.65" />
-            <stop offset="65%" stopColor="#16A34A" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#0B655D" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-
-        {/* Saffron Top Flying Ribbon Wave */}
-        <path
-          d="M0 24C180 8 380 32 600 16C840 -2 1100 22 1440 8V0H0V24Z"
-          fill="url(#hdrSaffronFlow)"
-        />
-
-        {/* White Middle Flying Ribbon Wave */}
-        <path
-          d="M0 42C180 24 380 48 600 32C840 14 1100 38 1440 22V8C1100 22 840 -2 600 16C380 32 180 8 0 24V42Z"
-          fill="url(#hdrWhiteFlow)"
-        />
-
-        {/* Green Bottom Flying Ribbon Wave */}
-        <path
-          d="M0 60C180 40 380 64 600 48C840 30 1100 54 1440 36V22C1100 38 840 14 600 32C380 48 180 24 0 42V60Z"
-          fill="url(#hdrGreenFlow)"
-        />
-      </svg>
-
-      <div className="portal-shell portal-header-inner" style={{ position: "relative", zIndex: 1 }}>
+    <header className="portal-header" ref={headerRef}>
+      <div className="portal-shell portal-header-inner">
         {/* Brand */}
         <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
           <img src="/media/draa-mark.png" alt="DRAA Logo" />
