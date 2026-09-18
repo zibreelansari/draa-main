@@ -130,8 +130,10 @@ export default function CoursesPage() {
   return (
     <>
       <section className="catalogue-hero">
+        <img className="catalogue-hero-bg" src="/media/courses-hero.jpg" alt="University campus students and library" />
+        <div className="catalogue-hero-overlay" />
         <div className="portal-shell" data-reveal>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--orange)", fontWeight: "800", fontSize: "12px", letterSpacing: "0.14em" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#ffb07b", fontWeight: "800", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase" }}>
             <Sparkles size={16} /> DRAA INTERNATIONAL PROGRAMME DISCOVERY
           </div>
           <h1>Explore accredited courses and institutions across India.</h1>

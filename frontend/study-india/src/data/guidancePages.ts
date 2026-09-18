@@ -9,6 +9,7 @@ export type GuidancePage = {
   title: string;
   intro: string;
   summary: string;
+  heroImage?: string;
   highlights?: Array<{ value: string; label: string }>;
   sections: GuidanceSection[];
   steps?: Array<{ number: string; title: string; body: string }>;
@@ -24,6 +25,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Independent guidance for a better-informed study decision.",
     intro: "DRAA Study in India brings programme discovery, application preparation and student guidance into one clear digital journey.",
     summary: "The portal is developed by DRAA (OPC) Private Limited, a New Delhi education-services and knowledge-management company incorporated on 28 June 2023.",
+    heroImage: "/media/guidance-about.jpg",
     highlights: [
       { value: "2023", label: "DRAA established" },
       { value: "3", label: "Dedicated portal roles" },
@@ -45,6 +47,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "A broad academic landscape with a living cultural education.",
     intro: "India combines multidisciplinary higher education, diverse study destinations and distinctive knowledge traditions.",
     summary: "A strong decision considers academic fit, institutional recognition, location, affordability and the experience you want beyond the classroom.",
+    heroImage: "/media/guidance-why-india.jpg",
     sections: [
       { title: "Education quality", body: "Explore recognised universities and specialist institutes offering undergraduate, postgraduate, doctoral and certificate pathways.", items: ["Theory and practical learning", "Research and innovation ecosystems", "Industry-linked disciplines"] },
       { title: "Cultural experience", body: "Study across communities shaped by many languages, cuisines, festivals, landscapes and creative traditions.", items: ["Campus communities", "Heritage and contemporary culture", "Regional diversity"] },
@@ -64,6 +67,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Ten practical reasons students explore India.",
     intro: "Look beyond a headline and assess the academic, cultural and personal value of each opportunity.",
     summary: "These are decision factors—not guarantees. DRAA recommends verifying every programme, fee and recognition detail with the institution.",
+    heroImage: "/media/guidance-reasons.jpg",
     sections: [
       { title: "Academic breadth", body: "Choose from technology, sciences, law, management, humanities, health, agriculture and specialist fields.", items: ["1. Diverse disciplines", "2. Multiple programme levels", "3. Specialist and niche learning"] },
       { title: "Learning environment", body: "Many programmes combine classroom learning with laboratories, projects, fieldwork, studios or industry exposure.", items: ["4. Practical learning", "5. Research exposure", "6. English-medium options"] },
@@ -75,6 +79,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Study, discover and participate responsibly.",
     intro: "Your time in India can include heritage, arts, nature, food and community experiences alongside academic life.",
     summary: "Plan activities around your academic calendar, personal safety, local guidance and applicable travel rules.",
+    heroImage: "/media/guidance-things-to-do.jpg",
     sections: [
       { title: "Explore heritage", body: "Visit museums, monuments, historic districts and cultural institutions with informed local guidance.", items: ["Architecture and history", "Craft and design", "Performing arts"] },
       { title: "Experience everyday India", body: "Learn through local markets, regional food, festivals, languages and campus communities.", items: ["Regional cuisines", "Student clubs", "Community events"] },
@@ -87,6 +92,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Understand levels, institutions and recognition before applying.",
     intro: "Programme titles can look similar while entry requirements, awarding authority, duration and professional recognition differ.",
     summary: "Always assess the institution and the individual programme—not only the course title.",
+    heroImage: "/media/guidance-higher-ed.jpg",
     sections: [
       { title: "Institution types", body: "India’s landscape includes central, state, private and deemed universities, institutes of national importance, and affiliated colleges.", items: ["Degree-awarding authority", "Institutional recognition", "Campus and delivery location"] },
       { title: "Quality indicators", body: "NIRF, NAAC, NBA and relevant statutory councils provide different kinds of information; no single indicator replaces full due diligence.", items: ["Institutional accreditation", "Programme accreditation", "Discipline-specific approvals"] },
@@ -104,6 +110,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Use rankings and accreditation as evidence—not shortcuts.",
     intro: "DRAA does not publish an institutional ranking. We help learners understand commonly used quality indicators.",
     summary: "Check the latest information directly with the relevant ranking, accreditation or regulatory body before applying.",
+    heroImage: "/media/guidance-ranking.jpg",
     sections: [
       { title: "NIRF", body: "The National Institutional Ranking Framework compares participating Indian institutions using defined teaching, research, graduation, outreach and perception measures.", items: ["Check year and category", "Review methodology", "Do not compare unrelated categories"] },
       { title: "NAAC and NBA", body: "NAAC assesses higher-education institutions, while NBA focuses on eligible academic programmes. Scope and validity dates matter.", items: ["Verify current validity", "Confirm programme coverage", "Review grade or accreditation status"] },
@@ -115,6 +122,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Check requirements before building your shortlist.",
     intro: "Eligibility varies by institution, discipline, programme level and intake. The course detail is the controlling source.",
     summary: "DRAA can organise the checklist, but the institution decides whether an applicant meets its admission requirements.",
+    heroImage: "/media/guidance-eligibility.jpg",
     steps: [
       { number: "01", title: "Confirm academic level", body: "Match your completed qualification with the entry requirement for undergraduate, postgraduate or doctoral study." },
       { number: "02", title: "Check subject prerequisites", body: "Some programmes require specific school subjects, prior degrees, grades or portfolios." },
@@ -132,6 +140,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Build a funding plan that works beyond tuition.",
     intro: "Financial support may come from institutions or external providers, each with separate conditions and deadlines.",
     summary: "DRAA does not currently award scholarships and never guarantees a fee waiver.",
+    heroImage: "/media/guidance-scholarships.jpg",
     sections: [
       { title: "Institutional support", body: "Some institutions offer merit-based tuition waivers, need-aware support or discipline-specific awards.", items: ["Coverage percentage", "Renewal conditions", "Academic performance requirements"] },
       { title: "External opportunities", body: "Foundations, governments and other authorised providers may publish separate scholarship programmes.", items: ["Apply through the named provider", "Verify eligibility and deadline", "Beware of payment-for-award scams"] },
@@ -143,6 +152,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "One structured journey from discovery to arrival.",
     intro: "Use your DRAA account to organise decisions and applications while completing official requirements through the correct institutions and authorities.",
     summary: "Accuracy matters. Keep names, dates, qualifications and passport information consistent across every system.",
+    heroImage: "/media/guidance-apply.jpg",
     steps: [
       { number: "01", title: "Create your DRAA profile", body: "Register as a student and add accurate personal and academic details." },
       { number: "02", title: "Explore and shortlist", body: "Compare discipline, level, eligibility, duration, location, fees and format." },
@@ -162,6 +172,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Prepare with DRAA. Complete statutory steps through authorised channels.",
     intro: "A student visa and any applicable post-arrival registration are legal processes outside DRAA’s authority.",
     summary: "Requirements can change. Always use current instructions from the relevant Indian Mission and authorised government services.",
+    heroImage: "/media/guidance-visa.jpg",
     steps: [
       { number: "01", title: "Secure an eligible offer", body: "Confirm that your admission and programme support the visa category you intend to use." },
       { number: "02", title: "Review official requirements", body: "Check current document, fee, biometric and appointment instructions for your jurisdiction." },
@@ -179,6 +190,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Prepare for arrival, study and everyday wellbeing.",
     intro: "DRAA’s support model helps students ask the right questions before travel and connect with appropriate institutional services.",
     summary: "Your institution’s international office should remain the first point of contact for campus-specific support.",
+    heroImage: "/media/guidance-support.jpg",
     sections: [
       { title: "Before departure", body: "Confirm accommodation, airport transfer options, insurance, documents and first-week responsibilities.", items: ["Arrival checklist", "Emergency contacts", "Budget and payment access"] },
       { title: "On campus", body: "Attend orientation and identify academic, wellbeing, accommodation and international-student contacts.", items: ["International office", "Academic adviser", "Health and counselling support"] },
@@ -190,6 +202,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Direct answers for planning your DRAA journey.",
     intro: "Start here, then confirm course-specific information with the institution before applying.",
     summary: "DRAA guidance is informational and does not replace institutional admission conditions or official statutory advice.",
+    heroImage: "/media/guidance-faq.jpg",
     sections: [
       { title: "Can DRAA guarantee admission?", body: "No. Admissions are decided by the institution after reviewing eligibility, documents and available places." },
       { title: "Can I apply to more than one programme?", body: "The DRAA demonstration workflow is designed to support multiple applications, subject to each institution’s rules." },
@@ -204,6 +217,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Talk to an education guidance specialist.",
     intro: "Tell us your current qualification, preferred subject, intended level and the questions you need answered.",
     summary: "DRAA (OPC) Private Limited is based in New Delhi and supports education, training, content, events, advisory and digital learning requirements.",
+    heroImage: "/media/guidance-contact.jpg",
     sections: [
       { title: "Email", body: "admin@draa.in", items: ["Course and application guidance", "Institution enquiries", "Partnership discussions"] },
       { title: "Telephone", body: "+91 11 4100 8450", items: ["Monday–Saturday", "9:30 AM–6:30 PM IST", "Appointments recommended"] },
@@ -217,6 +231,7 @@ export const guidancePages: Record<string, GuidancePage> = {
     title: "Student information should be collected with purpose and care.",
     intro: "DRAA’s production platform will limit collection to the information required for accounts, applications, support and institutional review.",
     summary: "Do not upload real passports or sensitive documents to this demonstration environment.",
+    heroImage: "/media/guidance-privacy.jpg",
     sections: [
       { title: "Purpose limitation", body: "Information should be used only for the service described when it is collected.", items: ["Clear notices", "Proportionate fields", "No unrelated reuse"] },
       { title: "Access control", body: "Student, institution and administrator roles receive different permissions enforced by the backend.", items: ["Role checks", "Secure sessions", "Audit-ready actions"] },

@@ -39,22 +39,46 @@ export default function ContactPage() {
       {/* Top Banner */}
       <section
         style={{
-          background: "linear-gradient(135deg, #093f3c 0%, #0f2c2e 100%)",
+          position: "relative",
+          isolation: "isolate",
+          overflow: "hidden",
+          background: "#081b1f",
           color: "#fff",
-          padding: "48px 20px 42px",
+          padding: "64px 20px 54px",
           textAlign: "center",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
-        <div style={{ maxWidth: "820px", margin: "0 auto" }}>
+        <img
+          src="/media/guidance-contact.jpg"
+          alt="New Delhi education and administrative hub"
+          style={{
+            position: "absolute",
+            zIndex: -2,
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 35%",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            zIndex: -1,
+            inset: 0,
+            background: "linear-gradient(110deg, rgba(8, 27, 31, 0.88) 0%, rgba(9, 34, 39, 0.65) 55%, rgba(9, 34, 39, 0.35) 100%), linear-gradient(0deg, rgba(8, 27, 31, 0.75) 0%, transparent 45%)",
+          }}
+        />
+        <div style={{ maxWidth: "820px", margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "5px 14px", borderRadius: "9999px", background: "rgba(255,255,255,0.12)", color: "#ffb07b", fontSize: "11.5px", fontWeight: "750", letterSpacing: "0.12em", marginBottom: "14px" }}>
             <span className="live-beacon-dot" />
             <Sparkles size={14} /> DEDICATED INTERNATIONAL ADVISORY
           </div>
-          <h1 style={{ fontSize: "clamp(30px, 3.5vw, 42px)", fontWeight: "800", margin: "0 0 10px", color: "#fff", letterSpacing: "-0.03em" }}>
+          <h1 style={{ fontSize: "clamp(32px, 3.8vw, 46px)", fontWeight: "800", margin: "0 0 10px", color: "#fff", letterSpacing: "-0.03em" }}>
             Study in India Admissions Helpdesk
           </h1>
-          <p style={{ color: "#d2ece8", fontSize: "14.5px", margin: 0, lineHeight: "1.6" }}>
+          <p style={{ color: "#d2ece8", fontSize: "15px", margin: 0, lineHeight: "1.65", maxWidth: "680px", marginLeft: "auto", marginRight: "auto" }}>
             Get verified guidance on course eligibility, university provisional offer letters, fee waivers, and student visa compliance.
           </p>
         </div>

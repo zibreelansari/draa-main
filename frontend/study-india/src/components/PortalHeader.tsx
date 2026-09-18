@@ -171,7 +171,7 @@ export default function PortalHeader() {
         </nav>
 
         {/* Right Action Dropdowns: Language Switcher, Register & Log in */}
-        <div className="account-actions" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <div className="account-actions">
           <LanguageSelector />
 
           {/* Register Dropdown */}
@@ -232,8 +232,8 @@ export default function PortalHeader() {
         </div>
 
         {/* Mobile Toggle */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "auto" }} className="mobile-actions-wrapper">
-          <div className="mobile-lang-wrapper" style={{ display: "none" }}>
+        <div className="mobile-actions-wrapper">
+          <div className="mobile-lang-wrapper">
             <LanguageSelector />
           </div>
           <button

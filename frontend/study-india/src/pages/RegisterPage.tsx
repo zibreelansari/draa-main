@@ -307,19 +307,21 @@ export default function RegisterPage() {
             </div>
 
             {/* Verified Student Social Proof Quote */}
-            <div style={{ padding: "18px 20px", borderRadius: "14px", background: "linear-gradient(135deg, #093f3c 0%, #0f2c2e 100%)", color: "#ffffff", boxShadow: "0 10px 25px rgba(9, 63, 60, 0.2)" }}>
+            <div style={{ position: "relative", overflow: "hidden", isolation: "isolate", padding: "20px 22px", borderRadius: "14px", color: "#ffffff", boxShadow: "0 10px 25px rgba(9, 63, 60, 0.2)" }}>
+              <img src="/media/campus-cultural.jpg" alt="Campus cultural life" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -2 }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(9, 63, 60, 0.94) 0%, rgba(15, 44, 46, 0.88) 100%)", zIndex: -1 }} />
               <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#ffb07b", fontSize: "11.5px", fontWeight: "800", marginBottom: "8px" }}>
                 <Star size={13} fill="#ffb07b" /> Verified International Scholar
               </div>
               <p style={{ margin: "0 0 10px", fontSize: "13px", lineHeight: "1.55", color: "#e6f4f1", fontStyle: "italic" }}>
                 "The Study in India platform made securing my admission and 50% tuition waiver at NIT seamless. The offer letter was accepted by the embassy without hassle."
               </p>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: "10px" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: "10px" }}>
                 <div style={{ fontSize: "12px" }}>
                   <strong style={{ color: "#ffffff" }}>Amina D. (Nigeria 🇳🇬)</strong>
                   <span style={{ color: "#99d1c7", display: "block", fontSize: "11px" }}>B.Tech Computer Science & AI</span>
                 </div>
-                <span style={{ padding: "3px 9px", borderRadius: "9999px", background: "rgba(255,255,255,0.15)", fontSize: "11px", fontWeight: "750", color: "#ffb07b" }}>
+                <span style={{ padding: "3px 9px", borderRadius: "9999px", background: "rgba(255,255,255,0.18)", fontSize: "11px", fontWeight: "750", color: "#ffb07b" }}>
                   50% Scholarship
                 </span>
               </div>
