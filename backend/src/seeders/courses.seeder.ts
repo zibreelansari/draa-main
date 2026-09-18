@@ -1,415 +1,51 @@
 import { Institute, Course } from '../models/index';
-
-interface CourseSeed {
-  instituteSlug: string;
-  title: string;
-  slug: string;
-  discipline: string;
-  level: string;
-  durationMonths: number;
-  tuitionFee?: number;
-  tuitionFeeInr?: number;
-  currency?: string;
-  mode: string;
-  courseType: string;
-  scholarshipAvailable: boolean;
-  eligibility: string;
-  startDate: string;
-}
-
-const courseSeedData: CourseSeed[] = [
-  // Technology & AI
-  {
-    instituteSlug: 'draa-institute-technology',
-    title: 'Bachelor of Computer Science & Engineering',
-    slug: 'bachelor-computer-science',
-    discipline: 'Engineering & Technology',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 5500,
-    tuitionFeeInr: 450000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'High School completion with Mathematics & Physics. Minimum 60% or equivalent GPA.',
-    startDate: '2026-08-15',
-  },
-  {
-    instituteSlug: 'draa-institute-technology',
-    title: 'B.Tech in Artificial Intelligence & Machine Learning',
-    slug: 'btech-artificial-intelligence',
-    discipline: 'Engineering & Technology',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 6200,
-    tuitionFeeInr: 510000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary education with Physics, Mathematics & Computing. Minimum 65% aggregate.',
-    startDate: '2026-08-15',
-  },
-  {
-    instituteSlug: 'draa-institute-technology',
-    title: 'Master of Data Science & Big Data Analytics',
-    slug: 'master-data-science',
-    discipline: 'Engineering & Technology',
-    level: 'POSTGRADUATE',
-    durationMonths: 24,
-    tuitionFee: 6500,
-    tuitionFeeInr: 520000,
-    currency: 'USD',
-    mode: 'BLENDED',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Bachelor's degree in Engineering, Computer Science, Statistics or Mathematics.",
-    startDate: '2026-09-01',
-  },
-  {
-    instituteSlug: 'draa-institute-technology',
-    title: 'B.Tech in Robotics & Autonomous Systems',
-    slug: 'btech-robotics-autonomous',
-    discipline: 'Engineering & Technology',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 5800,
-    tuitionFeeInr: 475000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary school completion with Physics, Mathematics and Chemistry.',
-    startDate: '2026-08-15',
-  },
-  {
-    instituteSlug: 'draa-institute-technology',
-    title: 'PG Diploma in Cybersecurity & Digital Forensics',
-    slug: 'pg-diploma-cybersecurity',
-    discipline: 'Engineering & Technology',
-    level: 'POSTGRADUATE',
-    durationMonths: 12,
-    tuitionFee: 2900,
-    tuitionFeeInr: 240000,
-    currency: 'USD',
-    mode: 'BLENDED',
-    courseType: 'SKILL_BASED',
-    scholarshipAvailable: false,
-    eligibility: "Bachelor's degree in IT, Computer Science, or relevant STEM field.",
-    startDate: '2026-10-01',
-  },
-  {
-    instituteSlug: 'draa-institute-technology',
-    title: 'Executive Certificate in Cloud Computing & DevOps',
-    slug: 'certificate-cloud-devops',
-    discipline: 'Computer Applications',
-    level: 'CERTIFICATE',
-    durationMonths: 6,
-    tuitionFee: 1250,
-    tuitionFeeInr: 98000,
-    currency: 'USD',
-    mode: 'ONLINE',
-    courseType: 'SKILL_BASED',
-    scholarshipAvailable: false,
-    eligibility: 'Basic programming knowledge and understanding of Linux/Networking.',
-    startDate: '2026-11-01',
-  },
-
-  // Management & Business
-  {
-    instituteSlug: 'draa-school-management',
-    title: 'Master of Business Administration (Global MBA)',
-    slug: 'master-business-administration',
-    discipline: 'Management',
-    level: 'POSTGRADUATE',
-    durationMonths: 24,
-    tuitionFee: 7500,
-    tuitionFeeInr: 600000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Recognized Bachelor's degree in any discipline with minimum 50% score or equivalent GPA.",
-    startDate: '2026-08-10',
-  },
-  {
-    instituteSlug: 'draa-school-management',
-    title: 'MBA in Financial Technology & Digital Banking',
-    slug: 'mba-fintech-banking',
-    discipline: 'Management',
-    level: 'POSTGRADUATE',
-    durationMonths: 24,
-    tuitionFee: 7800,
-    tuitionFeeInr: 630000,
-    currency: 'USD',
-    mode: 'BLENDED',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Bachelor's in Economics, Commerce, Engineering, or Business.",
-    startDate: '2026-08-10',
-  },
-  {
-    instituteSlug: 'draa-school-management',
-    title: 'Bachelor of Business Administration (BBA International)',
-    slug: 'bba-international-business',
-    discipline: 'Management',
-    level: 'UNDERGRADUATE',
-    durationMonths: 36,
-    tuitionFee: 4600,
-    tuitionFeeInr: 375000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary education completion (12th Grade/A-Levels/WAEC) with English proficiency.',
-    startDate: '2026-08-15',
-  },
-  {
-    instituteSlug: 'draa-school-management',
-    title: 'Master of Public Policy & Global Governance',
-    slug: 'master-public-policy',
-    discipline: 'Law & Public Policy',
-    level: 'POSTGRADUATE',
-    durationMonths: 24,
-    tuitionFee: 5200,
-    tuitionFeeInr: 420000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Recognized bachelor's degree and strong statement of purpose.",
-    startDate: '2026-08-10',
-  },
-
-  // Humanities, Arts & Law
-  {
-    instituteSlug: 'draa-university-liberal-studies',
-    title: 'Bachelor of Arts in Economics & International Relations',
-    slug: 'ba-economics-international-relations',
-    discipline: 'Arts & Humanities',
-    level: 'UNDERGRADUATE',
-    durationMonths: 36,
-    tuitionFee: 4200,
-    tuitionFeeInr: 330000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Recognized secondary school diploma with minimum 55% or equivalent.',
-    startDate: '2026-08-20',
-  },
-  {
-    instituteSlug: 'draa-university-liberal-studies',
-    title: 'Bachelor of Laws (LL.B International Corporate Law)',
-    slug: 'bachelor-laws',
-    discipline: 'Law & Public Policy',
-    level: 'UNDERGRADUATE',
-    durationMonths: 60,
-    tuitionFee: 5800,
-    tuitionFeeInr: 480000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: false,
-    eligibility: 'Recognized 12th Grade / A-Levels / High School with English as medium of instruction.',
-    startDate: '2026-08-20',
-  },
-  {
-    instituteSlug: 'draa-university-liberal-studies',
-    title: 'Bachelor of Hospitality Management & Culinary Arts',
-    slug: 'bachelor-hospitality-management',
-    discipline: 'Hospitality & Tourism',
-    level: 'UNDERGRADUATE',
-    durationMonths: 36,
-    tuitionFee: 4500,
-    tuitionFeeInr: 360000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary education completion and interview evaluation.',
-    startDate: '2026-08-20',
-  },
-
-  // Life Sciences & Health
-  {
-    instituteSlug: 'draa-college-life-sciences',
-    title: 'M.Sc. in Biotechnology & Genetic Engineering',
-    slug: 'msc-biotechnology',
-    discipline: 'Sciences',
-    level: 'POSTGRADUATE',
-    durationMonths: 24,
-    tuitionFee: 4800,
-    tuitionFeeInr: 390000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Bachelor's degree in Biology, Biochemistry, Biotechnology, or Life Sciences.",
-    startDate: '2026-08-25',
-  },
-  {
-    instituteSlug: 'draa-college-life-sciences',
-    title: 'Bachelor of Pharmacy (B.Pharm)',
-    slug: 'bachelor-pharmacy',
-    discipline: 'Allied Health',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 5100,
-    tuitionFeeInr: 415000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary education with Chemistry, Biology and Physics/Mathematics.',
-    startDate: '2026-08-25',
-  },
-  {
-    instituteSlug: 'draa-college-life-sciences',
-    title: 'Bachelor of Science in Nursing',
-    slug: 'bachelor-nursing',
-    discipline: 'Allied Health',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 5400,
-    tuitionFeeInr: 440000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: false,
-    eligibility: 'High School completion with Biology and Chemistry as core subjects.',
-    startDate: '2026-08-25',
-  },
-
-  // Agriculture & Sustainability
-  {
-    instituteSlug: 'draa-agriculture-sustainability',
-    title: 'B.Sc. in Sustainable Agriculture & Smart Farming',
-    slug: 'bsc-agriculture',
-    discipline: 'Agriculture',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 4300,
-    tuitionFeeInr: 350000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary education with Science/Agriculture stream.',
-    startDate: '2026-08-15',
-  },
-  {
-    instituteSlug: 'draa-agriculture-sustainability',
-    title: 'Ph.D. in Climate Resilience & Agro-Ecology',
-    slug: 'phd-sustainable-agriculture',
-    discipline: 'Agriculture',
-    level: 'DOCTORAL',
-    durationMonths: 36,
-    tuitionFee: 5900,
-    tuitionFeeInr: 480000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Master's degree in Agricultural Sciences, Environmental Sciences or related discipline.",
-    startDate: '2026-09-01',
-  },
-
-  // Indian Knowledge Systems & Yoga
-  {
-    instituteSlug: 'draa-indian-knowledge-systems',
-    title: 'Certificate in Traditional Yoga Sciences & Therapy',
-    slug: 'certificate-yoga-studies',
-    discipline: 'Yoga & Wellness',
-    level: 'CERTIFICATE',
-    durationMonths: 6,
-    tuitionFee: 850,
-    tuitionFeeInr: 70000,
-    currency: 'USD',
-    mode: 'BLENDED',
-    courseType: 'SHORT_TERM',
-    scholarshipAvailable: false,
-    eligibility: 'Open to eligible adult international learners. Basic physical fitness.',
-    startDate: '2026-10-01',
-  },
-  {
-    instituteSlug: 'draa-indian-knowledge-systems',
-    title: 'Diploma in Buddhist Philosophy & Sanskrit Heritage',
-    slug: 'certificate-buddhist-studies',
-    discipline: 'Indian Knowledge Systems',
-    level: 'CERTIFICATE',
-    durationMonths: 12,
-    tuitionFee: 1400,
-    tuitionFeeInr: 110000,
-    currency: 'USD',
-    mode: 'ONLINE',
-    courseType: 'SHORT_TERM',
-    scholarshipAvailable: false,
-    eligibility: 'High School completion or adult learners with English reading comprehension.',
-    startDate: '2026-10-01',
-  },
-
-  // Design & Media
-  {
-    instituteSlug: 'national-institute-design',
-    title: 'Bachelor of Design (B.Des in UI/UX & Interaction Design)',
-    slug: 'bdes-ui-ux-design',
-    discipline: 'Design & Media',
-    level: 'UNDERGRADUATE',
-    durationMonths: 48,
-    tuitionFee: 6400,
-    tuitionFeeInr: 525000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: 'Secondary education completion in any stream. Portfolio review / creative aptitude.',
-    startDate: '2026-08-15',
-  },
-  {
-    instituteSlug: 'national-institute-design',
-    title: 'M.Des in 3D Animation, VFX & Game Art',
-    slug: 'mdes-animation-vfx',
-    discipline: 'Design & Media',
-    level: 'POSTGRADUATE',
-    durationMonths: 24,
-    tuitionFee: 6800,
-    tuitionFeeInr: 550000,
-    currency: 'USD',
-    mode: 'OFFLINE',
-    courseType: 'REGULAR',
-    scholarshipAvailable: true,
-    eligibility: "Bachelor's degree in Design, Fine Arts, Media, Animation or Engineering with portfolio.",
-    startDate: '2026-08-15',
-  },
-];
+import * as fs from 'fs';
+import * as path from 'path';
 
 export async function seedCourses(): Promise<void> {
-  // Build a slug → _id map for institutes
-  const institutes = await Institute.find({}, { slug: 1 }).lean();
-  const slugToId = new Map(institutes.map((i) => [i.slug, i._id]));
+  let courseSeedData: any[] = [];
+  try {
+    const dataPath = path.join(__dirname, 'mapped_courses.json');
+    const rawData = fs.readFileSync(dataPath, 'utf-8');
+    courseSeedData = JSON.parse(rawData);
+  } catch (error) {
+    console.warn('[Seed] Could not read mapped_courses.json, falling back to empty.');
+  }
 
+  if (courseSeedData.length === 0) {
+    return;
+  }
+
+  let seededCount = 0;
   for (const data of courseSeedData) {
-    const instituteId = slugToId.get(data.instituteSlug);
-    if (!instituteId) {
-      console.warn(`[Seed] Institute "${data.instituteSlug}" not found, skipping course "${data.title}"`);
+    const institute = await Institute.findOne({ slug: data.instituteSlug });
+    if (!institute) {
+      // Skipping quietly for missing institutes
       continue;
     }
 
-    const { instituteSlug, ...courseData } = data;
     await Course.updateOne(
-      { slug: courseData.slug },
-      { $set: { ...courseData, currency: courseData.currency || 'USD', instituteId } },
+      { slug: data.slug },
+      {
+        $set: {
+          instituteId: institute._id,
+          title: data.title,
+          slug: data.slug,
+          discipline: data.discipline,
+          level: data.level,
+          durationMonths: data.durationMonths,
+          tuitionFee: data.tuitionFee,
+          currency: data.currency || 'USD',
+          mode: data.mode,
+          courseType: data.courseType,
+          scholarshipAvailable: data.scholarshipAvailable,
+          eligibility: data.eligibility,
+          status: 'PUBLISHED',
+        },
+      },
       { upsert: true }
     );
+    seededCount++;
   }
-
-  // Ensure all existing courses in DB have default currency 'USD' if missing
-  await Course.updateMany(
-    { $or: [{ currency: { $exists: false } }, { currency: null }, { currency: '' }] },
-    { $set: { currency: 'USD' } }
-  );
-
-  console.log(`[Seed] ${courseSeedData.length} courses seeded with USD as default currency.`);
+  console.log(`[Seed] ${seededCount} courses seeded.`);
 }

@@ -1,0 +1,5002 @@
+[
+  {
+    "name": "Hindu College Delhi",
+    "slug": "C-6377",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Agricultural Research Institute",
+    "slug": "U-0101",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Management Ahmedabad",
+    "slug": "U-1016",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "type": "Public",
+    "description": "Institution located in Ahmedabad, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Technology Madras",
+    "slug": "U-0456",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Law School Of India University Bengaluru",
+    "slug": "U-0238",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Padmashree Dr D Y Patil Vidyapeeth Mumbai",
+    "slug": "U-0321",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Symbiosis Skills And Professional University",
+    "slug": "U-0979",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Dairy Research Institute",
+    "slug": "U-0171",
+    "city": "Karnal",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Karnal, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Nilgiri College Of Arts And Science",
+    "slug": "C-46609",
+    "city": "Erumad",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Erumad, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Management Kozhikode",
+    "slug": "S-8909",
+    "city": "Kozhikode",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Kozhikode, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Manipal Academy Of Higher Education",
+    "slug": "U-0234",
+    "city": "Manipal",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Manipal, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Nalsar University Of Law",
+    "slug": "N-18",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "type": "Public",
+    "description": "Institution located in Hyderabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Management Lucknow",
+    "slug": "U-1008",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Lucknow, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jamia Millia Islamia University",
+    "slug": "U-0108",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jawaharlal Institute Of Postgraduate Medical Education And Research",
+    "slug": "U-0368",
+    "city": "Puducherry",
+    "state": "Puducherry (pondicherry)",
+    "type": "Public",
+    "description": "Institution located in Puducherry, Puducherry (pondicherry).",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "The West Bengal National University Of Juridicial Sciences",
+    "slug": "U-0585",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Management Calcutta",
+    "slug": "S-8972",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Technology Kanpur",
+    "slug": "U-0517",
+    "city": "Kanpur",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Kanpur, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Veterinary Research Institute Izatnagar",
+    "slug": "U-0518",
+    "city": "Bareilly",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Bareilly, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "CEPT University",
+    "slug": "U-0127",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Ahmedabad, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Pharmaceutical Education And Research Sas Nagar Mohali",
+    "slug": "SII-I-3278",
+    "city": "Sas Nagar Mohali",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Sas Nagar Mohali, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Atma Ram Sanatan Dharm College",
+    "slug": "C-22462",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amrita Vishwa Vidyapeetham",
+    "slug": "U-0436",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aligarh Muslim University",
+    "slug": "U-0496",
+    "city": "Aligarh",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Aligarh, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Lady Shri Ram College For Women",
+    "slug": "C-6415",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Management Development Institute",
+    "slug": "I-1170",
+    "city": "Gurugram",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Gurugram, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "PSGR Krishnammal College For Women",
+    "slug": "C-41046",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sherekashmir University Of Agricultural Science And Technology Of Kashmir",
+    "slug": "U-0200",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "type": "Public",
+    "description": "Institution located in Srinagar, Jammu & Kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Technology Banaras Hindu University",
+    "slug": "U-0701",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Varanasi, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jadavpur University",
+    "slug": "U-0575",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Saveetha Institute Of Medical And Technical Sciences",
+    "slug": "U-0475",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "SRM Institute Of Science And Technology Chennai",
+    "slug": "U-0473",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Academy Of Scientific And Innovative Research",
+    "slug": "U-0713",
+    "city": "Ghaziabad",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Ghaziabad, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Tamil Nadu Veterinary And Animal Sciences University",
+    "slug": "U-0487",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Deshbandhu College New Delhi",
+    "slug": "C-6409",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ramakrishna Mission Vivekananda Centenary College",
+    "slug": "SII-I-3203",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaudhary Sarwan Kumar Himachal Pardesh Krishi Vishvavidyalaya",
+    "slug": "U-0179",
+    "city": "Kangra",
+    "state": "Himachal Pradesh",
+    "type": "Public",
+    "description": "Institution located in Kangra, Himachal Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Loyola College",
+    "slug": "C-44006",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Madras Christian College",
+    "slug": "C-43965",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kerala Agricultural University Thrissur",
+    "slug": "U-0257",
+    "city": "Thrissur",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Thrissur, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "The Maharaja Sayajirao University Of Baroda",
+    "slug": "SII-I-3144",
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "type": "Public",
+    "description": "Institution located in Vadodara, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Y S Parmar University Of Horticulture And Forestry Solan",
+    "slug": "U-0181",
+    "city": "Solan",
+    "state": "Himachal Pradesh",
+    "type": "Public",
+    "description": "Institution located in Solan, Himachal Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Homi Bhabha National Institute",
+    "slug": "U-0304",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kalinga Institute Of Industrial Technology",
+    "slug": "U-0356",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Bhubaneswar, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Pharmaceutical Education And Research Raebareli",
+    "slug": "S-17656",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "type": "University",
+    "description": "Institution located in Lucknow, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ramakrishna Mission Vidyamandira",
+    "slug": "C-11926",
+    "city": "Howrah",
+    "state": "West bengal",
+    "type": "Public",
+    "description": "Institution located in Howrah, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Anand Agricultural University",
+    "slug": "U-0123",
+    "city": "Anand",
+    "state": "Gujarat",
+    "type": "Public",
+    "description": "Institution located in Anand, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Assam Agricultural University",
+    "slug": "U-0048",
+    "city": "Jorhat",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Jorhat, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Savitribai Phule Pune University",
+    "slug": "U-0323",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "School Of Planning And Architecture Vijayawada",
+    "slug": "U-0627",
+    "city": "Vijayawada",
+    "state": "Andhra pradesh",
+    "type": "Public",
+    "description": "Institution located in Vijayawada, Andhra pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "S P Jain Institute Of Management And Research",
+    "slug": "I-1044",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharathiar University",
+    "slug": "U-0447",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Guru Angad Dev Veterinary And Animal Sciences University",
+    "slug": "U-0375",
+    "city": "Ludhiana",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Ludhiana, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Management Udaipur",
+    "slug": "S-8942",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Udaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Mizoram University",
+    "slug": "U-0345",
+    "city": "Aizawl",
+    "state": "Mizoram",
+    "type": "Public",
+    "description": "Institution located in Aizawl, Mizoram.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Management Kashipur",
+    "slug": "U-1009",
+    "city": "Kashipur",
+    "state": "Uttarakhand",
+    "type": "Public",
+    "description": "Institution located in Kashipur, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kerala University",
+    "slug": "U-0260",
+    "city": "Thiruvananthapuram",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Thiruvananthapuram, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ramakrishna Mission Residential College",
+    "slug": "C-42814",
+    "city": "Kolkata",
+    "state": "West bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Symbiosis International Deemed University",
+    "slug": "U-0329",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "I S F College Of Pharmacy",
+    "slug": "C-10398",
+    "city": "Moga",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Moga, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kerala University Of Fisheries And Ocean Studies",
+    "slug": "U-0259",
+    "city": "Kochi",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Kochi, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "SDM College Of Dental Sciences And Hospital",
+    "slug": "N-238",
+    "city": "Dharwad",
+    "state": "Karnataka",
+    "type": "PRIVATE",
+    "description": "Institution located in Dharwad, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "St Josephs College",
+    "slug": "C-35860",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Tiruchirappalli, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Annamalai University",
+    "slug": "U-0443",
+    "city": "Annamalainagar",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Annamalainagar, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Koneru Lakshmaiah Education Foundation University K L College Of Engineering",
+    "slug": "U-0020",
+    "city": "Vaddeswaram",
+    "state": "Andhra Pradesh",
+    "type": "Deemed ",
+    "description": "Institution located in Vaddeswaram, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Law University",
+    "slug": "U-0358",
+    "city": "Cuttack",
+    "state": "Odisha",
+    "type": "Public",
+    "description": "Institution located in Cuttack, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Shanmugha Arts Science Technology And Research Academy",
+    "slug": "U-0476",
+    "city": "Thanjavur",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Thanjavur, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Shri Mata Vaishno Devi University",
+    "slug": "U-0201",
+    "city": "Katra",
+    "state": "Jammu & Kashmir",
+    "type": "Public",
+    "description": "Institution located in Katra, Jammu & Kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandigarh University",
+    "slug": "U-0747",
+    "city": "Mohali",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Mohali, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Deen Dayal Upadhyaya College",
+    "slug": "C-6361",
+    "city": "Dwarka",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Dwarka, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Technology Indore",
+    "slug": "U-0273",
+    "city": "Indore",
+    "state": "Madhya Pradesh",
+    "type": "Public",
+    "description": "Institution located in Indore, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Law University And Judicial Academy",
+    "slug": "U-0677",
+    "city": "Kamrup",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Kamrup, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kalasalingam Academy Of Research And Education",
+    "slug": "U-0458",
+    "city": "Srivilliputhur",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Srivilliputhur, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Technology Warangal",
+    "slug": "U-0025",
+    "city": "Warangal",
+    "state": "Telangana",
+    "type": "Public",
+    "description": "Institution located in Warangal, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "University Of Agricultural Sciences",
+    "slug": "U-0246",
+    "city": "Dharwad",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Dharwad, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Thapar Institute Of Engineering And Technology Deemed To Be University",
+    "slug": "U-0385",
+    "city": "Patiala",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Patiala, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amity University Gurugram",
+    "slug": "MHA-2771-7",
+    "city": "Gurugram",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Gurugram, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Himachal Pradesh National Law University Shimla",
+    "slug": "U-1035",
+    "city": "Shimla",
+    "state": "Himachal pradesh",
+    "type": "Public",
+    "description": "Institution located in Shimla, Himachal pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kristu Jayanti Deemed To Be University",
+    "slug": "U-1416",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Lala Lajpat Rai University Of Veterinary And Animal Sciences",
+    "slug": "U-0165",
+    "city": "Hisar",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Hisar, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Pachhunga University College",
+    "slug": "C-8308",
+    "city": "Aizawl",
+    "state": "Mizoram",
+    "type": "Public",
+    "description": "Institution located in Aizawl, Mizoram.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Narendra Deva University Of Agriculture And Technology Ayodhya",
+    "slug": "U-0531",
+    "city": "Faizabad",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Faizabad, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Engineering Science And Technology Shibpur",
+    "slug": "U-0584",
+    "city": "Howrah",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Howrah, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Institute Of Management Technology Ghaziabad",
+    "slug": "S-394",
+    "city": "Ghaziabad",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Ghaziabad, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Maharshi Dayanand University",
+    "slug": "U-0167",
+    "city": "Rohtak",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Rohtak, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Mahatma Phule Krishi Vidyapeeth Rahuri",
+    "slug": "U-0315",
+    "city": "Phulenagar",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Phulenagar, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Maitreyi College",
+    "slug": "C-6391",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "St Xaviers College Palayamkottai",
+    "slug": "C-41173",
+    "city": "Palayamkottai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Palayamkottai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Anant National University",
+    "slug": "U-0830",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Ahmedabad, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Cochin University Of Science And Technology",
+    "slug": "U-0253",
+    "city": "Cochin",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Cochin, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Great Lakes Institute Of Management",
+    "slug": "N-16",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Malaviya National Institute Of Technology Jaipur",
+    "slug": "U-0410",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Jaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "GB Pant Universtiy Of Agriculture And Technology",
+    "slug": "U-0554",
+    "city": "Pantnagar",
+    "state": "Uttarakhand",
+    "type": "Public",
+    "description": "Institution located in Pantnagar, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Insitute Of Technology Indian School Of Mines Dhanbad",
+    "slug": "U-0205",
+    "city": "Dhanbad",
+    "state": "Jharkhand",
+    "type": "Public",
+    "description": "Institution located in Dhanbad, Jharkhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Junagadh Agricultural University",
+    "slug": "U-0140",
+    "city": "Junagadh",
+    "state": "Gujarat",
+    "type": "Public",
+    "description": "Institution located in Junagadh, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Panjab University",
+    "slug": "U-0078",
+    "city": "Chandigarh",
+    "state": "Chandigarh",
+    "type": "Public",
+    "description": "Institution located in Chandigarh, Chandigarh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "University Of Madras",
+    "slug": "U-0462",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Public",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Calcutta University",
+    "slug": "U-0570",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Shaheed Bhagat Singh College Delhi",
+    "slug": "MHA-1214-30",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Gauhati University",
+    "slug": "U-0052",
+    "city": "Guwahati",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Guwahati, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "International Management Institute",
+    "slug": "I-1064",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Tamil Nadu Drjjayalalithaa Fisheries University",
+    "slug": "U-0665",
+    "city": "Nagapattinam",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Nagapattinam, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Stella Maris College Autonomous",
+    "slug": "C-43931",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Babasheb Bhimrao Ambedkar University",
+    "slug": "U-0498",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Lucknow, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "International Management Institute Kolkata",
+    "slug": "I-1408",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Private",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Midnapore College",
+    "slug": "SII-I-3083",
+    "city": "Midnapore",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Midnapore, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Andhra University",
+    "slug": "U-0006",
+    "city": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in Visakhapatnam, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Technology Durgapur",
+    "slug": "U-0577",
+    "city": "Durgapur",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Durgapur, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Shyam Lal College Delhi",
+    "slug": "C-6357",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Mar Ivanios College Autonomous",
+    "slug": "SII-I-3100",
+    "city": "Thiruvananthapuram",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Thiruvananthapuram, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Swargiya Dadasaheb Kalmegh Smruti Dental College",
+    "slug": "C-13998",
+    "city": "Nagpur",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Nagpur, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Mumbai University",
+    "slug": "U-0318",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Guru Jambheshwar University Of Science And Technology",
+    "slug": "U-0162",
+    "city": "Hisar",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Hisar, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sacred Heart College",
+    "slug": "C-11708",
+    "city": "Kochi",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Kochi, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Shivaji College Delhi",
+    "slug": "C-6366",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Entrepreneurship Development Institute Of India",
+    "slug": "S-88",
+    "city": "Bhat",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Bhat, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "IIMT University Meerut",
+    "slug": "C-0889",
+    "city": "Meerut",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Meerut, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Indian Institute Of Science Education And Research Mohali",
+    "slug": "U-0377",
+    "city": "Mohali",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Mohali, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sathyabama Institute Of Science And Technology",
+    "slug": "U-0474",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Holy Cross College Tiruchirappalli",
+    "slug": "C-35787",
+    "city": "Tiruchirappalli",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Tiruchirappalli, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "University Of Kashmir",
+    "slug": "U-0196",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "type": "Public",
+    "description": "Institution located in Srinagar, Jammu & Kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Maharajas College",
+    "slug": "C-11697",
+    "city": "Ernakulam",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Ernakulam, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Osmania University",
+    "slug": "U-0027",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "type": "Public",
+    "description": "Institution located in Hyderabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "St Thomas College Thrissur",
+    "slug": "C-8169",
+    "city": "Thrissur",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Thrissur, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Mar Athanasius College",
+    "slug": "SII-I-3132",
+    "city": "Kothamangalam",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Kothamangalam, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Technology Kurukshetra",
+    "slug": "U-0172",
+    "city": "Kurukshetra",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Kurukshetra, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharati Vidyapeeth Deemed To Be University",
+    "slug": "U-0292",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "The American College",
+    "slug": "C-36547",
+    "city": "Madurai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Madurai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kristu Jayanti College",
+    "slug": "C-20653",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Netaji Subhas University Of Technology",
+    "slug": "U-1056",
+    "city": "South West",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in South West, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sri Ramachandra Institute Of Higher Education And Research",
+    "slug": "I-1486",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Delhi Technological University",
+    "slug": "U-0098",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kekran Mekran University",
+    "slug": "I-0000",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Fore School Of Management",
+    "slug": "S-62",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Punjab Agricultural University Ludhiana",
+    "slug": "U-0381",
+    "city": "Ludhiana",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Ludhiana, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bangalore University",
+    "slug": "U-0215",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Somaiya Vidyavihar University",
+    "slug": "U-1085",
+    "city": "Mumbai Sub-Urban",
+    "state": "Maharashtra",
+    "type": "State Private University",
+    "description": "Institution located in Mumbai Sub-Urban, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandigarh College Of Pharmacy Landran",
+    "slug": "C-10283",
+    "city": "Landran",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Landran, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Loyola Institute Of Business Administration",
+    "slug": "S-331",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Womens Christian College",
+    "slug": "C-43946",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bundelkhand University Jhansi",
+    "slug": "MHA-16790-24",
+    "city": "Jhansi",
+    "state": "Uttar pradesh",
+    "type": "Public",
+    "description": "Institution located in Jhansi, Uttar pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sri Balaji Vidyapeeth Mahatma Gandhi Medical College Campus",
+    "slug": "U-0370",
+    "city": "Puducherry",
+    "state": "Puducherry (pondicherry)",
+    "type": "Private",
+    "description": "Institution located in Puducherry, Puducherry (pondicherry).",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "International Institute Of Information Technology Bangalore",
+    "slug": "U-0221",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Tezpur University",
+    "slug": "U-0056",
+    "city": "Tezpur",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Tezpur, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Calicut University Thenhipalem",
+    "slug": "U-0251",
+    "city": "Malappuram",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Malappuram, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Technology Raipur",
+    "slug": "U-0092",
+    "city": "Raipur",
+    "state": "Chhattisgarh",
+    "type": "Public",
+    "description": "Institution located in Raipur, Chhattisgarh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Vignans Foundation For Science Technologyand Research University",
+    "slug": "U-0043",
+    "city": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Visakhapatnam, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Alliance University",
+    "slug": "U-0213",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "K J Somaiya Institute Of Management Somaiya Vidyavihar University",
+    "slug": "SII-I-3196",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "University Of Mysore",
+    "slug": "U-0235",
+    "city": "Mysore",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Mysore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bundelkhand University",
+    "slug": "SII-I-3266",
+    "city": "Jhansi",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Jhansi, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Rajagiri Business School",
+    "slug": "SII-I-3204",
+    "city": "Cochin",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Cochin, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Alagappa University",
+    "slug": "U-0435",
+    "city": "Karaikudi",
+    "state": "Tamil nadu",
+    "type": "Public",
+    "description": "Institution located in Karaikudi, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "M S Ramaiah Institute Of Technology",
+    "slug": "C-1331",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Rajiv Gandhi Institute Of Petroleum Technology",
+    "slug": "U-0535",
+    "city": "Amethi",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Amethi, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sant Longowal Institute Of Engineering And Technology",
+    "slug": "U-0384",
+    "city": "Longowal",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Longowal, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Maulana Azad National Institute Of Technology",
+    "slug": "U-0284",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "type": "Public",
+    "description": "Institution located in Bhopal, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "NITTE Deemed To Be University",
+    "slug": "U-0239",
+    "city": "Mangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Mangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sacred Heart College Autonomous",
+    "slug": "C-36411",
+    "city": "Tirupattur",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Tirupattur, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Vellalar College For Women",
+    "slug": "SII-I-3118",
+    "city": "Erode",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Erode, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Tamil Nadu",
+    "slug": "U-0449",
+    "city": "Tiruvarur",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Tiruvarur, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dit University",
+    "slug": "U-0774",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Maulana Abul Kalam Azad University Of Technology",
+    "slug": "U-0592",
+    "city": "Haringhata",
+    "state": "West bengal",
+    "type": "Public",
+    "description": "Institution located in Haringhata, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jamal Mohamed College",
+    "slug": "C-35832",
+    "city": "Tiruchirappalli",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Tiruchirappalli, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jawaharlal Nehru Technological University Hyderabad",
+    "slug": "U-0017",
+    "city": "Hydearabad",
+    "state": "Telangana",
+    "type": "Public",
+    "description": "Institution located in Hydearabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jesus And Mary College",
+    "slug": "C-6420",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Parul University",
+    "slug": "U-0763",
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Vadodara, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sri Ramakrishna College Of Arts And Science",
+    "slug": "C-41100",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Vishwanath Karad MIT World Peace University",
+    "slug": "U-0938",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Vel Tech Rangarajan Dr Sagunthala R And D Institute Of Science And Technology",
+    "slug": "U-0489",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Rajasthan",
+    "slug": "U-0392",
+    "city": "Kishangarh",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Kishangarh, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chalapathi Institute Of Pharmaceutical Sciences",
+    "slug": "C-39486",
+    "city": "Guntur",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Guntur, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "St Xaviers College Mumbai",
+    "slug": "C-33555",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Thiagarajar School Of Management",
+    "slug": "C-36557",
+    "city": "Madurai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Madurai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "University Of Agricultural Sciences Bangalore",
+    "slug": "U-0248",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dg Vaishnav College",
+    "slug": "C-43968",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Raghavendra Institute Of Pharmaceuatical Education And Research",
+    "slug": "C-26907",
+    "city": "Anantapuramu",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Anantapuramu, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Nagarjuna University",
+    "slug": "U-0003",
+    "city": "Guntur",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in Guntur, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Institute Of Management Technology",
+    "slug": "I-1132",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "type": "Private",
+    "description": "Institution located in Hyderabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "JIS University",
+    "slug": "U-0861",
+    "city": "Kolkata",
+    "state": "West bengal",
+    "type": "Private",
+    "description": "Institution located in Kolkata, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Agricultural Extension Management",
+    "slug": "S-14553",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "type": "Public",
+    "description": "Institution located in Hyderabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "National Institute Of Technology Hamirpur",
+    "slug": "U-0189",
+    "city": "Hamirpur",
+    "state": "Himachal Pradesh",
+    "type": "Public",
+    "description": "Institution located in Hamirpur, Himachal Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "PG DAV College",
+    "slug": "C-22467",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Siddaganga Institute Of Technology",
+    "slug": "C-1297",
+    "city": "Tumkur",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Tumkur, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "SR University",
+    "slug": "SII-I-3258",
+    "city": "Hanumakonda",
+    "state": "Telangana",
+    "type": "Private",
+    "description": "Institution located in Hanumakonda, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaudhary Charan Singh Haryana Agricultural University",
+    "slug": "U-0159",
+    "city": "Hisar",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Hisar, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Rajasthan University Of Veterinary And Animal Sciences",
+    "slug": "U-0421",
+    "city": "Bikaner",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Bikaner, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharati Vidyapeeths College Of Engineering",
+    "slug": "C-32863",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "C V Raman Global University",
+    "slug": "C-30045",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Bhubaneswar, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Punjab",
+    "slug": "U-0372",
+    "city": "Bathinda",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Bathinda, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Glocal University",
+    "slug": "U-0645",
+    "city": "Saharanpur",
+    "state": "Uttar pradesh",
+    "type": "Private",
+    "description": "Institution located in Saharanpur, Uttar pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Goa University",
+    "slug": "U-0121",
+    "city": "Goa",
+    "state": "Goa",
+    "type": "Public",
+    "description": "Institution located in Goa, Goa.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kuvempu University",
+    "slug": "U-0232",
+    "city": "+919741148002",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in +919741148002, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Nehru Institute Of Technology",
+    "slug": "SII-I-3225",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Scottish Church College",
+    "slug": "C-11964",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ashoka University Sonepat",
+    "slug": "U-0744",
+    "city": "Sonepat",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Sonepat, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Assam Down Town University",
+    "slug": "U-0683",
+    "city": "Guwahati",
+    "state": "Assam",
+    "type": "Private",
+    "description": "Institution located in Guwahati, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandigarh Engineering College",
+    "slug": "C-10342",
+    "city": "Sahibzada Ajit Singh Nagar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Sahibzada Ajit Singh Nagar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Hindustan Institute Of Technology And Science",
+    "slug": "U-0454",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kumaraguru College Of Liberal Arts And Science",
+    "slug": "C-60410",
+    "city": "Coimbatore",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Mahatama Jyotiba Phule Rohikhand University Bareilly",
+    "slug": "U-0525",
+    "city": "Bareilly",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Bareilly, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "MS Ramaiah University Of Applied Sciences",
+    "slug": "U-0724",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "NIMS University Jaipur",
+    "slug": "U-0415",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "type": "State Private University",
+    "description": "Institution located in Jaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Pune Institute Of Business Management",
+    "slug": "I-1144",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Vels Institute Of Science Technology And Advanced Studies Chennai",
+    "slug": "U-0491",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandigarh Business School Of Administration Landran",
+    "slug": "C-10245",
+    "city": "Sahibzada Ajit Singh Nagar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Sahibzada Ajit Singh Nagar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Jawaharlal Nehru Technological University",
+    "slug": "U-0015",
+    "city": "Kakinada",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in Kakinada, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Seven Hills College Of Pharmacy",
+    "slug": "C-27017",
+    "city": "Tirupati",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Tirupati, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aditya College Of Engineering And Technology",
+    "slug": "C-18060",
+    "city": "Surampalem",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Surampalem, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aditya College Of Pharmacy",
+    "slug": "C-24339",
+    "city": "Surampalem",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Surampalem, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aditya University",
+    "slug": "U-1388",
+    "city": "Kakinada",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Kakinada, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Islamic University Of Science And Technology Pulwama",
+    "slug": "U-0194",
+    "city": "Pulwama",
+    "state": "Jammu & Kashmir",
+    "type": "Public",
+    "description": "Institution located in Pulwama, Jammu & Kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Suresh Gyan Vihar University",
+    "slug": "U-0427",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Jaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amity University New Town",
+    "slug": "U-0779",
+    "city": "North Twenty Four Parganas",
+    "state": "West bengal",
+    "type": "Private",
+    "description": "Institution located in North Twenty Four Parganas, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central Sanskrit University",
+    "slug": "U-0115",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaudhary Charan Singh University Meerut",
+    "slug": "U-0506",
+    "city": "Meerut",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Meerut, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "KPR Institute Of Engineering And Technology",
+    "slug": "C-36999",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "LNCT University",
+    "slug": "U-0813",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "type": "State Private University",
+    "description": "Institution located in Bhopal, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sambalpur University Sambalpur",
+    "slug": "U-0362",
+    "city": "Sambalpur",
+    "state": "Odisha",
+    "type": "Public",
+    "description": "Institution located in Sambalpur, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sri Padmavathi Mahila Visvavidyalayam",
+    "slug": "U-0034",
+    "city": "Tirupathi",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in Tirupathi, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Sri Ramakrishna Engineering College",
+    "slug": "C-37089",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ajeenkya D Y Patil University",
+    "slug": "U-0885",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amity University Gwalior",
+    "slug": "U-0604",
+    "city": "Gwalior",
+    "state": "Madhya Pradesh",
+    "type": "Private",
+    "description": "Institution located in Gwalior, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Godavari Global University",
+    "slug": "C-18029",
+    "city": "Rajahmundry",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Rajahmundry, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Hindusthan College Of Engineering And Technology Coimbatore",
+    "slug": "C-37063",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Kalaignar Karunanidhi Institute Of Technology",
+    "slug": "C-37070",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Narula Institute Of Technology",
+    "slug": "C-6257",
+    "city": "Kolkata",
+    "state": "West bengal",
+    "type": "Private",
+    "description": "Institution located in Kolkata, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aman Bhalla Institute Of Engg. & Tech, Jhakolari, Pathankot",
+    "slug": "C-10371",
+    "city": "Pathankot",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Pathankot, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Gautam Buddha University",
+    "slug": "U-0514",
+    "city": "Greater Noida",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Greater Noida, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "IFSMA Fire And Safety College",
+    "slug": "S-26155",
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "type": "stand-alone",
+    "description": "Institution located in Vadodara, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "A B Shetty Memorial Institute Of Dental Sciences",
+    "slug": "C-19320",
+    "city": "Mangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Mangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Abc",
+    "slug": "I-00123",
+    "city": "Tuty",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Tuty, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Academy Of Maritime Education And Training",
+    "slug": "U-0434",
+    "city": "Chengalpattu",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chengalpattu, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya And B M Reddy College Of Pharmacy",
+    "slug": "C-40354",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Bangalore B School",
+    "slug": "MHA-3490-10",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Institute Of Allied Health Sciences Soladevanahalli Bengaluru",
+    "slug": "C-62795",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Institute Of Graduate Studies",
+    "slug": "MHA-3472-10",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Affiliated",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Institute Of Graduate Studies",
+    "slug": "C-20716",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Institute Of Physiotherapy Soladevanahalli Bangalore",
+    "slug": "C-63238",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Institute Of Technology",
+    "slug": "I-1023",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Narendra Dev College New Delhi",
+    "slug": "C-6380",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya NG Ranga Agricultural University Guntur",
+    "slug": "U-0004",
+    "city": "Guntur",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in Guntur, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya Polytechnic",
+    "slug": "S-1179",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharya School Of Design",
+    "slug": "C-53294",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Acharyar NRV School Of Architecture Bangalore",
+    "slug": "C-1414",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Adamas University",
+    "slug": "U-0857",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Private",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Adesh University",
+    "slug": "U-0736",
+    "city": "Bathinda",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Bathinda, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Adichunchanagiri University",
+    "slug": "U-0971",
+    "city": "Mandya",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Mandya, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aditya Bangalore Institute Of Pharmacy Education And Research",
+    "slug": "C-40108",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aditya College Of Nursing",
+    "slug": "C-40124",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aditya Degree College Santinagar Kakinada",
+    "slug": "C-26817",
+    "city": "Kakinada",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in Kakinada, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "ADM College For Women",
+    "slug": "C-35805",
+    "city": "Nagapattinam",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Nagapattinam, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Advanced Technology Development Centre",
+    "slug": "T-0006",
+    "city": "Kharagpur",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Kharagpur, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aerospace Research And Development Centre",
+    "slug": "S-26363",
+    "city": "Barasat",
+    "state": "West bengal",
+    "type": "Private",
+    "description": "Institution located in Barasat, West bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ahmedabad University",
+    "slug": "U-0122",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Ahmedabad, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "AIPH University",
+    "slug": "U1062",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Bhubaneswar, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Al Shifa College Of Pharmacy Perinthalmanna",
+    "slug": "C-8257",
+    "city": "Malappuram",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Malappuram, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "All India Shri Shivaji Memorial Societys Institute Of Information Technology",
+    "slug": "I-1056",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amal College Of Advanced Studies",
+    "slug": "C-8040",
+    "city": "Nilambur",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Nilambur, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "American Institute Of Indian Studies",
+    "slug": "MHA-1051-30",
+    "city": "South Delhi",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in South Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amity University",
+    "slug": "U-0497",
+    "city": "Gautam Budh Nagar",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Gautam Budh Nagar, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amity University Rajasthan",
+    "slug": "U-0388",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Jaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amritsar Group Of Colleges",
+    "slug": "C-10440",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Amritsar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Amrutvahini College Of Engineering Sangamner",
+    "slug": "C-41515",
+    "city": "Sangamner",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Sangamner, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Anjaneya University",
+    "slug": "U-1264",
+    "city": "Raipur",
+    "state": "Chhattisgarh",
+    "type": "State Private University",
+    "description": "Institution located in Raipur, Chhattisgarh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Anna University",
+    "slug": "U-0439",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Annai Jkk Sampoorani Ammal College Of Nursing",
+    "slug": "C-45650",
+    "city": "Komarapalayam",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Komarapalayam, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Annai Velankanni College",
+    "slug": "C-41148",
+    "city": "Karungal",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Karungal, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Annasaheb Dange College Of B Pharmacy",
+    "slug": "C-55632",
+    "city": "Ashta Sangli",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Ashta Sangli, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Annasaheb Dange College Of Engineering And Technology",
+    "slug": "C-11099",
+    "city": "Ashta",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Ashta, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "AP Goyal Shimla University",
+    "slug": "U-0697",
+    "city": "9805967755",
+    "state": "Himachal pradesh",
+    "type": "Private",
+    "description": "Institution located in 9805967755, Himachal pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Apeejay Stya University",
+    "slug": "U-0156",
+    "city": "Sohna",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Sohna, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Apex University",
+    "slug": "U-1038",
+    "city": "JAIPUR",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in JAIPUR, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Arka Jain University",
+    "slug": "U-0920",
+    "city": "Gamharia",
+    "state": "Jharkhand",
+    "type": "Private",
+    "description": "Institution located in Gamharia, Jharkhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Arni University",
+    "slug": "U-0176",
+    "city": "Indora",
+    "state": "Himachal pradesh",
+    "type": "Private",
+    "description": "Institution located in Indora, Himachal pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Arul Anandar College",
+    "slug": "C-36571",
+    "city": "Madurai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Madurai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aryabhatta College Delhi",
+    "slug": "C-6396",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Asian College Of Journalism",
+    "slug": "S-2026-3",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Assam Don Bosco University",
+    "slug": "U-0049",
+    "city": "Azara",
+    "state": "Assam",
+    "type": "Private",
+    "description": "Institution located in Azara, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Assam University Silchar",
+    "slug": "U-0050",
+    "city": "Silchar",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Silchar, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Association For Yoga And Meditation",
+    "slug": "MHA-16172-27",
+    "city": "Tehri Garhwal",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Tehri Garhwal, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Assumption College For Women",
+    "slug": "SII-I-0015",
+    "city": "Unknown",
+    "state": "Unknown",
+    "type": "University",
+    "description": "Institution located in None, None.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Assumption College Kottayam",
+    "slug": "C-11567",
+    "city": "Kottayam",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Kottayam, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Atal Bihari Vajpayee Indian Institute Of Information Technology And Management Gwalior",
+    "slug": "U-0267",
+    "city": "Gwalior",
+    "state": "Madhya Pradesh",
+    "type": "Public",
+    "description": "Institution located in Gwalior, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Atharva University Mumbai",
+    "slug": "U-1406",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Athena College Of Allied Health Sciences",
+    "slug": "C-76189",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Athena College Of Physiotherapy",
+    "slug": "C-76338",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Athena Institute Of Management And Sciences",
+    "slug": "C-76691",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Athena Institute Of Nursing",
+    "slug": "C-64610",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Atlas Skilltech University",
+    "slug": "U-1145",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Atmiya University Rajkot",
+    "slug": "U0967",
+    "city": "Rajkot",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Rajkot, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Atria Institute Of Technology",
+    "slug": "C-1264",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Audisankara College Of Engineering And Technology",
+    "slug": "C-26855",
+    "city": "Gudur",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Gudur, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Aurovalley Ashram Rishidwar",
+    "slug": "MHA-16326-27",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Public",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Avantika University",
+    "slug": "U-0959",
+    "city": "Ujjain",
+    "state": "Madhya Pradesh",
+    "type": "Private",
+    "description": "Institution located in Ujjain, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Avinashilingam Institute For Home Science And Higher Education For Women",
+    "slug": "U-0444",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Public",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ayya Nadar Janaki Ammal College Autonomous",
+    "slug": "C-36579",
+    "city": "Sivakasi",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Sivakasi, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Azim Premji University",
+    "slug": "U-0601",
+    "city": "Bangalore Urban",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore Urban, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "B M S College For Women",
+    "slug": "C-21103",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "B M S College Of Engineering",
+    "slug": "C-1262",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "B S Abdur Rahman Crescent Institute Of Science And Technology",
+    "slug": "U-0445",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Baba Farid College Of Engineeringand Technology Bathinda",
+    "slug": "C-27841",
+    "city": "Bathinda",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Bathinda, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Baba Ghulam Shah Badshah University",
+    "slug": "U-0191",
+    "city": "07889473046",
+    "state": "Jammu & kashmir",
+    "type": "Public",
+    "description": "Institution located in 07889473046, Jammu & kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Baba Ishar Singh College Of Pharmacy Kotisekhan",
+    "slug": "C-10400",
+    "city": "Moga",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Moga, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Baba Isher Singh Institute Of Technology Vpogagra",
+    "slug": "C-10282",
+    "city": "Moga",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Moga, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bahra University",
+    "slug": "U-0597",
+    "city": "Unknown",
+    "state": "Himachal Pradesh",
+    "type": "Private",
+    "description": "Institution located in , Himachal Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Balasaheb Desai College",
+    "slug": "C-10994",
+    "city": "Patan",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Patan, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Banaras Hindu University",
+    "slug": "U-0500",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Varanasi, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Banasthali Vidyapith Rajasthan",
+    "slug": "U-0389",
+    "city": "Banasthali",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Banasthali, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bangalore College Of Pharmacy",
+    "slug": "S-19212",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bangalore Nursing College",
+    "slug": "C-69910",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bannari Amman Institute Of Technology",
+    "slug": "C-36984",
+    "city": "Sathyamangalam",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Sathyamangalam, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bansilal Ramnath Agarwal Charitable Trusts Vishwakarma Institute Of Technology",
+    "slug": "C-41351",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bareilly International University",
+    "slug": "U-00897",
+    "city": "Bareilly",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Bareilly, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bennett University",
+    "slug": "U-0890",
+    "city": "Greater Noida",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Greater Noida, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Berhampur University",
+    "slug": "U-0350",
+    "city": "Berhampur",
+    "state": "Odisha",
+    "type": "Public",
+    "description": "Institution located in Berhampur, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "BFIT Technical Campus",
+    "slug": "C-21293",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bhagwan Aadinath College Of Education",
+    "slug": "C-52709",
+    "city": "Lalitpur",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Lalitpur, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bhagwant Universityajmer",
+    "slug": "U-0390",
+    "city": "Ajmer",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Ajmer, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharata Mata College",
+    "slug": "C-11709",
+    "city": "Ernakulam",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Ernakulam, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharatesh College Of Computer Applications",
+    "slug": "C-9996",
+    "city": "Belagavi",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Belagavi, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharath Institute Of Higher Education And Research",
+    "slug": "U-0446",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharathidasan College Of Arts And Science",
+    "slug": "C-41071",
+    "city": "Erode",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Erode, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bharathiya Skill Development University Rajasthan",
+    "slug": "T-0011",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Jaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bhatkhande Sanskriti Vishwavidyalaya",
+    "slug": "U-0501",
+    "city": "Lucknow",
+    "state": "Uttar pradesh",
+    "type": "Public",
+    "description": "Institution located in Lucknow, Uttar pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bhojia-Dental-College&hospital",
+    "slug": "C-11473",
+    "city": "Baddi",
+    "state": "Himachal pradesh",
+    "type": "Private",
+    "description": "Institution located in Baddi, Himachal pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bhojia-Institute-Of-Nursing",
+    "slug": "C-55166",
+    "city": "Baddi",
+    "state": "Himachal pradesh",
+    "type": "Private",
+    "description": "Institution located in Baddi, Himachal pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bhupal Nobles' University",
+    "slug": "U-0836",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Udaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bihar Agriculture University",
+    "slug": "U-0060",
+    "city": "Bhagalpur",
+    "state": "Bihar",
+    "type": "Public",
+    "description": "Institution located in Bhagalpur, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bihar School Of Yoga",
+    "slug": "MHA-542-4",
+    "city": "Munger",
+    "state": "Bihar",
+    "type": "Private",
+    "description": "Institution located in Munger, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Birla Institute Of Management Technology",
+    "slug": "S-354",
+    "city": "Plot No 5, Knowledge Park Ii, Greater Noida,",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Plot No 5, Knowledge Park Ii, Greater Noida,, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Birla Institute Of Technology And Sciences Pilani",
+    "slug": "U-0391",
+    "city": "Pilani",
+    "state": "Rajasthan",
+    "type": "Private",
+    "description": "Institution located in Pilani, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Birla Institute Of Technology Mesra",
+    "slug": "U-0202",
+    "city": "Ranchi",
+    "state": "Jharkhand",
+    "type": "Private",
+    "description": "Institution located in Ranchi, Jharkhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Birsa Agricultural University Ranchi",
+    "slug": "U-0203",
+    "city": "Ranchi",
+    "state": "Jharkhand",
+    "type": "Public",
+    "description": "Institution located in Ranchi, Jharkhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "BIS College Of Engineering And Technology",
+    "slug": "C-10338",
+    "city": "Moga",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Moga, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "BMS College Of Architecture",
+    "slug": "C-57952",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "BMS Institute Of Technology And Management",
+    "slug": "C-1336",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bon Secours College For Women",
+    "slug": "C-35782",
+    "city": "Thanjavur",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Thanjavur, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Bonam Venkata Chalamayya Engineering College",
+    "slug": "C-18084",
+    "city": "Odalarevu",
+    "state": "Andhra pradesh",
+    "type": "Private",
+    "description": "Institution located in Odalarevu, Andhra pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Braille Without Borders",
+    "slug": "MHA-5657-11",
+    "city": "Thiruvananthapuram",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Thiruvananthapuram, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Brainware University",
+    "slug": "U-0846",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "type": "Private",
+    "description": "Institution located in Kolkata, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Budha College Of Management",
+    "slug": "C-10669",
+    "city": "Karnal",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Karnal, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Builders Engineering College",
+    "slug": "SII-I-3229",
+    "city": "Tirupur",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Tirupur, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "C K College Of Engineering And Technology",
+    "slug": "C-25014",
+    "city": "Cuddalore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Cuddalore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "C M R Institute Of Technology",
+    "slug": "C-1406",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Cambridge Institute Of Technology",
+    "slug": "I-1351",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Cambridge Institute Of Technology North Campus",
+    "slug": "C-50028",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Career College",
+    "slug": "C-35387",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "type": "Private",
+    "description": "Institution located in Bhopal, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Carmel College Of Arts Science And Commerce For Women",
+    "slug": "C-33103",
+    "city": "Margao",
+    "state": "Goa",
+    "type": "Public",
+    "description": "Institution located in Margao, Goa.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Cauvery College For Women Autonomous",
+    "slug": "SII-I-3088",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Tiruchirappalli, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central Agricultural University",
+    "slug": "U-0336",
+    "city": "Imphal West",
+    "state": "Manipur",
+    "type": "Public",
+    "description": "Institution located in Imphal West, Manipur.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central Institute Of Fisheries Education Fishries University",
+    "slug": "U-0293",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central Institute Of Higher Tibetan Studies Sarnath",
+    "slug": "U-0503",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Varanasi, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central Institute Of Hindi Delhi Centre",
+    "slug": "MHA-966-30",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Gujarat",
+    "slug": "U-0126",
+    "city": "Gandhinagar",
+    "state": "Gujarat",
+    "type": "Public",
+    "description": "Institution located in Gandhinagar, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Haryana",
+    "slug": "U-0158",
+    "city": "Mahendergarh",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Mahendergarh, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Himachal Pradesh",
+    "slug": "U-0178",
+    "city": "Dharamashala",
+    "state": "Himachal Pradesh",
+    "type": "Public",
+    "description": "Institution located in Dharamashala, Himachal Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Jammu",
+    "slug": "U-0631",
+    "city": "Jammu",
+    "state": "Jammu & Kashmir",
+    "type": "Public",
+    "description": "Institution located in Jammu, Jammu & Kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Jharkhand",
+    "slug": "U-0204",
+    "city": "Ranchi",
+    "state": "Jharkhand",
+    "type": "Public",
+    "description": "Institution located in Ranchi, Jharkhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Karnataka",
+    "slug": "U-0216",
+    "city": "Gulbarga",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Gulbarga, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Kashmir",
+    "slug": "U-0193",
+    "city": "Ganderbal",
+    "state": "Jammu & Kashmir",
+    "type": "Autonomous ",
+    "description": "Institution located in Ganderbal, Jammu & Kashmir.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of Kerala",
+    "slug": "U-0252",
+    "city": "Kasaragod",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Kasaragod, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Central University Of South Bihar Gaya",
+    "slug": "U-0062",
+    "city": "Gaya",
+    "state": "Bihar",
+    "type": "Public",
+    "description": "Institution located in Gaya, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Centre De Sciences Humaines",
+    "slug": "S-0001",
+    "city": "DELHI",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in DELHI, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Centre For Buddhist Studies Kjsomaiya Institute Of Dharma Studies",
+    "slug": "C-34048",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Mumbai, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Centurion University Of Technology And Management",
+    "slug": "U-0353",
+    "city": "Paralakhemundi",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Paralakhemundi, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Centurion University Of Technology And Management Andhra Pradesh",
+    "slug": "U-0957",
+    "city": "Vizianagaram",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Vizianagaram, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "CGC University Mohali",
+    "slug": "U-1432",
+    "city": "Mohali",
+    "state": "Punjab",
+    "type": "STATE PRIVATE",
+    "description": "Institution located in Mohali, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ch Charan Singh National Institute Of Agricultural Marketing",
+    "slug": "S-19567",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Jaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ch S D St theresas College For Women",
+    "slug": "C-23939",
+    "city": "Eluru",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Eluru, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaitanya Bharathi Institute Of Technology",
+    "slug": "C-25622",
+    "city": "Hyderbad",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Hyderbad, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaitanya Deemed To Be University",
+    "slug": "U-1088",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "type": "Private",
+    "description": "Institution located in Hyderabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chanakya University",
+    "slug": "U-1202",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandigarh Engineering College",
+    "slug": "C-49525",
+    "city": "Sahibzada Ajit Singh Nagar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Sahibzada Ajit Singh Nagar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandigarh University Unnao Uttar Pradesh",
+    "slug": "U-1382",
+    "city": "Unnao",
+    "state": "Uttar pradesh",
+    "type": "Private",
+    "description": "Institution located in Unnao, Uttar pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chandragupt Institute Of Management Patna",
+    "slug": "S-40",
+    "city": "Patna",
+    "state": "Bihar",
+    "type": "Public",
+    "description": "Institution located in Patna, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Charotar University Of Science And Technology",
+    "slug": "U-0128",
+    "city": "Changa",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Changa, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaudhary Bansi Lal University",
+    "slug": "U-0788",
+    "city": "Bhiwani",
+    "state": "Haryana",
+    "type": "Public",
+    "description": "Institution located in Bhiwani, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chaudhary Brahm Prakash Ayurved Charak Sansthan",
+    "slug": "C-32908",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chebrolu Engineering College",
+    "slug": "C-18030",
+    "city": "Chebrolu",
+    "state": "Andhra Pradesh",
+    "type": "Private",
+    "description": "Institution located in Chebrolu, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chennai Institute Of Technology",
+    "slug": "C-16576",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Cherraans College Of Pharmacy",
+    "slug": "C-45531",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chhatrapati Shahu Ji Maharaj University Kanpur",
+    "slug": "U-0505",
+    "city": "Kanpur",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Kanpur, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chhatrapati Shivaji Maharaj University",
+    "slug": "U-0987",
+    "city": "Panvel",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Panvel, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chhattisgarh Kamdhenu Vishwavidalaya",
+    "slug": "U-0634",
+    "city": "Durg",
+    "state": "Chhattisgarh",
+    "type": "Public",
+    "description": "Institution located in Durg, Chhattisgarh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Chitkara University",
+    "slug": "U-0373",
+    "city": "Rajpura",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Rajpura, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Christ University Bangalore",
+    "slug": "U-0217",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "CMR University Bangalore",
+    "slug": "U-0723",
+    "city": "09463684901",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in 09463684901, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "CMS College Kottayam",
+    "slug": "C-11771",
+    "city": "Kottayam",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Kottayam, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "CMS College Of Science And Commerce",
+    "slug": "C-41096",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Coimbatore, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College For Higher Tibetan Studies Sarah",
+    "slug": "MHA-2826-8",
+    "city": "09805914071",
+    "state": "Himachal Pradesh",
+    "type": "Private",
+    "description": "Institution located in 09805914071, Himachal Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Agriculture Suwana Bhilwara",
+    "slug": "C-64889",
+    "city": "Bhilwara",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Bhilwara, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Community And Applied Sciences",
+    "slug": "C-63980",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Udaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Dairy And Food Technology",
+    "slug": "C-52182",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Udaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Engineering Pune",
+    "slug": "C-41593",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Engineering Thalassery",
+    "slug": "C-9481",
+    "city": "Thalassery",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Thalassery, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Nursing Cihsr",
+    "slug": "C-47446",
+    "city": "Dimapur",
+    "state": "Nagaland",
+    "type": "Private",
+    "description": "Institution located in Dimapur, Nagaland.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Technology And Engineering",
+    "slug": "I-1067",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "type": "Public",
+    "description": "Institution located in Udaipur, Rajasthan.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Veterinary And Animal Sciences Pookode",
+    "slug": "C-61531",
+    "city": "Wayanad",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Wayanad, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "College Of Vocational Studies New Delhi",
+    "slug": "C-6397",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ct Institute Of Engg Management And Technology Shahpur",
+    "slug": "C-10378",
+    "city": "Jalandhar",
+    "state": "Punjab",
+    "type": "Private unaided",
+    "description": "Institution located in Jalandhar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "CT University",
+    "slug": "U-0892",
+    "city": "Ludhiana",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Ludhiana, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "D Y Patil Educational Society",
+    "slug": "U-0294",
+    "city": "Kolhapur",
+    "state": "Maharashtra",
+    "type": "Deemed University",
+    "description": "Institution located in Kolhapur, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "D Y Patil International University",
+    "slug": "U-0984",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Das Institute",
+    "slug": "MHA-1303-30",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Private",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Datta Meghe Institute Of Higher Education And Research",
+    "slug": "U-0295",
+    "city": "Wardha",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Wardha, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dav Institute Of Engineering And Technology",
+    "slug": "C-10384",
+    "city": "Jalandhar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Jalandhar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dayal Singh College Karnal",
+    "slug": "C-10569",
+    "city": "Karnal",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Karnal, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dayanand Science College",
+    "slug": "C-7327",
+    "city": "Latur",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Latur, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dayananda Sagar University",
+    "slug": "U-0856",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "DDS Global University",
+    "slug": "U-1335",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Debra Thana Sahid Kshudiram Smriti Mahavidyalaya",
+    "slug": "C-19090",
+    "city": "Debra",
+    "state": "West Bengal",
+    "type": "Public",
+    "description": "Institution located in Debra, West Bengal.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Deen Dayal Upadhyay Gorakhpur University",
+    "slug": "U-0508",
+    "city": "Gorakhpur",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Gorakhpur, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Delhi College Of Arts And Commerce",
+    "slug": "MHA-1040-30",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Delhi Pharmaceutical Sciences And Research University",
+    "slug": "U-0853",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in New Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Delhi University",
+    "slug": "MHA-1165-30",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Demo University",
+    "slug": "U-00010",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Educational",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dempo Charities Trusts S S Dempo College Of Commerce And Economics",
+    "slug": "C-30828",
+    "city": "Bambolim",
+    "state": "Goa",
+    "type": "Private",
+    "description": "Institution located in Bambolim, Goa.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Deogiri College",
+    "slug": "C-34605",
+    "city": "Aurangabad",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Aurangabad, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Department Of Urdu",
+    "slug": "MHA-1390-30",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Des Pune University",
+    "slug": "U-1306",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Desh Bhagat University",
+    "slug": "U-0684",
+    "city": "Mandi Gobindgarh",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Mandi Gobindgarh, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dev Bhoomi Uttarakhand University",
+    "slug": "U-1169",
+    "city": "Naugaon",
+    "state": "Uttarakhand",
+    "type": "Private University",
+    "description": "Institution located in Naugaon, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dev Samaj College For Women",
+    "slug": "C-29348",
+    "city": "Chandigarh",
+    "state": "Chandigarh",
+    "type": "Private",
+    "description": "Institution located in Chandigarh, Chandigarh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dev Sanskriti Vishwavidyala",
+    "slug": "U-0551",
+    "city": "Haridwar",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Haridwar, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dhakuakhana College",
+    "slug": "C-8472",
+    "city": "Lakhimpur",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Lakhimpur, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dhanalakshmi Srinivasan Engineering College",
+    "slug": "C-24984",
+    "city": "Perambalur",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Perambalur, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dhanwantari Nursing College",
+    "slug": "C-40220",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dhi Centre Of Excellence For Electric Mobility Automotive Research Association Of India",
+    "slug": "T-0003",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dhirubhai Ambani Institute Of Information And Communication Technology",
+    "slug": "U-0130",
+    "city": "Gandhinagar",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Gandhinagar, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dibrugarh University",
+    "slug": "U-0051",
+    "city": "Dibrugarh",
+    "state": "Assam",
+    "type": "Public",
+    "description": "Institution located in Dibrugarh, Assam.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "DKTE Societys Textile And Engineering Institute",
+    "slug": "C-11058",
+    "city": "Ichalkaranji",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Ichalkaranji, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dnyaan Prasad Global University",
+    "slug": "U-1381",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dnyanprassarak Mandals College And Research Centre",
+    "slug": "C-30843",
+    "city": "North Goa",
+    "state": "Goa",
+    "type": "Private",
+    "description": "Institution located in North Goa, Goa.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Doaba Business School Kharar",
+    "slug": "C-60238",
+    "city": "Kharar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Kharar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Doaba Institute Of Engineering And Technology Ghatuar",
+    "slug": "C-29459",
+    "city": "Kharar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Kharar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Doaba Women Institute Of Engineering And Technology",
+    "slug": "C-10424",
+    "city": "Kharar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Kharar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dolma Ling Nunnery And Institute Of Dialects",
+    "slug": "MHA-2946-8",
+    "city": "Kangra",
+    "state": "Himachal pradesh",
+    "type": "Private",
+    "description": "Institution located in Kangra, Himachal pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Doon Business School",
+    "slug": "C-21266",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Doon Pg College Of Agriculture Science And Technology",
+    "slug": "C-24664",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Doon University",
+    "slug": "U-0552",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Public",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Ambedkar Institute Of Technology",
+    "slug": "C-1291",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Public",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr B R Ambedkar National Institute Of Technology Jalandhar",
+    "slug": "U-0374",
+    "city": "Jalandhar",
+    "state": "Punjab",
+    "type": "Public",
+    "description": "Institution located in Jalandhar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr B R Sur Homoeopathic Medical College Hospital And Research Centre",
+    "slug": "C-32835",
+    "city": "Newdelhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Newdelhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Babasaheb Ambedkar Marathwada University Aurangabad",
+    "slug": "U-0298",
+    "city": "Aurangabad",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Aurangabad, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Balasaheb Sawant Konkan Krishi Vidyaapeeth",
+    "slug": "U-0300",
+    "city": "Dapoli",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Dapoli, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Bhimrao Ambedkar University Agra",
+    "slug": "U-0509",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Agra, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Br Ambedkar University Delhi",
+    "slug": "U-0097",
+    "city": "Delhi",
+    "state": "Delhi",
+    "type": "Public",
+    "description": "Institution located in Delhi, Delhi.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr C V Raman University",
+    "slug": "U-0937",
+    "city": "Hajipur",
+    "state": "Bihar",
+    "type": "Private",
+    "description": "Institution located in Hajipur, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr C V Raman University",
+    "slug": "U-0084",
+    "city": "Bilaspur",
+    "state": "Chhattisgarh",
+    "type": "Private",
+    "description": "Institution located in Bilaspur, Chhattisgarh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr D Y Patil Pratishthans Dy Patil College Of Engineering Akurdi Pune",
+    "slug": "C-41513",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Autonomous",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr D Y Patil Vidyapeeth Pune Deemed To Be University",
+    "slug": "U-0301",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Gafoor Memorial MES Mampad College",
+    "slug": "C-8041",
+    "city": "Malappuram",
+    "state": "Kerala",
+    "type": "Private",
+    "description": "Institution located in Malappuram, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Harisingh Gour Vishwavidyalayasagar",
+    "slug": "U-0271",
+    "city": "Sagar",
+    "state": "Madhya Pradesh",
+    "type": "Public",
+    "description": "Institution located in Sagar, Madhya Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr I T Institute Of Management And Technology Jalalapur",
+    "slug": "C-10340",
+    "city": "Banur",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Banur, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr It School Of Business",
+    "slug": "C-10334",
+    "city": "Banur",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Banur, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr K N Modi University Modinagar Ghaziabad Uttar Pradesh",
+    "slug": "U-1426",
+    "city": "Modinagar, Ghaziabad",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Modinagar, Ghaziabad, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Rajendra Prasad Central Agricultural University Samastipur",
+    "slug": "U-0075",
+    "city": "Samastipur",
+    "state": "Bihar",
+    "type": "Public",
+    "description": "Institution located in Samastipur, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Subhash University",
+    "slug": "U-1204",
+    "city": "Junagadh",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Junagadh, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr Y S R Horticulture University",
+    "slug": "U-0001",
+    "city": "West Godavari",
+    "state": "Andhra Pradesh",
+    "type": "Public",
+    "description": "Institution located in West Godavari, Andhra Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Dr. Babasaheb Ambedkar Open University",
+    "slug": "U-0131",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "type": "Public",
+    "description": "Institution located in Ahmedabad, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Drepung Gomang Monastery",
+    "slug": "MHA-4163-10",
+    "city": "Uttara Kannada",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Uttara Kannada, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Drepung Losel Ling Monastery",
+    "slug": "MHA-461-11",
+    "city": "Mundgod",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Mundgod, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "East Point College Of Engg And Tech Bangalore",
+    "slug": "C-1383",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bengaluru, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Easwari Engineering College",
+    "slug": "C-16560",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ecole Francaise D Extremeorient Centre De Pondichery",
+    "slug": "C-69457",
+    "city": "Pondicherry",
+    "state": "Puducherry (pondicherry)",
+    "type": "Research Centre",
+    "description": "Institution located in Pondicherry, Puducherry (pondicherry).",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "English And Foreign Languages University",
+    "slug": "U-0041",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "type": "Public",
+    "description": "Institution located in Hyderabad, Telangana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Entrepreneurship Development Institute Of India",
+    "slug": "T-0008",
+    "city": "Gandhinagar",
+    "state": "Gujrat",
+    "type": "Public",
+    "description": "Institution located in Gandhinagar, Gujrat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ethiraj College For Women",
+    "slug": "C-43902",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Chennai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Excel Engineering College",
+    "slug": "C-36930",
+    "city": "Komarapalayam",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Komarapalayam, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Excel Polytechnic College",
+    "slug": "S-2787",
+    "city": "Namakkal",
+    "state": "Tamil nadu",
+    "type": "Private",
+    "description": "Institution located in Namakkal, Tamil nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Farook College Autonomous",
+    "slug": "C-8023",
+    "city": "Kozhikode",
+    "state": "Kerala",
+    "type": "Public",
+    "description": "Institution located in Kozhikode, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Fatima College For Women",
+    "slug": "C-36529",
+    "city": "Madurai",
+    "state": "Tamil Nadu",
+    "type": "Private",
+    "description": "Institution located in Madurai, Tamil Nadu.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Federal Institute Of Science And Technology",
+    "slug": "C-11794",
+    "city": "Ernakulam",
+    "state": "Kerala",
+    "type": "Self Financing Autonomous",
+    "description": "Institution located in Ernakulam, Kerala.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Film And Television Institute Of India Pune",
+    "slug": "S-8924",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "CENTRAL GOVERNMENT",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Film And Tevision Institute Of India Pune",
+    "slug": "T-0019",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Public",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Flame University",
+    "slug": "U-1181",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Pune, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Florida College Of Nursing",
+    "slug": "C-62722",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Florida School Of Nursing",
+    "slug": "S-4015",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Bangalore, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Footwear Design And Development Institute",
+    "slug": "U-0898",
+    "city": "Gautam Budh Nagar",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Gautam Budh Nagar, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Footwear Design And Development Institute Patna",
+    "slug": "C-58646",
+    "city": "Patna",
+    "state": "Bihar",
+    "type": "Public",
+    "description": "Institution located in Patna, Bihar.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Footwear Design Development Institute",
+    "slug": "T-0007",
+    "city": "Noida",
+    "state": "Uttar Pradesh",
+    "type": "Public",
+    "description": "Institution located in Noida, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Forest Research Institute Deemed To Be University",
+    "slug": "U-0553",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Public",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Fr Agnel College Of Arts And Commerce Pilar",
+    "slug": "C-30863",
+    "city": "North Goa",
+    "state": "Goa",
+    "type": "Private",
+    "description": "Institution located in North Goa, Goa.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "French Institute Of Pondicherry",
+    "slug": "C-6570",
+    "city": "Pondicherry",
+    "state": "Puducherry (pondicherry)",
+    "type": "Public",
+    "description": "Institution located in Pondicherry, Puducherry (pondicherry).",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "FS University",
+    "slug": "U-1346",
+    "city": "Firozabad",
+    "state": "Uttar pradesh",
+    "type": "Private",
+    "description": "Institution located in Firozabad, Uttar pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Future University Bareilly",
+    "slug": "U-1354",
+    "city": "Bareily",
+    "state": "Uttar pradesh",
+    "type": "Private",
+    "description": "Institution located in Bareily, Uttar pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "G H Raisoni College Of Engineering",
+    "slug": "C-18817",
+    "city": "Nagpur",
+    "state": "Maharashtra",
+    "type": "Private",
+    "description": "Institution located in Nagpur, Maharashtra.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "G N A University",
+    "slug": "U-0789",
+    "city": "Kapurthala",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Kapurthala, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "G.R.D. Institute Of Management & Technology",
+    "slug": "C-21309",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "type": "Private",
+    "description": "Institution located in Dehradun, Uttarakhand.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Gaden Jangtse Norling College",
+    "slug": "MHA-5332-10",
+    "city": "Mundgod",
+    "state": "Karnataka",
+    "type": "Private",
+    "description": "Institution located in Mundgod, Karnataka.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Galgotias University",
+    "slug": "U-0643",
+    "city": "Greater Noida",
+    "state": "Uttar Pradesh",
+    "type": "Private",
+    "description": "Institution located in Greater Noida, Uttar Pradesh.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Gandhi Engieering College",
+    "slug": "C-30148",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Bhubaneswar, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Gandhi Institute For Education And Technology Bhubaneswar",
+    "slug": "C-30170",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Bhubaneswar, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Gandhi Institute For Technological Advancement",
+    "slug": "C-30066",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "type": "Private",
+    "description": "Institution located in Bhubaneswar, Odisha.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ganga Institute Of Technology And Management",
+    "slug": "C-28433",
+    "city": "Jhajjar",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Jhajjar, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Ganpat University",
+    "slug": "U-0132",
+    "city": "Ganpat Vidyanagar, Mehsana",
+    "state": "Gujarat",
+    "type": "Private",
+    "description": "Institution located in Ganpat Vidyanagar, Mehsana, Gujarat.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "GCS Institute Of Vocational Studies Bhaddal",
+    "slug": "C-30787",
+    "city": "Rupnagar",
+    "state": "Punjab",
+    "type": "Private",
+    "description": "Institution located in Rupnagar, Punjab.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "GD Goenka University",
+    "slug": "U-0720",
+    "city": "Gurugram",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Gurugram, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  },
+  {
+    "name": "Geeta University",
+    "slug": "U-1201",
+    "city": "Panipat",
+    "state": "Haryana",
+    "type": "Private",
+    "description": "Institution located in Panipat, Haryana.",
+    "imageUrl": "/media/campus-1.jpg",
+    "status": "PUBLISHED"
+  }
+]

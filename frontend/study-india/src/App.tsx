@@ -10,11 +10,11 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import ContactPage from "./pages/ContactPage";
+import ReasonsPage from "./pages/ReasonsPage";
 
 const contentPaths = [
   "about",
   "why-india",
-  "reasons",
   "things-to-do",
   "higher-education",
   "institute-ranking",
@@ -34,6 +34,7 @@ export default function App() {
         <Routes>
         <Route element={<PortalLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="reasons" element={<ReasonsPage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="courses/:slug" element={<CourseDetailPage />} />
           <Route path="notifications" element={<ResourcesPage />} />
