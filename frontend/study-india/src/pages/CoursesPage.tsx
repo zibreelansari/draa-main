@@ -626,92 +626,41 @@ export default function CoursesPage() {
 
                   <div className="institutes-grid">
                     {visibleInstitutes.map((inst) => (
-                      <article key={inst.id} className="institute-card" data-reveal>
-                        <div 
-                          className="institute-card-image-wrap"
-                          style={{
-                            background: [
-                              "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
-                              "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)",
-                              "linear-gradient(135deg, #042f2e 0%, #14b8a6 100%)",
-                              "linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%)",
-                              "linear-gradient(135deg, #7f1d1d 0%, #ef4444 100%)",
-                              "linear-gradient(135deg, #78350f 0%, #f59e0b 100%)"
-                            ][inst.name.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) % 6],
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                          }}
-                        >
-                          <span style={{ fontSize: '3.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.25)', letterSpacing: '2px', textAlign: 'center', padding: '1rem' }}>
-                            {inst.name.split(" ").map(n => n[0]).slice(0,2).join("").toUpperCase()}
-                          </span>
-                          <div className="institute-image-overlay" />
-                          {inst.nirfRank && (
-                            <span className="institute-rank-badge">{inst.nirfRank}</span>
-                          )}
-                          {inst.naacGrade && (
-                            <span className="institute-naac-badge">{inst.naacGrade}</span>
-                          )}
-                        </div>
-
-                        <div className="institute-card-body">
-                          <span className="institute-type-tag">{inst.type}</span>
-                          <h3 className="institute-name">{inst.name}</h3>
-                          <p className="institute-description">{inst.description}</p>
-
-                          <div className="institute-location-info">
-                            <MapPin size={14} />
-                            <span>{inst.city}, {inst.state}</span>
-                            {inst.established && (
-                              <span className="est-year">· Est. {inst.established}</span>
-                            )}
+                      <article key={inst.id} className="institute-card text-only-card" data-reveal>
+                        <div className="inst-card-top">
+                          <div className="inst-icon-box">
+                            <Building2 size={24} color="#334155" />
                           </div>
-
-                          {inst.facilities && inst.facilities.length > 0 && (
-                            <div className="institute-facilities">
-                              <small>Key Amenities:</small>
-                              <div className="facility-chips">
-                                {inst.facilities.slice(0, 3).map((f) => (
-                                  <span key={f} className="facility-chip">{f}</span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          <div className="institute-card-footer">
-                            <div className="institute-fee-est">
-                              <small>Tuition Range</small>
-                              <strong>
-                                {currency === "INR"
-                                  ? inst.tuitionPerYearINR || "₹2,50,000 – ₹5,00,000"
-                                  : inst.tuitionPerYearUSD || "$3,000 – $6,000"}
-                              </strong>
-                            </div>
-
-                            <div className="institute-action-btns">
-                              {inst.website && (
-                                <a
-                                  href={inst.website}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inst-website-link"
-                                  title="Visit Official Website"
-                                >
-                                  <ExternalLink size={14} />
-                                </a>
-                              )}
-                              <button
-                                type="button"
-                                className="btn-view-programmes"
-                                onClick={() => {
-                                  setView("courses");
-                                  setQuery(inst.name);
-                                }}
-                              >
-                                View Programmes <ArrowRight size={13} />
-                              </button>
-                            </div>
+                          <div className="inst-header-text">
+                            <h3>{inst.name}</h3>
+                            <span>{inst.city}, {inst.state}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="inst-card-bottom">
+                          <ul className="inst-details-list">
+                            <li>
+                              <MapPin size={16} /> <span>{inst.city}</span>
+                            </li>
+                            <li>
+                              <GraduationCap size={16} /> <span>{inst.type}</span>
+                            </li>
+                            <li>
+                              <Award size={16} /> <span>NIRF Rank: {inst.nirfRank || 'NA'}</span>
+                            </li>
+                          </ul>
+                          
+                          <div className="inst-card-actions" style={{ justifyContent: 'flex-end' }}>
+                            <button
+                              type="button"
+                              className="btn-inst-details"
+                              onClick={() => {
+                                setView("courses");
+                                setQuery(inst.name);
+                              }}
+                            >
+                              Details
+                            </button>
                           </div>
                         </div>
                       </article>
