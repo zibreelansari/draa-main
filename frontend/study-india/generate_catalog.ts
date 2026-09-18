@@ -38,24 +38,26 @@ const topRanks: Record<string, number> = {
   "Miranda House": 2, 
 };
 
-function getDeterministicRank(name: string): string {
+let currentRankCounter = 101;
+const assignedRanks = new Set<number>(Object.values(topRanks));
+
+function getUniqueRank(name: string): string {
+  // First check if it's in our top hardcoded ranks
   for (const [key, rank] of Object.entries(topRanks)) {
     if (name.toLowerCase().includes(key.toLowerCase())) {
       return rank.toString();
     }
   }
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  
+  // Assign next available unique rank
+  while (assignedRanks.has(currentRankCounter)) {
+    currentRankCounter++;
   }
-  hash = Math.abs(hash);
-  if (name.includes("Indian Institute of Technology")) return (10 + (hash % 40)).toString();
-  if (name.includes("National Institute of Technology")) return (20 + (hash % 80)).toString();
-  if (name.includes("Indian Institute of Information Technology")) return (50 + (hash % 100)).toString();
-  if (name.includes("Indian Institute of Management")) return (4 + (hash % 40)).toString();
-  if (name.includes("University")) return (20 + (hash % 150)).toString();
-  if (name.includes("College")) return (10 + (hash % 150)).toString();
-  return (50 + (hash % 200)).toString();
+  
+  const assigned = currentRankCounter;
+  assignedRanks.add(assigned);
+  currentRankCounter++;
+  return assigned.toString();
 }
 
 function getDeterministicGrade(name: string): string {
@@ -80,7 +82,7 @@ const formattedInstitutes = institutes.map((inst: any) => ({
   city: inst.city || 'Unknown',
   state: inst.state || 'Unknown',
   type: inst.type || 'University',
-  nirfRank: inst.nirF_Rank || getDeterministicRank(inst.name),
+  nirfRank: inst.nirF_Rank || getUniqueRank(inst.name),
   naacGrade: getDeterministicGrade(inst.name) + ' Accredited',
   established: (1950 + (inst.name.length % 60)).toString(),
   imageUrl: inst.imageUrl || '/media/campus-1.jpg',
