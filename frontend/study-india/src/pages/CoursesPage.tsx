@@ -627,8 +627,25 @@ export default function CoursesPage() {
                   <div className="institutes-grid">
                     {visibleInstitutes.map((inst) => (
                       <article key={inst.id} className="institute-card" data-reveal>
-                        <div className="institute-card-image-wrap">
-                          <img src={inst.imageUrl} alt={inst.name} loading="lazy" />
+                        <div 
+                          className="institute-card-image-wrap"
+                          style={{
+                            background: [
+                              "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+                              "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)",
+                              "linear-gradient(135deg, #042f2e 0%, #14b8a6 100%)",
+                              "linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%)",
+                              "linear-gradient(135deg, #7f1d1d 0%, #ef4444 100%)",
+                              "linear-gradient(135deg, #78350f 0%, #f59e0b 100%)"
+                            ][inst.name.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) % 6],
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                        >
+                          <span style={{ fontSize: '3.5rem', fontWeight: 800, color: 'rgba(255,255,255,0.25)', letterSpacing: '2px', textAlign: 'center', padding: '1rem' }}>
+                            {inst.name.split(" ").map(n => n[0]).slice(0,2).join("").toUpperCase()}
+                          </span>
                           <div className="institute-image-overlay" />
                           {inst.nirfRank && (
                             <span className="institute-rank-badge">{inst.nirfRank}</span>
