@@ -122,6 +122,7 @@ export default function CoursesPage() {
   const [applyingCourse, setApplyingCourse] = useState<Course | null>(null);
   const [gpaModalOpen, setGpaModalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   // Attempt background sync with backend API if running
   useEffect(() => {
@@ -372,9 +373,25 @@ export default function CoursesPage() {
       {/* ═══════════════ MAIN CATALOGUE EXPLORER ═══════════════ */}
       <section className="catalogue-content-section">
         <div className="portal-shell">
+          {/* Mobile Filter Toggle */}
+          <div className="mobile-filter-bar">
+            <button
+              type="button"
+              className="mobile-filter-trigger-btn"
+              onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
+              aria-expanded={mobileFiltersOpen}
+            >
+              <SlidersHorizontal size={16} />
+              <span>{mobileFiltersOpen ? "Hide Filter Options" : "Filter Courses & Universities"}</span>
+              {activeFiltersCount > 0 && (
+                <span className="active-filters-count">{activeFiltersCount} active</span>
+              )}
+            </button>
+          </div>
+
           <div className="catalogue-layout">
             {/* ── Filter Sidebar ── */}
-            <aside className="catalogue-filters-panel" data-reveal>
+            <aside className={`catalogue-filters-panel ${mobileFiltersOpen ? "mobile-open" : ""}`} data-reveal>
               <div className="filters-panel-header">
                 <div className="header-title">
                   <SlidersHorizontal size={18} />

@@ -1891,7 +1891,10 @@
   .draa-corp-menu-button {
     display: inline-grid;
     place-items: center;
-    padding: 8px;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
     cursor: pointer;
   }
 
@@ -1899,23 +1902,72 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 10px 16px 18px;
+    padding: 12px 18px 24px;
     border-top: 1px solid var(--corp-line);
     background: #fffdf8;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .draa-corp-mobile-nav span {
+    margin: 12px 8px 2px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    color: #9a6729;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .draa-corp-mobile-nav span:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 2px;
   }
 
   .draa-corp-mobile-nav a {
-    padding: 11px 12px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
     border-radius: 8px;
     color: #3e372e;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     text-decoration: none;
+    transition: all 0.18s ease;
+  }
+
+  .draa-corp-mobile-nav a:hover,
+  .draa-corp-mobile-nav a.active {
+    background: #f5eedf;
+    color: #191611;
+  }
+
+  .draa-mobile-study {
+    background: #093a3c !important;
+    color: #ffffff !important;
+    border: 1px solid #14b8a6 !important;
+    box-shadow: 0 4px 14px rgba(9, 58, 60, 0.25);
+    margin: 6px 0 !important;
   }
 
   .draa-corp-mobile-cta {
-    margin-top: 5px;
+    margin-top: 10px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 750;
     color: #fff !important;
+    background: linear-gradient(135deg, #dfa64c 0%, #b36f18 100%);
+    box-shadow: 0 4px 14px rgba(179, 111, 24, 0.35);
   }
 
   .draa-corp-hero {
@@ -2016,6 +2068,10 @@
     width: min(100% - 24px, 520px);
   }
 
+  .draa-corp-brand-copy strong {
+    font-size: 15px;
+  }
+
   .draa-corp-brand-copy small {
     display: block;
     max-width: 168px;
@@ -2024,13 +2080,17 @@
   }
 
   .draa-corp-hero h1 {
-    font-size: 39px;
-    line-height: 1.04;
+    font-size: clamp(28px, 7.5vw, 42px);
+    line-height: 1.08;
   }
 
   .draa-corp-actions,
   .draa-corp-actions .draa-corp-button {
     width: 100%;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .draa-corp-trust-row {
@@ -2046,7 +2106,7 @@
   }
 
   .draa-corp-hero-visual {
-    min-height: 390px;
+    min-height: 360px;
   }
 
   .draa-corp-visual-meta {
@@ -2054,13 +2114,13 @@
   }
 
   .draa-corp-visual-orbit {
-    width: 280px;
-    height: 280px;
+    width: min(280px, 80vw);
+    height: min(280px, 80vw);
   }
 
   .draa-corp-visual-brand img {
-    width: 105px;
-    height: 105px;
+    width: 88px;
+    height: 88px;
   }
 
   .capability-one {

@@ -721,27 +721,96 @@
 
 @media (max-width: 640px) {
   .he-hero {
-    padding: 50px 0 36px;
+    padding: 44px 0 32px;
+  }
+  .he-hero h1 {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.16;
+  }
+  .he-hero-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .he-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .he-btn-primary,
+  .he-btn-secondary {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
   }
   .he-hero-metrics {
     flex-direction: column;
     align-items: stretch;
+    gap: 8px;
+  }
+  .he-metric-badge {
+    justify-content: center;
+  }
+  .he-taxonomy-tabs {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  .he-tab-button {
+    scroll-snap-align: start;
+    min-height: 42px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .he-category-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+    gap: 24px;
+  }
+  .he-category-left h3 {
+    font-size: 20px;
+  }
+  .he-category-right {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  .he-quick-metrics {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
   .he-degree-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .he-features-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .he-accreditation-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   .he-cta-banner {
-    padding: 32px 20px;
+    padding: 28px 18px;
+    border-radius: 14px;
   }
   .he-cta-actions {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
   .he-cta-actions a {
     width: 100%;
+    min-height: 46px;
     justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .he-hero {
+    padding: 36px 0 28px;
+  }
+  .he-category-card {
+    padding: 16px 12px;
   }
 }
