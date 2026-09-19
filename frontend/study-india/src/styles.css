@@ -3360,31 +3360,37 @@ img {
 /* ── Enhanced Catalogue & Course Detail Styles ─────────────────────── */
 .catalogue-hero {
   position: relative;
-  isolation: isolate;
   overflow: hidden;
-  padding: 72px 0 0;
-  background: #081b1f;
+  padding: 64px 0 38px;
+  background: #081d22;
   color: #ffffff;
 }
 
 .catalogue-hero-bg {
   position: absolute;
-  z-index: -2;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  animation: subtle-drift 25s ease-in-out infinite;
+  object-position: center 34%;
+  opacity: 0.95;
+  filter: brightness(0.92) contrast(1.1) saturate(1.08);
+  transform: scale(1.02);
+  transition: transform 12s ease-out;
 }
 
 .catalogue-hero-overlay {
   position: absolute;
-  z-index: -1;
   inset: 0;
   background:
-    linear-gradient(110deg, rgba(8, 27, 31, 0.88) 0%, rgba(9, 34, 39, 0.65) 55%, rgba(9, 34, 39, 0.3) 100%),
-    linear-gradient(0deg, rgba(8, 27, 31, 0.8) 0%, transparent 50%);
+    linear-gradient(180deg, 
+      rgba(6, 21, 25, 0.50) 0%, 
+      rgba(7, 26, 30, 0.32) 32%, 
+      rgba(6, 21, 25, 0.58) 72%, 
+      rgba(6, 20, 24, 0.84) 100%
+    );
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 .catalogue-hero h1 {
@@ -3747,8 +3753,8 @@ img {
 .catalogue-hero {
   position: relative;
   overflow: hidden;
-  padding: 60px 0 36px;
-  background: #07191d;
+  padding: 64px 0 38px;
+  background: #081d22;
   color: #ffffff;
 }
 
@@ -3758,15 +3764,26 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.28;
+  object-position: center 34%;
+  opacity: 0.95;
+  filter: brightness(0.92) contrast(1.1) saturate(1.08);
   z-index: 0;
+  transform: scale(1.02);
+  transition: transform 12s ease-out;
 }
 
 .catalogue-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 25, 29, 0.85) 0%, rgba(7, 25, 29, 0.95) 100%);
+  background: 
+    linear-gradient(180deg, 
+      rgba(6, 21, 25, 0.50) 0%, 
+      rgba(7, 26, 30, 0.32) 32%, 
+      rgba(6, 21, 25, 0.58) 72%, 
+      rgba(6, 20, 24, 0.84) 100%
+    );
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   z-index: 1;
 }
 
@@ -3779,17 +3796,19 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(8px);
-  color: #ffb07b;
-  font-size: 11px;
+  background: rgba(6, 24, 28, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffb885;
+  font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 18px;
 }
 
 .sii-flag-dot {
@@ -3798,25 +3817,29 @@ img {
   border-radius: 50%;
   background: linear-gradient(135deg, #FF9933, #FFFFFF, #138808);
   display: inline-block;
+  box-shadow: 0 0 6px rgba(255, 153, 51, 0.6);
 }
 
 .catalogue-hero-title {
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(32px, 4.2vw, 50px);
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.03em;
-  color: #ffffff;
-  max-width: 860px;
+  color: #ffffff !important;
+  max-width: 880px;
   margin: 0 0 14px;
   text-wrap: balance;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85), 0 4px 28px rgba(0, 0, 0, 0.6);
 }
 
 .catalogue-hero-desc {
   max-width: 780px;
-  font-size: 15.5px;
+  font-size: 16px;
   line-height: 1.65;
-  color: #c5dedb;
-  margin: 0 0 24px;
+  color: #f1f8f7 !important;
+  font-weight: 500;
+  margin: 0 0 26px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85), 0 2px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Quick Metrics Strip */
@@ -3834,10 +3857,12 @@ img {
   gap: 8px;
   padding: 8px 16px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(8px);
-  color: #e2efed;
+  background: rgba(6, 24, 28, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  color: #e6f3f1;
   font-size: 12.5px;
 }
 
@@ -3920,10 +3945,13 @@ img {
 /* Currency Switcher */
 .currency-toggle {
   display: inline-flex;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(6, 24, 28, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 10px;
   padding: 4px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .currency-toggle button {
@@ -3941,7 +3969,7 @@ img {
 .currency-toggle button.active {
   background: #e87524;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(232, 117, 36, 0.4);
+  box-shadow: 0 2px 8px rgba(232, 117, 36, 0.45);
 }
 
 .gpa-calc-trigger {
@@ -3950,19 +3978,22 @@ img {
   gap: 7px;
   padding: 11px 18px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(6, 24, 28, 0.65);
   color: #ffffff;
   font-size: 13px;
   font-weight: 750;
   cursor: pointer;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
 }
 
 .gpa-calc-trigger:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(14, 46, 54, 0.85);
   border-color: #ffb07b;
+  transform: translateY(-1px);
 }
 
 /* Discipline Pills Bar */
@@ -3982,8 +4013,11 @@ img {
   white-space: nowrap;
   padding: 7px 16px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(6, 24, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   color: #e2efed;
   font-size: 12px;
   font-weight: 700;
@@ -3992,15 +4026,16 @@ img {
 }
 
 .discipline-pill:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(15, 45, 52, 0.8);
+  border-color: rgba(255, 255, 255, 0.35);
   color: #ffffff;
 }
 
 .discipline-pill.selected {
   background: #e87524;
   color: #ffffff;
-  border-color: #e87524;
-  box-shadow: 0 4px 14px rgba(232, 117, 36, 0.35);
+  border-color: #ff9950;
+  box-shadow: 0 4px 14px rgba(232, 117, 36, 0.45);
 }
 
 /* Dual Tab Switcher */
