@@ -7125,3 +7125,52 @@ img {
 .btn-inst-details:hover {
   text-decoration: underline;
 }
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVENESS FIXES
+   ========================================================================== */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  img, video, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+  .portal-shell {
+    width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .portal-header-inner {
+    gap: 16px !important;
+  }
+  .reasons-cards-stack,
+  .reason-card-block,
+  .reason-card-block.reverse-layout,
+  .reasons-hero-stats-grid,
+  .footer-grid-draa,
+  .course-grid,
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .reason-card-block.reverse-layout .reason-content-col {
+    order: 2 !important;
+  }
+  .reason-card-block.reverse-layout .reason-media-col {
+    order: 1 !important;
+  }
+  h1, .reasons-hero-title, .cta-heading, .section-title {
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.25 !important;
+  }
+  .footer-col-brand, .footer-col-links, .footer-col-newsletter {
+    grid-column: 1 / -1 !important;
+  }
+  .text-only-card {
+    margin-bottom: 16px;
+  }
+}
