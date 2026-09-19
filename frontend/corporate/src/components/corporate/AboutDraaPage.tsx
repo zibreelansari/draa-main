@@ -35,11 +35,11 @@ import ScrollToTop from './ScrollToTop';
 import ScrollTop from './ScrollTop';
 import SEO from './SEO';
 import { services } from './serviceData';
+import { STUDY_INDIA_PORTAL_URL } from '../../config';
 import './DraaCorporateHome.css';
 import './AboutDraaPage.css';
 
-const studyIndiaPortalUrl =
-  import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
+const studyIndiaPortalUrl = STUDY_INDIA_PORTAL_URL;
 
 const pillarsOfIdentity = [
   {

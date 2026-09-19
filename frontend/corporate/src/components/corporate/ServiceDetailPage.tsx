@@ -37,6 +37,7 @@ import ScrollTop from './ScrollTop';
 import SEO from './SEO';
 import { services, servicesBySlug, type ServiceIcon } from './serviceData';
 import LightLineMotionBackground from './LightLineMotionBackground';
+import { STUDY_INDIA_PORTAL_URL } from '../../config';
 import './DraaCorporateHome.css';
 import './ServiceDetailPage.css';
 
@@ -119,16 +120,38 @@ export default function ServiceDetailPage() {
               <p className="sd-hero-summary">{service.summary}</p>
 
               <div className="sd-hero-actions">
-                <Link
-                  className="draa-corp-button draa-corp-button-gold"
-                  style={{ background: service.themeColor, borderColor: service.themeColor }}
-                  to={`/contact?subject=${encodeURIComponent(contactSubject)}`}
-                >
-                  Discuss Your Requirement <ArrowRight size={17} />
-                </Link>
-                <a className="draa-corp-button draa-corp-button-light" href="#scope-and-deliverables">
-                  Explore Deliverables
-                </a>
+                {service.slug === 'study-in-india-guidance' ? (
+                  <>
+                    <a
+                      className="draa-corp-button draa-corp-button-gold"
+                      style={{ background: service.themeColor, borderColor: service.themeColor }}
+                      href={STUDY_INDIA_PORTAL_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Explore Study in India Portal <ArrowRight size={17} />
+                    </a>
+                    <Link
+                      className="draa-corp-button draa-corp-button-light"
+                      to={`/contact?subject=${encodeURIComponent(contactSubject)}`}
+                    >
+                      Contact Advisory Team
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      className="draa-corp-button draa-corp-button-gold"
+                      style={{ background: service.themeColor, borderColor: service.themeColor }}
+                      to={`/contact?subject=${encodeURIComponent(contactSubject)}`}
+                    >
+                      Discuss Your Requirement <ArrowRight size={17} />
+                    </Link>
+                    <a className="draa-corp-button draa-corp-button-light" href="#scope-and-deliverables">
+                      Explore Deliverables
+                    </a>
+                  </>
+                )}
               </div>
 
               {/* Proof Indicators */}

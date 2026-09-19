@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+import { STUDY_INDIA_PORTAL_URL } from '../../config';
 
 export default function DraaCorporateFooter() {
-  const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
+  const studyIndiaPortalUrl = STUDY_INDIA_PORTAL_URL;
   return (
     <footer className="draa-corp-footer">
       <div className="draa-corp-shell draa-corp-footer-main">

@@ -10,7 +10,9 @@ interface NavMenuLink {
   featured?: boolean;
 }
 
-const studyIndiaPortalUrl = import.meta.env.VITE_STUDY_INDIA_URL || 'http://localhost:5175';
+import { STUDY_INDIA_PORTAL_URL } from '../../config';
+
+const studyIndiaPortalUrl = STUDY_INDIA_PORTAL_URL;
 
 const companyLinks: NavMenuLink[] = [
   { label: 'About DRAA', description: 'Purpose, approach and company story', href: '/about-draa' },
