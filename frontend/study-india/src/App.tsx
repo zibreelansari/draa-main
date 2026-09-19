@@ -11,11 +11,11 @@ import RegisterPage from "./pages/RegisterPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import ContactPage from "./pages/ContactPage";
 import ReasonsPage from "./pages/ReasonsPage";
+import ThingsToDoPage from "./pages/ThingsToDoPage";
 
 const contentPaths = [
   "about",
   "why-india",
-  "things-to-do",
   "higher-education",
   "institute-ranking",
   "eligibility",
@@ -35,6 +35,8 @@ export default function App() {
         <Route element={<PortalLayout />}>
           <Route index element={<HomePage />} />
           <Route path="reasons" element={<ReasonsPage />} />
+          <Route path="things-to-do" element={<ThingsToDoPage />} />
+          <Route path="things-to-do-in-india" element={<Navigate to="/things-to-do" replace />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="courses/:slug" element={<CourseDetailPage />} />
           <Route path="notifications" element={<ResourcesPage />} />
