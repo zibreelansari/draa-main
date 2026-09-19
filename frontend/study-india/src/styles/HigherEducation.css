@@ -1,0 +1,747 @@
+/* ══════════════════════════════════════════════════════════════════════
+   INDIAN HIGHER EDUCATION PORTAL STYLES (HigherEducation.css)
+   ══════════════════════════════════════════════════════════════════════ */
+
+.higher-ed-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: var(--ink, #071f20);
+  padding-bottom: 80px;
+}
+
+/* ─── Hero Section (Translucent Glassmorphic) ─── */
+.he-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 68px 0 44px;
+  background: #081d22;
+  color: #ffffff;
+}
+
+.he-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.94;
+  filter: brightness(0.9) contrast(1.1) saturate(1.1);
+  transform: scale(1.02);
+  transition: transform 12s ease-out;
+  z-index: 0;
+}
+
+.he-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 21, 25, 0.52) 0%,
+    rgba(7, 26, 30, 0.35) 35%,
+    rgba(6, 21, 25, 0.62) 75%,
+    rgba(6, 20, 24, 0.88) 100%
+  );
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  z-index: 1;
+}
+
+.he-hero .portal-shell {
+  position: relative;
+  z-index: 2;
+}
+
+.he-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  background: rgba(6, 24, 28, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  color: #ffb885;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.he-hero-title {
+  font-size: clamp(32px, 4.4vw, 52px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: #ffffff !important;
+  max-width: 900px;
+  margin: 0 0 16px;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85), 0 4px 28px rgba(0, 0, 0, 0.6);
+}
+
+.he-hero-desc {
+  max-width: 820px;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #f1f8f7 !important;
+  font-weight: 500;
+  margin: 0 0 28px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85), 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Quick Metrics Row */
+.he-hero-metrics {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.he-metric-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgba(6, 24, 28, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  color: #e6f3f1;
+  font-size: 13px;
+}
+
+.he-metric-chip strong {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.he-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.he-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 10px;
+  background: var(--orange, #e87524);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(232, 117, 36, 0.4);
+  transition: all 0.2s ease;
+}
+
+.he-btn-primary:hover {
+  background: #f18233;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232, 117, 36, 0.5);
+  color: #ffffff;
+}
+
+.he-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.he-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffb885;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ─── Global Section Shells ─── */
+.he-section {
+  padding: 64px 0;
+}
+
+.he-section-alt {
+  background: #ffffff;
+  border-top: 1px solid rgba(11, 101, 93, 0.08);
+  border-bottom: 1px solid rgba(11, 101, 93, 0.08);
+}
+
+.he-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.he-section-badge {
+  display: inline-block;
+  color: var(--orange, #e87524);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.he-section-header h2 {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 800;
+  color: var(--ink, #071f20);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+.he-section-header p {
+  color: var(--muted, #5e7379);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── 1. Taxonomy / Institutional Tiers Section ─── */
+.he-taxonomy-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px;
+  margin-bottom: 28px;
+  background: #eef4f3;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 101, 93, 0.1);
+  scrollbar-width: none;
+}
+
+.he-taxonomy-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.he-tab-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: #557277;
+  font-size: 13.5px;
+  font-weight: 750;
+  border-radius: 9px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.he-tab-button:hover {
+  color: var(--ink, #071f20);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.he-tab-button.active {
+  background: #ffffff;
+  color: var(--teal, #0b655d);
+  box-shadow: 0 4px 14px rgba(11, 101, 93, 0.12);
+}
+
+.he-category-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(11, 101, 93, 0.12);
+  box-shadow: 0 12px 36px rgba(7, 31, 32, 0.06);
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: start;
+}
+
+.he-category-left h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink, #071f20);
+  margin: 0 0 6px;
+}
+
+.he-category-authority {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--orange, #e87524);
+  font-size: 12.5px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.he-category-left p {
+  color: #4a6369;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.he-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.he-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.he-feature-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eaf5f3;
+  color: var(--teal, #0b655d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.he-feature-text strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink, #071f20);
+}
+
+.he-feature-text span {
+  font-size: 12.5px;
+  color: var(--muted, #5e7379);
+}
+
+.he-examples-strip {
+  background: #f8fafc;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border-left: 4px solid var(--teal, #0b655d);
+}
+
+.he-examples-strip strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal, #0b655d);
+  margin-bottom: 4px;
+}
+
+.he-examples-strip p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #334e54;
+  font-weight: 600;
+}
+
+/* Category Sidebar Card */
+.he-category-sidebar {
+  background: linear-gradient(145deg, #09393c 0%, #062325 100%);
+  color: #ffffff;
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(6, 35, 37, 0.25);
+}
+
+.he-category-sidebar h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 16px;
+  color: #ffb885;
+  letter-spacing: 0.04em;
+}
+
+.he-sidebar-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.he-sidebar-fact:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.he-sidebar-fact span {
+  font-size: 11.5px;
+  color: #a7cbca;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.he-sidebar-fact strong {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* ─── 2. NEP 2020 Degree Pathways ─── */
+.he-degree-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.he-degree-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(11, 101, 93, 0.12);
+  padding: 26px 22px;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 20px rgba(7, 31, 32, 0.04);
+}
+
+.he-degree-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(11, 101, 93, 0.12);
+  border-color: var(--teal, #0b655d);
+}
+
+.he-degree-step {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #eef7f5;
+  color: var(--teal, #0b655d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.he-degree-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink, #071f20);
+  margin: 0 0 6px;
+}
+
+.he-degree-credential {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #fef4ec;
+  color: #b94b07;
+  font-size: 11.5px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.he-degree-card p {
+  color: #556e74;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.he-degree-credits {
+  font-size: 12px;
+  color: var(--teal, #0b655d);
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ─── 3. Accreditation & Washington Accord ─── */
+.he-accreditation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.he-accred-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(11, 101, 93, 0.1);
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(7, 31, 32, 0.05);
+  transition: all 0.2s ease;
+}
+
+.he-accred-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(232, 117, 36, 0.4);
+  box-shadow: 0 12px 30px rgba(232, 117, 36, 0.1);
+}
+
+.he-accred-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.he-accred-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fdf3eb;
+  color: var(--orange, #e87524);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.he-accred-header h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink, #071f20);
+  margin: 0;
+}
+
+.he-accred-header span {
+  font-size: 12px;
+  color: var(--muted, #5e7379);
+  display: block;
+}
+
+.he-accred-card p {
+  color: #4a6369;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+.he-accred-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.he-accred-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #2c4950;
+  line-height: 1.45;
+}
+
+.he-accred-points li svg {
+  color: var(--teal, #0b655d);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── 4. Comparison Table Wrap ─── */
+.he-table-container {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(11, 101, 93, 0.12);
+  box-shadow: 0 8px 24px rgba(7, 31, 32, 0.05);
+  background: #ffffff;
+}
+
+.he-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.he-table th {
+  background: #093a3c;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.he-table td {
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: #314b51;
+  border-bottom: 1px solid #eef3f2;
+  vertical-align: top;
+}
+
+.he-table tr:hover td {
+  background: #fbfdfd;
+}
+
+.he-table tr:last-child td {
+  border-bottom: none;
+}
+
+.he-table strong {
+  color: var(--ink, #071f20);
+}
+
+/* ─── 5. FAQ Accordion ─── */
+.he-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.he-faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 101, 93, 0.12);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.he-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 750;
+  color: var(--ink, #071f20);
+}
+
+.he-faq-question:hover {
+  color: var(--teal, #0b655d);
+}
+
+.he-faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #eef7f5;
+  color: var(--teal, #0b655d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.he-faq-item.open .he-faq-icon {
+  transform: rotate(180deg);
+  background: var(--orange, #e87524);
+  color: #ffffff;
+}
+
+.he-faq-answer {
+  padding: 0 24px 22px;
+  color: #4a6369;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ─── 6. Final CTA Section ─── */
+.he-cta-banner {
+  margin-top: 60px;
+  padding: 48px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #093f3c 0%, #072528 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 16px 40px rgba(6, 35, 37, 0.22);
+}
+
+.he-cta-content h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.he-cta-content p {
+  color: #c9e3e0;
+  font-size: 15.5px;
+  margin: 0;
+  max-width: 600px;
+}
+
+.he-cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* ─── Responsive Media Queries ─── */
+@media (max-width: 1024px) {
+  .he-category-card {
+    grid-template-columns: 1fr;
+  }
+  .he-degree-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .he-accreditation-grid {
+    grid-template-columns: 1fr;
+  }
+  .he-cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .he-cta-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .he-hero {
+    padding: 50px 0 36px;
+  }
+  .he-hero-metrics {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .he-degree-grid {
+    grid-template-columns: 1fr;
+  }
+  .he-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .he-cta-banner {
+    padding: 32px 20px;
+  }
+  .he-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .he-cta-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+}

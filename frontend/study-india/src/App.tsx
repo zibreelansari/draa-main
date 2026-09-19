@@ -12,14 +12,14 @@ import ResourcesPage from "./pages/ResourcesPage";
 import ContactPage from "./pages/ContactPage";
 import ReasonsPage from "./pages/ReasonsPage";
 import ThingsToDoPage from "./pages/ThingsToDoPage";
+import HigherEducationPage from "./pages/HigherEducationPage";
+import ScholarshipsPage from "./pages/ScholarshipsPage";
 
 const contentPaths = [
   "about",
   "why-india",
-  "higher-education",
   "institute-ranking",
   "eligibility",
-  "scholarships",
   "how-to-apply",
   "visa-frro",
   "local-support",
@@ -37,6 +37,9 @@ export default function App() {
           <Route path="reasons" element={<ReasonsPage />} />
           <Route path="things-to-do" element={<ThingsToDoPage />} />
           <Route path="things-to-do-in-india" element={<Navigate to="/things-to-do" replace />} />
+          <Route path="higher-education" element={<HigherEducationPage />} />
+          <Route path="indian-higher-education" element={<Navigate to="/higher-education" replace />} />
+          <Route path="scholarships" element={<ScholarshipsPage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="courses/:slug" element={<CourseDetailPage />} />
           <Route path="notifications" element={<ResourcesPage />} />
