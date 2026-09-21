@@ -242,10 +242,10 @@ export default function RegisterPage() {
       <div className="portal-shell" style={{ maxWidth: "1200px" }}>
         
         {/* Main Split Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "44px", alignItems: "start" }}>
+        <div className="auth-split-layout">
           
           {/* Left Column: Prestigious Government Authority & Showcase */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <div className="auth-showcase-column" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             
             {/* Government Authority Badge */}
             <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", borderRadius: "9999px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#065f46", fontSize: "12px", fontWeight: "750", width: "max-content" }}>
@@ -308,7 +308,7 @@ export default function RegisterPage() {
 
             {/* Verified Student Social Proof Quote */}
             <div style={{ position: "relative", overflow: "hidden", isolation: "isolate", padding: "20px 22px", borderRadius: "14px", color: "#ffffff", boxShadow: "0 10px 25px rgba(9, 63, 60, 0.2)" }}>
-              <img src="/media/campus-cultural.jpg" alt="Campus cultural life" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -2 }} />
+              <img src="/media/campus-cultural.jpg" alt="Campus cultural life" className="content-hero-bg" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -2 }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(9, 63, 60, 0.94) 0%, rgba(15, 44, 46, 0.88) 100%)", zIndex: -1 }} />
               <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#ffb07b", fontSize: "11.5px", fontWeight: "800", marginBottom: "8px" }}>
                 <Star size={13} fill="#ffb07b" /> Verified International Scholar
@@ -345,7 +345,7 @@ export default function RegisterPage() {
           </div>
 
           {/* Right Column: World-Class Precision Form Card */}
-          <div className="premium-form-card" style={{ padding: "32px 34px" }}>
+          <div className="auth-form-column premium-form-card">
             
             {/* Segmented Role Switcher */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", padding: "4px", borderRadius: "10px", background: "#f1f5f9", marginBottom: "22px" }}>
@@ -451,7 +451,7 @@ export default function RegisterPage() {
                   </div>
 
                   {/* Name fields */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                  <div className="form-two-col">
                     <div className="premium-input-group">
                       <label>First Name <span className="required-star">*</span></label>
                       <div className="input-with-icon">
@@ -483,7 +483,7 @@ export default function RegisterPage() {
                   </div>
 
                   {/* Country & Phone */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1.15fr 0.85fr", gap: "12px" }}>
+                  <div className="form-split-phone">
                     <div className="premium-input-group">
                       <label>Country of Citizenship <span className="required-star">*</span></label>
                       <CountrySelector value={selectedCountry} onChange={handleCountryChange} />
@@ -512,7 +512,7 @@ export default function RegisterPage() {
                   </div>
 
                   {/* Academic Preferences */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                  <div className="form-two-col">
                     <div className="premium-input-group">
                       <label>Target Degree Level</label>
                       <div className="input-with-icon">
@@ -589,7 +589,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                  <div className="form-two-col">
                     <div className="premium-input-group">
                       <label>Nodal Officer Name <span className="required-star">*</span></label>
                       <div className="input-with-icon">
@@ -617,7 +617,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                  <div className="form-two-col">
                     <div className="premium-input-group">
                       <label>City in India <span className="required-star">*</span></label>
                       <div className="input-with-icon">
@@ -643,7 +643,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "12px" }}>
+                  <div className="form-split-phone">
                     <div className="premium-input-group">
                       <label>Website URL</label>
                       <input

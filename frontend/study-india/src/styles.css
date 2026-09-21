@@ -680,51 +680,144 @@ img {
   background: rgba(0, 0, 0, 0.05);
 }
 
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(8, 27, 31, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
 .mobile-nav {
-  display: grid;
-  gap: 5px;
-  padding: 14px 18px 24px;
-  border-top: 1px solid var(--border-subtle);
+  position: fixed;
+  top: 62px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 20px 48px;
   background: #ffffff;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.14);
-  max-height: calc(100vh - 66px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  animation: slideDownMobile 0.24s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mobile-nav a {
+@keyframes slideDownMobile {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-btn-apply {
   display: flex;
   align-items: center;
-  min-height: 44px;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
   padding: 10px 14px;
-  color: var(--ink-700);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
   border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
+  background: linear-gradient(135deg, #e87524, #ea580c);
+  color: #ffffff !important;
+  font-weight: 750;
+  font-size: 13.5px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(232, 117, 36, 0.35);
 }
 
-.mobile-nav a:hover, .mobile-nav a.active {
-  color: var(--teal-700);
-  background: var(--teal-50);
+.mobile-btn-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: #f0fdfa;
+  border: 1.5px solid var(--teal-600);
+  color: var(--teal-800) !important;
+  font-weight: 750;
+  font-size: 13.5px;
+  text-decoration: none;
 }
 
-.mobile-nav strong {
-  margin: 14px 10px 4px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border-subtle);
-  color: var(--orange-600);
+.mobile-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-group-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--orange-600);
+  margin: 6px 4px 4px;
 }
 
-.mobile-nav strong:first-of-type {
-  border-top: none;
-  padding-top: 0;
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 11px 14px;
+  color: var(--ink-800);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:active, .mobile-nav-link.active {
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border-color: var(--teal-200);
+}
+
+.mobile-sub-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 4px;
+  padding: 2px 4px;
+}
+
+.mobile-sub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+}
+
+.mobile-sub-pill:active {
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 /* ── World-Class Portal Footer ────────────────────────────────────── */
@@ -3649,6 +3742,17 @@ img {
   .events-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .universities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .campus-life-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+    gap: 16px;
+    margin-top: 30px;
+  }
 }
 
 /* iOS Safari 16px form field zoom prevention */
@@ -3733,25 +3837,103 @@ img {
     gap: 10px;
   }
   .stats-band {
-    margin-top: -36px;
+    margin-top: -32px;
     position: relative;
     z-index: 5;
+    padding-bottom: 24px;
   }
   .stats-band-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
   .stat-card {
-    padding: 16px 12px;
+    padding: 13px 10px;
+    gap: 10px;
+    border-radius: 12px;
+    align-items: center;
+  }
+  .stat-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .stat-card-icon svg {
+    width: 20px;
+    height: 20px;
   }
   .stat-card-number {
-    font-size: 22px;
+    font-size: 19px;
+    line-height: 1.1;
   }
   .stat-card-label {
-    font-size: 11.5px;
+    font-size: 11px;
+    line-height: 1.25;
+    margin-top: 2px;
   }
   .disciplines-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .discipline-card-media {
+    height: 170px;
+  }
+  .universities-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .university-image-wrap {
+    height: 180px;
+  }
+  .campus-life-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .campus-life-card.col-span-2,
+  .campus-life-card.row-span-2 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .scholarship-banner-section {
+    padding: 36px 0;
+  }
+  .scholarship-banner {
+    min-height: auto;
+    border-radius: 16px;
+  }
+  .scholarship-banner-content {
+    padding: 26px 18px;
+    max-width: 100%;
+  }
+  .scholarship-banner-content h2 {
+    font-size: clamp(23px, 6.5vw, 30px);
+    margin-bottom: 10px;
+    line-height: 1.18;
+  }
+  .scholarship-banner-content p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .scholarship-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .scholarship-stat strong {
+    font-size: 19px;
+  }
+  .scholarship-stat span {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .scholarship-btn {
+    width: 100%;
+    justify-content: center;
   }
   .reference-steps {
     grid-template-columns: 1fr;
@@ -3761,6 +3943,10 @@ img {
   }
   .events-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .event-card-thumb {
+    height: 170px;
   }
   .solid-button, .outline-button {
     width: 100%;
@@ -5869,6 +6055,42 @@ img {
   .success-ref-card {
     grid-template-columns: 1fr;
   }
+  .catalogue-actions-cluster {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .currency-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .currency-toggle button {
+    flex: 1;
+    padding: 8px 6px;
+    text-align: center;
+  }
+  .gpa-calc-trigger {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 12.5px;
+  }
+  .catalogue-switch-tabs {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+  }
+  .catalogue-switch-tabs .tab-btn {
+    flex: 1;
+    min-height: 46px;
+    padding: 10px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    justify-content: center;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -7135,17 +7357,46 @@ img {
     width: 100% !important;
   }
   img, video, iframe {
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: cover;
+    max-width: 100%;
+  }
+  /* Absolute background & cover images */
+  .reference-hero > img,
+  .content-hero-bg,
+  .scholarship-banner-bg,
+  .course-detail-hero > img,
+  .course-detail-shade,
+  .featured-video > img,
+  .featured-blog > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .portal-brand img {
+    width: 32px !important;
+    height: 32px !important;
+    object-fit: contain !important;
+  }
+  .discipline-card-media img,
+  .university-image-wrap img,
+  .event-card-thumb img,
+  .media-frame-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .testimonial-avatar-img {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
   }
   .portal-shell {
     width: 100% !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
   .portal-header-inner {
-    gap: 16px !important;
+    gap: 12px !important;
   }
   .reasons-cards-stack,
   .reason-card-block,
@@ -7155,22 +7406,82 @@ img {
   .course-grid,
   .dashboard-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 24px !important;
   }
-  .reason-card-block.reverse-layout .reason-content-col {
+  .reason-card-block.reverse-layout .reason-content-col,
+  .reason-card-block .reason-content-col {
     order: 2 !important;
   }
-  .reason-card-block.reverse-layout .reason-media-col {
+  .reason-card-block.reverse-layout .reason-media-col,
+  .reason-card-block .reason-media-col {
     order: 1 !important;
   }
   h1, .reasons-hero-title, .cta-heading, .section-title {
-    font-size: clamp(28px, 8vw, 38px) !important;
-    line-height: 1.25 !important;
+    font-size: clamp(26px, 7vw, 36px) !important;
+    line-height: 1.2 !important;
   }
   .footer-col-brand, .footer-col-links, .footer-col-newsletter {
     grid-column: 1 / -1 !important;
   }
   .text-only-card {
     margin-bottom: 16px;
+  }
+}
+
+/* ── Auth & Registration Responsive Utilities ── */
+.auth-split-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.form-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-split-phone {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .auth-split-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .auth-showcase-column {
+    order: 2;
+  }
+  .auth-form-column {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-two-col,
+  .form-split-phone {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .premium-form-card {
+    padding: 22px 18px !important;
+    border-radius: 14px;
+  }
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }

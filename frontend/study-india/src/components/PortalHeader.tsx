@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BookOpen, ChevronDown, LogIn, Menu, X } from "lucide-react";
+import { BookOpen, Building2, ChevronDown, ChevronRight, Compass, GraduationCap, LogIn, Menu, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 import { useLanguage } from "../context/LanguageContext";
@@ -37,6 +37,18 @@ export default function PortalHeader() {
     setMobileOpen(false);
     setActiveMenu(null);
   }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   // Click outside to close active dropdown
   useEffect(() => {
@@ -247,40 +259,128 @@ export default function PortalHeader() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Backdrop & Drawer Nav */}
       {mobileOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          <NavLink to="/" onClick={() => setMobileOpen(false)}>
-            Home
-          </NavLink>
-          {[...chooseIndia, ...planStudies].map(([text, href]) => (
-            <NavLink key={href} to={href} onClick={() => setMobileOpen(false)}>
-              {text}
-            </NavLink>
-          ))}
-          <strong>Free Resources</strong>
-          {resourceNav.map(([text, href]) => (
-            <NavLink key={href} to={href} onClick={() => setMobileOpen(false)}>
-              {text}
-            </NavLink>
-          ))}
-          <strong>Accounts</strong>
-          <NavLink to="/register/student" onClick={() => setMobileOpen(false)}>
-            Student Registration
-          </NavLink>
-          <NavLink to="/register/institute" onClick={() => setMobileOpen(false)}>
-            Institute Registration
-          </NavLink>
-          <NavLink to="/login/student" onClick={() => setMobileOpen(false)}>
-            Student Login
-          </NavLink>
-          <NavLink to="/login/institute" onClick={() => setMobileOpen(false)}>
-            Institute Login
-          </NavLink>
-          <NavLink to="/login/admin" onClick={() => setMobileOpen(false)}>
-            Admin Login
-          </NavLink>
-        </nav>
+        <>
+          <div
+            className="mobile-nav-backdrop"
+            onClick={() => setMobileOpen(false)}
+            aria-hidden="true"
+          />
+          <nav className="mobile-nav" aria-label="Mobile navigation">
+            {/* Primary Action Buttons */}
+            <div className="mobile-nav-actions">
+              <Link
+                to="/register/student"
+                className="mobile-btn-apply"
+                onClick={() => setMobileOpen(false)}
+              >
+                <GraduationCap size={16} />
+                <span>Student Apply</span>
+              </Link>
+              <Link
+                to="/login/student"
+                className="mobile-btn-login"
+                onClick={() => setMobileOpen(false)}
+              >
+                <LogIn size={15} />
+                <span>Student Login</span>
+              </Link>
+            </div>
+
+            {/* Choose India */}
+            <div className="mobile-nav-group">
+              <span className="mobile-group-title">
+                <Compass size={13} /> {t("nav.chooseIndia", "Choose India")}
+              </span>
+              <NavLink
+                to="/"
+                className="mobile-nav-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                <span>Gateway Home</span>
+                <ChevronRight size={14} color="#94a3b8" />
+              </NavLink>
+              {chooseIndia.map(([text, href]) => (
+                <NavLink
+                  key={href}
+                  to={href}
+                  className="mobile-nav-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span>{text}</span>
+                  <ChevronRight size={14} color="#94a3b8" />
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Plan Your Studies */}
+            <div className="mobile-nav-group">
+              <span className="mobile-group-title">
+                <GraduationCap size={13} /> {t("nav.planStudies", "Plan your Studies")}
+              </span>
+              {planStudies.map(([text, href]) => (
+                <NavLink
+                  key={href}
+                  to={href}
+                  className="mobile-nav-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span>{text}</span>
+                  <ChevronRight size={14} color="#94a3b8" />
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Free Resources */}
+            <div className="mobile-nav-group">
+              <span className="mobile-group-title">
+                <BookOpen size={13} /> {t("nav.freeResources", "Free Resources")}
+              </span>
+              {resourceNav.map(([text, href]) => (
+                <NavLink
+                  key={href}
+                  to={href}
+                  className="mobile-nav-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span>{text}</span>
+                  <ChevronRight size={14} color="#94a3b8" />
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Institutional & Admin Access */}
+            <div className="mobile-nav-group">
+              <span className="mobile-group-title">
+                <Building2 size={13} /> Institutional & Governance Access
+              </span>
+              <div className="mobile-sub-pill-row">
+                <Link
+                  to="/register/institute"
+                  className="mobile-sub-pill"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Institute Reg
+                </Link>
+                <Link
+                  to="/login/institute"
+                  className="mobile-sub-pill"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Institute Desk
+                </Link>
+                <Link
+                  to="/login/admin"
+                  className="mobile-sub-pill"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Admin Operations
+                </Link>
+              </div>
+            </div>
+          </nav>
+        </>
       )}
     </header>
   );

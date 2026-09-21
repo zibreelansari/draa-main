@@ -661,11 +661,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Floating Apply Button */}
-      <Link className="floating-apply" to="/register/student">
-        <Plane size={17} /> {t("hero.apply", "Apply Now")}
-      </Link>
     </div>
   );
 }

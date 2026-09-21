@@ -52,6 +52,7 @@ export default function ContactPage() {
         <img
           src="/media/guidance-contact.jpg"
           alt="New Delhi education and administrative hub"
+          className="content-hero-bg"
           style={{
             position: "absolute",
             zIndex: -2,
@@ -86,7 +87,7 @@ export default function ContactPage() {
 
       {/* Main Grid */}
       <div className="portal-shell" style={{ maxWidth: "1180px", marginTop: "36px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "minmax(300px, 380px) 1fr", gap: "28px" }}>
+        <div className="contact-main-grid">
           
           {/* Left: Contact Info & Emergency Hotline */}
           <div style={{ display: "grid", gap: "16px", alignContent: "start" }}>
@@ -221,7 +222,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                <div className="form-two-col">
                   <div className="premium-input-group">
                     <label>Full Name <span className="required-star">*</span></label>
                     <div className="input-with-icon">
@@ -251,7 +252,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                <div className="form-two-col">
                   <div className="premium-input-group">
                     <label>Country of Residence <span className="required-star">*</span></label>
                     <div className="input-with-icon">
@@ -279,7 +280,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                <div className="form-two-col">
                   <div className="premium-input-group">
                     <label>Target Degree Level</label>
                     <div className="input-with-icon">
