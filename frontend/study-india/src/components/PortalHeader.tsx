@@ -1,8 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BookOpen, Building2, ChevronDown, ChevronRight, Compass, GraduationCap, LogIn, Menu, X } from "lucide-react";
+import {
+  BookOpen,
+  Building2,
+  Check,
+  ChevronDown,
+  ChevronRight,
+  Compass,
+  Globe2,
+  GraduationCap,
+  LogIn,
+  Menu,
+  X,
+} from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
-import { useLanguage } from "../context/LanguageContext";
+import { LANGUAGES, useLanguage } from "../context/LanguageContext";
 
 const chooseIndia = [
   ["About DRAA Study in India", "/about"],
@@ -25,7 +37,7 @@ const resourceNav = [
 ];
 
 export default function PortalHeader() {
-  const { t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const closeTimeoutRef = useRef<number | null>(null);
@@ -92,174 +104,176 @@ export default function PortalHeader() {
   };
 
   return (
-    <header className="portal-header" ref={headerRef}>
-      <div className="portal-shell portal-header-inner">
-        {/* Brand */}
-        <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
-          <img src="/media/draa-mark.png" alt="DRAA Logo" />
-          <span>
-            <strong>DRAA STUDY IN INDIA</strong>
-            <small>LEARN &middot; DISCOVER &middot; GROW</small>
-          </span>
-        </Link>
+    <>
+      <header className={`portal-header ${mobileOpen ? "is-nav-open" : ""}`} ref={headerRef}>
+        <div className="portal-shell portal-header-inner">
+          {/* Brand */}
+          <Link className="portal-brand" to="/" aria-label="DRAA Study in India home">
+            <img src="/media/draa-mark.png" alt="DRAA Logo" />
+            <span>
+              <strong>DRAA STUDY IN INDIA</strong>
+              <small>LEARN &middot; DISCOVER &middot; GROW</small>
+            </span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="desktop-nav" aria-label="Main navigation">
-          {/* Choose India */}
-          <div
-            className={`nav-group ${activeMenu === "choose-india" ? "open" : ""}`}
-            onMouseEnter={() => handleMouseEnter("choose-india")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              type="button"
-              className="nav-group-trigger"
-              onClick={() => toggleMenu("choose-india")}
-              aria-expanded={activeMenu === "choose-india"}
+          {/* Desktop Navigation */}
+          <nav className="desktop-nav" aria-label="Main navigation">
+            {/* Choose India */}
+            <div
+              className={`nav-group ${activeMenu === "choose-india" ? "open" : ""}`}
+              onMouseEnter={() => handleMouseEnter("choose-india")}
+              onMouseLeave={handleMouseLeave}
             >
-              {t("nav.chooseIndia", "Choose India")} <ChevronDown size={15} className="menu-chevron" />
-            </button>
-            {activeMenu === "choose-india" && (
-              <div className="nav-dropdown animate-dropdown">
-                {chooseIndia.map(([text, href]) => (
-                  <Link key={href} to={href} onClick={() => setActiveMenu(null)}>
-                    {text}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+              <button
+                type="button"
+                className="nav-group-trigger"
+                onClick={() => toggleMenu("choose-india")}
+                aria-expanded={activeMenu === "choose-india"}
+              >
+                {t("nav.chooseIndia", "Choose India")} <ChevronDown size={15} className="menu-chevron" />
+              </button>
+              {activeMenu === "choose-india" && (
+                <div className="nav-dropdown animate-dropdown">
+                  {chooseIndia.map(([text, href]) => (
+                    <Link key={href} to={href} onClick={() => setActiveMenu(null)}>
+                      {text}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-          {/* Plan your Studies */}
-          <div
-            className={`nav-group ${activeMenu === "plan-studies" ? "open" : ""}`}
-            onMouseEnter={() => handleMouseEnter("plan-studies")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              type="button"
-              className="nav-group-trigger"
-              onClick={() => toggleMenu("plan-studies")}
-              aria-expanded={activeMenu === "plan-studies"}
+            {/* Plan your Studies */}
+            <div
+              className={`nav-group ${activeMenu === "plan-studies" ? "open" : ""}`}
+              onMouseEnter={() => handleMouseEnter("plan-studies")}
+              onMouseLeave={handleMouseLeave}
             >
-              {t("nav.planStudies", "Plan your Studies")} <ChevronDown size={15} className="menu-chevron" />
-            </button>
-            {activeMenu === "plan-studies" && (
-              <div className="nav-dropdown animate-dropdown">
-                {planStudies.map(([text, href]) => (
-                  <Link key={href} to={href} onClick={() => setActiveMenu(null)}>
-                    {text}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+              <button
+                type="button"
+                className="nav-group-trigger"
+                onClick={() => toggleMenu("plan-studies")}
+                aria-expanded={activeMenu === "plan-studies"}
+              >
+                {t("nav.planStudies", "Plan your Studies")} <ChevronDown size={15} className="menu-chevron" />
+              </button>
+              {activeMenu === "plan-studies" && (
+                <div className="nav-dropdown animate-dropdown">
+                  {planStudies.map(([text, href]) => (
+                    <Link key={href} to={href} onClick={() => setActiveMenu(null)}>
+                      {text}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-          {/* Free Resources */}
-          <div
-            className={`nav-group ${activeMenu === "free-resources" ? "open" : ""}`}
-            onMouseEnter={() => handleMouseEnter("free-resources")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              type="button"
-              className="nav-group-trigger"
-              onClick={() => setActiveMenu("free-resources")}
-              aria-expanded={activeMenu === "free-resources"}
+            {/* Free Resources */}
+            <div
+              className={`nav-group ${activeMenu === "free-resources" ? "open" : ""}`}
+              onMouseEnter={() => handleMouseEnter("free-resources")}
+              onMouseLeave={handleMouseLeave}
             >
-              <BookOpen size={15} aria-hidden="true" />
-              {t("nav.freeResources", "Free Resources")} <ChevronDown size={15} className="menu-chevron" />
-            </button>
-            {activeMenu === "free-resources" && (
-              <div className="nav-dropdown animate-dropdown">
-                {resourceNav.map(([text, href]) => (
-                  <Link key={href} to={href} onClick={() => setActiveMenu(null)}>
-                    {text}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        </nav>
+              <button
+                type="button"
+                className="nav-group-trigger"
+                onClick={() => setActiveMenu("free-resources")}
+                aria-expanded={activeMenu === "free-resources"}
+              >
+                <BookOpen size={15} aria-hidden="true" />
+                {t("nav.freeResources", "Free Resources")} <ChevronDown size={15} className="menu-chevron" />
+              </button>
+              {activeMenu === "free-resources" && (
+                <div className="nav-dropdown animate-dropdown">
+                  {resourceNav.map(([text, href]) => (
+                    <Link key={href} to={href} onClick={() => setActiveMenu(null)}>
+                      {text}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </nav>
 
-        {/* Right Action Dropdowns: Language Switcher, Register & Log in */}
-        <div className="account-actions">
-          <LanguageSelector />
-
-          {/* Register Dropdown */}
-          <div
-            className={`account-menu register-menu ${activeMenu === "register" ? "open" : ""}`}
-            onMouseEnter={() => handleMouseEnter("register")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              type="button"
-              className="account-menu-trigger"
-              onClick={() => toggleMenu("register")}
-              aria-expanded={activeMenu === "register"}
-            >
-              {t("nav.register", "Register")} <ChevronDown size={15} className="menu-chevron" />
-            </button>
-            {activeMenu === "register" && (
-              <div className="account-dropdown animate-dropdown">
-                <Link to="/register/student" onClick={() => setActiveMenu(null)}>
-                  {t("nav.studentReg", "Student Registration")}
-                </Link>
-                <Link to="/register/institute" onClick={() => setActiveMenu(null)}>
-                  {t("nav.instituteReg", "Institute Registration")}
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Log in Dropdown */}
-          <div
-            className={`account-menu login-menu ${activeMenu === "login" ? "open" : ""}`}
-            onMouseEnter={() => handleMouseEnter("login")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              type="button"
-              className="account-menu-trigger"
-              onClick={() => toggleMenu("login")}
-              aria-expanded={activeMenu === "login"}
-            >
-              <LogIn size={15} />
-              {t("nav.login", "Log in")} <ChevronDown size={14} className="menu-chevron" />
-            </button>
-            {activeMenu === "login" && (
-              <div className="account-dropdown animate-dropdown">
-                <Link to="/login/student" onClick={() => setActiveMenu(null)}>
-                  {t("nav.studentLogin", "Student Login")}
-                </Link>
-                <Link to="/login/institute" onClick={() => setActiveMenu(null)}>
-                  {t("nav.instituteLogin", "Institute Login")}
-                </Link>
-                <Link to="/login/admin" onClick={() => setActiveMenu(null)}>
-                  {t("nav.adminLogin", "Admin Login")}
-                </Link>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="mobile-actions-wrapper">
-          <div className="mobile-lang-wrapper">
+          {/* Right Action Dropdowns: Language Switcher, Register & Log in */}
+          <div className="account-actions">
             <LanguageSelector />
-          </div>
-          <button
-            className="mobile-toggle"
-            aria-label="Toggle navigation"
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
 
-      {/* Mobile Backdrop & Drawer Nav */}
+            {/* Register Dropdown */}
+            <div
+              className={`account-menu register-menu ${activeMenu === "register" ? "open" : ""}`}
+              onMouseEnter={() => handleMouseEnter("register")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                className="account-menu-trigger"
+                onClick={() => toggleMenu("register")}
+                aria-expanded={activeMenu === "register"}
+              >
+                {t("nav.register", "Register")} <ChevronDown size={15} className="menu-chevron" />
+              </button>
+              {activeMenu === "register" && (
+                <div className="account-dropdown animate-dropdown">
+                  <Link to="/register/student" onClick={() => setActiveMenu(null)}>
+                    {t("nav.studentReg", "Student Registration")}
+                  </Link>
+                  <Link to="/register/institute" onClick={() => setActiveMenu(null)}>
+                    {t("nav.instituteReg", "Institute Registration")}
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Log in Dropdown */}
+            <div
+              className={`account-menu login-menu ${activeMenu === "login" ? "open" : ""}`}
+              onMouseEnter={() => handleMouseEnter("login")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                className="account-menu-trigger"
+                onClick={() => toggleMenu("login")}
+                aria-expanded={activeMenu === "login"}
+              >
+                <LogIn size={15} />
+                {t("nav.login", "Log in")} <ChevronDown size={14} className="menu-chevron" />
+              </button>
+              {activeMenu === "login" && (
+                <div className="account-dropdown animate-dropdown">
+                  <Link to="/login/student" onClick={() => setActiveMenu(null)}>
+                    {t("nav.studentLogin", "Student Login")}
+                  </Link>
+                  <Link to="/login/institute" onClick={() => setActiveMenu(null)}>
+                    {t("nav.instituteLogin", "Institute Login")}
+                  </Link>
+                  <Link to="/login/admin" onClick={() => setActiveMenu(null)}>
+                    {t("nav.adminLogin", "Admin Login")}
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Mobile Actions: Compact Language Switcher + Menu Toggle */}
+          <div className="mobile-actions-wrapper">
+            <div className="mobile-lang-wrapper">
+              <LanguageSelector compact />
+            </div>
+            <button
+              className={`mobile-toggle ${mobileOpen ? "open" : ""}`}
+              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Backdrop & Drawer Nav (rendered outside header to avoid backdrop-filter containing block trap) */}
       {mobileOpen && (
         <>
           <div
@@ -350,6 +364,37 @@ export default function PortalHeader() {
               ))}
             </div>
 
+            {/* Dedicated Mobile Language Switcher Section */}
+            <div className="mobile-nav-group mobile-nav-lang-section">
+              <span className="mobile-group-title">
+                <Globe2 size={13} /> Choose Language / भाषा / اللغة
+              </span>
+              <div className="mobile-lang-grid">
+                {LANGUAGES.map((lang) => {
+                  const isSelected = lang.code === language;
+                  return (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      className={`mobile-lang-pill ${isSelected ? "active" : ""}`}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setMobileOpen(false);
+                      }}
+                    >
+                      <img
+                        src={`https://flagcdn.com/w40/${lang.flagIso}.png`}
+                        alt=""
+                        className="lang-flag-img"
+                      />
+                      <span>{lang.nativeName}</span>
+                      {isSelected && <Check size={13} className="lang-check" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Institutional & Admin Access */}
             <div className="mobile-nav-group">
               <span className="mobile-group-title">
@@ -382,6 +427,6 @@ export default function PortalHeader() {
           </nav>
         </>
       )}
-    </header>
+    </>
   );
 }

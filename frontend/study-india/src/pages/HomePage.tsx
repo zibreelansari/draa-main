@@ -306,10 +306,10 @@ export default function HomePage() {
         <div className="reference-hero-shade" />
 
         <div className="portal-shell reference-hero-copy" data-reveal>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginBottom: "14px" }}>
+          <div className="hero-eyebrows-wrap">
             <span className="hero-eyebrow hero-eyebrow--primary">
-              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "linear-gradient(135deg, #FF9933, #138808)" }} />
-              {t("hero.eyebrow", "STUDY IN INDIA \u00b7 OFFICIAL GATEWAY")}
+              <span className="hero-eyebrow-dot" />
+              {t("hero.eyebrow", "DRAA STUDY IN INDIA")}
             </span>
             <span className="hero-eyebrow hero-eyebrow--secondary">
               <Sparkles size={11} color="#f59e0b" /> 5,000+ Years of Heritage
@@ -335,11 +335,13 @@ export default function HomePage() {
 
           <div className="hero-trust-strip">
             <small>TRUSTED BY</small>
-            <span>UGC</span>
-            <span>AICTE</span>
-            <span>NAAC</span>
-            <span>NIRF</span>
-            <span>Study in India</span>
+            <div className="hero-trust-badges">
+              <span>UGC</span>
+              <span>AICTE</span>
+              <span>NAAC</span>
+              <span>NIRF</span>
+              <span>Study in India</span>
+            </div>
           </div>
         </div>
 

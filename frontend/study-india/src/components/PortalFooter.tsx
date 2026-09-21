@@ -1,9 +1,20 @@
-import React from "react";
-import { FileText, Mail, MapPin, Phone, Send } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function PortalFooter() {
   const currentYear = new Date().getFullYear();
+  const [showFloating, setShowFloating] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show only after scrolling past the hero fold (380px)
+      setShowFloating(window.scrollY > 380);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <footer className="portal-footer">
@@ -74,9 +85,13 @@ export default function PortalFooter() {
         <span>Purpose-led education &middot; Responsible guidance</span>
       </div>
 
-      {/* Floating Apply Now Button */}
-      <Link to="/register/student" className="floating-apply" aria-label="Apply Now">
-        <Send size={15} /> Apply Now
+      {/* Floating Apply Now Button (only visible when scrolled past hero, eliminating stat card overlap) */}
+      <Link
+        to="/register/student"
+        className={`floating-apply ${showFloating ? "is-visible" : ""}`}
+        aria-label="Apply Now"
+      >
+        <Send size={15} /> <span>Apply Now</span>
       </Link>
     </footer>
   );
