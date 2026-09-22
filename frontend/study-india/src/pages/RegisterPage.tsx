@@ -248,7 +248,7 @@ export default function RegisterPage() {
           <div className="auth-showcase-column" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             
             {/* Government Authority Badge */}
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", borderRadius: "9999px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#065f46", fontSize: "12px", fontWeight: "750", width: "max-content" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", borderRadius: "9999px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#065f46", fontSize: "12px", fontWeight: "750", maxWidth: "100%", width: "fit-content" }}>
               <span className="live-beacon-dot" />
               <ShieldCheck size={14} color="#059669" /> Government of India · Official Admissions Portal
             </div>
