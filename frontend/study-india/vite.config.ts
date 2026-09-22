@@ -12,4 +12,19 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    // Warn if any chunk exceeds 600KB (down from default 500KB to catch regressions)
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Isolate the massive 2.5MB catalog into its own lazy-loaded chunk
+          "study-india-catalog": ["./src/data/studyIndiaCatalog"],
+          // Vendor split for better caching
+          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          "vendor-icons": ["lucide-react"],
+        },
+      },
+    },
+  },
 });

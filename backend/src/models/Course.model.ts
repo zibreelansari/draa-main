@@ -83,6 +83,12 @@ CourseSchema.index({ level: 1, discipline: 1, status: 1 });
 CourseSchema.index({ courseType: 1, mode: 1, scholarshipAvailable: 1, discipline: 1 });
 CourseSchema.index({ currency: 1, status: 1 });
 
+// Fee range filtering (used in catalog fee budget filter)
+CourseSchema.index({ status: 1, tuitionFeeInr: 1 });
+
+// Catalog listing default sort (status=PUBLISHED sorted by title)
+CourseSchema.index({ status: 1, title: 1 });
+
 // Text index for search
 CourseSchema.index({ title: 'text', discipline: 'text', eligibility: 'text' });
 

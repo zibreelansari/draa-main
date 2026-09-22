@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -7,6 +7,10 @@ import {
   Calculator,
   CalendarDays,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
   Compass,
   DollarSign,
   ExternalLink,
@@ -33,6 +37,9 @@ import {
   STUDY_INDIA_DISCIPLINES,
   STUDY_INDIA_STATES,
 } from "../data/studyIndiaCatalog";
+
+/** Items shown per page — tuned for fast rendering + good UX scroll depth */
+const PAGE_SIZE = 24;
 
 export type Course = {
   id: string | number;
@@ -106,14 +113,20 @@ export default function CoursesPage() {
   useReveal();
   const navigate = useNavigate();
 
-  // Primary states initialized with official Study in India catalog for instant 0ms load
-  const [courses, setCourses] = useState<Course[]>(OFFICIAL_COURSES);
-  const [institutes, setInstitutes] = useState<Institute[]>(OFFICIAL_UNIVERSITIES);
+  // Lazy state init — the array reference is reused, not re-created on every render
+  const [courses, setCourses] = useState<Course[]>(() => OFFICIAL_COURSES);
+  const [institutes, setInstitutes] = useState<Institute[]>(() => OFFICIAL_UNIVERSITIES);
   const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const [filters, setFilters] = useState<Filters>(emptyFilters);
   const [view, setView] = useState<"courses" | "institutes">("courses");
   const [currency, setCurrency] = useState<"USD" | "INR">("USD");
   const [selectedDisciplinePill, setSelectedDisciplinePill] = useState<string>("All");
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [instPage, setInstPage] = useState(1);
+  const resultsTopRef = useRef<HTMLDivElement>(null);
 
   // Quick View Modal
   const [quickViewCourse, setQuickViewCourse] = useState<Course | null>(null);
@@ -124,6 +137,22 @@ export default function CoursesPage() {
   const [toastMessage, setToastMessage] = useState("");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
+  // ── Debounce search input (300ms) to avoid filtering 24K items on every keystroke
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setDebouncedQuery(query);
+      setCurrentPage(1); // reset to page 1 on new search
+      setInstPage(1);
+    }, 300);
+    return () => clearTimeout(id);
+  }, [query]);
+
+  // Reset to page 1 whenever filters change
+  useEffect(() => {
+    setCurrentPage(1);
+    setInstPage(1);
+  }, [filters]);
+
   // Attempt background sync with backend API if running
   useEffect(() => {
     Promise.all([
@@ -131,7 +160,6 @@ export default function CoursesPage() {
       apiRequest<{ institutes: Institute[] }>("/api/catalog/institutes").catch(() => null),
     ]).then(([backendCourses, backendInstitutes]) => {
       if (backendCourses?.courses && backendCourses.courses.length > 0) {
-        // Merge official catalog with any additional backend records
         const officialSlugs = new Set(OFFICIAL_COURSES.map((c) => c.slug));
         const customBackend = backendCourses.courses.filter((c) => !officialSlugs.has(c.slug));
         setCourses([...OFFICIAL_COURSES, ...customBackend]);
@@ -175,10 +203,12 @@ export default function CoursesPage() {
     return currency === "INR" ? "₹2,50,000/yr" : "$3,000/yr";
   };
 
-  const visibleCourses = useMemo(() => {
+  // ── Filtered results (uses debounced query so we don't re-filter on every keystroke)
+  const filteredCourses = useMemo(() => {
+    const q = debouncedQuery.toLowerCase();
     return courses.filter((course) => {
       const haystack = `${course.title} ${course.discipline} ${course.instituteName} ${course.city} ${course.state} ${course.level}`.toLowerCase();
-      const matchesQuery = !query || haystack.includes(query.toLowerCase());
+      const matchesQuery = !q || haystack.includes(q);
       const matchesDiscipline = !filters.discipline || course.discipline.toLowerCase().includes(filters.discipline.toLowerCase());
       const matchesLevel = !filters.level || course.level.toUpperCase() === filters.level.toUpperCase();
       const matchesState = !filters.state || course.state.toLowerCase() === filters.state.toLowerCase();
@@ -196,16 +226,41 @@ export default function CoursesPage() {
 
       return matchesQuery && matchesDiscipline && matchesLevel && matchesState && matchesMode && matchesScholarship && matchesFee;
     });
-  }, [courses, query, filters]);
+  }, [courses, debouncedQuery, filters]);
 
-  const visibleInstitutes = useMemo(() => {
+  const filteredInstitutes = useMemo(() => {
+    const q = debouncedQuery.toLowerCase();
     return institutes.filter((institute) => {
       const haystack = `${institute.name} ${institute.type} ${institute.city} ${institute.state} ${institute.nirfRank || ""}`.toLowerCase();
-      const matchesQuery = !query || haystack.includes(query.toLowerCase());
+      const matchesQuery = !q || haystack.includes(q);
       const matchesState = !filters.state || institute.state.toLowerCase() === filters.state.toLowerCase();
       return matchesQuery && matchesState;
     });
-  }, [institutes, query, filters.state]);
+  }, [institutes, debouncedQuery, filters.state]);
+
+  // ── Paginate: only render PAGE_SIZE items at a time ─────────────────────────
+  const courseTotalPages = Math.max(1, Math.ceil(filteredCourses.length / PAGE_SIZE));
+  const instTotalPages = Math.max(1, Math.ceil(filteredInstitutes.length / PAGE_SIZE));
+
+  const visibleCourses = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filteredCourses.slice(start, start + PAGE_SIZE);
+  }, [filteredCourses, currentPage]);
+
+  const visibleInstitutes = useMemo(() => {
+    const start = (instPage - 1) * PAGE_SIZE;
+    return filteredInstitutes.slice(start, start + PAGE_SIZE);
+  }, [filteredInstitutes, instPage]);
+
+  /** Scroll to results area after page change */
+  const goToPage = useCallback((page: number, target: "courses" | "institutes") => {
+    if (target === "courses") {
+      setCurrentPage(Math.max(1, Math.min(page, courseTotalPages)));
+    } else {
+      setInstPage(Math.max(1, Math.min(page, instTotalPages)));
+    }
+    resultsTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [courseTotalPages, instTotalPages]);
 
   function handleApplyClick(course: Course) {
     apiRequest("/api/workspaces/student")
@@ -345,7 +400,7 @@ export default function CoursesPage() {
             >
               <BookOpen size={17} />
               <span>Explore Courses</span>
-              <span className="count-badge">{visibleCourses.length}</span>
+              <span className="count-badge">{filteredCourses.length.toLocaleString()}</span>
             </button>
             <button
               type="button"
@@ -356,7 +411,7 @@ export default function CoursesPage() {
             >
               <Building2 size={17} />
               <span>Universities & Campuses</span>
-              <span className="count-badge">{visibleInstitutes.length}</span>
+              <span className="count-badge">{filteredInstitutes.length.toLocaleString()}</span>
             </button>
           </div>
         </div>
@@ -513,14 +568,15 @@ export default function CoursesPage() {
             </aside>
 
             {/* ── Main Results Panel ── */}
-            <main className="catalogue-results-panel">
+            <main className="catalogue-results-panel" ref={resultsTopRef}>
               {view === "courses" ? (
                 <>
                   <div className="results-header">
                     <div>
                       <span className="results-eyebrow">VERIFIED COURSE LISTINGS</span>
                       <h2 className="results-title">
-                        {visibleCourses.length} Programmes Available for 2026-27 Intake
+                        {filteredCourses.length.toLocaleString()} Programmes Available for 2026-27 Intake
+                        {courseTotalPages > 1 && <span className="page-indicator"> — Page {currentPage} of {courseTotalPages}</span>}
                       </h2>
                     </div>
                     <span className="results-badge">
@@ -608,7 +664,7 @@ export default function CoursesPage() {
                     ))}
                   </div>
 
-                  {!visibleCourses.length && (
+                  {!filteredCourses.length && (
                     <div className="catalogue-empty-state">
                       <Compass size={44} color="#ea580c" />
                       <h3>No programmes matched your current filters</h3>
@@ -625,6 +681,30 @@ export default function CoursesPage() {
                       </button>
                     </div>
                   )}
+
+                  {/* ── Pagination Controls ── */}
+                  {courseTotalPages > 1 && (
+                    <nav className="catalogue-pagination" aria-label="Course results pagination">
+                      <button type="button" disabled={currentPage <= 1} onClick={() => goToPage(1, "courses")} title="First page" aria-label="First page">
+                        <ChevronsLeft size={18} />
+                      </button>
+                      <button type="button" disabled={currentPage <= 1} onClick={() => goToPage(currentPage - 1, "courses")} title="Previous page" aria-label="Previous page">
+                        <ChevronLeft size={18} />
+                      </button>
+
+                      <span className="pagination-info">
+                        Page <strong>{currentPage}</strong> of <strong>{courseTotalPages}</strong>
+                        <span className="pagination-total">({filteredCourses.length.toLocaleString()} results)</span>
+                      </span>
+
+                      <button type="button" disabled={currentPage >= courseTotalPages} onClick={() => goToPage(currentPage + 1, "courses")} title="Next page" aria-label="Next page">
+                        <ChevronRight size={18} />
+                      </button>
+                      <button type="button" disabled={currentPage >= courseTotalPages} onClick={() => goToPage(courseTotalPages, "courses")} title="Last page" aria-label="Last page">
+                        <ChevronsRight size={18} />
+                      </button>
+                    </nav>
+                  )}
                 </>
               ) : (
                 /* ── Universities Tab View ── */
@@ -633,7 +713,8 @@ export default function CoursesPage() {
                     <div>
                       <span className="results-eyebrow">INSTITUTION DIRECTORY</span>
                       <h2 className="results-title">
-                        {visibleInstitutes.length} Accredited Partner Campuses
+                        {filteredInstitutes.length.toLocaleString()} Accredited Partner Campuses
+                        {instTotalPages > 1 && <span className="page-indicator"> — Page {instPage} of {instTotalPages}</span>}
                       </h2>
                     </div>
                     <span className="results-badge">
@@ -683,6 +764,28 @@ export default function CoursesPage() {
                       </article>
                     ))}
                   </div>
+
+                  {/* ── Institutes Pagination ── */}
+                  {instTotalPages > 1 && (
+                    <nav className="catalogue-pagination" aria-label="Institute results pagination">
+                      <button type="button" disabled={instPage <= 1} onClick={() => goToPage(1, "institutes")} title="First page" aria-label="First page">
+                        <ChevronsLeft size={18} />
+                      </button>
+                      <button type="button" disabled={instPage <= 1} onClick={() => goToPage(instPage - 1, "institutes")} title="Previous page" aria-label="Previous page">
+                        <ChevronLeft size={18} />
+                      </button>
+                      <span className="pagination-info">
+                        Page <strong>{instPage}</strong> of <strong>{instTotalPages}</strong>
+                        <span className="pagination-total">({filteredInstitutes.length.toLocaleString()} results)</span>
+                      </span>
+                      <button type="button" disabled={instPage >= instTotalPages} onClick={() => goToPage(instPage + 1, "institutes")} title="Next page" aria-label="Next page">
+                        <ChevronRight size={18} />
+                      </button>
+                      <button type="button" disabled={instPage >= instTotalPages} onClick={() => goToPage(instTotalPages, "institutes")} title="Last page" aria-label="Last page">
+                        <ChevronsRight size={18} />
+                      </button>
+                    </nav>
+                  )}
                 </>
               )}
             </main>

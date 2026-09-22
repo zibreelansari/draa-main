@@ -191,7 +191,7 @@ export async function getInstituteBySlug(slug: string) {
   return Institute.findOne({ slug: slug.toLowerCase(), status: 'PUBLISHED' }).lean();
 }
 
-export async function listCourses(filters?: { level?: string; discipline?: string; query?: string; mode?: string; minFee?: number; maxFee?: number }) {
+export async function listCourses(filters?: { level?: string; discipline?: string; query?: string; mode?: string; minFee?: number; maxFee?: number; page?: number; limit?: number }) {
   const query: Record<string, unknown> = { status: 'PUBLISHED' };
   if (filters?.level) query.level = filters.level;
   if (filters?.discipline) query.discipline = filters.discipline;
@@ -208,10 +208,27 @@ export async function listCourses(filters?: { level?: string; discipline?: strin
     if (filters.maxFee) (query.tuitionFeeInr as Record<string, number>).$lte = filters.maxFee;
   }
 
-  return Course.find(query)
-    .populate('instituteId', 'name slug city state type imageUrl')
-    .sort({ title: 1 })
-    .lean();
+  const page = Math.max(1, filters?.page || 1);
+  const limit = Math.min(100, Math.max(1, filters?.limit || 50));
+  const skip = (page - 1) * limit;
+
+  const [courses, total] = await Promise.all([
+    Course.find(query)
+      .populate('instituteId', 'name slug city state type imageUrl')
+      .sort({ title: 1 })
+      .skip(skip)
+      .limit(limit)
+      .lean(),
+    Course.countDocuments(query),
+  ]);
+
+  return {
+    courses,
+    page,
+    limit,
+    total,
+    totalPages: Math.ceil(total / limit),
+  };
 }
 
 export async function getCourseBySlug(slug: string) {

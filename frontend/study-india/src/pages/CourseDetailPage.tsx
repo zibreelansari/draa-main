@@ -32,6 +32,19 @@ type CourseDetail = Course & {
   careerProspects?: string[];
 };
 
+// ── O(1) lookup maps (built once, cached in module scope) ─────────────────
+let _courseMap: Map<string, typeof OFFICIAL_COURSES[0]> | null = null;
+let _uniMap: Map<string, typeof OFFICIAL_UNIVERSITIES[0]> | null = null;
+
+function getCourseMap() {
+  if (!_courseMap) _courseMap = new Map(OFFICIAL_COURSES.map((c) => [c.slug, c]));
+  return _courseMap;
+}
+function getUniMap() {
+  if (!_uniMap) _uniMap = new Map(OFFICIAL_UNIVERSITIES.map((u) => [u.slug, u]));
+  return _uniMap;
+}
+
 const label = (value: string) =>
   value.replace(/_/g, " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase());
 
@@ -53,10 +66,10 @@ export default function CourseDetailPage() {
   const [gpaModalOpen, setGpaModalOpen] = useState(false);
 
   useEffect(() => {
-    // 1. First check official catalogue dataset
-    const matchedOfficial = OFFICIAL_COURSES.find((c) => c.slug === slug);
+    // 1. O(1) lookup in official catalogue dataset
+    const matchedOfficial = getCourseMap().get(slug);
     if (matchedOfficial) {
-      const uni = OFFICIAL_UNIVERSITIES.find((u) => u.slug === matchedOfficial.instituteSlug);
+      const uni = getUniMap().get(matchedOfficial.instituteSlug);
       setCourse({
         ...matchedOfficial,
         instituteDescription: uni?.description || "Premier higher education institution in India accredited by NAAC and NIRF.",

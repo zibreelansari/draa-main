@@ -5304,6 +5304,75 @@ img {
   cursor: pointer;
 }
 
+/* ── Pagination Controls ───────────────────────────────────────────────────── */
+.catalogue-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 0 16px;
+  flex-wrap: wrap;
+}
+
+.catalogue-pagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.catalogue-pagination button:hover:not(:disabled) {
+  background: #0b655d;
+  color: #ffffff;
+  border-color: #0b655d;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(11, 101, 93, 0.25);
+}
+
+.catalogue-pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: #475569;
+  padding: 0 12px;
+  user-select: none;
+}
+
+.pagination-info strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.pagination-total {
+  margin-left: 6px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.page-indicator {
+  font-size: 0.72em;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0;
+}
+
+/* Lazy-load spinner animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* ══════════════════════════════════════════════════════════════════════
    COURSE QUICK VIEW MODAL (SCOPED TO AVOID BOOTSTRAP OVERRIDES)
    ══════════════════════════════════════════════════════════════════════ */
